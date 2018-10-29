@@ -1,0 +1,7 @@
+**/.vscode
+
+# python cache
+*.pyc
+
+# log file
+*.log

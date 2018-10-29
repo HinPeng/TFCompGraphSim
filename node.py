@@ -1,0 +1,99 @@
+from tensor import Tensor
+
+class Node():
+  def __init__(self,
+               node_name,
+               start_time=0,
+               end_time=0):
+    self.node_name = node_name
+
+    # Can be delayed due to other operation. such as swap in
+    self.logic_time = 0
+    self.tmp_time = []
+
+    # Init by the run_metadata
+    self.start_time = start_time
+    self.end_time = end_time
+
+    self.pending_count = -1
+    self.fanout_nodes = []  # store the fanout nodes (Can be multiple same node)
+    self.fanin_tensors = [] # store fanin tensors to this node
+
+    self.ok_fanin_tensors = []
+
+    self.outputs_num = 0
+    self.outputs = []       # store the output tensors
+    self.no_use_outputs = []# store some no use output tensors
+
+    # for memory size transfer
+    self.metric = 1 << 20
+
+    self.gpu_allocator_name = "GPU_0_bfc"
+
+    self.gpu_mem_allocated = 0
+    self.gpu_mem_requested = 0
+
+    self.access_id = 0
+
+  def __cmp__(self, other):
+    if self.pending_count == other.pending_count:
+      return self.start_time > other.start_time
+
+    return self.pending_count > other.pending_count
+
+  def GPUMemAllocated(self):
+    if (len(self.outputs) == 0) and (len(self.no_use_outputs) == 0):
+      self.gpu_mem_allocated = 0
+    else:
+      sum_allocated_bytes = 0
+      for t in self.outputs:
+        if t.allocator_name == self.gpu_allocator_name:
+          sum_allocated_bytes += t.allocated_bytes
+
+      for t in self.no_use_outputs:
+        if t.allocator_name == self.gpu_allocator_name:
+          sum_allocated_bytes += t.allocated_bytes
+
+      self.gpu_mem_allocated = float(sum_allocated_bytes) / self.metric
+
+  def GPUMemRequested(self):
+    if (len(self.outputs) == 0) and (len(self.no_use_outputs) == 0):
+      self.gpu_mem_requested = 0
+    else:
+      sum_requested_bytes = 0
+      for t in self.outputs:
+        if t.allocator_name == self.gpu_allocator_name:
+          sum_requested_bytes += t.requested_bytes
+
+      for t in self.no_use_outputs:
+        if t.allocator_name == self.gpu_allocator_name:
+          sum_requested_bytes += t.requested_bytes
+
+      self.gpu_mem_requested = float(sum_requested_bytes) / self.metric
+
+  def GetNOkfanintensors(self):
+    if len(self.fanin_tensors) == 0:
+      return None
+    # assert len(self.fanin_tensors) != 0
+    # assert len(self.ok_fanin_tensors) !
+    Nok_tensors = []
+    for t in self.fanin_tensors:
+      if t in self.ok_fanin_tensors:
+        pass
+      else:
+        Nok_tensors.append(t.name())
+
+    if len(Nok_tensors) == 0:
+      return None
+    else:
+      return Nok_tensors
+
+
+# class Port():
+#   def __init__(self,
+#                node=None,
+#                tid=0,
+#                tensor=None):
+#     self.node = node
+#     self.tid = tid
+#     self.tensor = tensor
