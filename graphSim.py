@@ -8,6 +8,8 @@ import os
 import collections
 import copy
 
+from check_netArch import Check_netArch
+
 # from tomorrow import threads
 
 from node import Node
@@ -32,7 +34,8 @@ class GraphSim():
     # self.logic_time = 0
     # Node number in nodeInfo is a bit fewer than nodeCon
 
-    self.metadata_dir = "./inception3_115_k40/"
+    self.metadata_dir = "./alexnet_256_k40/"
+    # self.metadata_dir = "./inception3_115_k40/"
 
     self.nodeInfo_filename = "gpu_0_nodetime.txt"  # Initiate node execution time
     # self.nodeCon_filename = "1.log"
@@ -64,7 +67,7 @@ class GraphSim():
     self.peak_memory = 0
     self.mem_usage = []
 
-    self.mem_limit = 5.5 * (1 << 10)
+    self.mem_limit = 1 * (1 << 10)
     self.pcie_bandwidth = 12 * (1 << 10)
 
     self.time_metric = 1000000
@@ -84,9 +87,9 @@ class GraphSim():
     self.debug = True
     self.debug_file = "log_debug.log"
 
-    self.swapin_trigger_distance = 10
+    self.swapin_trigger_distance = 20
 
-    self.swap = True
+    self.swap = False
 
     if self.swap:
       self.swapping_test = True
@@ -184,8 +187,6 @@ class GraphSim():
       fout_debug.write("-------------------\n")
       for t in e.fanin_tensors:
         t.ref_count -= 1
-        if t.name() == "v/tower_0/cg/incept_v3_e0_1/conv85/batchnorm85/Const_1_0":
-          fout_debug.write("Decrease to "+str(t.ref_count)+" "+e.node_name+'\n')
 
         for st in self.swapped_tensors.keys():
         # t is in swapped_tensors collection
@@ -375,9 +376,9 @@ class GraphSim():
             if ut.ref_count == -1:
               ut.ref_count = 0
             ut.ref_count += 1
-            if ut.name() == "v/tower_0/cg/incept_v3_e0_1/conv85/batchnorm85/Const_1_0":
-              # print("[HINT] Init ref count %d of %s\n" % (ut.ref_count, fanout_node.node_name))
-              fout_debug.write("Init "+str(ut.ref_count)+" "+fanout_node.node_name+'\n')
+            # if ut.name() == "v/tower_0/cg/incept_v3_e0_1/conv85/batchnorm85/Const_1_0":
+            #   # print("[HINT] Init ref count %d of %s\n" % (ut.ref_count, fanout_node.node_name))
+            #   fout_debug.write("Init "+str(ut.ref_count)+" "+fanout_node.node_name+'\n')
             fanout_node.ok_fanin_tensors.append(ut)
             # if self.log_ref_count:
             #   fout_ref.write("%s ref count increase: %d\n" % (ut.name(), ut.ref_count))
@@ -607,6 +608,7 @@ class GraphSim():
       # print("%s in_trigger_index: %d, access timestamp: %d\n" % (swapin_trigger.name(), in_trigger_index, self.tensor_accesses[in_trigger_index][0]))
       try:
         assert (in_trigger_index > v[swapping_indicies[k]])
+        # print(in_trigger_index - v[swapping_indicies[k]])
       except AssertionError:
         print(k+", swapping_indicies:"+str(v)+'\n')
         print("%s, swapping_index: %d, next_use_index: %d, in_trigger_index: %d\n" % (k, v[swapping_indicies[k]], k_nindex, in_trigger_index))
@@ -1092,6 +1094,8 @@ if __name__ == '__main__':
 
   if graph_sim.swapping_test:
     graph_sim.InitSwappingDecision()
+
+  Check_netArch(graph_sim.metadata_dir, graph_sim.nodes, log2file=True)
 
 
   # if graph_sim.debug:
