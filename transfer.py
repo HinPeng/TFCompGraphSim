@@ -7,4 +7,4 @@ with open(medatata_dir+"swapping_decision.txt", 'w') as fout:
       tmp = line.split()
       swapout_num = int(tmp[1]) - int(tmp[2])
       swapin_num = int(tmp[4]) - int(tmp[5])
-      fout.write("%s\t%d\t%s\t%d\n" % (tmp[0], swapout_num, tmp[3], swapin_num))
+      fout.write("%s\t%d\t%d\t%s\t%d\t%d\n" % (tmp[0], int(tmp[1]), swapout_num, tmp[3], int(tmp[4]), swapin_num))

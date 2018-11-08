@@ -44,7 +44,8 @@ class GraphSim():
     self.innode_filename = "1_innodes.txt"  # Initiate input tensor information of a node
     self.outnode_filename = "1_outnodes.txt"# Initiate outnodes of each node
     self.finish_time = 0.0
-    self.batch_size = 115
+    # self.batch_size = 115
+    self.batch_size = int(self.metadata_dir.split('_')[1])
     self.events = q.PriorityQueue()
 
     self.nodes = dict()
