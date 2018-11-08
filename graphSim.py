@@ -99,7 +99,7 @@ class GraphSim():
       self.swapping_test = False
       self.swapping_debug = False
 
-    # self.
+    self.checkNetArch = False
 
   def EventsEngine(self):
 
@@ -1096,7 +1096,8 @@ if __name__ == '__main__':
   if graph_sim.swapping_test:
     graph_sim.InitSwappingDecision()
 
-  Check_netArch(graph_sim.metadata_dir, graph_sim.nodes, log2file=True)
+  if graph_sim.checkNetArch:
+    Check_netArch(graph_sim.metadata_dir, graph_sim.nodes, log2file=True)
 
 
   # if graph_sim.debug:
