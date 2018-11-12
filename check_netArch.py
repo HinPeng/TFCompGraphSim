@@ -15,7 +15,7 @@ def Check_netArch(data_dir, net, log2file):
     log_dir = data_dir+"layerArch/"
     if not os.path.exists(log_dir):
       os.mkdir(log_dir)
-  
+
   # innodes_file=data_dir+"1_innodes.txt"
 
   for node in net.values():
@@ -49,7 +49,7 @@ def Check_netArch(data_dir, net, log2file):
       if kn in ttmp:
         kn = ttmp
         break
-    
+
     if "conv" in kn:
       convfilterflag = False
       for filterconvkey in filterconvkeys:
@@ -86,7 +86,7 @@ def Check_netArch(data_dir, net, log2file):
   swapped_tensors = dict()
   for k,v in forwardkey.items():
     for vv in v:
-      node = net[vv]      
+      node = net[vv]
       for fanin_tensor in node.fanin_tensors:
         if filterconvkey in fanin_tensor.name():
           continue
@@ -95,7 +95,10 @@ def Check_netArch(data_dir, net, log2file):
         swapped_tensors[vv].append(fanin_tensor.name())
 
   swap_info = dict()
+  conv_fanout_nodes = dict()
   for k,v in swapped_tensors.items():
+    # Only one input of conv layer is needed swapped out, maybe not a good assumption
+    assert (len(v) == 1)
     # for each tensor
     for vv in v:
       index_ = vv.rfind('_')
@@ -103,8 +106,9 @@ def Check_netArch(data_dir, net, log2file):
       output_id = vv[index_+1:]
       # node_name = vv.split('_')[0]  # swap out tensor's node name
       # output_id = vv.split('_')[1]  # output id of this tensor
-      if not swap_info.__contains__((node_name, output_id)):
-        swap_info[(node_name, output_id)] = []
+      tensor = (node_name, output_id)
+      if not swap_info.__contains__(tensor):
+        swap_info[tensor] = []
       swap_node = net[node_name]
       for fanout_node in swap_node.fanout_nodes:
         if fanout_node.node_name == k:
@@ -118,18 +122,50 @@ def Check_netArch(data_dir, net, log2file):
           print("Error input_id, node: %d, fanin_tensor: %s" % (fanout_node.node_name, vv))
           raise ValueError
 
-        swap_info[(node_name, output_id)].append((fanout_node.node_name, input_id))
+        swap_info[tensor].append((fanout_node.node_name, input_id))
+
+      # Get fanout_nodes of conv node
+      conv_node = net[k]
+      assert (not conv_fanout_nodes.__contains__((tensor)))
+      conv_fanout_nodes[tensor] = []
+      for fanout_node in conv_node.fanout_nodes:
+        conv_fanout_nodes[tensor].append(fanout_node.node_name)
 
   # TODO: choose the in_trigger_node for each swapped out tensor
+  in_trigger_dict = dict()
+  in_trigger_fanouts = dict()
+  with open(data_dir+"in_trigger_node.log") as fin:
+    for line in fin:
+      tmp = line.split()
+      assert(len(tmp) == 4)
+      tensor = (tmp[0], tmp[1])
+      assert(not in_trigger_dict.__contains__(tensor))
+      in_trigger_dict[tensor] = tmp[2]
 
-  # with open("swap_info.log", 'w') as fout:
-  #   for k,v in swap_info.items():
-  #     fout.write(k[0]+'\t'+k[1]+'\t'+str(len(v))+'\n')
-  #     for vv in v:
-  #       fout.write(vv[0]+'\t'+str(vv[1])+'\n')
+      node = net[tmp[3]]
+      assert (not in_trigger_fanouts.__contains__(tensor))
+      in_trigger_fanouts[tensor] = []
+      for fanout_node in node.fanout_nodes:
+        in_trigger_fanouts[tensor].append(fanout_node.node_name)
 
-        
-      
+
+  with open(data_dir+"swap_info.log", 'w') as fout:
+    for k,v in swap_info.items():
+      fout.write(k[0]+'\t'+k[1]+'\t'+str(len(v))+'\n')
+      for vv in v:
+        fout.write(vv[0]+'\t'+str(vv[1])+'\n')
+      assert (k in conv_fanout_nodes.keys())
+      fout.write(str(len(conv_fanout_nodes[k]))+'\n')
+      for conv_fanout in conv_fanout_nodes[k]:
+        fout.write(conv_fanout+'\n')
+      assert (k in in_trigger_dict.keys())
+      fout.write(in_trigger_dict[k]+'\n')
+      fout.write(str(len(in_trigger_fanouts[k]))+'\n')
+      for in_trigger_fanout in in_trigger_fanouts[k]:
+        fout.write(in_trigger_fanout+'\n')
+
+
+
 
 
   # return forwardkey, backwardkey

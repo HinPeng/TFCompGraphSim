@@ -34,8 +34,8 @@ class GraphSim():
     # self.logic_time = 0
     # Node number in nodeInfo is a bit fewer than nodeCon
 
-    self.metadata_dir = "./alexnet_256_k40/"
-    # self.metadata_dir = "./inception3_115_k40/"
+    # self.metadata_dir = "./alexnet_256_k40/"
+    self.metadata_dir = "./inception3_115_k40/"
 
     self.nodeInfo_filename = "gpu_0_nodetime.txt"  # Initiate node execution time
     # self.nodeCon_filename = "1.log"
@@ -68,14 +68,16 @@ class GraphSim():
     self.peak_memory = 0
     self.mem_usage = []
 
-    self.mem_limit = 1 * (1 << 10)
+    self.mem_limit = 5.5 * (1 << 10)
     self.pcie_bandwidth = 12 * (1 << 10)
 
     self.time_metric = 1000000
 
     # self.node_access = []     # store the access of node in one iteration
+    self.using_tf_tensor_access = True
     self.tensor_accesses = []   # store the access of tensor in one iteration, include timestamp
     self.tensor_access = []
+    self.tf_tensor_access = []  # store the tensor access of tensorflow real running
     self.ngpu_tensor_access = dict()
 
     self.swapping_test = True
@@ -479,25 +481,50 @@ class GraphSim():
     print("[INFO] Peak memory is %f MB\n" % peak_mem)
 
   # Analysis
-  def access_analysis(self, tensor_access):
+  def access_analysis(self, tensor_access):    
     tac = dict()
 
-    # tensor_accesses = [tensor for _, tensor in tensor_access]
-    for index, t in enumerate(tensor_access):
-      # Ignore the tensor not in GPU
-      if t.allocator_name != "GPU_0_bfc":
-        # record the index of tensor which is not been allocated by GPU_BFC
-        if not self.ngpu_tensor_access.__contains__(t.name()):
-          self.ngpu_tensor_access[t.name()] = []
-        self.ngpu_tensor_access[t.name()].append(index)
-        continue
+    if self.using_tf_tensor_access:
+      # Init tensor (include cpu & gpu side) access info
+      with open(self.metadata_dir+"tensor_access.log") as fin:
+        line_num = -1
+        for line in fin:
+          tensor_name = line.split()[0]
+          access_time = int(line.split()[1])
+          line_num += 1
+          self.tf_tensor_access.append((access_time, tensor_name))
+          if not self.tensors.__contains__(tensor_name):
+            print("[DEBUG] tf tensor not found in simulator: %s\n" % tensor_name)
+            if not self.ngpu_tensor_access.__contains__(tensor_name):
+              self.ngpu_tensor_access[tensor_name] = []
+            self.ngpu_tensor_access[tensor_name].append(line_num)
+            # tensor's allocator is on CPU-side
+          else:
+            if self.tensors[tensor_name].allocator_name != "GPU_0_bfc":
+              if not self.ngpu_tensor_access.__contains__(tensor_name):
+                self.ngpu_tensor_access[tensor_name] = []
+              self.ngpu_tensor_access[tensor_name].append(line_num)
+            else:
+              if not tac.__contains__(tensor_name):
+                tac[tensor_name] = []
+              tac[tensor_name].append(line_num)
+    else:                          
+      # tensor_accesses = [tensor for _, tensor in tensor_access]
+      for index, t in enumerate(tensor_access):
+        # Ignore the tensor not in GPU
+        if t.allocator_name != "GPU_0_bfc":
+          # record the index of tensor which is not been allocated by GPU_BFC
+          if not self.ngpu_tensor_access.__contains__(t.name()):
+            self.ngpu_tensor_access[t.name()] = []
+          self.ngpu_tensor_access[t.name()].append(index)
+          continue
 
 
-      if not tac.__contains__(t.name()):
-        tac[t.name()] = []
-      tac[t.name()].append(index)
+        if not tac.__contains__(t.name()):
+          tac[t.name()] = []
+        tac[t.name()].append(index)
 
-
+    # filter the gpu tensors only show up once
     tac_f = {k:v for k,v in tac.items() if len(v) > 1}
     # Get the tensor used multiple times and sorted by index distance
     tac_ff = sorted(tac_f.items(), key=lambda x: x[1][-1] - x[1][0], reverse=True)
@@ -596,53 +623,62 @@ class GraphSim():
       in_trigger_index = -1
       while True:
         in_trigger_index = k_nindex - self.swapin_trigger_distance - i
-        swapin_trigger = self.tensor_access[in_trigger_index]
-        if swapin_trigger.name() not in tac.keys():
+        if self.using_tf_tensor_access:
+          swapin_trigger_name = self.tf_tensor_access[in_trigger_index][1]
+        else:
+          swapin_trigger = self.tensor_access[in_trigger_index]
+          swapin_trigger_name = swapin_trigger.name()
+        if swapin_trigger_name not in tac.keys():
           break
-        elif swapin_trigger.name() in skipped_list:
+        elif swapin_trigger_name in skipped_list:
           break
         else:
           i += 1
 
       # Check iff we choose the inputs of the same node
       # print("%s swapin_index: %d, access timestamp: %d\n" % (k, k_nindex, self.tensor_accesses[k_nindex][0]))
-      # print("%s in_trigger_index: %d, access timestamp: %d\n" % (swapin_trigger.name(), in_trigger_index, self.tensor_accesses[in_trigger_index][0]))
+      # print("%s in_trigger_index: %d, access timestamp: %d\n" % (swapin_trigger_name, in_trigger_index, self.tensor_accesses[in_trigger_index][0]))
       try:
         assert (in_trigger_index > v[swapping_indicies[k]])
         # print(in_trigger_index - v[swapping_indicies[k]])
       except AssertionError:
         print(k+", swapping_indicies:"+str(v)+'\n')
         print("%s, swapping_index: %d, next_use_index: %d, in_trigger_index: %d\n" % (k, v[swapping_indicies[k]], k_nindex, in_trigger_index))
-      if self.tensor_accesses[k_nindex][0] == self.tensor_accesses[in_trigger_index][0]:
-        print("[ERROR] Choose the inputs tensors of the same node!\n")
+      # check if the in_trigger and swapped_in tensor is used at the same time
+      if self.using_tf_tensor_access:
+        if self.tf_tensor_access[k_nindex][0] == self.tf_tensor_access[in_trigger_index][0]:
+          print("[ERROR] Choose the inputs tensors of the same node!\n")
+      else:
+        if self.tensor_accesses[k_nindex][0] == self.tensor_accesses[in_trigger_index][0]:
+          print("[ERROR] Choose the inputs tensors of the same node!\n")
 
       swapout_ref_count = len(v) - swapping_indicies[k] - 1
       swapin_ref_count = 0
       swapin_total_rc = 1
-      if swapin_trigger.name() in tac.keys():
+      if swapin_trigger_name in tac.keys():
         try:
-          assert(in_trigger_index in tac[swapin_trigger.name()])
+          assert(in_trigger_index in tac[swapin_trigger_name])
         except TypeError:
           print(in_trigger_index)
-          print(tac[swapin_trigger.name()])
+          print(tac[swapin_trigger_name])
           raise TypeError
-        swapin_ref_count = len(tac[swapin_trigger.name()]) - tac[swapin_trigger.name()].index(in_trigger_index) - 1
-        swapin_total_rc = len(tac[swapin_trigger.name()])
-      elif swapin_trigger.name() in self.ngpu_tensor_access.keys():
+        swapin_ref_count = len(tac[swapin_trigger_name]) - tac[swapin_trigger_name].index(in_trigger_index) - 1
+        swapin_total_rc = len(tac[swapin_trigger_name])
+      elif swapin_trigger_name in self.ngpu_tensor_access.keys():
         try:
-          assert (in_trigger_index in self.ngpu_tensor_access[swapin_trigger.name()])
+          assert (in_trigger_index in self.ngpu_tensor_access[swapin_trigger_name])
         except TypeError:
           raise TypeError
-        swapin_ref_count = len(self.ngpu_tensor_access[swapin_trigger.name()]) - self.ngpu_tensor_access[swapin_trigger.name()].index(in_trigger_index) - 1
-        swapin_total_rc = len(self.ngpu_tensor_access[swapin_trigger.name()])
+        swapin_ref_count = len(self.ngpu_tensor_access[swapin_trigger_name]) - self.ngpu_tensor_access[swapin_trigger_name].index(in_trigger_index) - 1
+        swapin_total_rc = len(self.ngpu_tensor_access[swapin_trigger_name])
       else:
-        # print(swapin_trigger.name())
+        # print(swapin_trigger_name)
         # raise KeyError
-        # in this case, the tensor is only shown up once
+        # in this case, the tensor is on gpu side and only shown up once
         pass
 
       fout.write("%s\t%d\t%d\t%s\t%d\t%s\n" % (k, len(v), swapout_ref_count,
-                                           swapin_trigger.name(),
+                                           swapin_trigger_name,
                                            swapin_total_rc,
                                            swapin_ref_count))
       # TODO: move the swap operation to the completion of a node instead of the start of a node
@@ -1097,7 +1133,8 @@ if __name__ == '__main__':
     graph_sim.InitSwappingDecision()
 
   if graph_sim.checkNetArch:
-    Check_netArch(graph_sim.metadata_dir, graph_sim.nodes, log2file=True)
+    Check_netArch(graph_sim.metadata_dir, graph_sim.nodes, log2file=False)
+    exit(0)
 
 
   # if graph_sim.debug:
