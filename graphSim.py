@@ -16,6 +16,7 @@ from node import Node
 # from node import Port
 
 from tensor import Tensor
+from swapInfo import SwapInfo
 
 def node_cmp(x, y):
   if x.start_time ==  y.start_time:
@@ -481,7 +482,7 @@ class GraphSim():
     print("[INFO] Peak memory is %f MB\n" % peak_mem)
 
   # Analysis
-  def access_analysis(self, tensor_access):    
+  def access_analysis(self, tensor_access):
     tac = dict()
 
     if self.using_tf_tensor_access:
@@ -506,9 +507,11 @@ class GraphSim():
               self.ngpu_tensor_access[tensor_name].append(line_num)
             else:
               if not tac.__contains__(tensor_name):
-                tac[tensor_name] = []
-              tac[tensor_name].append(line_num)
-    else:                          
+                # tac[tensor_name] = []
+                tac[tensor_name] = SwapInfo(tensor_name)
+              # tac[tensor_name].append(line_num)
+              tac[tensor_name].access_list.append(line_num)
+    else:
       # tensor_accesses = [tensor for _, tensor in tensor_access]
       for index, t in enumerate(tensor_access):
         # Ignore the tensor not in GPU
@@ -525,9 +528,10 @@ class GraphSim():
         tac[t.name()].append(index)
 
     # filter the gpu tensors only show up once
-    tac_f = {k:v for k,v in tac.items() if len(v) > 1}
+    tac_f = [v for k,v in tac.items() if len(v.access_list) > 1]
     # Get the tensor used multiple times and sorted by index distance
-    tac_ff = sorted(tac_f.items(), key=lambda x: x[1][-1] - x[1][0], reverse=True)
+    # This is no use now as the swapping_index decision is made later
+    # tac_ff = sorted(tac_f.items(), key=lambda x: x[1][-1] - x[1][0], reverse=True)
     # with open("candidates.log", 'w') as fout1:
     #   for k,v in tac_ff:
     #     fout1.write(k+': ')
@@ -535,18 +539,56 @@ class GraphSim():
     #       fout1.write(str(vv)+'\t')
     #     fout1.write('\n')
 
-    self.swapping_decision(tac_ff)
+    self.swapping_decisionTime(tac_f)
     # for k,v in tac_ff:
     #   print(k,v)
 
-  def swapping_decision(self, tac_ff):
+  def GetMaxAccessInterval(self, swapinfo):
+    prev_t = self.tf_tensor_access[swapinfo.access_list[0]][0]
+    curr_t = 0
+    max_interval = -1
+    max_index = 0
+
+    for i in range(1, len(swapinfo.access_list)):
+      curr_t = self.tf_tensor_access[i][0]
+      if (curr_t - prev_t) > max_interval:
+        max_interval = curr_t - prev_t
+        max_index = i - 1
+      prev_t = curr_t
+
+    swapinfo.swap_start = max_index
+    swapinfo.max_access_interval = max_interval
+
+  def swapping_decisionTime(self, tac_f):
+    for swapinfo in tac_f:
+      swapinfo.access_list.sort()
+      self.GetMaxAccessInterval(swapinfo)
+
+    # tac_ff = sorted(tac_f)
+    tac_f.sort()
+
+    for swapinfo in tac_f:
+      print(swapinfo.tensor_name, len(swapinfo.access_list), swapinfo.swap_start, swapinfo.max_access_interval)
+
+
+  def swapping_decision(self, tac_f):
     """
-    tac: tuple (tensor_name, [occured_indices])
+    # tac: dict (tensor_name, [occured_indices])
+    tac_f: SwapInfo
     """
 
     # Decide the swapping index for multiple occurrences
     swapping_indicies = dict()
-    for k,v in tac_ff:
+    # for swapinfo in tac_f:
+    #   self.GetMaxAccessInterval(swapinfo)
+
+    # tac_ff = sorted(tac_f)
+
+    # for swapinfo in tac_ff:
+    #   print(swapinfo.tensor_name, swapinfo.swap_start, swapinfo.max_access_interval)
+
+
+    for k,v in tac_f.items():
       if len(v) == 2:
         swapping_indicies[k] = 0
         continue
@@ -568,10 +610,10 @@ class GraphSim():
       # del v[max_index+2:]
       # del v[0:max_index]
 
-    tac_fff = sorted(tac_ff, key=lambda x: x[1][swapping_indicies[x[0]]+1] -
+    tac_ff = sorted(tac_f.items(), key=lambda x: x[1][swapping_indicies[x[0]]+1] -
                                            x[1][swapping_indicies[x[0]]], reverse=True)
     # with open("candidates_sorted.log", 'w') as fout1:
-    #   for k,v in tac_fff:
+    #   for k,v in tac_ff:
     #     fout1.write(k+': ')
     #     for vv in v:
     #       fout1.write(str(vv)+'\t')
@@ -581,18 +623,9 @@ class GraphSim():
     tac = collections.OrderedDict()
 
 
-    # with open(self.metadata_dir+'candidates_sorted.log', 'w') as fout:
-    for k, v in tac_fff:
+    for k, v in tac_ff:
       tac[k] = v
-        # fout.write("%s: %s\n" % (k, str(v)))
 
-    # for k, v in tac.items():
-    #   print(v[swapping_indicies[k]+1] - v[swapping_indicies[k]])
-
-    # with open("tmp.log", 'w') as fout:
-    #   for k,v in tac.items():
-    #     # print(v[swapping_indicies[k]+1] - v[swapping_indicies[k]])
-    #     fout.write(k+': '+str(v)+'\n')
 
     fout = open(self.metadata_dir+self.swapping_log, 'w')
 
@@ -603,6 +636,14 @@ class GraphSim():
 
     skipped_list = []                   # Store the skipped tensor
 
+    candidates_num = 0
+    for k,_ in tac.items():
+      swapped_out = self.tensors[k]
+      if swapped_out.gpu_mem_allocated < swapping_threshold:
+        continue
+      candidates_num += 1
+
+    print("[INFO] Total available candidates are %d" % candidates_num)
     # candidate_tensors_name = [k for k,v in tac]
 
     for k,v in tac.items():
@@ -677,12 +718,14 @@ class GraphSim():
         # in this case, the tensor is on gpu side and only shown up once
         pass
 
-      fout.write("%s\t%d\t%d\t%s\t%d\t%s\n" % (k, len(v), swapout_ref_count,
+      fout.write("%s\t%d\t%d\t%s\t%d\t%s\t%f\n" % (k, len(v), swapout_ref_count,
                                            swapin_trigger_name,
                                            swapin_total_rc,
-                                           swapin_ref_count))
+                                           swapin_ref_count,
+                                           swapped_out.gpu_mem_allocated))
       # TODO: move the swap operation to the completion of a node instead of the start of a node
       required_saving -= swapped_out.gpu_mem_allocated
+      print("[DEBUG] Choose %s: %f" % k, swapped_out.gpu_mem_allocated)
       if required_saving <= 0:
         print("[INFO] Already choose proper swapped out tensors\n")
         break
