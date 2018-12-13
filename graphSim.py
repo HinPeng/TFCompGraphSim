@@ -510,7 +510,7 @@ class GraphSim():
                 # tac[tensor_name] = []
                 tac[tensor_name] = SwapInfo(tensor_name)
               # tac[tensor_name].append(line_num)
-              tac[tensor_name].access_list.append(line_num)
+              tac[tensor_name].access_list.append((line_num, access_time))
     else:
       # tensor_accesses = [tensor for _, tensor in tensor_access]
       for index, t in enumerate(tensor_access):
@@ -544,13 +544,13 @@ class GraphSim():
     #   print(k,v)
 
   def GetMaxAccessInterval(self, swapinfo):
-    prev_t = self.tf_tensor_access[swapinfo.access_list[0]][0]
+    prev_t = swapinfo.access_list[0][1]
     curr_t = 0
     max_interval = -1
     max_index = 0
 
     for i in range(1, len(swapinfo.access_list)):
-      curr_t = self.tf_tensor_access[i][0]
+      curr_t = swapinfo.access_list[i][1]
       if (curr_t - prev_t) > max_interval:
         max_interval = curr_t - prev_t
         max_index = i - 1
@@ -561,7 +561,7 @@ class GraphSim():
 
   def swapping_decisionTime(self, tac_f):
     for swapinfo in tac_f:
-      swapinfo.access_list.sort()
+      swapinfo.access_list.sort(key=lambda x : x[1])
       self.GetMaxAccessInterval(swapinfo)
 
     # tac_ff = sorted(tac_f)
@@ -569,6 +569,16 @@ class GraphSim():
 
     for swapinfo in tac_f:
       print(swapinfo.tensor_name, len(swapinfo.access_list), swapinfo.swap_start, swapinfo.max_access_interval)
+
+    swapping_threshold = 2
+    skipped_list = []
+    for swapinfo in tac_f:
+      swapped_out = self.tensors[swapinfo.tensor_name]
+      if swapped_out.gpu_mem_allocated < swapping_threshold:
+        skipped_list.append(swapinfo.tensor_name)
+        continue
+
+      
 
 
   def swapping_decision(self, tac_f):
