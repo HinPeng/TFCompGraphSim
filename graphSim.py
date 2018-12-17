@@ -95,6 +95,8 @@ class GraphSim():
 
     self.swap = False
 
+    self.swap_time = False
+
     if self.swap:
       self.swapping_test = True
       self.swapping_debug = True
@@ -491,7 +493,8 @@ class GraphSim():
         line_num = -1
         for line in fin:
           tensor_name = line.split()[0]
-          access_time = int(line.split()[1])
+          # requested_bytes = int(line.split()[1])
+          access_time = int(line.split()[2])
           line_num += 1
           self.tf_tensor_access.append((access_time, tensor_name))
           if not self.tensors.__contains__(tensor_name):
@@ -507,10 +510,17 @@ class GraphSim():
               self.ngpu_tensor_access[tensor_name].append(line_num)
             else:
               if not tac.__contains__(tensor_name):
-                # tac[tensor_name] = []
-                tac[tensor_name] = SwapInfo(tensor_name)
-              # tac[tensor_name].append(line_num)
-              tac[tensor_name].access_list.append((line_num, access_time))
+                if self.swap_time:
+                  # take time into account when making swapping decision
+                  allocated_time = self.tensors[tensor_name].allocated_time
+                  tac[tensor_name] = SwapInfo(tensor_name, allocated_time=allocated_time)
+                else:
+                  tac[tensor_name] = []
+              if self.swap_time:
+                tac[tensor_name].access_list.append((line_num, access_time))
+              else:
+                tac[tensor_name].append(line_num)
+
     else:
       # tensor_accesses = [tensor for _, tensor in tensor_access]
       for index, t in enumerate(tensor_access):
@@ -528,7 +538,13 @@ class GraphSim():
         tac[t.name()].append(index)
 
     # filter the gpu tensors only show up once
-    tac_f = [v for k,v in tac.items() if len(v.access_list) > 1]
+    if self.swap_time:
+      tac_f = [v for k,v in tac.items() if len(v.access_list) > 1]
+      self.swapping_decisionTime(tac_f)
+    else:
+      tac_f = {k:v for k,v in tac.items() if len(v) > 1}
+      self.swapping_decision(tac_f)
+
     # Get the tensor used multiple times and sorted by index distance
     # This is no use now as the swapping_index decision is made later
     # tac_ff = sorted(tac_f.items(), key=lambda x: x[1][-1] - x[1][0], reverse=True)
@@ -539,7 +555,13 @@ class GraphSim():
     #       fout1.write(str(vv)+'\t')
     #     fout1.write('\n')
 
-    self.swapping_decisionTime(tac_f)
+
+    # for taking time into account
+
+    # self.swapping_decisionTime(tac_f)
+
+    # for not taking time into account
+    # self.swapping_decision(tac_f)
     # for k,v in tac_ff:
     #   print(k,v)
 
@@ -559,9 +581,13 @@ class GraphSim():
     swapinfo.swap_start = max_index
     swapinfo.max_access_interval = max_interval
 
+  def GetPeakMemoryLiveTensors(self):
+    pass
+
   def swapping_decisionTime(self, tac_f):
     for swapinfo in tac_f:
       swapinfo.access_list.sort(key=lambda x : x[1])
+      swapinfo.DeallocateTime()
       self.GetMaxAccessInterval(swapinfo)
 
     # tac_ff = sorted(tac_f)
@@ -578,13 +604,12 @@ class GraphSim():
         skipped_list.append(swapinfo.tensor_name)
         continue
 
-      
+
 
 
   def swapping_decision(self, tac_f):
     """
-    # tac: dict (tensor_name, [occured_indices])
-    tac_f: SwapInfo
+    tac: dict (tensor_name, [occured_indices])
     """
 
     # Decide the swapping index for multiple occurrences
@@ -596,6 +621,28 @@ class GraphSim():
 
     # for swapinfo in tac_ff:
     #   print(swapinfo.tensor_name, swapinfo.swap_start, swapinfo.max_access_interval)
+
+
+    # for swapinfo in tac_f:
+    #   v = swapinfo.access_list
+    #   if len(v) == 2:
+    #     swapinfo.swap_start = 0
+    #     continue
+
+    #   v_std = v[1] - v[0]
+    #   v_div = []
+    #   v_div.append(1)
+    #   prev = v[1]
+    #   curr = 0
+
+    #   for i in range(2, len(v)):
+    #     curr = v[i]
+    #     v_div.append((curr-prev)/v_std)
+    #     prev = curr
+
+    #   max_index = v_div.index(max(v_div))
+    #   assert(max_index+2) <= len(v)
+    #   swapinfo.swap_start = max_index
 
 
     for k,v in tac_f.items():
@@ -642,6 +689,7 @@ class GraphSim():
     required_saving = self.peak_memory - self.mem_limit
     print("[INFO] Required saving is %f\n" % required_saving)
     # (tensor_name, [indices])
+    total_swapping = 0
     swapping_threshold = 2  # Ignore tensor size less than 2MB
 
     skipped_list = []                   # Store the skipped tensor
@@ -735,9 +783,11 @@ class GraphSim():
                                            swapped_out.gpu_mem_allocated))
       # TODO: move the swap operation to the completion of a node instead of the start of a node
       required_saving -= swapped_out.gpu_mem_allocated
-      print("[DEBUG] Choose %s: %f" % k, swapped_out.gpu_mem_allocated)
+      total_swapping += swapped_out.gpu_mem_requested
+      print("[DEBUG] Choose %s: %f" % (k, swapped_out.gpu_mem_allocated))
       if required_saving <= 0:
         print("[INFO] Already choose proper swapped out tensors\n")
+        print("[INFO] Total swapping memory : %d\n" % total_swapping)
         break
 
     fout.close()
@@ -927,12 +977,14 @@ class GraphSim():
             allocator_name = None
             # print("[DEBUG] IndexError line: %d" % (i+j))
             # raise IndexError
+          allocated_time = int(ttmp[5])
           t_name = node_name+'_'+str(output_slot)
           if self.tensors.__contains__(t_name):
             t = self.tensors[t_name]
             t.requested_bytes = requested_bytes
             t.allocated_bytes = allocated_bytes
             t.allocator_name = allocator_name
+            t.allocated_time = allocated_time
 
             # Initiate the GPU memory usage of this tensor
             t.MemAllocated()
@@ -1031,7 +1083,7 @@ class GraphSim():
   #       fout.write('\n')
 
 # ------------------------------------------------------- #
-  # For debug use
+# FOR DEBUG USE
 
   def CheckSwappingDecision(self):
     assert (len(self.swapped_tensors) != 0)
@@ -1141,7 +1193,8 @@ class GraphSim():
     #   for k,v in failed_nodes_dict.items():
     #     fout.write(k+':'+str(v)+'\n')
 
-
+# END DEBUG Related
+# ------------------------------------------------------- #
 
   def InitEvents(self):
     for node in self.nodes.values():
@@ -1186,6 +1239,7 @@ if __name__ == '__main__':
     graph_sim.InitSwappingDecision()
 
   if graph_sim.checkNetArch:
+    # for vdnn to get right tensor to be swapped out
     Check_netArch(graph_sim.metadata_dir, graph_sim.nodes, log2file=False)
     exit(0)
 
