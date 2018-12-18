@@ -71,7 +71,7 @@ class GraphSim():
     self.peak_memory = 0
     self.mem_usage = []
 
-    self.mem_limit = 5.5 * (1 << 10)
+    self.mem_limit = 8 * (1 << 10)
     self.pcie_bandwidth = 12 * (1 << 10)
 
     self.time_metric = 1000000
@@ -496,7 +496,7 @@ class GraphSim():
         for line in fin:
           tensor_name = line.split()[0]
           # requested_bytes = int(line.split()[1])
-          access_time = int(line.split()[1])
+          access_time = int(line.split()[2])
           line_num += 1
           self.tf_tensor_access.append((access_time, tensor_name))
           if not self.tensors.__contains__(tensor_name):
@@ -588,7 +588,7 @@ class GraphSim():
 
 
   def swapping_decisionTime(self, tac_f):
-    for _,swapinfo in tac_f:
+    for swapinfo in tac_f.values():
       swapinfo.access_list.sort(key=lambda x : x[1])
       swapinfo.DeallocateTime()
       self.GetMaxAccessInterval(swapinfo)
@@ -602,21 +602,26 @@ class GraphSim():
     # for name in peakmem_util.peakmem_tensors_collec:
     #   print("[INFO] Peak memory tensor: %s" % name)
     # tac_ff = sorted(tac_f)
-    tac_f.sort()
+    # tac_f.sort()
+    tac_ff = sorted(tac_f.values())
 
-    # for swapinfo in tac_f:
+    # for swapinfo in tac_ff:
     #   print(swapinfo.tensor_name, len(swapinfo.access_list), swapinfo.swap_start, swapinfo.max_access_interval)
 
+    keys_filter = ["kernel"]
     swapping_threshold = 2
-    skipped_list = []
-    tac_f_keys = [swapinfo.tensor_name for _,swapinfo in tac_f]
+    skipped_list = [] # seems do not need this
+    # tac_f_keys = [swapinfo.tensor_name for _,swapinfo in tac_f]
 
     required_saving = self.peak_memory - self.mem_limit
     print("[INFO] Required saving is %f\n" % required_saving)
 
     fout = open(self.metadata_dir+self.swapping_log, 'w')
 
-    for _,swapinfo in tac_f:
+    for swapinfo in tac_ff:
+      # check this tensor is not weights
+      if swapinfo.tensor_name in keys_filter:
+        continue
       # Check this tensor if in the peak memory usage time
       if swapinfo.tensor_name not in peakmem_util.peakmem_tensors_collec:
         print("[DEBUG] %s not in peak memory usage time\n" % swapinfo.tensor_name)
@@ -639,6 +644,7 @@ class GraphSim():
         in_trigger_index -= 1
         if (n_time-self.tf_tensor_access[in_trigger_index][0]) > swap_time:
           in_trigger_name = self.tf_tensor_access[in_trigger_index][1]
+          print("[DEBUG] %s index distances: %d" % (swapinfo.tensor_name, n_index-in_trigger_index))
           break
         # TODO: choose in_trigger index but not too early to OOM
 
@@ -646,7 +652,7 @@ class GraphSim():
       swapout_total_rc = len(swapinfo.access_list)
       swapin_rc = 0
       swapin_total_rc = 1
-      if in_trigger_name in tac_f_keys:
+      if in_trigger_name in tac_f.keys():
         access_indicies = [v for v,_ in tac_f[in_trigger_name].access_list]
         assert (in_trigger_index in access_indicies)
         swapin_rc = len(access_indicies) - access_indicies.index(in_trigger_index) - 1
@@ -659,7 +665,7 @@ class GraphSim():
       else:
         pass
 
-      fout.write("%s\t%d\t%d\t%s\t%d\%d\n" % (swapinfo.tensor_name,
+      fout.write("%s\t%d\t%d\t%s\t%d\t%d\n" % (swapinfo.tensor_name,
                                               swapout_total_rc,
                                               swapout_rc,
                                               in_trigger_name,
@@ -669,7 +675,7 @@ class GraphSim():
       required_saving -= swapinfo.allocated_bytes
       if required_saving <= 0:
         print("[INFO] Already choose proper swapped out tensors\n")
-        print("[INFO] Total swapping memory : %d\n" % total_swapping)
+        # print("[INFO] Total swapping memory : %d\n" % total_swapping)
         break
     
     fout.close()

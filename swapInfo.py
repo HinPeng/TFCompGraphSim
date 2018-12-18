@@ -11,7 +11,7 @@ class SwapInfo():
     self.tensor_name = tensor_name
     self.allocated_time = allocated_time
     self.deallocate_time = 0
-    self.allocated_bytes = allocated_bytes
+    self.allocated_bytes = float(allocated_bytes) / (1<<20)
     self.access_list = [] #(access_index, access_time)
     self.swap_start = -1  # at which index to swap this tensor out
     self.max_access_interval = -1
@@ -24,8 +24,8 @@ class SwapInfo():
     self.deallocate_time = self.access_list[-1][1]
 
   def GetSwappingTime(self, pcie_bw):
-    # make this microseconds
-    return float(self.allocated_bytes) / pcie_bw
+    # microseconds
+    return float(self.allocated_bytes) / pcie_bw * 1000000
 
   def GetFirstUseIndexAfterSwap(self):
     return self.access_list[self.swap_start+1][0]
