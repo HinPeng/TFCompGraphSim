@@ -5,3 +5,5 @@
 
 # log file
 *.log
+
+**/swap_policy.txt

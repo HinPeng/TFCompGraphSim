@@ -80,7 +80,6 @@ class PeakMemory():
     self.peakmem_tensors_collec = []
     # record which tensor is been deallocated so far
     self.curr_deallocate_ = []
-    self.mem_metric = 1 << 20
     # pass
 
   def InitFromSwapInfo(self, swapinfos):
@@ -122,4 +121,4 @@ class PeakMemory():
 
       self.meminfos.task_done()
 
-    return (peak_mem/self.mem_metric)
+    return peak_mem

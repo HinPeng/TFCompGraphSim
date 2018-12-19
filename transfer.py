@@ -1,7 +1,7 @@
 medatata_dir = "./inception3_115_k40/"
 swapping_dec = "swapping_decision.log"
 
-with open(medatata_dir+"swapping_decision.txt", 'w') as fout:
+with open(medatata_dir+"swap_policy.txt", 'w') as fout:
   with open(medatata_dir+swapping_dec) as fin:
     for line in fin:
       tmp = line.split()

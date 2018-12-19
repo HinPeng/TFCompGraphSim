@@ -593,8 +593,11 @@ class GraphSim():
       swapinfo.DeallocateTime()
       self.GetMaxAccessInterval(swapinfo)
 
+
+    tac_ff = sorted(tac_f.values())
+
     peakmem_util = swapInfo.PeakMemory()
-    peakmem_util.InitFromSwapInfo(tac_f.values())
+    peakmem_util.InitFromSwapInfo(tac_ff)
     peak_mem = peakmem_util.GetPeakMemory()
 
     print("[INFO] Peak memory usage from tensor access is %d MB\n" % peak_mem)
@@ -603,7 +606,7 @@ class GraphSim():
     #   print("[INFO] Peak memory tensor: %s" % name)
     # tac_ff = sorted(tac_f)
     # tac_f.sort()
-    tac_ff = sorted(tac_f.values())
+    
 
     # for swapinfo in tac_ff:
     #   print(swapinfo.tensor_name, len(swapinfo.access_list), swapinfo.swap_start, swapinfo.max_access_interval)
@@ -625,12 +628,12 @@ class GraphSim():
       # Check this tensor if in the peak memory usage time
       if swapinfo.tensor_name not in peakmem_util.peakmem_tensors_collec:
         print("[DEBUG] %s not in peak memory usage time\n" % swapinfo.tensor_name)
-        skipped_list.append(swapinfo.tensor_name)
+        # skipped_list.append(swapinfo.tensor_name)
         continue
 
       swapped_out = self.tensors[swapinfo.tensor_name]
       if swapped_out.gpu_mem_allocated < swapping_threshold:
-        skipped_list.append(swapinfo.tensor_name)
+        # skipped_list.append(swapinfo.tensor_name)
         continue
 
       # Find appropriate in_trigger tensor
@@ -639,13 +642,18 @@ class GraphSim():
       swap_time = swapinfo.GetSwappingTime(self.pcie_bandwidth)
 
 
+      # TODO: try not to choose the same in_trigger
       in_trigger_index = n_index
       while True:
         in_trigger_index -= 1
         if (n_time-self.tf_tensor_access[in_trigger_index][0]) > swap_time:
-          in_trigger_name = self.tf_tensor_access[in_trigger_index][1]
-          print("[DEBUG] %s index distances: %d" % (swapinfo.tensor_name, n_index-in_trigger_index))
-          break
+          if in_trigger_index in skipped_list:
+            continue
+          else:
+            in_trigger_name = self.tf_tensor_access[in_trigger_index][1]
+            print("[DEBUG] %s index distances: %d" % (swapinfo.tensor_name, n_index-in_trigger_index))
+            skipped_list.append(in_trigger_index)
+            break
         # TODO: choose in_trigger index but not too early to OOM
 
       swapout_rc = swapinfo.GetSwapoutRc()
