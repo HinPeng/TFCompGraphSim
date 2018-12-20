@@ -38,7 +38,8 @@ class GraphSim():
     # Node number in nodeInfo is a bit fewer than nodeCon
 
     # self.metadata_dir = "./alexnet_256_k40/"
-    self.metadata_dir = "./inception3_115_k40/"
+    # self.metadata_dir = "./inception3_115_k40/"
+    self.metadata_dir = "./inception3_160_p100/"
 
     self.nodeInfo_filename = "gpu_0_nodetime.txt"  # Initiate node execution time
     # self.nodeCon_filename = "1.log"
@@ -98,6 +99,9 @@ class GraphSim():
     self.swap = False
 
     self.swap_time = True
+
+    # Ignore the weights tensors when making swapping decision
+    self.keys_filter = ["kernel"]
 
     if self.swap:
       self.swapping_test = True
@@ -611,7 +615,6 @@ class GraphSim():
     # for swapinfo in tac_ff:
     #   print(swapinfo.tensor_name, len(swapinfo.access_list), swapinfo.swap_start, swapinfo.max_access_interval)
 
-    keys_filter = ["kernel"]
     swapping_threshold = 2
     skipped_list = [] # seems do not need this
     # tac_f_keys = [swapinfo.tensor_name for _,swapinfo in tac_f]
@@ -623,8 +626,14 @@ class GraphSim():
 
     for swapinfo in tac_ff:
       # check this tensor is not weights
-      if swapinfo.tensor_name in keys_filter:
+      weights_flag = False
+      for key_f in self.keys_filter:
+        if key_f in swapinfo.tensor_name:
+          weights_flag = True
+          break
+      if weights_flag:
         continue
+
       # Check this tensor if in the peak memory usage time
       if swapinfo.tensor_name not in peakmem_util.peakmem_tensors_collec:
         print("[DEBUG] %s not in peak memory usage time\n" % swapinfo.tensor_name)
@@ -643,6 +652,8 @@ class GraphSim():
 
 
       # TODO: try not to choose the same in_trigger
+      # TODO: check the in_trigger time is not bigger than swap_out_time
+      # check the swap_in_time is not at peak memory time
       in_trigger_index = n_index
       while True:
         in_trigger_index -= 1
@@ -654,7 +665,6 @@ class GraphSim():
             print("[DEBUG] %s index distances: %d" % (swapinfo.tensor_name, n_index-in_trigger_index))
             skipped_list.append(in_trigger_index)
             break
-        # TODO: choose in_trigger index but not too early to OOM
 
       swapout_rc = swapinfo.GetSwapoutRc()
       swapout_total_rc = len(swapinfo.access_list)
@@ -732,7 +742,7 @@ class GraphSim():
     #   assert(max_index+2) <= len(v)
     #   swapinfo.swap_start = max_index
 
-
+    # Calculate the swapping index
     for k,v in tac_f.items():
       if len(v) == 2:
         swapping_indicies[k] = 0
@@ -769,6 +779,14 @@ class GraphSim():
 
 
     for k, v in tac_ff:
+      weights_flag = False
+      for key_f in self.keys_filter:
+        if key_f in k:
+          weights_flag = True
+          break
+      if weights_flag:
+        continue
+        
       tac[k] = v
 
 
@@ -782,14 +800,14 @@ class GraphSim():
 
     skipped_list = []                   # Store the skipped tensor
 
-    candidates_num = 0
-    for k,_ in tac.items():
-      swapped_out = self.tensors[k]
-      if swapped_out.gpu_mem_allocated < swapping_threshold:
-        continue
-      candidates_num += 1
+    # candidates_num = 0
+    # for k,_ in tac.items():
+    #   swapped_out = self.tensors[k]
+    #   if swapped_out.gpu_mem_allocated < swapping_threshold:
+    #     continue
+    #   candidates_num += 1
 
-    print("[INFO] Total available candidates are %d" % candidates_num)
+    # print("[INFO] Total available candidates are %d" % candidates_num)
     # candidate_tensors_name = [k for k,v in tac]
 
     for k,v in tac.items():
