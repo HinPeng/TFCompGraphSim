@@ -3,8 +3,22 @@ try:
 except ImportError:
   import queue as q
 
+pcie_bw = 12 * (1 << 10)
+
+class SwapOutTimeInfo():
+  def __init__(self):
+    self.start_time = 0
+    self.end_time = 0
+
+class SwapInTimeInfo():
+  def __init__(self):
+    self.start_time = 0
+    self.end_time = 0
+
+# TODO: update this to Swap&Re-compute info
+# not only just SwapInfo
 class SwapInfo():
-  def __init__(self, 
+  def __init__(self,
                tensor_name,
                allocated_time=0,
                allocated_bytes=0):
@@ -12,46 +26,144 @@ class SwapInfo():
     self.allocated_time = allocated_time
     self.deallocate_time = 0
     self.allocated_bytes = float(allocated_bytes) / (1<<20)
-    self.access_list = [] #(access_index, access_time)
+    self.access_list = [] # (access_index, access_time)
     self.swap_start = -1  # at which index to swap this tensor out
-    self.max_access_interval = -1
+    self.max_access_interval = -1   # to be deprecated
+    # be used for ordering
+    # needed to be re-computed when choosing a swapping candidate    
+
+    # Swap time info
+    # static swap time info is fixed for each tensor
+    # No need to store this info
+    # self.static_swapout_time_info = SwapOutTimeInfo()
+    # self.static_swapin_time_info = SwapInTimeInfo()
+
+    # curr swap time info can be affected by other tensor's swap time info
+    # due to pci-e interference
+    # Updated when deciding to add a tensor to already_queue
+    self.curr_swapout_info = SwapOutTimeInfo()
+    self.curr_swapin_info = SwapInTimeInfo()
+    self.curr_swap_free_time = -1 # seems uesless
+
+    # swap time info when a new candidate being added to already_queue
+    self.swapout_info = SwapOutTimeInfo()
+    self.swapin_info = SwapInTimeInfo()
+    self.swap_free_time = -1
+
+    # time of
+    self.swap_time = float(self.allocated_bytes) / pcie_bw * 1000000
+    # Time on PCI-e bus, should be fixed as it's pinned memory
+    # self.swapout_start_time = 0 # Time when swapping out starts
+    # self.swapout_end_time = 0       # Time when swapping out finishes
+    # self.swapin_start_time = 0  #
+    # self.swapin_end_time = 0    #
+
+  def InitSwapInfo(self):
+    # TODO: init swap_time first
+    self.curr_swapout_info.start_time = self.access_list[self.swap_start][1]
+    self.curr_swapout_info.end_time = self.curr_swapout_info.start_time + self.swap_time
+    self.curr_swapin_info.end_time = self.access_list[self.swap_start+1][1]
+    self.curr_swapin_info.start_time = self.curr_swapin_info.end_time - self.swap_time
+    self.swapout_info.start_time = self.curr_swapout_info.start_time
+    self.swapout_info.end_time = self.curr_swapout_info.end_time
+    self.swapin_info.start_time = self.curr_swapin_info.start_time
+    self.swapin_info.end_time = self.curr_swapin_info.end_time
+    self.swap_free_time = self.swapin_info.start_time - self.swapout_info.end_time
+    
+  def UpdateCurrSwapInfo(self):
+    self.curr_swapout_info.start_time = self.swapout_info.start_time
+    self.curr_swapout_info.end_time = self.swapout_info.end_time
+    self.curr_swapin_info.start_time = self.swapin_info.start_time
+    self.curr_swapin_info.end_time = self.swapin_info.end_time
+    self.curr_swap_free_time = self.swap_free_time
+
+  def UpdateSwapOutTime(self, time_interval):
+    # this operation do not add time_interval to the original value
+    # as it will be changed when being added to already_queue as a candidate                 
+    self.swapout_info.start_time = self.curr_swapout_info.start_time + time_interval
+    self.swapout_info.end_time = self.curr_swapout_info.end_time + time_interval
+    # self.swap_free_time = self.swapin_info.start_time - self.swapout_info.end_time
+  
+  def UpdateSwapInTime(self, time_interval):
+    self.swapin_info.end_time = self.curr_swapin_info.end_time + time_interval
+    self.swapin_info.start_time = self.curr_swapin_info.start_time + time_interval
+    # also update swap_free_time here
+    self.swap_free_time = self.swapin_info.start_time - \
+                          self.swapout_info.end_time
+  # Updating SwapTimeInfo needs current swapping decision
+  # def UpdateSwapInfo(self):
+    # this time would be delayed by other pinned memory data transfer
+    # self.swapout_start_time = self.access_list[self.swap_start][1]
+    # #
+    # self.swapout_end_time = self.swapout_start_time + self.swap_time
+    # self.swapin_end_time = self.swapin_start_time + self.swap_time
+    # self.swap_free_time = self.swapin_start_time - self.swapout_end_time
+
 
   def DeallocateTime(self):
     # access_time = [v for _,v in self.access_list]
     # self.deallocate_time = max(access_time)
 
     # access_list has been sorted when this func is invoked
+    # this deallocation_time is not accurate as it's been used now
+    # need to add this node's execution time
     self.deallocate_time = self.access_list[-1][1]
 
-  def GetSwappingTime(self, pcie_bw):
-    # microseconds
-    return float(self.allocated_bytes) / pcie_bw * 1000000
+  # def SetSwappingTime(self, pcie_bw):
+  #   # microseconds
+  #   self.swap_time = float(self.allocated_bytes) / pcie_bw * 1000000
 
   def GetFirstUseIndexAfterSwap(self):
     return self.access_list[self.swap_start+1][0]
-    
+
   def GetFirstUseTimeAfterSwap(self):
     return self.access_list[self.swap_start+1][1]
 
   def GetSwapoutRc(self):
     return (len(self.access_list) - self.swap_start - 1)
 
+  # When max_access_interval is equal, then the bigger swap_start gets high priority
+  # or, the smaller max_access_interval gets high priority
+  # TODO: should also consider this tensor size
+  # def __cmp__(self, other):
+  #   if self.max_access_interval == other.max_access_interval:
+  #     if self.swap_start == other.swap_start:
+  #       return 0
+  #     elif self.swap_start > other.swap_start:
+  #       return 1
+  #     else:
+  #       return -1
+  #   elif self.max_access_interval > other.max_access_interval:
+  #     return -1
+  #   else:
+  #     return 1
+  #   # if self.max_access_interval == other.max_access_interval:
+  #   #   return self.swap_start > other.swap_start
+
+  #   # return self.max_access_interval > other.max_access_interval
+
+  # Priority: first order is swap_free_time   (descending)
+  #           second order is swap_start_time (ascending)
   def __cmp__(self, other):
-    if self.max_access_interval == other.max_access_interval:
-      if self.swap_start == other.swap_start:
+    if self.swap_free_time == other.swap_free_time:
+      if self.swapout_info.start_time == \
+        other.swapout_info.start_time:
         return 0
-      elif self.swap_start > other.swap_start:
-        return 1
+      # if self.swapout_start_time == other.swapout_start_time:
+      #   return 0
+      elif self.swapout_info.start_time > \
+          other.swapout_info.start_time:
+          return 1
       else:
         return -1
-    elif self.max_access_interval > other.max_access_interval:
+      # elif self.swapout_start_time > other.swapout_start_time:
+      #   return 1
+      # else:
+      #   return -1
+    elif self.swap_free_time > other.swap_free_time:
       return -1
     else:
       return 1
-    # if self.max_access_interval == other.max_access_interval:
-    #   return self.swap_start > other.swap_start
-
-    # return self.max_access_interval > other.max_access_interval
 
 class MemInfo():
   def __init__(self,
@@ -102,7 +214,7 @@ class PeakMemory():
     while not self.meminfos.empty():
       meminfo = self.meminfos.get()
       total_mem += meminfo.allocated_bytes
-      
+
       if meminfo.IsDeallocate():
         self.curr_deallocate_.append(meminfo.tensor_name)
 

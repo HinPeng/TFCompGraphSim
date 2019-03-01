@@ -26,10 +26,11 @@ class test():
     self.swapInfos.append(swapinfo4)
 
   def Test(self):
-    # self.swapInfos.sort()
-    sis = sorted(self.swapInfos)
-    for swapinfo in sis:
-    # for swapinfo in self.swapInfos:
+    self.swapInfos.sort()
+    # sis = sorted(self.swapInfos)
+
+    # for swapinfo in sis:
+    for swapinfo in self.swapInfos:
       print(swapinfo.tensor_name, swapinfo.swap_start, swapinfo.max_access_interval)
 
 if __name__ == '__main__':

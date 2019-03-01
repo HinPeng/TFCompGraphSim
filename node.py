@@ -23,7 +23,7 @@ class Node():
 
     self.outputs_num = 0
     self.outputs = []       # store the output tensors
-    self.no_use_outputs = []# store some no use output tensors
+    self.no_use_outputs = []# store some no use output tensors # TODO: be deprecated
 
     # for memory size transfer
     self.metric = 1 << 20
@@ -40,6 +40,31 @@ class Node():
       return self.start_time > other.start_time
 
     return self.pending_count > other.pending_count
+
+  def GetExecTime(self):
+    return (self.end_time - self.start_time)
+
+  def InitTensorRPInfo(self):
+    for tensor in self.outputs:
+      for fanin_tensor in self.fanin_tensors:
+        tensor.inputs.append(fanin_tensor)
+
+  def GetNodeTotalSize(self):
+    # Inputs size
+    total_node_size = 0
+    for t in self.fanin_tensors:
+      total_node_size += t.gpu_mem_allocated
+    
+    # Outputs size
+    for t in self.outputs:
+      total_node_size += t.gpu_mem_allocated
+
+    # No use tensors' size
+    for t in self.no_use_outputs:
+      t.MemAllocated()
+      total_node_size += t.gpu_mem_allocated
+    
+    return total_node_size
 
   def GPUMemAllocated(self):
     if (len(self.outputs) == 0) and (len(self.no_use_outputs) == 0):

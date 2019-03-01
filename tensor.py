@@ -7,7 +7,7 @@ class Tensor():
                allocator_name=None,
                allocated_bytes=0):
     self.node_name = node_name
-    self.tid = tid
+    self.tid = tid  # the port of outputs of this node
 
     self.allocator_name = allocator_name
     self.requested_bytes = requested_bytes
@@ -34,8 +34,12 @@ class Tensor():
     self.swapin_time = 0
 
     # reference count according at the timing of pending_count is zero  (at nodes' end)
-    # Init at 
     self.ref_count_ = 0
+
+    # info for re-computation
+    self.inputs = []    # store tensors which can produce this tensor
+    # self.func = self.node_name  # how this tensor be produced by inputs
+    # May we do not need to consider the kernel?
 
 
   def name(self):
