@@ -1,6 +1,6 @@
-global_step_0	1551353758419952
-global_step/read_0	1551353758419995
-global_step/read/_545_0	1551353758420595
+#global_step_0	1551353758419952
+#global_step/read_0	1551353758419995
+#global_step/read/_545_0	1551353758420595
 v/cg/resnet_v16/conv23/batchnorm23/beta_0	1551353758425138
 v/cg/resnet_v12/conv8/batchnorm8/moving_variance_0	1551353758425158
 v/cg/resnet_v12/conv9/batchnorm9/moving_mean_0	1551353758425170

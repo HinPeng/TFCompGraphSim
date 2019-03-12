@@ -1,11 +1,24 @@
 import os
 
+def FilterByKeys(name, filters=None):
+  if filters == None:
+    return True
+
+  l_name = name.lower()
+  for f in filters:
+    if f in l_name:
+      return True
+  
+  return False
+
+
 def Check_netArch(data_dir, net, log2file):
+  """ For vDNN swapping """
   layerkeys = ["conv"]
   # filter the conv layer with the kernel keyword as it's the weights
-  filterconvkeys = ["kernel", "bias", "Bias"]
+  filterconvkeys = ["kernel", "bias"]
   # layerkeys = ["conv", "mpool", "apool"]
-  filterkeys = ["batchnorm", "Relu", "gradient", "Gradient"]
+  filterkeys = ["batchnorm", "Relu", "gradient"]
 
   forwardkey = dict()
   backwardkey = dict()
@@ -21,23 +34,18 @@ def Check_netArch(data_dir, net, log2file):
   for node in net.values():
     # Check if the backpropagation
     backPropa = False
-    if "Back" in node.node_name:
+    if "back" in node.node_name.lower():
       backPropa = True
 
     # if not backpropagation, filter the keywords we didn't need
-    passflag = False
     if not backPropa:
-      for filterkey in filterkeys:
-        if filterkey in node.node_name:
-          passflag = True
-          break
-    if passflag:
-      continue
+      if FilterByKeys(node.node_name, filters=filterkeys):
+        continue
 
     # Extract the layerkey, like "conv0, mpool0"
     kn = ""
     for layerkey in layerkeys:
-      if layerkey in node.node_name:
+      if layerkey in node.node_name.lower():
         kn = layerkey
         break
 
@@ -50,14 +58,17 @@ def Check_netArch(data_dir, net, log2file):
         kn = ttmp
         break
 
+    # kn should be like 'conv2'
     if "conv" in kn:
-      convfilterflag = False
-      for filterconvkey in filterconvkeys:
-        if filterconvkey in node.node_name:
-          convfilterflag = True
-          break
-      if convfilterflag:
+      if FilterByKeys(node.node_name, filterconvkeys):
         continue
+      # convfilterflag = False
+      # for filterconvkey in filterconvkeys:
+      #   if filterconvkey in node.node_name:
+      #     convfilterflag = True
+      #     break
+      # if convfilterflag:
+      #   continue
 
     if backPropa:
       if not backwardkey.__contains__(kn):
@@ -88,7 +99,8 @@ def Check_netArch(data_dir, net, log2file):
     for vv in v:
       node = net[vv]
       for fanin_tensor in node.fanin_tensors:
-        if filterconvkey in fanin_tensor.name():
+        # ERROR here
+        if FilterByKeys(fanin_tensor.name(), filters=filterconvkeys):
           continue
         if not swapped_tensors.__contains__(vv):
           swapped_tensors[vv] = []
@@ -132,24 +144,32 @@ def Check_netArch(data_dir, net, log2file):
         conv_fanout_nodes[tensor].append(fanout_node.node_name)
 
   # TODO: choose the in_trigger_node for each swapped out tensor
-  in_trigger_dict = dict()
-  in_trigger_fanouts = dict()
-  with open(data_dir+"in_trigger_node.log") as fin:
-    for line in fin:
-      tmp = line.split()
-      assert(len(tmp) == 4)
-      tensor = (tmp[0], tmp[1])
-      assert(not in_trigger_dict.__contains__(tensor))
-      in_trigger_dict[tensor] = tmp[2]
+  print("swap tensor num: %d\n" % len(swap_info))
+  in_trigger_log = False
+  if os.path.exists(data_dir+"in_trigger_node.log"):
+    in_trigger_log = True
+  
+  if in_trigger_log:
+    in_trigger_dict = dict()
+    in_trigger_fanouts = dict()
+    
+    with open(data_dir+"in_trigger_node.log") as fin:
+      for line in fin:
+        tmp = line.split()
+        assert(len(tmp) == 4)
+        tensor = (tmp[0], tmp[1])
+        assert(not in_trigger_dict.__contains__(tensor))
+        in_trigger_dict[tensor] = tmp[2]
 
-      node = net[tmp[3]]
-      assert (not in_trigger_fanouts.__contains__(tensor))
-      in_trigger_fanouts[tensor] = []
-      for fanout_node in node.fanout_nodes:
-        in_trigger_fanouts[tensor].append(fanout_node.node_name)
+        # the backward computation node which overlap the swap-in
+        node = net[tmp[3]]
+        assert (not in_trigger_fanouts.__contains__(tensor))
+        in_trigger_fanouts[tensor] = []
+        for fanout_node in node.fanout_nodes:
+          in_trigger_fanouts[tensor].append(fanout_node.node_name)
 
 
-  with open(data_dir+"swap_info.log", 'w') as fout:
+  with open(data_dir+"vdnn_swap_info.log", 'w') as fout:
     for k,v in swap_info.items():
       fout.write(k[0]+'\t'+k[1]+'\t'+str(len(v))+'\n')
       for vv in v:
@@ -158,11 +178,14 @@ def Check_netArch(data_dir, net, log2file):
       fout.write(str(len(conv_fanout_nodes[k]))+'\n')
       for conv_fanout in conv_fanout_nodes[k]:
         fout.write(conv_fanout+'\n')
-      assert (k in in_trigger_dict.keys())
-      fout.write(in_trigger_dict[k]+'\n')
-      fout.write(str(len(in_trigger_fanouts[k]))+'\n')
-      for in_trigger_fanout in in_trigger_fanouts[k]:
-        fout.write(in_trigger_fanout+'\n')
+
+      # ignore in_trigger at first
+      if in_trigger_log:
+        assert (k in in_trigger_dict.keys())
+        fout.write(in_trigger_dict[k]+'\n')
+        fout.write(str(len(in_trigger_fanouts[k]))+'\n')
+        for in_trigger_fanout in in_trigger_fanouts[k]:
+          fout.write(in_trigger_fanout+'\n')
 
 
 

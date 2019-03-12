@@ -12,6 +12,8 @@ class Node():
     self.tmp_time = []
 
     # Init by the run_metadata
+    # start_time = node.all_start_micros
+    # end_time = start_time + node.all_end_rel_micros
     self.start_time = start_time
     self.end_time = end_time
 

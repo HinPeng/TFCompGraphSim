@@ -3,6 +3,9 @@ try:
 except ImportError:
   import queue as q
 
+import logger
+import logging
+
 pcie_bw = 12 * (1 << 10)
 
 class SwapOutTimeInfo():
@@ -192,6 +195,13 @@ class PeakMemory():
     self.peakmem_tensors_collec = []
     # record which tensor is been deallocated so far
     self.curr_deallocate_ = []
+    
+    self.meminfos_dict = dict()
+
+    self.peak_mem = 0
+
+    self.left_peak_time = -1
+    self.right_peak_time = -1
     # pass
 
   def InitFromSwapInfo(self, swapinfos):
@@ -205,6 +215,11 @@ class PeakMemory():
 
       self.meminfos.put(meminfo_a)
       self.meminfos.put(meminfo_d)
+      # logging.debug("%s: %d, %d" % (swapinfo.tensor_name,
+      #                               swapinfo.allocated_time,
+      #                               swapinfo.deallocate_time))
+      self.meminfos_dict[swapinfo.tensor_name] = (swapinfo.allocated_time, swapinfo.deallocate_time)
+      
 
     # pass
 
@@ -215,22 +230,51 @@ class PeakMemory():
       meminfo = self.meminfos.get()
       total_mem += meminfo.allocated_bytes
 
+      # logging.debug("%s: %d" % (meminfo.tensor_name, meminfo.allocated_bytes))
+
       if meminfo.IsDeallocate():
         self.curr_deallocate_.append(meminfo.tensor_name)
+        # logging.debug("%s is in current deallocation" % meminfo.tensor_name)
 
       if total_mem > peak_mem:
         assert (meminfo.IsDeallocate() == False)
         peak_mem = total_mem
         self.peakmem_tensors_collec.append(meminfo.tensor_name)
+        # logging.debug("%s enter into peakmem collection" % meminfo.tensor_name)
         # remove the tensor which has been deallocated as it's not
         # at peak memory usage
         if (len(self.curr_deallocate_) > 0):
           for name in self.curr_deallocate_:
-            assert name in self.peakmem_tensors_collec
+            # TODO: a bug here when meeting resnet50
+            try:
+              assert name in self.peakmem_tensors_collec
+            except AssertionError:
+              logging.error("Error when init peak memory")
+              logging.debug("Error name: %s" % name)
+              # logging.debug("Current peakmem tensors collection:")
+              # for t_name in self.peakmem_tensors_collec:
+              #   logging.debug("%s" % t_name)
+              logging.debug("Allocation time: %d" % self.meminfos_dict[name][0])
+              logging.debug("Deallocation time: %d" % self.meminfos_dict[name][1])
+              exit(1)
             self.peakmem_tensors_collec.remove(name)
 
           del self.curr_deallocate_[:]
 
       self.meminfos.task_done()
+
+    # the earliest time of peak memory: earliest allocation time in peakmem_tensors_collec
+    # the lastest time of peak memory: lastest deallocation time in peakmem_tensors_collec
+    l_times = []
+    r_times = []
+    for t_name in self.peakmem_tensors_collec:
+      # logging.debug("%s: %d, %d" % (t_name, self.meminfos_dict[t_name][0], self.meminfos_dict[t_name][1]))
+      assert t_name in self.meminfos_dict.keys()
+      l_times.append(self.meminfos_dict[t_name][0])
+      r_times.append(self.meminfos_dict[t_name][1])
+
+    self.left_peak_time = max(l_times)
+    self.right_peak_time = min(r_times)
+    self.peak_mem = peak_mem
 
     return peak_mem
