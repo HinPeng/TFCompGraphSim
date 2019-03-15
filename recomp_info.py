@@ -7,15 +7,45 @@ import logging
 # maybe use the max access time is this subrecomp more reasonable
 recomp_depth_limit = 0
 
+recomp_ratio = 0.8
+
+# class Chain():
+#   def __init__(self):
+#     self.head = None  # recomp
+#     self.tail = None  # recomp
+#     self.member = []  # sub_recomp
+
+#   def add(self, subrp):
+#     self.member.append(subrp)
+
+#   def addchain(self, other):
+#     for subrp in other.member:
+#       self.add(subrp)
+
+#   def length(self):
+#     return len(self.member)
+
+#   def name(self):
+#     return self.head.name()
+
+#   def IsPrev(self, recomp):
+#     pass
+
+
+# For two use
+# 1. recomps in sub_recomp will only recompute root_, the other can be recomputed by other recomp is this sub_recomp
+# 2. recomps in sub_recomp will all be recomputed, so we need to set right inputs for each recomp (Current)
 class SubReComp():
   def __init__(self, recomp):
     self.root_ = recomp
     # recomputation targets
-    self.coll = []
-    self.coll.append(recomp)
+    self.coll = dict()
+    self.coll[recomp.name()] = recomp
     self.max_rank_var = 0
     # store current inputs which are necessary to recompute
     self.src_inputs = []
+    for input_ in recomp.srcs:
+      self.src_inputs.append(input_[1])
     # for input_ in recomp.srcs:
     #   # we don't need to store the index of inputs
     #   # as the input in this sub_recomp won't appear in here
@@ -49,6 +79,81 @@ class SubReComp():
   def name(self):
     return self.root_.name()
 
+  # recomp is prev of this sub_recomp
+  def IsInSrc(self, recomp):
+    if recomp.name() in self.src_inputs:
+      return True
+    return False
+
+  # recomp is succ of this sub_recomp
+  def IsSrc(self, recomp):
+    # srcs = []
+    # name_coll = [rp.name() for rp in self.coll]
+    for input_ in recomp.srcs:
+      if input_[1] in self.coll.keys():
+        # srcs.append(rp.name())
+        return True
+    return False
+
+    # if len(srcs) != 0:
+    #   return srcs
+    # else:
+    #   return None
+
+  def MergeSucc(self, recomp):
+    self.coll[recomp.name()] = recomp
+    rv = recomp.rank - self.root_.rank
+    if rv > self.max_rank_var:
+      self.max_rank_var = rv
+    for src in recomp.srcs:
+      if src[1] in self.coll.keys():
+        recomp.inputs.remove(src[1])
+        recomp.inputs += self.coll[src[1]].inputs        
+      else:
+        # recomp.inputs.append(src[1])
+        if src[1] not in self.src_inputs:
+          self.src_inputs.append(src[1])
+
+  def MergePrev(self, recomp):
+    rvs = [abs(rp.rank-recomp.rank) for rp in self.coll.values()]
+    self.max_rank_var = max(rvs)
+    self.coll[recomp.name()] = recomp
+    self.src_inputs.remove(recomp.name())
+    self.src_inputs += recomp.inputs
+    if recomp.rank < self.root_.rank:
+      self.root_ = recomp
+    # recomp.inputs = [src[1] for src in recomp.srcs]
+    for rp in self.coll.values():
+      if recomp.name() in rp.inputs:
+        rp.inputs.remove(recomp.name())
+        rp.inputs += recomp.inputs
+
+  def TryMerge(self, recomp):
+    rp_srcs = self.IsSrc(recomp)
+    if rp_srcs != None:
+      if self.CheckRank(self.root_.rank-recomp.rank):
+        # can be merged in
+        # need to change this recomp's inputs
+        self.coll[recomp.name()] = recomp
+        for src in recomp.srcs:
+          if src[1] in rp_srcs:
+            recomp.inputs += self.coll[src[1]].inputs
+          else:
+            recomp.inputs.append(src[1])
+            # check this input if in this sub_recomp's inputs
+            if src[1] not in self.src_inputs:
+              self.src_inputs.append(src[1])
+        return True
+      else:
+        return False
+
+    # if we need to check recomp's inputs
+    elif self.IsInSrc(recomp):
+      pass
+
+
+
+
   def SetInTrigger(self, tac, graphsim, r_peak_time):
     # choose in_trigger according to tensor accesses
     # set a ratio not total recomp time as multistream comp of GPU
@@ -66,6 +171,15 @@ class SubReComp():
     # logging.debug("Initial in trigger index: %d" % in_trigger_index)
     while True:
       in_trigger_index -= 1
+      t_name = graphsim.tf_tensor_access[in_trigger_index][1]
+      if t_name in tac.keys():
+        if graphsim.IsWeights(t_name):
+          pass
+        elif graphsim.IsSize(t_name):
+          pass
+        else:
+          # ignore the tensor which is possible to be recomp or swapping
+          continue
       # logging.debug("Current in trigger index: %d, time: %d" % (in_trigger_index,
       #                               graphsim.tf_tensor_access[in_trigger_index][0]))
       if graphsim.tf_tensor_access[in_trigger_index][0] < r_peak_time:
@@ -114,6 +228,8 @@ class SubReComp():
 
     # pass
 
+  # Src inputs can be different if this src is also chosen to be recomputed
+  # this is the initial src inputs
   def SetSrcs(self):
     for rp in self.coll:
       for src in rp.srcs:
@@ -190,7 +306,7 @@ class SubReComp():
           self.max_rank_var = rv
           # logging.debug("Add %s as a root of %s subrecomp" % (rp.name(), self.root_.name()))
           self.root_ = rp
-          self.coll.append(rp)
+          self.coll[rp.name()] =  rp
           return True
         else:
           # logging.debug("Add %s failed due to rank: %d" % (rp.name(), rv))
@@ -221,7 +337,7 @@ class SubReComp():
         if self.CheckRank(rv):
           if rv > self.max_rank_var:
             self.max_rank_var = rv
-          self.coll.append(rp)
+          self.coll[rp.name()] = rp
           # logging.debug("Add %s as a succ of %s subrecomp" % (rp.name(), self.root_.name()))
           return True
         else:
@@ -306,6 +422,7 @@ class SubReComp():
 
 
   def IsPPrev(self, rp_src, rp):
+    # rp_src, rp: recomp
     # search prev of rp recurrsively
     # if meet rp_src
     rp_queue = [p for p in rp.prev]
@@ -385,11 +502,13 @@ class ReCompColl():
     left_queue.remove(self.root_)
     # logging.debug("Start from %s" % self.root_.name())
     self.root_.rank = 0
+    # traverse from root_ to set each rp's rank
     while len(curr_queue) > 0:
       t_recomp = curr_queue.pop()
       for recomp in left_queue:
         assert recomp != t_recomp
 
+        # check if t_recomp in recomp's inputs
         if recomp.IsInSrcs(t_recomp):
           if t_recomp.IsInSrcs(recomp):
             logging.error("Meet a loop, %s and %s" % (recomp.name(), t_recomp.name()))
@@ -406,9 +525,10 @@ class ReCompColl():
           left_queue.remove(recomp)
 
     # for debug log
-    # for recomp in self.collection.values():
+    # recomps_ = sorted(self.collection.values(), key=lambda x: x.rank)
+    # for recomp in recomps_:
     #   logging.debug("%s, rank: %d" % (recomp.name(), recomp.rank))
-    #   logging.debug("prev: %d, succ: %d" % (len(recomp.prev), len(recomp.succ)))
+      # logging.debug("prev: %d, succ: %d" % (len(recomp.prev), len(recomp.succ)))
 
    # def InitRank(self, rp):
   #   for input_t in rp.tensor.inputs:
@@ -459,6 +579,9 @@ class ReComp():
     # 3: Root input: which has no inputs
     self.srcs = []
 
+    # the inputs can be changed due to other recomps been chosen
+    self.inputs = []
+
     # 0: not set yet
     # 1. been set already
     # if 1 && same_src_root not None, no need to traverse
@@ -476,9 +599,22 @@ class ReComp():
 
     self.sub_rp = None
 
+    self.out_trigger = None
+    self.in_trigger = None
+
 
   def name(self):
     return self.tensor.name()
+
+  def IsPrev(self, rp):
+    if rp in self.prev:
+      return True
+    return False
+
+  def IsSucc(self, rp):
+    if rp in self.succ:
+      return True
+    return False
 
   def IsSameSrcs(self, recomp):
     flag = True
@@ -490,6 +626,48 @@ class ReComp():
         break
     
     return flag
+
+  def SetTrigger(self, tac, graphsim, r_peak_time):
+    acc_index = self.access_info[0]
+    acc_time = self.access_info[1]
+
+    in_trigger_index = acc_index
+    while True:
+      in_trigger_index -= 1
+      t_name = graphsim.tf_tensor_access[in_trigger_index][1]
+      if graphsim.tf_tensor_access[in_trigger_index][0] < r_peak_time:
+        return False
+
+      d_time = acc_time - graphsim.tf_tensor_access[in_trigger_index][0]
+      if d_time > self.eva_time * recomp_ratio:
+        in_trigger_name = graphsim.tf_tensor_access[in_trigger_index][1]
+        break
+
+    swapinfo = tac[self.name()]
+    swapout_rc = swapinfo.GetSwapoutRc()
+    swapout_total_rc = len(swapinfo.access_list)
+    self.out_trigger = (swapout_total_rc, swapout_total_rc-swapout_rc)
+
+    swapin_rc = 0
+    swapin_total_rc = 1
+    if in_trigger_name in tac.keys():
+      access_indicies =[v for v, _ in tac[in_trigger_name].access_list]
+      assert in_trigger_index in access_indicies
+      swapin_rc = len(access_indicies) - access_indicies.index(in_trigger_index) - 1
+      swapin_total_rc = len(access_indicies)
+    elif in_trigger_name in graphsim.ngpu_tensor_access.keys():
+      access_indicies = graphsim.ngpu_tensor_access[in_trigger_name]
+      assert in_trigger_index in access_indicies
+      swapin_rc = len(access_indicies) - access_indicies.index(in_trigger_index) - 1
+      swapin_total_rc = len(access_indicies)
+    else:
+      pass
+
+    self.in_trigger = (in_trigger_name, swapin_total_rc, swapin_total_rc-swapin_rc)
+
+    return True
+
+    
 
   def GetSrcRoot(self):
     if self.same_src_flag == 0:
@@ -552,7 +730,7 @@ class ReComp():
 
   def IsInSrcs(self, recomp):
     for _, name in self.srcs:
-      if recomp.tensor.name() == name:
+      if recomp.name() == name:
         return True
     return False
 
