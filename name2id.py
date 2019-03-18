@@ -1,3 +1,6 @@
+import logger
+import logging
+
 node2id_filename = "1node2id.txt"
 target_filename = "recompute.log"
 rtarget_filename = "r_recompute.log"
@@ -39,6 +42,14 @@ def NodeToId(metadir):
       in_tri_idname = tensorname2id(tmp[3])
 
       # for check
+      t_id = int(t_idname[:-2])
+      # px: not accurate yet, just an indication
+      for t_id_ in t_ids:
+        if abs(t_id-t_id_) == 1:
+          logging.info("Continuous number: %d, %d" % (t_id, t_id_))
+          continue
+          # break
+          # exit(1)
       t_ids.append(int(t_idname[:-2]))
 
       fout.write("%s\t%s\t%s\t%s\t%s\t%s\t" % (t_idname,

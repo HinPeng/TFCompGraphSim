@@ -133,7 +133,11 @@ class GraphSim():
     self.nouse_mem = 0
 
     # mm decision
+    # 0: swapping
+    # 1: recomputation
     self.mm_decision = dict()
+
+    self.multargets_rp = False
 
     self.mm_candidates = dict()
 
@@ -435,14 +439,25 @@ class GraphSim():
           # ignore line start with '#'
           if line[0] == '#':
             continue
-          tensor_name = line.split()[0]
+          tmp = line.split()
+          ac_index = 1
+          if len(tmp) == 3:
+            # include requested_bytes
+            ac_index = 2
+          tensor_name = tmp[0]
+          access_time = int(tmp[ac_index])
+          # tensor_name = line.split()[0]
           # requested_bytes = int(line.split()[1])
-          access_time = int(line.split()[1])
+          # access_time = int(line.split()[1])
           line_num += 1
           # shift to reletive time
           if line_num == 0:
             min_abs_time = self.tensors[tensor_name].allocated_time
-            assert access_time > min_abs_time
+            try:
+              assert access_time > min_abs_time
+            except AssertionError:
+              logging.error("%d v.s %d" % (min_abs_time, access_time))
+              exit(1)
             access_time -= min_abs_time
           else:
             assert access_time >= min_abs_time
@@ -1030,14 +1045,39 @@ class GraphSim():
   #       # input_[1] is prev of candidate
   #       sub_rp = GetSubrp(input_[1], already_queue)
   #       # check current root?
-  #       if 
+  #       if
   #       chain.set_root(sub_rp)
 
   def GetOrCreateSubRP(self, sub_recomps, recomp):
     # for sub_recomp in sub_recomps:
     pass
 
-  
+
+  def CheckAvai(self, recomp):
+    # check recomp tensor's direct inputs
+    for t in recomp.tensor.inputs:
+      # whether its inputs are swapping or recomputation
+      if t.name() in self.mm_decision.keys():
+        return False
+
+    # check recomp if is prev
+    for t_name in self.mm_decision.keys():
+      t_ = self.tensors[t_name]
+      if recomp.tensor in t_.inputs:
+        if self.mm_decision[t_name] == 1:
+          # ok if can recompute multi-target
+          # so they must in the same sub_recomputation
+          if self.multargets_rp:
+            continue
+          else:
+            return False
+        else:
+          # swapping input
+          continue
+
+    return True
+    
+      
 
   def InitRecomp(self, tac_f):
     """ tac_f: all tensors which show up more than one """
@@ -1135,6 +1175,12 @@ class GraphSim():
       succ = [] # sub_recomp is succ of rp
       prev = [] # sub_recomp is prev of rp
       recomp = left_queue.pop()
+      # check if this rp is direct input or output of mm_decision
+      if self.CheckAvai(recomp):
+        pass
+      else:
+        logging.debug("%s is rejected" % recomp.name())
+        continue
       flag = True
       for sub_recomp in sub_recomps:
         if sub_recomp.IsSrc(recomp):
@@ -1192,7 +1238,8 @@ class GraphSim():
       logging.debug("Choose %s, bytes: %d MB, metric: %f" % (recomp.name(), recomp.alloc_bytes, recomp.metric))
       logging.debug("in_trigger info: %s" % str(recomp.in_trigger))
 
-      required_saving -= recomp.alloc_bytes        
+      required_saving -= recomp.alloc_bytes
+      self.mm_decision[recomp.name()] = 1
       if required_saving <= 0:
         logging.info("Already choose right tensors from recomputation!")
         break
@@ -1211,7 +1258,7 @@ class GraphSim():
         fout.write("\n")
 
 
-        
+
 
     # TODO: remove this sub_recomp as it needs to be decided at runtime
     # sub_recomps = self.recomp_colle.sub_rp
