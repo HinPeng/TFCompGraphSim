@@ -7,4 +7,6 @@
 *.log
 *.bak
 
+*.pdf
+
 **/swap_policy.txt

@@ -1,4 +1,6 @@
 import os
+import logger
+import logging
 
 def FilterByKeys(name, filters=None):
   if filters == None:
@@ -13,8 +15,9 @@ def FilterByKeys(name, filters=None):
 
 
 def Check_netArch(data_dir, net, log2file):
-  """ For vDNN swapping """
-  layerkeys = ["conv"]
+  # For vDNN(conv) swapping
+  # layerkeys = ["conv"]
+  layerkeys = ["conv", "avgpool", "mpool", "relu"]
   # filter the conv layer with the kernel keyword as it's the weights
   filterconvkeys = ["kernel", "bias"]
   # layerkeys = ["conv", "mpool", "apool"]
@@ -97,6 +100,7 @@ def Check_netArch(data_dir, net, log2file):
   swapped_tensors = dict()
   for k,v in forwardkey.items():
     for vv in v:
+      # vv: node name
       node = net[vv]
       for fanin_tensor in node.fanin_tensors:
         # ERROR here
@@ -109,6 +113,7 @@ def Check_netArch(data_dir, net, log2file):
   swap_info = dict()
   conv_fanout_nodes = dict()
   for k,v in swapped_tensors.items():
+    logging.info("%s fanin tensor: %s" % (k, v))
     # Only one input of conv layer is needed swapped out, maybe not a good assumption
     assert (len(v) == 1)
     # for each tensor
@@ -131,7 +136,7 @@ def Check_netArch(data_dir, net, log2file):
             input_id = index
             break
         if input_id == -1:
-          print("Error input_id, node: %d, fanin_tensor: %s" % (fanout_node.node_name, vv))
+          print("Error input_id, node: %s, fanin_tensor: %s" % (fanout_node.node_name, vv))
           raise ValueError
 
         swap_info[tensor].append((fanout_node.node_name, input_id))
@@ -142,12 +147,13 @@ def Check_netArch(data_dir, net, log2file):
       conv_fanout_nodes[tensor] = []
       for fanout_node in conv_node.fanout_nodes:
         conv_fanout_nodes[tensor].append(fanout_node.node_name)
+        logging.info("%s" % fanout_node.node_name)
 
   # TODO: choose the in_trigger_node for each swapped out tensor
   print("swap tensor num: %d\n" % len(swap_info))
   in_trigger_log = False
-  if os.path.exists(data_dir+"in_trigger_node.log"):
-    in_trigger_log = True
+  # if os.path.exists(data_dir+"in_trigger_node.log"):
+  #   in_trigger_log = True
   
   if in_trigger_log:
     in_trigger_dict = dict()

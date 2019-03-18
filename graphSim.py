@@ -44,8 +44,8 @@ class GraphSim():
 
     # self.metadata_dir = "./alexnet_256_k40/"
     # self.metadata_dir = "./inception3_115_k40/"
-    self.metadata_dir = "./inception3_160_p100/"
-    # self.metadata_dir = "./vgg16_226_p100/"
+    # self.metadata_dir = "./inception3_160_p100/"
+    self.metadata_dir = "./vgg16_226_p100/"
     # self.metadata_dir = "./resnet50_190_p100/"
 
     self.nodeInfo_filename = "gpu_0_nodetime.txt"  # Initiate node execution time
