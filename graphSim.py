@@ -44,9 +44,10 @@ class GraphSim():
 
     # self.metadata_dir = "./alexnet_256_k40/"
     # self.metadata_dir = "./inception3_115_k40/"
-    self.metadata_dir = "./inception3_160_p100/"
-    # self.metadata_dir = "./vgg16_226_p100/"
+    # self.metadata_dir = "./inception3_160_p100/"
+    self.metadata_dir = "./vgg16_226_p100/"
     # self.metadata_dir = "./resnet50_190_p100/"
+    # self.metadata_dir = "./bert_66_p100/"
 
     self.nodeInfo_filename = "gpu_0_nodetime.txt"  # Initiate node execution time
     # self.nodeCon_filename = "1.log"
@@ -133,18 +134,14 @@ class GraphSim():
     self.nouse_mem = 0
 
     # mm decision
-    # 0: swapping
-    # 1: recomputation
     self.mm_decision = dict()
-
-    self.multargets_rp = False
 
     self.mm_candidates = dict()
 
     # recomputation info
     self.recomp_colle = recomp_info.ReCompColl()
     # the memory saving ratio from recomputation
-    self.recomp_ratio = 1.0
+    self.recomp_ratio = 0.0
 
 
   def EventsEngine(self):
@@ -439,25 +436,18 @@ class GraphSim():
           # ignore line start with '#'
           if line[0] == '#':
             continue
-          tmp = line.split()
-          ac_index = 1
-          if len(tmp) == 3:
-            # include requested_bytes
-            ac_index = 2
-          tensor_name = tmp[0]
-          access_time = int(tmp[ac_index])
-          # tensor_name = line.split()[0]
+          tensor_name = line.split()[0]
           # requested_bytes = int(line.split()[1])
-          # access_time = int(line.split()[1])
+          try:
+            access_time = int(line.split()[1])
+          except:
+            logging.error("no accesstime, tensor name %s" % (tensor_name))
+            exit(-1)
           line_num += 1
           # shift to reletive time
           if line_num == 0:
             min_abs_time = self.tensors[tensor_name].allocated_time
-            try:
-              assert access_time > min_abs_time
-            except AssertionError:
-              logging.error("%d v.s %d" % (min_abs_time, access_time))
-              exit(1)
+            assert access_time > min_abs_time
             access_time -= min_abs_time
           else:
             assert access_time >= min_abs_time
@@ -472,13 +462,13 @@ class GraphSim():
             logging.debug("tf tensor not found in simulator: %s" % tensor_name)
             if not self.ngpu_tensor_access.__contains__(tensor_name):
               self.ngpu_tensor_access[tensor_name] = []
-            self.ngpu_tensor_access[tensor_name].append(line_num)
+            self.ngpu_tensor_access[tensor_name].append((line_num, access_time))
             # tensor's allocator is on CPU-side
           else:
             if self.tensors[tensor_name].allocator_name != "GPU_0_bfc":
               if not self.ngpu_tensor_access.__contains__(tensor_name):
                 self.ngpu_tensor_access[tensor_name] = []
-              self.ngpu_tensor_access[tensor_name].append(line_num)
+              self.ngpu_tensor_access[tensor_name].append((line_num, access_time))
             else:
               if not tac.__contains__(tensor_name):
                 if self.swap_time:
@@ -487,9 +477,15 @@ class GraphSim():
                   try:
                     assert allocated_time >= min_abs_time
                   except AssertionError:
+                    #TODO bert 
                     logging.error("Tensor name: %s" % tensor_name)
                     logging.error("Allocation time: %d, min_ac_time: %d" % (allocated_time, min_abs_time))
-                    exit(1)
+                    tmp = min_abs_time-allocated_time
+                    min_abs_time = allocated_time
+                    self.tf_tensor_access = [(x+tmp, y) for x,y in self.tf_tensor_access]
+                    for tensor_name in tac.keys():
+                      tac[tensor_name].allocated_time += tmp
+                    # exit(1)
 
                   allocated_time -= min_abs_time
                   allocated_bytes = self.tensors[tensor_name].allocated_bytes
@@ -773,7 +769,11 @@ class GraphSim():
     t_time = t_ac[t_index][1]
 
     if len(i_ac) <= 3:
-      assert t_time > i_ac[0][1]
+      try:
+        assert t_time > i_ac[0][1]
+      except AssertionError:
+        logging.info("%s" % str(i_ac))
+        logging.info("%s" % str(t_ac))
       return (t_time - i_ac[0][1])
     else:
       for i in range(len(i_ac)-1, -1, -1):
@@ -953,17 +953,26 @@ class GraphSim():
         i_name = name
         break
       elif num == 1:
-        i_name = name
+        i_name = name 
         break
       elif num == 2:
         logging.debug("only var input")
+        i_name = name
       else:
         logging.debug("only root input")
-
+        eva_time = 50
+        recomp.SetEvaTime(eva_time)
+        return
     t_ac = tac_f[t_name].access_list
     if i_name == None:
       logging.error("Got no input name for %s" % t_name)
-    i_ac = tac_f[i_name].access_list
+    try:
+      i_ac = tac_f[i_name].access_list
+    except KeyError:
+      i_ac = self.ngpu_tensor_access[i_name]
+      # for k, v in tac_f.items():
+      #   logging.debug("%s" % k)
+      # exit(1)
 
     eva_time = self.gettime(t_ac, i_ac)
     if eva_time == -1:
@@ -990,94 +999,7 @@ class GraphSim():
           logging.debug("Ignore merging two sub_recomp for now!")
           # try merge two sub_recomp
 
-  def GetChain(self, recomp_coll, chains, candidate):
-    # candidate: sub_recomp
-    # chains
-    # tmp_chain = recomp_info.Chain()
-    # tmp_chain.add(candidate)
-    # tmp_chain.head = candidate.root_
 
-    # candidate be the head of current chains
-    heads = []
-    # candidate be the tail of current chains
-    tails = []
-
-    for chain in chains:
-      # check if candidate can be head or tail of current chain
-      # if candidate.root_.IsSucc(chain.head):
-      if chain.IsPrev(candidate):
-      # if recomp_coll.IsPPrev(candidate, chain.head):
-        # candidate is the head
-        heads.append(chain)
-
-        # tmp_chain.addchain(chain)
-        # tmp_chain.tail = chain.tail
-
-      # elif candidate.root_.IsPrev(chain.tail):
-      elif recomp_coll.IsPPrev(chain):
-        # candidate is the tail
-        tails.append(chain)
-        # tmp_chain.addchain(chain)
-        # tmp_chain.head = chain.head
-        # tmp_chain.tail = chain.tail
-
-
-
-  # def GetChain(self, already_queue, candidate):
-  #   # check the already_queue if candidate is in src_inputs
-  #   def GetSubrp(name, q):
-  #     for p in q:
-  #       if name == p.name():
-  #         return p
-  #     return None
-
-  #   chain = recomp_info.Chain()
-  #   chain.set_root(candidate)
-  #   for subrp in already_queue:
-  #     src_inputs = [src[1] for src in subrp.src_inputs]
-  #     if candidate.name() in src_inputs:
-  #       # candidate is prev of subrp
-  #       chain.add(subrp)
-
-  #   q_names = [srp.name() for srp in already_queue]
-  #   for input_ in candidate.src_inputs:
-  #     if input_[1] in q_names:
-  #       # input_[1] is prev of candidate
-  #       sub_rp = GetSubrp(input_[1], already_queue)
-  #       # check current root?
-  #       if
-  #       chain.set_root(sub_rp)
-
-  def GetOrCreateSubRP(self, sub_recomps, recomp):
-    # for sub_recomp in sub_recomps:
-    pass
-
-
-  def CheckAvai(self, recomp):
-    # check recomp tensor's direct inputs
-    for t in recomp.tensor.inputs:
-      # whether its inputs are swapping or recomputation
-      if t.name() in self.mm_decision.keys():
-        return False
-
-    # check recomp if is prev
-    for t_name in self.mm_decision.keys():
-      t_ = self.tensors[t_name]
-      if recomp.tensor in t_.inputs:
-        if self.mm_decision[t_name] == 1:
-          # ok if can recompute multi-target
-          # so they must in the same sub_recomputation
-          if self.multargets_rp:
-            continue
-          else:
-            return False
-        else:
-          # swapping input
-          continue
-
-    return True
-    
-      
 
   def InitRecomp(self, tac_f):
     """ tac_f: all tensors which show up more than one """
@@ -1125,7 +1047,6 @@ class GraphSim():
       # logging.debug("%s recomputation src:" % k)
       # prev_t = [t.tensor for t in v.prev]
       self.GetRecompSrc(v, v.tensor, t_colls.values(), tac_f)
-      v.inputs = [src[1] for src in v.srcs]
       if v.IsRoot():
         if self.recomp_colle.root_ == None:
           self.recomp_colle.SetRoot(v)
@@ -1139,14 +1060,14 @@ class GraphSim():
 
     # Evaluate re-computation time of each rp
     for recomp_ in recomps.values():
+      # logging.debug("%s" % recomp_.name())
       recomp_.SetRecompBytes(self.tensors)
       # logging.debug("%s: recomp bytes: %d MB" % (recomp_.name(), recomp_.recomp_bytes))
       if self.recomp_colle.IsRoot(recomp_):
         continue
       self.EvaluateRP(recomp_, tac_f)
     # recomps_ = sorted(recomps.values(), key=lambda x: x.alloc_bytes, reverse=True)
-    # not reverse here due to the following pop() operation
-    recomps_ = sorted(recomps.values(), key=lambda x: x.metric)
+    recomps_ = sorted(recomps.values(), key=lambda x: x.metric, reverse=True)
     # for recomp_ in recomps_:
     #   if recomp_colle.IsRoot(recomp_):
     #     logging.debug("Ignore root: %s" % recomp_.tensor.name())
@@ -1154,210 +1075,101 @@ class GraphSim():
     #   self.EvaluateRP(recomp_, tac_f)
     # recomps.sort(key=lambda x: x.alloc_bytes)
     # candidates = []
+    sub_recomps = self.recomp_colle.sub_rp
+    for recomp_ in recomps_:
+      flag = False
+      # TODO: how to sort these sub_recomp
+      for sub_recomp in sub_recomps:
+        if sub_recomp.AddRP(recomp_):
+          flag = True
+          break
+
+      if flag:
+        # logging.debug("Adding %s success" % recomp_.name())
+        continue
+      else:
+        # logging.debug("New a sub_recomp for %s" % recomp_.name())
+        new_sub_recomp = recomp_info.SubReComp(recomp_)
+        sub_recomps.append(new_sub_recomp)
+
+      # logging.debug("%s : %f MB, %f" %
+      #   (recomp_.name(), recomp_.alloc_bytes, recomp_.metric))
+
+    # for log debug
+    logging.debug("Total %d sub recomputation" % len(sub_recomps))
+    for sub_recomp_ in sub_recomps:
+      # logging.debug("Root: %s, size: %d" % (sub_recomp_.root_.name(), len(sub_recomp_.coll)))
+      sub_recomp_.GetRecompTime()
+      sub_recomp_.SetSrcs()
+      sub_recomp_.SetTotalBytes(self.tensors)
+      # TODO: this metric should not include inputs size
+      sub_recomp_.SetMetric()
+      # logging.debug("Recomputation time: %d" % sub_recomp_.recomp_time)
+      # for rp in sub_recomp_.coll:
+      #   logging.debug("%s, rank: %d" % (rp.name(), rp.rank))
+
 
     r_peak_time = self.peakmem_util.right_peak_time
-    required_saving = self.required_saving * self.recomp_ratio
+    sub_recomps_ = sorted(sub_recomps, key=lambda x: x.metric, reverse=True)
+
+    total_rp_bytes = 0
+    max_rp_bytes = 0
 
     fout = open(self.metadata_dir+self.recomp_log, 'w')
 
-    sub_recomps = []
-    # for now only one target at a recomputation
-    # already_queue = []
-    recomp_depth = 2
-    left_queue = [recomp_ for recomp_ in recomps_]
-    while True:
-    # for recomp in recomps_:
-      # if this recomp connect two sub_recomps, we shouldn't choose this one
-      # we need to make decision when visiting all sub_recomps
-      if len(left_queue) == 0:
-        break
 
-      succ = [] # sub_recomp is succ of rp
-      prev = [] # sub_recomp is prev of rp
-      recomp = left_queue.pop()
-      # check if this rp is direct input or output of mm_decision
-      if self.CheckAvai(recomp):
-        pass
-      else:
-        logging.debug("%s is rejected" % recomp.name())
-        continue
-      flag = True
-      for sub_recomp in sub_recomps:
-        if sub_recomp.IsSrc(recomp):
-          if recomp.rank - sub_recomp.root_.rank <= recomp_depth:
-            prev.append(sub_recomp)
-          else:
-            # one failed means all failed
-            flag = False
-            break
-        if sub_recomp.IsInSrc(recomp):
-          assert sub_recomp not in prev
-          if (sub_recomp.max_rank_var+sub_recomp.root_.rank-recomp.rank) <= recomp_depth:
-            succ.append(sub_recomp)
-          else:
-            flag = False
-            break
-
-      logging.debug("%s: prev: %d, succ: %d" % (recomp.name(), len(prev), len(succ)))
-      if len(prev) > 1:
-        logging.error("%s prev: %d" % (recomp.name(), len(prev)))
-      if len(succ) > 1:
-        logging.error("%s succ: %d" % (recomp.name(), len(prev)))
-      if not flag:
-        continue
-
-
-      if len(prev) != 0 and len(succ) != 0:
-        logging.debug("%s will connect two recomps, so we ignore this" % (recomp.name()))
-        continue
-
-      s = recomp.SetTrigger(tac_f, self, r_peak_time)
+    required_saving = self.required_saving * self.recomp_ratio
+    logging.debug("Required saving from recomputation is %f MB" % required_saving)
+    if required_saving == 0:
+      return
+    curr_num = 1
+    for recomp in sub_recomps_:
+      logging.debug("Curr number: %d, Total size: %d, metric: %f" % (curr_num, len(recomp.coll), recomp.metric))
+      s = recomp.SetInTrigger(tac_f, self, r_peak_time) 
       if s == False:
         logging.debug("Can not set in_trigger for %s" % recomp.name())
-        continue
-
-      if len(prev) != 0:
-        if len(succ) != 0:
-          logging.debug("%s will connect two recomps, so we ignore this" % (recomp.name()))
-        else:
-          prev_ = prev[0]
-          logging.debug("%s merge succ: %s" % (prev_.name(), recomp.name()))
-          prev_.MergeSucc(recomp)
-          # pass
       else:
-        if len(succ) != 0:
-          succ_ = succ[0]
-          logging.debug("%s merge prev: %s" % (succ_.name(), recomp.name()))
-          succ_.MergePrev(recomp)
-          # pass
-        else:
-          # new a sub_recomp for this recomp
-          new_subrp = recomp_info.SubReComp(recomp)
-          sub_recomps.append(new_subrp)
+        total_rp_bytes += recomp.saving_bytes
+        if recomp.saving_bytes > max_rp_bytes:
+          max_rp_bytes = recomp.saving_bytes
+        logging.debug("Recomputation bytes: %d MB" % recomp.saving_bytes)
+        logging.debug("Total bytes: %d MB" % recomp.total_bytes)
+        logging.debug("%s: in_trigger info: %s" % (recomp.name(), str(recomp.in_trigger)))
 
-      logging.debug("Choose %s, bytes: %d MB, metric: %f" % (recomp.name(), recomp.alloc_bytes, recomp.metric))
-      logging.debug("in_trigger info: %s" % str(recomp.in_trigger))
+        for rp in recomp.coll:
+          assert rp.name() not in self.mm_decision.keys()
+          self.mm_decision[rp.name()] = 1
 
-      required_saving -= recomp.alloc_bytes
-      self.mm_decision[recomp.name()] = 1
-      if required_saving <= 0:
-        logging.info("Already choose right tensors from recomputation!")
-        break
 
-    for sub_recomp in sub_recomps:
-      for recomp in sub_recomp.coll.values():
-        fout.write("%s\t%d\t%d\t%s\t%d\t%d\t" % (recomp.name(),
-                                                 recomp.out_trigger[0],
-                                                 recomp.out_trigger[1],
-                                                 recomp.in_trigger[0],
-                                                 recomp.in_trigger[1],
-                                                 recomp.in_trigger[2]))
+        # NOTE: assert out trigger is one now
+        fout.write("%s\t%d\t%d\t%s\t%d\t%d\t" % (recomp.out_triggers.keys()[0],
+                                               recomp.out_triggers.values()[0][0],
+                                               recomp.out_triggers.values()[0][1],
+                                               recomp.in_trigger[0],
+                                               recomp.in_trigger[1],
+                                               recomp.in_trigger[2]))
 
-        for input_ in recomp.inputs:
-          fout.write("%s\t" % input_)
+        for src in recomp.src_inputs:
+          fout.write("%s\t" % src[1])
+
         fout.write("\n")
 
+        required_saving -= recomp.saving_bytes
 
+        if required_saving <= 0:
+          logging.info("Already choose right tensors from recomputation!")
+          break
 
+      curr_num += 1
 
-    # TODO: remove this sub_recomp as it needs to be decided at runtime
-    # sub_recomps = self.recomp_colle.sub_rp
-    # for recomp_ in recomps_:
-    #   flag = False
-    #   # TODO: how to sort these sub_recomp
-    #   for sub_recomp in sub_recomps:
-    #     if sub_recomp.AddRP(recomp_):
-    #       flag = True
-    #       break
+    fout.close()
+    if required_saving > 0:
+      logging.info("Already choose %d MB" % total_rp_bytes)
+      logging.error("No enough tensors")
+      exit(1)
 
-    #   if flag:
-    #     # logging.debug("Adding %s success" % recomp_.name())
-    #     continue
-    #   else:
-    #     # logging.debug("New a sub_recomp for %s" % recomp_.name())
-    #     new_sub_recomp = recomp_info.SubReComp(recomp_)
-    #     sub_recomps.append(new_sub_recomp)
-
-    #   # logging.debug("%s : %f MB, %f" %
-    #   #   (recomp_.name(), recomp_.alloc_bytes, recomp_.metric))
-
-    # # for log debug
-    # logging.debug("Total %d sub recomputation" % len(sub_recomps))
-    # for sub_recomp in sub_recomps:
-    #   # logging.debug("Root: %s, size: %d" % (sub_recomp.root_.name(), len(sub_recomp.coll)))
-    #   sub_recomp.GetRecompTime()
-    #   sub_recomp.SetSrcs()
-    #   sub_recomp.SetTotalBytes(self.tensors)
-    #   # TODO: this metric should not include inputs size
-    #   sub_recomp.SetMetric()
-    #   # logging.debug("Recomputation time: %d" % sub_recomp.recomp_time)
-    #   # for rp in sub_recomp.coll:
-    #   #   logging.debug("%s, rank: %d" % (rp.name(), rp.rank))
-
-
-    # r_peak_time = self.peakmem_util.right_peak_time
-    # sub_recomps_ = sorted(sub_recomps, key=lambda x: x.metric, reverse=True)
-
-    # total_rp_bytes = 0
-    # max_rp_bytes = 0
-
-    # fout = open(self.metadata_dir+self.recomp_log, 'w')
-
-
-    # required_saving = self.required_saving * self.recomp_ratio
-    # logging.debug("Required saving from recomputation is %f MB" % required_saving)
-    # curr_num = 1
-    # # TODO: add a candidate queue to see the new one is a prev of succ of a recomp in queue
-    # candidate_queue = []
-    # chains = []
-    # for sub_recomp_ in sub_recomps_:
-
-    #   logging.debug("Curr number: %d, Total size: %d, metric: %f" % (curr_num, len(sub_recomp_.coll), sub_recomp_.metric))
-    #   s = sub_recomp_.SetInTrigger(tac_f, self, r_peak_time)
-    #   if s == False:
-    #     logging.debug("Can not set in_trigger for %s" % sub_recomp_.name())
-    #   else:
-    #     total_rp_bytes += sub_recomp_.saving_bytes
-    #     if sub_recomp_.saving_bytes > max_rp_bytes:
-    #       max_rp_bytes = sub_recomp_.saving_bytes
-    #     logging.debug("Recomputation bytes: %d MB" % sub_recomp_.saving_bytes)
-    #     logging.debug("Total bytes: %d MB" % sub_recomp_.total_bytes)
-    #     logging.debug("%s: in_trigger info: %s" % (sub_recomp_.name(), str(sub_recomp_.in_trigger)))
-
-    #     for rp in sub_recomp_.coll:
-    #       assert rp.name() not in self.mm_decision.keys()
-    #       self.mm_decision[rp.name()] = 1
-
-
-    #     # NOTE: assert out trigger is one now
-    #     fout.write("%s\t%d\t%d\t%s\t%d\t%d\t" % (sub_recomp_.out_triggers.keys()[0],
-    #                                              sub_recomp_.out_triggers.values()[0][0],
-    #                                              sub_recomp_.out_triggers.values()[0][1],
-    #                                              sub_recomp_.in_trigger[0],
-    #                                              sub_recomp_.in_trigger[1],
-    #                                              sub_recomp_.in_trigger[2]))
-
-    #     for src in sub_recomp_.src_inputs:
-    #       fout.write("%s\t" % src[1])
-
-    #     fout.write("\n")
-
-    #     required_saving -= sub_recomp_.saving_bytes
-
-    #     if required_saving <= 0:
-    #       logging.info("Already choose right tensors from recomputation!")
-    #       break
-
-    #   curr_num += 1
-
-    # fout.close()
-    # if required_saving > 0:
-    #   logging.info("Already choose %d MB" % total_rp_bytes)
-    #   logging.error("No enough tensors")
-    #   exit(1)
-
-    # logging.debug("Total recomputation saving bytes: %d MB" % total_rp_bytes)
-    # logging.debug("Max recomputation saving bytes: %d MB" % max_rp_bytes)
+    logging.debug("Total recomputation saving bytes: %d MB" % total_rp_bytes)
+    logging.debug("Max recomputation saving bytes: %d MB" % max_rp_bytes)
 
 
 
@@ -1565,6 +1377,7 @@ class GraphSim():
       in_trigger_index = n_index
       while True:
         # TODO: check if this in_trigger to early that in peak memory
+        # tf_tensor_access = [(access_time, tensor_name)]
         in_trigger_index -= 1
         if self.tf_tensor_access[in_trigger_index][0] < r_peak_time:
           logging.debug("Not enough time for %s swapping in" % swapinfo.tensor_name)
@@ -1590,7 +1403,7 @@ class GraphSim():
         swapin_rc = len(access_indicies) - access_indicies.index(in_trigger_index) - 1
         swapin_total_rc = len(access_indicies)
       elif in_trigger_name in self.ngpu_tensor_access.keys():
-        access_indicies = self.ngpu_tensor_access[in_trigger_name]
+        access_indicies = [v for v,_ in self.ngpu_tensor_access[in_trigger_name]]
         assert (in_trigger_index in access_indicies)
         swapin_rc = len(access_indicies) - access_indicies.index(in_trigger_index) - 1
         swapin_total_rc = len(access_indicies)
@@ -1611,10 +1424,19 @@ class GraphSim():
 
       fout.write("%s\t%d\t%d\t%s\t%d\t%d\n" % (swapinfo.tensor_name,
                                                swapout_total_rc,
-                                               swapout_rc,
+                                               swapout_total_rc - swapout_rc,
                                                in_trigger_name,
                                                swapin_total_rc,
-                                               swapin_rc))
+                                               swapin_total_rc - swapin_rc))
+
+      # set in_trigger
+      # fout.write("%s\t%d\t%d\t%s\t%d\t%d\n" % (swapinfo.tensor_name,
+      #                                          swapout_total_rc,
+      #                                          swapout_total_rc,
+      #                                          in_trigger_name,
+      #                                          swapin_total_rc,
+      #                                          swapin_total_rc))
+
 
       required_saving -= swapinfo.allocated_bytes
       # print("[DEBUG] Max access interval is %d, allocated MB: %f\n" % (swapinfo.max_access_interval, swapinfo.allocated_bytes))
@@ -2030,7 +1852,7 @@ class GraphSim():
               raise ValueError
 
           # Add the output tensor to the corresponding node (ignore the control flow)
-          if fanin_id == -1:
+          if fanin_id == -1: 
             continue
           t_name = fanin_nodename+'_'+str(fanin_id)
           if not self.tensors.__contains__(t_name):
@@ -2443,13 +2265,13 @@ if __name__ == '__main__':
   # if graph_sim.debug:
   #   graph_sim.debug_nodeInfo()
 
-  graph_sim.InitEvents()
-  graph_sim.EventsEngine()
+  # graph_sim.InitEvents()
+  # graph_sim.EventsEngine()
 
   # graph_sim.CheckFailedNodes()
 
-  graph_sim.PrintResult()
-  graph_sim.GetPeakMemory()
+  # graph_sim.PrintResult()
+  # graph_sim.GetPeakMemory()
 
   if not graph_sim.swapping_test:
     graph_sim.access_analysis(graph_sim.tensor_access)

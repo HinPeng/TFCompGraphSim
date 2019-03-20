@@ -117,6 +117,7 @@ class SwapInfo():
   #   self.swap_time = float(self.allocated_bytes) / pcie_bw * 1000000
 
   def GetFirstUseIndexAfterSwap(self):
+    # access_list = [(line_num, access_time)]
     return self.access_list[self.swap_start+1][0]
 
   def GetFirstUseTimeAfterSwap(self):
@@ -230,9 +231,9 @@ class PeakMemory():
       meminfo = self.meminfos.get()
       total_mem += meminfo.allocated_bytes
 
-      # logging.debug("%s: %d" % (meminfo.tensor_name, meminfo.allocated_bytes))
+      #logging.debug("%s: %d, %d" % (meminfo.tensor_name, meminfo.allocated_bytes, meminfo.time))
 
-      if meminfo.IsDeallocate():
+      if meminfo.IsDeallocate() and meminfo.tensor_name in self.peakmem_tensors_collec:
         self.curr_deallocate_.append(meminfo.tensor_name)
         # logging.debug("%s is in current deallocation" % meminfo.tensor_name)
 

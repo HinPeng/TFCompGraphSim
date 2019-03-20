@@ -79,7 +79,3 @@ if __name__ == "__main__":
   # metadir = "./vgg16_226_p100/"
   metadir = "./inception3_160_p100/"
   NodeToId(metadir)
-      
-
-  
-    
