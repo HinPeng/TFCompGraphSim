@@ -44,8 +44,8 @@ class GraphSim():
 
     # self.metadata_dir = "./alexnet_256_k40/"
     # self.metadata_dir = "./inception3_115_k40/"
-    # self.metadata_dir = "./inception3_160_p100/"
-    self.metadata_dir = "./vgg16_226_p100/"
+    self.metadata_dir = "./inception3_160_p100/"
+    # self.metadata_dir = "./vgg16_226_p100/"
     # self.metadata_dir = "./resnet50_190_p100/"
     # self.metadata_dir = "./bert_66_p100/"
 
@@ -134,7 +134,11 @@ class GraphSim():
     self.nouse_mem = 0
 
     # mm decision
+    # 0: swapping
+    # 1: recomputation
     self.mm_decision = dict()
+
+    self.multargets_rp = False
 
     self.mm_candidates = dict()
 
@@ -437,17 +441,23 @@ class GraphSim():
           if line[0] == '#':
             continue
           tensor_name = line.split()[0]
+          tmp = line.split()
+          ac_index = 1
+          if len(tmp) == 3:
+            # include requested_bytes
+            ac_index = 2
+          tensor_name = tmp[0]
+          access_time = int(tmp[ac_index])
           # requested_bytes = int(line.split()[1])
-          try:
-            access_time = int(line.split()[1])
-          except:
-            logging.error("no accesstime, tensor name %s" % (tensor_name))
-            exit(-1)
           line_num += 1
           # shift to reletive time
           if line_num == 0:
             min_abs_time = self.tensors[tensor_name].allocated_time
-            assert access_time > min_abs_time
+            try:
+              assert access_time > min_abs_time
+            except AssertionError:
+              logging.error("%d v.s %d" % (min_abs_time, access_time))
+              exit(1)
             access_time -= min_abs_time
           else:
             assert access_time >= min_abs_time
@@ -1000,6 +1010,65 @@ class GraphSim():
           # try merge two sub_recomp
 
 
+  def GetChain(self, recomp_coll, chains, candidate):
+    # candidate: sub_recomp
+    # chains
+    # tmp_chain = recomp_info.Chain()
+    # tmp_chain.add(candidate)
+    # tmp_chain.head = candidate.root_
+
+    # candidate be the head of current chains
+    heads = []
+    # candidate be the tail of current chains
+    tails = []
+
+    for chain in chains:
+      # check if candidate can be head or tail of current chain
+      # if candidate.root_.IsSucc(chain.head):
+      if chain.IsPrev(candidate):
+      # if recomp_coll.IsPPrev(candidate, chain.head):
+        # candidate is the head
+        heads.append(chain)
+
+        # tmp_chain.addchain(chain)
+        # tmp_chain.tail = chain.tail
+
+      # elif candidate.root_.IsPrev(chain.tail):
+      elif recomp_coll.IsPPrev(chain):
+        # candidate is the tail
+        tails.append(chain)
+        # tmp_chain.addchain(chain)
+        # tmp_chain.head = chain.head
+        # tmp_chain.tail = chain.tail
+
+
+  def GetOrCreateSubRP(self, sub_recomps, recomp):
+    pass
+
+
+  def CheckAvai(self, recomp):
+    # check recomp tensor's direct inputs
+    for t in recomp.tensor.inputs:
+      # whether its inputs are swapping or recomputation
+      if t.name() in self.mm_decision.keys():
+        return False
+
+     # check recomp if is prev
+    for t_name in self.mm_decision.keys():
+      t_ = self.tensors[t_name]
+      if recomp.tensor in t_.inputs:
+        if self.mm_decision[t_name] == 1:
+          # ok if can recompute multi-target
+          # so they must in the same sub_recomputation
+          if self.multargets_rp:
+            continue
+          else:
+            return False
+        else:
+          # swapping input
+          continue
+    return True
+
 
   def InitRecomp(self, tac_f):
     """ tac_f: all tensors which show up more than one """
@@ -1075,101 +1144,210 @@ class GraphSim():
     #   self.EvaluateRP(recomp_, tac_f)
     # recomps.sort(key=lambda x: x.alloc_bytes)
     # candidates = []
-    sub_recomps = self.recomp_colle.sub_rp
-    for recomp_ in recomps_:
-      flag = False
-      # TODO: how to sort these sub_recomp
-      for sub_recomp in sub_recomps:
-        if sub_recomp.AddRP(recomp_):
-          flag = True
-          break
-
-      if flag:
-        # logging.debug("Adding %s success" % recomp_.name())
-        continue
-      else:
-        # logging.debug("New a sub_recomp for %s" % recomp_.name())
-        new_sub_recomp = recomp_info.SubReComp(recomp_)
-        sub_recomps.append(new_sub_recomp)
-
-      # logging.debug("%s : %f MB, %f" %
-      #   (recomp_.name(), recomp_.alloc_bytes, recomp_.metric))
-
-    # for log debug
-    logging.debug("Total %d sub recomputation" % len(sub_recomps))
-    for sub_recomp_ in sub_recomps:
-      # logging.debug("Root: %s, size: %d" % (sub_recomp_.root_.name(), len(sub_recomp_.coll)))
-      sub_recomp_.GetRecompTime()
-      sub_recomp_.SetSrcs()
-      sub_recomp_.SetTotalBytes(self.tensors)
-      # TODO: this metric should not include inputs size
-      sub_recomp_.SetMetric()
-      # logging.debug("Recomputation time: %d" % sub_recomp_.recomp_time)
-      # for rp in sub_recomp_.coll:
-      #   logging.debug("%s, rank: %d" % (rp.name(), rp.rank))
-
 
     r_peak_time = self.peakmem_util.right_peak_time
-    sub_recomps_ = sorted(sub_recomps, key=lambda x: x.metric, reverse=True)
-
-    total_rp_bytes = 0
-    max_rp_bytes = 0
+    required_saving = self.required_saving * self.recomp_ratio
 
     fout = open(self.metadata_dir+self.recomp_log, 'w')
 
+    sub_recomps = []
+    # for now only one target at a recomputation
+    # already_queue = []
+    recomp_depth = 2
+    left_queue = [recomp_ for recomp_ in recomps_]
+    while True:
+    # for recomp in recomps_:
+      # if this recomp connect two sub_recomps, we shouldn't choose this one
+      # we need to make decision when visiting all sub_recomps
+      if len(left_queue) == 0:
+        break
 
-    required_saving = self.required_saving * self.recomp_ratio
-    logging.debug("Required saving from recomputation is %f MB" % required_saving)
-    if required_saving == 0:
-      return
-    curr_num = 1
-    for recomp in sub_recomps_:
-      logging.debug("Curr number: %d, Total size: %d, metric: %f" % (curr_num, len(recomp.coll), recomp.metric))
-      s = recomp.SetInTrigger(tac_f, self, r_peak_time) 
+      succ = [] # sub_recomp is succ of rp
+      prev = [] # sub_recomp is prev of rp
+      recomp = left_queue.pop()
+      # check if this rp is direct input or output of mm_decision
+      if self.CheckAvai(recomp):
+        pass
+      else:
+        logging.debug("%s is rejected" % recomp.name())
+        continue
+      flag = True
+      for sub_recomp in sub_recomps:
+        if sub_recomp.IsSrc(recomp):
+          if recomp.rank - sub_recomp.root_.rank <= recomp_depth:
+            prev.append(sub_recomp)
+          else:
+            # one failed means all failed
+            flag = False
+            break
+        if sub_recomp.IsInSrc(recomp):
+          assert sub_recomp not in prev
+          if (sub_recomp.max_rank_var+sub_recomp.root_.rank-recomp.rank) <= recomp_depth:
+            succ.append(sub_recomp)
+          else:
+            flag = False
+            break
+
+      logging.debug("%s: prev: %d, succ: %d" % (recomp.name(), len(prev), len(succ)))
+      if len(prev) > 1:
+        logging.error("%s prev: %d" % (recomp.name(), len(prev)))
+      if len(succ) > 1:
+        logging.error("%s succ: %d" % (recomp.name(), len(prev)))
+      if not flag:
+        continue
+
+
+      if len(prev) != 0 and len(succ) != 0:
+        logging.debug("%s will connect two recomps, so we ignore this" % (recomp.name()))
+        continue
+
+      s = recomp.SetTrigger(tac_f, self, r_peak_time)
       if s == False:
         logging.debug("Can not set in_trigger for %s" % recomp.name())
+        continue
+
+      if len(prev) != 0:
+        if len(succ) != 0:
+          logging.debug("%s will connect two recomps, so we ignore this" % (recomp.name()))
+        else:
+          prev_ = prev[0]
+          logging.debug("%s merge succ: %s" % (prev_.name(), recomp.name()))
+          prev_.MergeSucc(recomp)
+          # pass
       else:
-        total_rp_bytes += recomp.saving_bytes
-        if recomp.saving_bytes > max_rp_bytes:
-          max_rp_bytes = recomp.saving_bytes
-        logging.debug("Recomputation bytes: %d MB" % recomp.saving_bytes)
-        logging.debug("Total bytes: %d MB" % recomp.total_bytes)
-        logging.debug("%s: in_trigger info: %s" % (recomp.name(), str(recomp.in_trigger)))
+        if len(succ) != 0:
+          succ_ = succ[0]
+          logging.debug("%s merge prev: %s" % (succ_.name(), recomp.name()))
+          succ_.MergePrev(recomp)
+          # pass
+        else:
+          # new a sub_recomp for this recomp
+          new_subrp = recomp_info.SubReComp(recomp)
+          sub_recomps.append(new_subrp)
 
-        for rp in recomp.coll:
-          assert rp.name() not in self.mm_decision.keys()
-          self.mm_decision[rp.name()] = 1
+      logging.debug("Choose %s, bytes: %d MB, metric: %f" % (recomp.name(), recomp.alloc_bytes, recomp.metric))
+      logging.debug("in_trigger info: %s" % str(recomp.in_trigger))
 
+      required_saving -= recomp.alloc_bytes
+      self.mm_decision[recomp.name()] = 1
+      if required_saving <= 0:
+        logging.info("Already choose right tensors from recomputation!")
+        break
 
-        # NOTE: assert out trigger is one now
-        fout.write("%s\t%d\t%d\t%s\t%d\t%d\t" % (recomp.out_triggers.keys()[0],
-                                               recomp.out_triggers.values()[0][0],
-                                               recomp.out_triggers.values()[0][1],
-                                               recomp.in_trigger[0],
-                                               recomp.in_trigger[1],
-                                               recomp.in_trigger[2]))
+    for sub_recomp in sub_recomps:
+      for recomp in sub_recomp.coll.values():
+        fout.write("%s\t%d\t%d\t%s\t%d\t%d\t" % (recomp.name(),
+                                                 recomp.out_trigger[0],
+                                                 recomp.out_trigger[1],
+                                                 recomp.in_trigger[0],
+                                                 recomp.in_trigger[1],
+                                                 recomp.in_trigger[2]))
 
-        for src in recomp.src_inputs:
-          fout.write("%s\t" % src[1])
-
+        for input_ in recomp.inputs:
+          fout.write("%s\t" % input_)
         fout.write("\n")
 
-        required_saving -= recomp.saving_bytes
 
-        if required_saving <= 0:
-          logging.info("Already choose right tensors from recomputation!")
-          break
 
-      curr_num += 1
 
-    fout.close()
-    if required_saving > 0:
-      logging.info("Already choose %d MB" % total_rp_bytes)
-      logging.error("No enough tensors")
-      exit(1)
+    # TODO: remove this sub_recomp as it needs to be decided at runtime
+    # sub_recomps = self.recomp_colle.sub_rp
+    # for recomp_ in recomps_:
+    #   flag = False
+    #   # TODO: how to sort these sub_recomp
+    #   for sub_recomp in sub_recomps:
+    #     if sub_recomp.AddRP(recomp_):
+    #       flag = True
+    #       break
 
-    logging.debug("Total recomputation saving bytes: %d MB" % total_rp_bytes)
-    logging.debug("Max recomputation saving bytes: %d MB" % max_rp_bytes)
+    #   if flag:
+    #     # logging.debug("Adding %s success" % recomp_.name())
+    #     continue
+    #   else:
+    #     # logging.debug("New a sub_recomp for %s" % recomp_.name())
+    #     new_sub_recomp = recomp_info.SubReComp(recomp_)
+    #     sub_recomps.append(new_sub_recomp)
+
+    #   # logging.debug("%s : %f MB, %f" %
+    #   #   (recomp_.name(), recomp_.alloc_bytes, recomp_.metric))
+
+    # # for log debug
+    # logging.debug("Total %d sub recomputation" % len(sub_recomps))
+    # for sub_recomp in sub_recomps:
+    #   # logging.debug("Root: %s, size: %d" % (sub_recomp.root_.name(), len(sub_recomp.coll)))
+    #   sub_recomp.GetRecompTime()
+    #   sub_recomp.SetSrcs()
+    #   sub_recomp.SetTotalBytes(self.tensors)
+    #   # TODO: this metric should not include inputs size
+    #   sub_recomp.SetMetric()
+    #   # logging.debug("Recomputation time: %d" % sub_recomp.recomp_time)
+    #   # for rp in sub_recomp.coll:
+    #   #   logging.debug("%s, rank: %d" % (rp.name(), rp.rank))
+
+
+    # r_peak_time = self.peakmem_util.right_peak_time
+    # sub_recomps_ = sorted(sub_recomps, key=lambda x: x.metric, reverse=True)
+
+    # total_rp_bytes = 0
+    # max_rp_bytes = 0
+
+    # fout = open(self.metadata_dir+self.recomp_log, 'w')
+
+
+    # required_saving = self.required_saving * self.recomp_ratio
+    # logging.debug("Required saving from recomputation is %f MB" % required_saving)
+    # curr_num = 1
+    # # TODO: add a candidate queue to see the new one is a prev of succ of a recomp in queue
+    # candidate_queue = []
+    # chains = []
+    # for sub_recomp_ in sub_recomps_:
+
+    #   logging.debug("Curr number: %d, Total size: %d, metric: %f" % (curr_num, len(sub_recomp_.coll), sub_recomp_.metric))
+    #   s = sub_recomp_.SetInTrigger(tac_f, self, r_peak_time)
+    #   if s == False:
+    #     logging.debug("Can not set in_trigger for %s" % sub_recomp_.name())
+    #   else:
+    #     total_rp_bytes += sub_recomp_.saving_bytes
+    #     if sub_recomp_.saving_bytes > max_rp_bytes:
+    #       max_rp_bytes = sub_recomp_.saving_bytes
+    #     logging.debug("Recomputation bytes: %d MB" % sub_recomp_.saving_bytes)
+    #     logging.debug("Total bytes: %d MB" % sub_recomp_.total_bytes)
+    #     logging.debug("%s: in_trigger info: %s" % (sub_recomp_.name(), str(sub_recomp_.in_trigger)))
+
+    #     for rp in sub_recomp_.coll:
+    #       assert rp.name() not in self.mm_decision.keys()
+    #       self.mm_decision[rp.name()] = 1
+
+
+    #     # NOTE: assert out trigger is one now
+    #     fout.write("%s\t%d\t%d\t%s\t%d\t%d\t" % (sub_recomp_.out_triggers.keys()[0],
+    #                                              sub_recomp_.out_triggers.values()[0][0],
+    #                                              sub_recomp_.out_triggers.values()[0][1],
+    #                                              sub_recomp_.in_trigger[0],
+    #                                              sub_recomp_.in_trigger[1],
+    #                                              sub_recomp_.in_trigger[2]))
+
+    #     for src in sub_recomp_.src_inputs:
+    #       fout.write("%s\t" % src[1])
+
+    #     fout.write("\n")
+
+    #     required_saving -= sub_recomp_.saving_bytes
+
+    #     if required_saving <= 0:
+    #       logging.info("Already choose right tensors from recomputation!")
+    #       break
+
+    #   curr_num += 1
+
+    # fout.close()
+    # if required_saving > 0:
+    #   logging.info("Already choose %d MB" % total_rp_bytes)
+    #   logging.error("No enough tensors")
+    #   exit(1)
+
+    # logging.debug("Total recomputation saving bytes: %d MB" % total_rp_bytes)
+    # logging.debug("Max recomputation saving bytes: %d MB" % max_rp_bytes)
 
 
 
