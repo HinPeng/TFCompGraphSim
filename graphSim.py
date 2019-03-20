@@ -82,8 +82,6 @@ class GraphSim():
     self.peak_memory = 0
     self.mem_usage = []
 
-    self.mem_limit = 6 * (1 << 10)
-    self.required_saving = 0
     self.pcie_bandwidth = 12 * (1 << 10)
 
     self.time_metric = 1000000
@@ -103,7 +101,6 @@ class GraphSim():
     self.swapping_debug = True
     # self.swapping_debug_log = "swapping_debug.log"
 
-
     self.swapin_trigger_distance = 20
 
     self.swap = False
@@ -112,8 +109,9 @@ class GraphSim():
 
     # Ignore the weights tensors when making swapping decision
     self.keys_filter = ["kernel", "beta", "grad", "bias", "batchnorm", "learning_rate", "weight"]
-    self.variables = ['kernel', 'bias', 'read', 'const']
-    self.v_filters = ['biasadd']
+    self.variables = ['kernel', 'bias', 'const', 'read']
+    self.var_exce = ['read']      # which is not a in-memory var
+    self.v_filters = ['biasadd']  # which is not a var
     # 'relu' should prioritize 'conv' as it's node name contains 'conv'
     self.layer_names = ["relu", "conv", "maxpool", "avgpool"]
 
@@ -143,8 +141,19 @@ class GraphSim():
 
     # recomputation info
     self.recomp_colle = recomp_info.ReCompColl()
+
+
+    # self.mem_limit = 6 * (1 << 10)
+    self.mem_limit = 0          # choose AMAP when set to zero
+    self.required_saving = -1   # set by peak_mem-self.mem_limit if mem_limit is not zero
+    
     # the memory saving ratio from recomputation
-    self.recomp_ratio = 1.0
+    # self.recomp_ratio = 1.0
+    self.recomp_ratio = 0.0
+
+    # if true, we play a on-demand swapping or recompute
+    self.recomp_ondemand = False
+    self.swap_ondemand = True
 
 
   def EventsEngine(self):
@@ -553,7 +562,10 @@ class GraphSim():
 
       self.nouse_mem = self.GetUselessMemory()   # Seems that this useless memory is equal model size
 
-      self.required_saving = peak_mem - self.mem_limit
+      if self.mem_limit == 0:
+        self.required_saving = 0
+      else:
+        self.required_saving = peak_mem - self.mem_limit
 
       logging.info("Peak memory usage from tensor access is %f MB" % (peak_mem+self.nouse_mem))
       logging.info("Peak memory usage live tensors number is %d" % len(self.peakmem_util.peakmem_tensors_collec))
@@ -906,6 +918,15 @@ class GraphSim():
 
     return False
 
+  def IsVarExce(self, name):
+    # judge if the name is a var
+    l_name = name.lower()
+    for v in self.var_exce:
+      if v in l_name:
+        return True
+
+    return False
+
 
   def GetRecompSrc(self, recomp, t, c_coll, a_coll):
     """ Get recomputation inputs for t
@@ -921,7 +942,11 @@ class GraphSim():
     for input_ in t.inputs:
       if self.IsVar(input_.name()):
         # logging.debug("Var input: %s" % input_.name())
-        recomp.AddSrc((2, input_.name()))
+        # search upon if meeting a var with 'read'
+        if self.IsVarExce(input_.name()):
+          return self.GetRecompSrc(recomp, input_, c_coll, a_coll)
+        else:
+          recomp.AddSrc((2, input_.name()))
       elif input_ in c_coll:
         # logging.debug("Candidate input: %s" % input_.name())
         recomp.AddSrc((0, input_.name()))
@@ -990,6 +1015,7 @@ class GraphSim():
           logging.debug("Ignore merging two sub_recomp for now!")
           # try merge two sub_recomp
 
+  # deprecated
   def GetChain(self, recomp_coll, chains, candidate):
     # candidate: sub_recomp
     # chains
@@ -1022,38 +1048,24 @@ class GraphSim():
         # tmp_chain.tail = chain.tail
 
 
-
-  # def GetChain(self, already_queue, candidate):
-  #   # check the already_queue if candidate is in src_inputs
-  #   def GetSubrp(name, q):
-  #     for p in q:
-  #       if name == p.name():
-  #         return p
-  #     return None
-
-  #   chain = recomp_info.Chain()
-  #   chain.set_root(candidate)
-  #   for subrp in already_queue:
-  #     src_inputs = [src[1] for src in subrp.src_inputs]
-  #     if candidate.name() in src_inputs:
-  #       # candidate is prev of subrp
-  #       chain.add(subrp)
-
-  #   q_names = [srp.name() for srp in already_queue]
-  #   for input_ in candidate.src_inputs:
-  #     if input_[1] in q_names:
-  #       # input_[1] is prev of candidate
-  #       sub_rp = GetSubrp(input_[1], already_queue)
-  #       # check current root?
-  #       if
-  #       chain.set_root(sub_rp)
-
   def GetOrCreateSubRP(self, sub_recomps, recomp):
     # for sub_recomp in sub_recomps:
     pass
 
+  def CheckAvaiS(self, swapinfo):
+    # rp = self.recomp_colle.collection[swapinfo.tensor_name]
+    t_tensor = self.tensors[swapinfo.tensor_name]
+    for t_name in self.mm_decision.keys():
+      t_ = self.tensors[t_name]
+      if t_tensor not in t_.inputs:
+        continue
 
-  def CheckAvai(self, recomp):
+      if self.mm_decision[t_name] == 1:
+        return False
+
+    return True
+
+  def CheckAvaiR(self, recomp):
     # check recomp tensor's direct inputs
     for t in recomp.tensor.inputs:
       # whether its inputs are swapping or recomputation
@@ -1081,6 +1093,18 @@ class GraphSim():
 
   def InitRecomp(self, tac_f):
     """ tac_f: all tensors which show up more than one """
+
+    if int(self.recomp_ratio) == 0:
+      return
+
+    if self.required_saving == 0:
+      # required saving not set, so we choose candidates AMAP
+      logging.info("Required saving not set, will choose AMAP for recomputation")
+      required_saving = None
+    else:
+      required_saving = self.required_saving * self.recomp_ratio
+      logging.info("Required saving from recomputation is %f" % required_saving)
+
 
     t_colls = dict()
     for swapinfo in tac_f.values():
@@ -1156,13 +1180,15 @@ class GraphSim():
     # candidates = []
 
     r_peak_time = self.peakmem_util.right_peak_time
-    required_saving = self.required_saving * self.recomp_ratio
+    
 
     fout = open(self.metadata_dir+self.recomp_log, 'w')
 
     sub_recomps = []
     # for now only one target at a recomputation
     # already_queue = []
+
+    # control how deep we can recompute from (0 is itself)
     recomp_depth = 2
     left_queue = [recomp_ for recomp_ in recomps_]
     while True:
@@ -1170,13 +1196,17 @@ class GraphSim():
       # if this recomp connect two sub_recomps, we shouldn't choose this one
       # we need to make decision when visiting all sub_recomps
       if len(left_queue) == 0:
+        logging.info("Already choose recomputation AMAP")
         break
 
       succ = [] # sub_recomp is succ of rp
       prev = [] # sub_recomp is prev of rp
       recomp = left_queue.pop()
+
+      if recomp.name() not in self.peakmem_util.peakmem_tensors_collec:
+        continue
       # check if this rp is direct input or output of mm_decision
-      if self.CheckAvai(recomp):
+      if self.CheckAvaiR(recomp):
         pass
       else:
         logging.debug("%s is rejected" % recomp.name())
@@ -1198,6 +1228,7 @@ class GraphSim():
             flag = False
             break
 
+      # 
       logging.debug("%s: prev: %d, succ: %d" % (recomp.name(), len(prev), len(succ)))
       if len(prev) > 1:
         logging.error("%s prev: %d" % (recomp.name(), len(prev)))
@@ -1211,7 +1242,7 @@ class GraphSim():
         logging.debug("%s will connect two recomps, so we ignore this" % (recomp.name()))
         continue
 
-      s = recomp.SetTrigger(tac_f, self, r_peak_time)
+      s = recomp.SetTrigger(tac_f, self, r_peak_time, on_demand=self.recomp_ondemand)
       if s == False:
         logging.debug("Can not set in_trigger for %s" % recomp.name())
         continue
@@ -1238,11 +1269,13 @@ class GraphSim():
       logging.debug("Choose %s, bytes: %d MB, metric: %f" % (recomp.name(), recomp.alloc_bytes, recomp.metric))
       logging.debug("in_trigger info: %s" % str(recomp.in_trigger))
 
-      required_saving -= recomp.alloc_bytes
       self.mm_decision[recomp.name()] = 1
-      if required_saving <= 0:
-        logging.info("Already choose right tensors from recomputation!")
-        break
+      if required_saving != None:
+        required_saving -= recomp.alloc_bytes
+      
+        if required_saving <= 0:
+          logging.info("Already choose right tensors from recomputation!")
+          break
 
     for sub_recomp in sub_recomps:
       for recomp in sub_recomp.coll.values():
@@ -1480,13 +1513,20 @@ class GraphSim():
     # NOTE: use which one to set required saving
     # required_saving = self.peakmem_util.peak_mem - self.mem_limit
 
-    required_saving = self.required_saving * (1-self.recomp_ratio)
-    logging.info("Required saving for swapping is %f MB" % required_saving)
-
-    if required_saving == 0:
+    if int(1-self.recomp_ratio) == 0:
       return
 
+    if self.required_saving == 0:
+      logging.info("Required saving not set, will choose AMAP for swapping")
+      required_saving = None
+    else:
+      required_saving = self.required_saving * (1-self.recomp_ratio)
+      logging.info("Required saving for swapping is %f MB" % required_saving)
+
     fout = open(self.metadata_dir+self.swapping_log, 'w')
+    if fout.closed:
+      logging.error("file not open")
+      exit(1)
 
     # To see the extreme memory we can save
 
@@ -1521,106 +1561,143 @@ class GraphSim():
     logging.debug("Left peak memory time: %d" % l_peak_time)
     logging.debug("Right peak memory time: %d" % r_peak_time)
 
+    total_swap_size = 0
+
     # Init swap out/in time info
     for swapinfo_ in mm_left_queue:
       swapinfo_.InitSwapInfo()
 
-    total_swap_size = 0
-    while True:
-      # res = []
-      if len(mm_left_queue) == 0:
-        # TODO: add debug info
-        break
+    if self.swap_ondemand:
+      logging.info("Swap on-demand!")
       for swapinfo_ in mm_left_queue:
-        # Update swapinfo_ according to current queue
-        # And we need to use this to order the swapinfo_ in mm_left_queue
-        # (swap_free_time, swapout_start_time)
-        # only update temp swap_info
-        self.UpdateSwapTimeInfo(mm_already_queue, swapinfo_)
-        # res.append(self.UpdateSwapTimeInfo(mm_already_queue, swapinfo_))
-      # res.sort()
-      # swapinfo = res[0]
-
-
+        # init swapinfo swap time
+        self.UpdateSwapTimeInfo([], swapinfo_)
       mm_left_queue.sort()
-      # No need to sort mm_already_queue here
-      swapinfo = mm_left_queue[0]
-      # check the swap-out end_time if exceeds the left_peak_time
-      swapout_end_time = swapinfo.swapout_info.end_time
-      if swapout_end_time > l_peak_time:
-        logging.debug("Not enough time for %s swapping out" % swapinfo.tensor_name)
-        logging.debug("Swap-out end time: %d" % swapout_end_time)
-        mm_left_queue.remove(swapinfo)
-        continue
-      # we decide to use this candidate?
-      # here we can get the latest time to start swapping-in
-      # Find appropriate in_trigger tensor
-
-      n_index = swapinfo.GetFirstUseIndexAfterSwap()
-      s_time = swapinfo.swapin_info.start_time
-      # e_time = swapinfo.swapin_info.end_time
-
-      # n_time = swapinfo.GetFirstUseTimeAfterSwap()
-      in_trigger_flag = True
-      in_trigger_index = n_index
+      
       while True:
-        # TODO: check if this in_trigger to early that in peak memory
-        in_trigger_index -= 1
-        if self.tf_tensor_access[in_trigger_index][0] < r_peak_time:
-          logging.debug("Not enough time for %s swapping in" % swapinfo.tensor_name)
-          in_trigger_flag = False
-          break
-          # exit(1)
-        if self.tf_tensor_access[in_trigger_index][0] < s_time:
-          in_trigger_name = self.tf_tensor_access[in_trigger_index][1]
-          # print("[DEBUG] %s in_trigger index distances: %d" % (swapinfo.tensor_name, n_index-in_trigger_index))
+        if len(mm_left_queue) == 0:
+          logging.info("Already choose swapping AMAP")
           break
 
-      if not in_trigger_flag:
+        swapinfo = mm_left_queue.pop()
+        swapout_rc = swapinfo.GetSwapoutRc()
+        swapout_total_rc = len(swapinfo.access_list)
+        in_trigger_name = "fxxxxxxxxxxxxxxxxxxxk"
+        swapin_rc = 0
+        swapin_total_rc = 0
+
+        total_swap_size += swapinfo.allocated_bytes
+        fout.write("%s\t%d\t%d\t%s\t%d\t%d\n" % (swapinfo.tensor_name,
+                                                 swapout_total_rc,
+                                                 swapout_total_rc-swapout_rc,
+                                                 in_trigger_name,
+                                                 swapin_total_rc,
+                                                 swapin_total_rc-swapin_rc))
+
+        if required_saving != None:
+          required_saving -= swapinfo.allocated_bytes
+          if required_saving <= 0:
+            logging.info("Already choose proper swapped out tensors")
+            break
+    else:
+      while True:
+        # res = []
+        if len(mm_left_queue) == 0:
+          # TODO: add debug info
+          logging.debug("Candidate queue is empty!")
+          break
+        for swapinfo_ in mm_left_queue:
+          # Update swapinfo_ according to current queue
+          # And we need to use this to order the swapinfo_ in mm_left_queue
+          # (swap_free_time, swapout_start_time)
+          # only update temp swap_info
+          self.UpdateSwapTimeInfo(mm_already_queue, swapinfo_)
+          # res.append(self.UpdateSwapTimeInfo(mm_already_queue, swapinfo_))
+        # res.sort()
+        # swapinfo = res[0]
+
+
+        mm_left_queue.sort()
+        # No need to sort mm_already_queue here
+        swapinfo = mm_left_queue[0]
+        # check the swap-out end_time if exceeds the left_peak_time
+        swapout_end_time = swapinfo.swapout_info.end_time
+        if swapout_end_time > l_peak_time:
+          logging.debug("Not enough time for %s swapping out" % swapinfo.tensor_name)
+          logging.debug("Swap-out end time: %d" % swapout_end_time)
+          mm_left_queue.remove(swapinfo)
+          continue
+        # we decide to use this candidate?
+        # here we can get the latest time to start swapping-in
+        # Find appropriate in_trigger tensor
+
+        n_index = swapinfo.GetFirstUseIndexAfterSwap()
+        s_time = swapinfo.swapin_info.start_time
+        # e_time = swapinfo.swapin_info.end_time
+
+        # n_time = swapinfo.GetFirstUseTimeAfterSwap()
+        in_trigger_flag = True
+        in_trigger_index = n_index
+        while True:
+          # TODO: check if this in_trigger to early that in peak memory
+          in_trigger_index -= 1
+          if self.tf_tensor_access[in_trigger_index][0] < r_peak_time:
+            logging.debug("Not enough time for %s swapping in" % swapinfo.tensor_name)
+            in_trigger_flag = False
+            break
+            # exit(1)
+          if self.tf_tensor_access[in_trigger_index][0] < s_time:
+            in_trigger_name = self.tf_tensor_access[in_trigger_index][1]
+            # print("[DEBUG] %s in_trigger index distances: %d" % (swapinfo.tensor_name, n_index-in_trigger_index))
+            break
+
+        if not in_trigger_flag:
+          mm_left_queue.remove(swapinfo)
+          continue
+
+        swapout_rc = swapinfo.GetSwapoutRc()
+        swapout_total_rc = len(swapinfo.access_list)
+        swapin_rc = 0
+        swapin_total_rc = 1
+        if in_trigger_name in tac_f.keys():
+          access_indicies = [v for v,_ in tac_f[in_trigger_name].access_list]
+          assert (in_trigger_index in access_indicies)
+          swapin_rc = len(access_indicies) - access_indicies.index(in_trigger_index) - 1
+          swapin_total_rc = len(access_indicies)
+        elif in_trigger_name in self.ngpu_tensor_access.keys():
+          access_indicies = self.ngpu_tensor_access[in_trigger_name]
+          assert (in_trigger_index in access_indicies)
+          swapin_rc = len(access_indicies) - access_indicies.index(in_trigger_index) - 1
+          swapin_total_rc = len(access_indicies)
+        else:
+          pass
+
+
+        # swapinfo.UpdateCurrSwapInfo()
+
+        mm_already_queue.append(swapinfo)
+        for swapinfo_ in mm_already_queue:
+          swapinfo_.UpdateCurrSwapInfo()
         mm_left_queue.remove(swapinfo)
-        continue
 
-      swapout_rc = swapinfo.GetSwapoutRc()
-      swapout_total_rc = len(swapinfo.access_list)
-      swapin_rc = 0
-      swapin_total_rc = 1
-      if in_trigger_name in tac_f.keys():
-        access_indicies = [v for v,_ in tac_f[in_trigger_name].access_list]
-        assert (in_trigger_index in access_indicies)
-        swapin_rc = len(access_indicies) - access_indicies.index(in_trigger_index) - 1
-        swapin_total_rc = len(access_indicies)
-      elif in_trigger_name in self.ngpu_tensor_access.keys():
-        access_indicies = self.ngpu_tensor_access[in_trigger_name]
-        assert (in_trigger_index in access_indicies)
-        swapin_rc = len(access_indicies) - access_indicies.index(in_trigger_index) - 1
-        swapin_total_rc = len(access_indicies)
-      else:
-        pass
+        if required_saving != None:
+          total_swap_size += swapinfo.allocated_bytes
+          required_saving -= swapinfo.allocated_bytes
+          # print("[DEBUG] Max access interval is %d, allocated MB: %f\n" % (swapinfo.max_access_interval, swapinfo.allocated_bytes))
+          if required_saving <= 0:
+            logging.info("Already choose proper swapped out tensors")
+            break
 
+        # logging.debug("choose %s, size: %d, in_trigger: %s" % (swapinfo.tensor_name, swapinfo.allocated_bytes, in_trigger_name))
 
-      # swapinfo.UpdateCurrSwapInfo()
+        fout.write("%s\t%d\t%d\t%s\t%d\t%d\n" % (swapinfo.tensor_name,
+                                                swapout_total_rc,
+                                                swapout_total_rc-swapout_rc,
+                                                in_trigger_name,
+                                                swapin_total_rc,
+                                                swapin_total_rc-swapin_rc))
 
-      mm_already_queue.append(swapinfo)
-      for swapinfo_ in mm_already_queue:
-        swapinfo_.UpdateCurrSwapInfo()
-      mm_left_queue.remove(swapinfo)
-
-      total_swap_size += swapinfo.allocated_bytes
-
-      # logging.debug("choose %s, size: %d, in_trigger: %s" % (swapinfo.tensor_name, swapinfo.allocated_bytes, in_trigger_name))
-
-      fout.write("%s\t%d\t%d\t%s\t%d\t%d\n" % (swapinfo.tensor_name,
-                                               swapout_total_rc,
-                                               swapout_rc,
-                                               in_trigger_name,
-                                               swapin_total_rc,
-                                               swapin_rc))
-
-      required_saving -= swapinfo.allocated_bytes
-      # print("[DEBUG] Max access interval is %d, allocated MB: %f\n" % (swapinfo.max_access_interval, swapinfo.allocated_bytes))
-      if required_saving <= 0:
-        logging.info("Already choose proper swapped out tensors")
-        break
+        
 
     fout.close()
     if required_saving > 0:
