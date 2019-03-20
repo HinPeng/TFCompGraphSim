@@ -1113,6 +1113,10 @@ class GraphSim():
         continue
       if self.IsSize(swapinfo.tensor_name):
         continue
+
+      if swapinfo.tensor_name in self.mm_decision.keys():
+        continue
+        
       t_colls[swapinfo.tensor_name] = tensor
       # logging.debug("%s: %d" % (tensor.name(), tensor.gpu_mem_allocated))
       # logging.debug("%s" % swapinfo.tensor_name)

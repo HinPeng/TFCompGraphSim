@@ -3,7 +3,7 @@ import os
 import logger
 import logging
 
-node2id_filename = "1node2id.txt"
+node2id_filename = "1_node2id.txt"
 recomp_filename = "recompute.log"
 swap_filename = "swapping_decision.log"
 rswap_filename = "r_swap.log"
