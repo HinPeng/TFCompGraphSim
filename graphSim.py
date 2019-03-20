@@ -147,7 +147,7 @@ class GraphSim():
     # the memory saving ratio from recomputation
     self.recomp_ratio = 0.0
 
-
+ 
   def EventsEngine(self):
 
     access_id = 0
@@ -1147,6 +1147,10 @@ class GraphSim():
 
     r_peak_time = self.peakmem_util.right_peak_time
     required_saving = self.required_saving * self.recomp_ratio
+    logging.debug("Required saving for recomputation is %f MB" % required_saving)
+
+    if required_saving == 0:  
+      return
 
     fout = open(self.metadata_dir+self.recomp_log, 'w')
 
@@ -1537,9 +1541,11 @@ class GraphSim():
       swapinfo = mm_left_queue[0]
       # check the swap-out end_time if exceeds the left_peak_time
       swapout_end_time = swapinfo.swapout_info.end_time
+      # if swapout_end_time > l_peak_time:
       if swapout_end_time > l_peak_time:
         logging.debug("Not enough time for %s swapping out" % swapinfo.tensor_name)
-        logging.debug("Swap-out end time: %d" % swapout_end_time)
+        logging.debug("swap-out start time: %d" % swapinfo.swapout_info.start_time)
+        logging.debug("Swap-out end time: %d, swap-in start time: %d" % (swapout_end_time, swapinfo.swapin_info.start_time))
         mm_left_queue.remove(swapinfo)
         continue
       # we decide to use this candidate?
@@ -1600,20 +1606,20 @@ class GraphSim():
 
       # logging.debug("choose %s, size: %d, in_trigger: %s" % (swapinfo.tensor_name, swapinfo.allocated_bytes, in_trigger_name))
 
-      fout.write("%s\t%d\t%d\t%s\t%d\t%d\n" % (swapinfo.tensor_name,
-                                               swapout_total_rc,
-                                               swapout_total_rc - swapout_rc,
-                                               in_trigger_name,
-                                               swapin_total_rc,
-                                               swapin_total_rc - swapin_rc))
-
-      # set in_trigger
       # fout.write("%s\t%d\t%d\t%s\t%d\t%d\n" % (swapinfo.tensor_name,
       #                                          swapout_total_rc,
-      #                                          swapout_total_rc,
+      #                                          swapout_total_rc - swapout_rc,
       #                                          in_trigger_name,
       #                                          swapin_total_rc,
-      #                                          swapin_total_rc))
+      #                                          swapin_total_rc - swapin_rc))
+
+      # set in_trigger
+      fout.write("%s\t%d\t%d\t%s\t%d\t%d\n" % (swapinfo.tensor_name,
+                                               swapout_total_rc,
+                                               swapout_total_rc,
+                                               in_trigger_name,
+                                               0,
+                                               0))
 
 
       required_saving -= swapinfo.allocated_bytes
