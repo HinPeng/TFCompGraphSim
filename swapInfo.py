@@ -233,14 +233,15 @@ class PeakMemory():
 
       #logging.debug("%s: %d, %d" % (meminfo.tensor_name, meminfo.allocated_bytes, meminfo.time))
 
-      if meminfo.IsDeallocate() and meminfo.tensor_name in self.peakmem_tensors_collec:
+      if meminfo.IsDeallocate():
         self.curr_deallocate_.append(meminfo.tensor_name)
         # logging.debug("%s is in current deallocation" % meminfo.tensor_name)
-
+      else:
+        self.peakmem_tensors_collec.append(meminfo.tensor_name)
+      
       if total_mem > peak_mem:
         assert (meminfo.IsDeallocate() == False)
-        peak_mem = total_mem
-        self.peakmem_tensors_collec.append(meminfo.tensor_name)
+        peak_mem = total_mem  
         # logging.debug("%s enter into peakmem collection" % meminfo.tensor_name)
         # remove the tensor which has been deallocated as it's not
         # at peak memory usage
