@@ -215,9 +215,9 @@ class PeakMemory():
 
       self.meminfos.put(meminfo_a)
       self.meminfos.put(meminfo_d)
-      # logging.debug("%s: %d, %d" % (swapinfo.tensor_name,
-      #                               swapinfo.allocated_time,
-      #                               swapinfo.deallocate_time))
+      logging.debug("%s: %d, %d" % (swapinfo.tensor_name,
+                                    swapinfo.allocated_time,
+                                    swapinfo.deallocate_time))
       self.meminfos_dict[swapinfo.tensor_name] = (swapinfo.allocated_time, swapinfo.deallocate_time)
       
 
@@ -226,20 +226,25 @@ class PeakMemory():
   def GetPeakMemory(self):
     peak_mem = 0
     total_mem = 0
+    tmp_ = []
     while not self.meminfos.empty():
       meminfo = self.meminfos.get()
       total_mem += meminfo.allocated_bytes
 
-      # logging.debug("%s: %d" % (meminfo.tensor_name, meminfo.allocated_bytes))
-
+      logging.debug("%s: %d" % (meminfo.tensor_name, meminfo.allocated_bytes))
+      
+      
       if meminfo.IsDeallocate():
         self.curr_deallocate_.append(meminfo.tensor_name)
+      else:
+        tmp_.append(meminfo.tensor_name)
         # logging.debug("%s is in current deallocation" % meminfo.tensor_name)
 
       if total_mem > peak_mem:
         assert (meminfo.IsDeallocate() == False)
         peak_mem = total_mem
-        self.peakmem_tensors_collec.append(meminfo.tensor_name)
+        self.peakmem_tensors_collec += tmp_
+        del tmp_[:]
         # logging.debug("%s enter into peakmem collection" % meminfo.tensor_name)
         # remove the tensor which has been deallocated as it's not
         # at peak memory usage

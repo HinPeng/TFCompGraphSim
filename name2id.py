@@ -9,8 +9,11 @@ swap_filename = "swapping_decision.log"
 rswap_filename = "r_swap.log"
 rrecomp_filename = "r_recompute.log"
 
+tensor_access = "tensor_access.txt"
+rtensor_access = "rtensor_access.txt"
 
 node2id = dict()
+id2node = dict()
 
 def tensorname2id(name):
   # NOTE: assert slot is less than 10
@@ -23,7 +26,11 @@ def tensorname2id(name):
   id_name = str(node2id[node_name]) + ':' + slot
   return id_name
 
-  
+def id2tensorname(t_id):
+  n_id = t_id.split(':')[0]
+  slot = t_id.split(':')[1]
+  node_name = id2node[int(n_id)]
+  return (node_name+'_'+slot)
 
 def NodeToId(metadir):
   rp_trans = False
@@ -42,76 +49,90 @@ def NodeToId(metadir):
       node_id = int(tmp[1])
       assert node_name not in node2id.keys()
       node2id[node_name] = node_id
+      id2node[node_id] = node_name
 
+  fout_tac = open(metadir+rtensor_access, 'w')
+  with open(metadir+tensor_access) as fin:
+    for line in fin:
+      tmp = line.split()
+      assert len(tmp) == 2
+      t_ = tmp[0]
+      t_name = id2tensorname(t_)
+      fout_tac.write("%s\t%s\n" % (t_name, tmp[1]))
+
+  fout_tac.close()
+      
+      
   
   # for checking
-  t_ids = []
-  i_ids = []
+  # t_ids = []
+  # i_ids = []
 
-  if sp_trans:
-    fout_s = open(metadir+rswap_filename, 'w')
-    with open(metadir+swap_filename) as fin:
-      for line in fin:
-        tmp = line.split()
-        assert len(tmp) == 6
-        t_idname = tensorname2id(tmp[0])
-        in_tri_idname = tensorname2id(tmp[3])
+  # if sp_trans:
+  #   fout_s = open(metadir+rswap_filename, 'w')
+  #   with open(metadir+swap_filename) as fin:
+  #     for line in fin:
+  #       tmp = line.split()
+  #       assert len(tmp) == 6
+  #       t_idname = tensorname2id(tmp[0])
+  #       in_tri_idname = tensorname2id(tmp[3])
 
-        fout_s.write("%s\t%s\t%s\t%s\t%s\t%s\n" % (t_idname,
-                                                  tmp[1],
-                                                  tmp[2],
-                                                  in_tri_idname,
-                                                  tmp[4],
-                                                  tmp[5]))
-      fout_s.close()
+  #       fout_s.write("%s\t%s\t%s\t%s\t%s\t%s\n" % (t_idname,
+  #                                                 tmp[1],
+  #                                                 tmp[2],
+  #                                                 in_tri_idname,
+  #                                                 tmp[4],
+  #                                                 tmp[5]))
+  #     fout_s.close()
 
-  if rp_trans:
-    fout_r = open(metadir+rrecomp_filename, 'w')
-    with open(metadir+recomp_filename) as fin:
-      for line in fin:
-        tmp = line.split()
-        # index: 0, 3, 6-
-        assert len(tmp) >= 6
-        t_idname = tensorname2id(tmp[0])
-        in_tri_idname = tensorname2id(tmp[3])
+  # if rp_trans:
+  #   fout_r = open(metadir+rrecomp_filename, 'w')
+  #   with open(metadir+recomp_filename) as fin:
+  #     for line in fin:
+  #       tmp = line.split()
+  #       # index: 0, 3, 6-
+  #       assert len(tmp) >= 6
+  #       t_idname = tensorname2id(tmp[0])
+  #       in_tri_idname = tensorname2id(tmp[3])
 
-        # for check
-        t_id = int(t_idname[:-2])
-        # px: not accurate yet, just an indication
-        for t_id_ in t_ids:
-          if abs(t_id-t_id_) == 1:
-            logging.info("Continuous number: %d, %d" % (t_id, t_id_))
-            continue
-            # break
-            # exit(1)
-        t_ids.append(int(t_idname[:-2]))
+  #       # for check
+  #       t_id = int(t_idname[:-2])
+  #       # px: not accurate yet, just an indication
+  #       for t_id_ in t_ids:
+  #         if abs(t_id-t_id_) == 1:
+  #           logging.info("Continuous number: %d, %d" % (t_id, t_id_))
+  #           continue
+  #           # break
+  #           # exit(1)
+  #       t_ids.append(int(t_idname[:-2]))
 
-        fout_r.write("%s\t%s\t%s\t%s\t%s\t%s\t" % (t_idname,
-                                                  tmp[1],
-                                                  tmp[2],
-                                                  in_tri_idname,
-                                                  tmp[4],
-                                                  tmp[5]))
-        for i in range(6, len(tmp)):
-          fout_r.write("%s\t" % tensorname2id(tmp[i]))
-          i_id = int(tensorname2id(tmp[i])[:-2])
-          if i_id not in i_ids:
-            i_ids.append(i_id)
-        fout_r.write("\n")
+  #       fout_r.write("%s\t%s\t%s\t%s\t%s\t%s\t" % (t_idname,
+  #                                                 tmp[1],
+  #                                                 tmp[2],
+  #                                                 in_tri_idname,
+  #                                                 tmp[4],
+  #                                                 tmp[5]))
+  #       for i in range(6, len(tmp)):
+  #         fout_r.write("%s\t" % tensorname2id(tmp[i]))
+  #         i_id = int(tensorname2id(tmp[i])[:-2])
+  #         if i_id not in i_ids:
+  #           i_ids.append(i_id)
+  #       fout_r.write("\n")
 
-    fout_r.close()
+  #   fout_r.close()
 
-  inters = list(set(t_ids).intersection(set(i_ids)))
-  if len(inters) != 0:
-    print("error!\n")
-    for i in inters:
-      print(i)
+  # inters = list(set(t_ids).intersection(set(i_ids)))
+  # if len(inters) != 0:
+  #   print("error!\n")
+  #   for i in inters:
+  #     print(i)
     
 
 if __name__ == "__main__":
   # pass
   metadir = "./vgg16_226_p100/"
   # metadir = "./inception3_160_p100/"
+  # metadir = "./resnet50_190_p100/"
   NodeToId(metadir)
       
 

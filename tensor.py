@@ -12,7 +12,7 @@ class Tensor():
     self.allocator_name = allocator_name
     self.requested_bytes = requested_bytes
     self.allocated_bytes = allocated_bytes
-    self.allocated_time = 0
+    self.allocated_time = 0  # init by node start_time
 
     # to calculate peak memory usage
     # current reference count according to nodes' fanin_tensors (at nodes' start)

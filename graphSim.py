@@ -431,6 +431,97 @@ class GraphSim():
     self.peak_memory = peak_mem
     logging.info("Peak memory is %f MB" % peak_mem)
 
+  def SimTensorAccess(self):
+    nodes_seq = sorted(self.nodes.values(), key=lambda x: x.start_time, reverse=True)
+    tacs = []
+    while True:
+      if len(nodes_seq) == 0:
+        break
+
+      node = nodes_seq.pop()
+      for fanin_tensor in node.fanin_tensors:
+        tacs.append((fanin_tensor.name(), node.start_time))
+
+    # for tac in tacs:
+    #   logging.debug("%s: %d" % (tac[0], tac[1]))
+    return tacs
+
+  def access_analysisV1(self):
+    tacs = self.SimTensorAccess()
+    tac = dict()
+    line_num = -1
+
+    min_abs_time = min([t.allocated_time for t in self.tensors.values()])
+    
+    for tac_ in tacs:
+      line_num += 1
+
+      tensor_name = tac_[0]
+      access_time = tac_[1]
+
+      self.tf_tensor_access.append((access_time, tensor_name))
+      if not self.tensors.__contains__(tensor_name):
+        logging.error("This error should not appear here: %s" % tensor_name)
+        exit(1)
+
+      if self.tensors[tensor_name].allocator_name != "GPU_0_bfc":
+        if not self.ngpu_tensor_access.__contains__(tensor_name):
+          self.ngpu_tensor_access[tensor_name] = []
+        self.ngpu_tensor_access[tensor_name].append(line_num)
+      else:
+        if not tac.__contains__(tensor_name):
+          if self.swap_time:
+            allocated_time = self.tensors[tensor_name].allocated_time
+            try:
+              assert allocated_time >= min_abs_time
+            except AssertionError:
+              logging.error("This error should not appear here: %s" % tensor_name)
+              exit(1)
+
+            allocated_time -= min_abs_time
+            allocated_bytes = self.tensors[tensor_name].allocated_bytes
+            tac[tensor_name] = swapInfo.SwapInfo(tensor_name,
+                                                 allocated_time=allocated_time,
+                                                 allocated_bytes=allocated_bytes)
+          else:
+            tac[tensor_name] = []
+        if self.swap_time:
+          tac[tensor_name].access_list.append((line_num, access_time))
+        else:
+          tac[tensor_name].append(line_num)
+
+    for swapinfo in tac.values():
+      if len(swapinfo.access_list) > 1:
+        swapinfo.access_list.sort(key=lambda x: x[1])
+        swapinfo.DeallocateTime()
+        self.GetMaxAccessInterval(swapinfo)
+
+    if self.draw_access:
+      self.GetAccessInterval(tac)
+
+    if self.swap_time:
+      self.mm_candidates = {k:v for k,v in tac.items() if len(v.access_list) > 1}
+      self.peakmem_util.InitFromSwapInfo(self.mm_candidates.values())
+      peak_mem = self.peakmem_util.GetPeakMemory()
+
+      self.nouse_mem = self.GetUselessMemory()
+
+      if self.mem_limit == 0:
+        self.required_saving = 0
+      else:
+        self.required_saving = peak_mem - self.mem_limit
+
+      logging.info("Peak memory usage from tensor access is %f MB" % (peak_mem+self.nouse_mem))
+      logging.info("Peak memory usage live tensors number is %d" % len(self.peakmem_util.peakmem_tensors_collec))
+
+      self.GetMaxSavingMemory()
+      self.InitRecomp(self.mm_candidates)
+      self.swapping_decisionTime(self.mm_candidates)
+    else:
+      tac_f = {k:v for k,v in tac.items() if len(v) > 1}
+      self.FilterCandidates(tac_f)
+      self.swapping_decision(tac_f)
+
 
   # Analysis
   def access_analysis(self, tensor_access):
@@ -442,8 +533,10 @@ class GraphSim():
       # this access info is already sorted by timestamp
       with open(self.metadata_dir+"tensor_access.txt") as fin:
         line_num = -1
-        min_abs_time = -1
-        max_access_time = -1
+        allocated_times = [t.allocated_time for t in self.tensors.values()]
+        min_abs_time = min(allocated_times)
+        max_ac_time = -1
+        logging.debug("Min abs time: %d" % min_abs_time)
         for line in fin:
           # ignore line start with '#'
           if line[0] == '#':
@@ -460,23 +553,31 @@ class GraphSim():
           # access_time = int(line.split()[1])
           line_num += 1
           # shift to reletive time
-          if line_num == 0:
-            min_abs_time = self.tensors[tensor_name].allocated_time
-            try:
-              assert access_time > min_abs_time
-            except AssertionError:
-              logging.error("%d v.s %d" % (min_abs_time, access_time))
-              exit(1)
-            access_time -= min_abs_time
-          else:
-            assert access_time >= min_abs_time
-            access_time -= min_abs_time
+          # if line_num == 0:
+          #   min_abs_time = self.tensors[tensor_name].allocated_time
+          #   try:
+          #     assert access_time > min_abs_time
+          #   except AssertionError:
+          #     logging.error("%d v.s %d" % (min_abs_time, access_time))
+          #     exit(1)
+          #   access_time -= min_abs_time
+          # else:
+          #   assert access_time >= min_abs_time
+          #   access_time -= min_abs_time
 
-          if access_time > max_access_time:
-            max_access_time = access_time
+          try:
+            assert access_time > min_abs_time
+          except AssertionError:
+            logging.error("Error access time for %s: %d" % (tensor_name, access_time))
+            exit(1)
+          
+          access_time -= min_abs_time
+
+          if access_time > max_ac_time:
+            max_ac_time = access_time
 
           self.tf_tensor_access.append((access_time, tensor_name))
-          # logging.debug("%s access time: %d" % (tensor_name, access_time))
+          logging.debug("%s access time: %d" % (tensor_name, access_time))
           if not self.tensors.__contains__(tensor_name):
             logging.debug("tf tensor not found in simulator: %s" % tensor_name)
             if not self.ngpu_tensor_access.__contains__(tensor_name):
@@ -498,7 +599,12 @@ class GraphSim():
                   except AssertionError:
                     logging.error("Tensor name: %s" % tensor_name)
                     logging.error("Allocation time: %d, min_ac_time: %d" % (allocated_time, min_abs_time))
-                    exit(1)
+                    tmp = min_abs_time - allocated_time
+                    self.tf_tensor_access = [(x+tmp, y) for x,y in self.tf_tensor_access]
+                    for tensor_name in tac.keys():
+                      tac[tensor_name].allocated_time += tmp
+                    min_abs_time = allocated_time
+                    # exit(1)
 
                   allocated_time -= min_abs_time
                   allocated_bytes = self.tensors[tensor_name].allocated_bytes
@@ -512,7 +618,9 @@ class GraphSim():
               else:
                 tac[tensor_name].append(line_num)
 
-        logging.info("Max access time from tf tensor access is %f s" % (max_access_time/1e6))
+        logging.info("Max access time: %d" % max_ac_time)
+        
+
 
     else:
       # tensor_accesses = [tensor for _, tensor in tensor_access]
@@ -2508,6 +2616,7 @@ if __name__ == '__main__':
   graph_sim.InitNodesFanout()
   graph_sim.InitNodesFanin()
   graph_sim.InitTensorSize()
+  graph_sim.SimTensorAccess()
   # graph_sim.DrawNodeExecTime()
   graph_sim.InitReComputationInfo()
 
@@ -2533,6 +2642,7 @@ if __name__ == '__main__':
   graph_sim.GetPeakMemory()
 
   if not graph_sim.swapping_test:
-    graph_sim.access_analysis(graph_sim.tensor_access)
+    graph_sim.access_analysisV1()
+    # graph_sim.access_analysis(graph_sim.tensor_access)
     # graph_sim.InitSwappingDecision()
     # graph_sim.CheckSwappingDecision()
