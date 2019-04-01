@@ -4,7 +4,8 @@ class Node():
   def __init__(self,
                node_name,
                start_time=0,
-               end_time=0):
+               end_time=0,
+               gpu_time=False):
     self.node_name = node_name
 
     # Can be delayed due to other operation. such as swap in
@@ -36,6 +37,8 @@ class Node():
     self.gpu_mem_requested = 0
 
     self.access_id = 0
+
+    self.gpu_time = gpu_time # mark the nodetime init by gpu_0 or gpu_0_stream_all
 
   def __cmp__(self, other):
     if self.pending_count == other.pending_count:

@@ -606,6 +606,9 @@ class ReComp():
   def name(self):
     return self.tensor.name()
 
+  def nodename(self):
+    return self.tensor.node_name
+
   def IsPrev(self, rp):
     if rp in self.prev:
       return True

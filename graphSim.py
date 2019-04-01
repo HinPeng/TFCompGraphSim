@@ -48,7 +48,8 @@ class GraphSim():
     self.metadata_dir = "./vgg16_226_p100/"
     # self.metadata_dir = "./resnet50_190_p100/"
 
-    self.nodeInfo_filename = "gpu_0_nodetime.txt"  # Initiate node execution time
+    self.CpuNodeInfo_filename = "gpu_0_nodetime.txt"  # Initiate node execution time
+    self.GpuNodeInfo_filename = "gpu_0_stream_all_nodetime.txt"  # Initiate node execution time
     # self.nodeCon_filename = "1.log"
 
     self.tensorsize_filename = "gpu_0_outputs.txt"  # Initiate the requested bytes and allocated bytes of a tensor
@@ -143,17 +144,21 @@ class GraphSim():
     self.recomp_colle = recomp_info.ReCompColl()
 
 
-    # self.mem_limit = 6 * (1 << 10)
-    self.mem_limit = 0          # choose AMAP when set to zero
+    self.mem_limit = 6 * (1 << 10)
+    # self.mem_limit = 0          # choose AMAP when set to zero
     self.required_saving = -1   # set by peak_mem-self.mem_limit if mem_limit is not zero
-    
+
     # the memory saving ratio from recomputation
-    # self.recomp_ratio = 1.0
-    self.recomp_ratio = 0.0
+    self.recomp_ratio = 1.0
+    # self.recomp_ratio = 0.0
 
     # if true, we play a on-demand swapping or recompute
     self.recomp_ondemand = False
     self.swap_ondemand = True
+
+    # record the recomp which can get access interval as the input time 
+    # or itself is not gpu time
+    self.invalid_recomp = []
 
 
   def EventsEngine(self):
@@ -439,6 +444,10 @@ class GraphSim():
         break
 
       node = nodes_seq.pop()
+
+      if not node.gpu_time:
+        logging.debug("%s is not gpu time, ignore it" % node.node_name)
+        continue
       for fanin_tensor in node.fanin_tensors:
         tacs.append((fanin_tensor.name(), node.start_time))
 
@@ -452,7 +461,7 @@ class GraphSim():
     line_num = -1
 
     min_abs_time = min([t.allocated_time for t in self.tensors.values()])
-    
+
     for tac_ in tacs:
       line_num += 1
 
@@ -570,7 +579,7 @@ class GraphSim():
           except AssertionError:
             logging.error("Error access time for %s: %d" % (tensor_name, access_time))
             exit(1)
-          
+
           access_time -= min_abs_time
 
           if access_time > max_ac_time:
@@ -619,7 +628,7 @@ class GraphSim():
                 tac[tensor_name].append(line_num)
 
         logging.info("Max access time: %d" % max_ac_time)
-        
+
 
 
     else:
@@ -1078,20 +1087,56 @@ class GraphSim():
 
   # Calculate eva_time of each rp
   def EvaluateRP(self, recomp, tac_f):
+    def rp_src_cmp(x, y):
+      if x[1][0] == y[1][0]:
+        if x[1][1] == y[1][1]:
+          return 0
+        elif x[1][1] > y[1][1]:
+          return 1
+        else:
+          return -1
+      elif x[1][0] < y[1][0]:
+        return 1
+      else:
+        return -1
+
+
     t_name = recomp.name()
     i_name = None
     # recomp.srcs.sort(key=lambda x: x[0])
+    tmp = dict()
     for num, name in recomp.srcs:
-      if num == 0:
-        i_name = name
-        break
-      elif num == 1:
-        i_name = name
-        break
-      elif num == 2:
-        logging.debug("only var input")
+      node_name = name[:-2]
+      assert not tmp.__contains__(name)
+      if self.nodes[node_name].gpu_time:
+        tmp[name] = (1, num)
+        # i_name = name
+        # break
       else:
-        logging.debug("only root input")
+        tmp[name] = (0, num)
+      # if num == 0:
+      #   i_name = name
+      #   break
+      # elif num == 1:
+      #   i_name = name
+      #   break
+      # elif num == 2:
+      #   logging.debug("only var input")
+      # else:
+      #   logging.debug("only root input")
+
+    ttmp = sorted(tmp.items(), rp_src_cmp)#, reverse=True)
+    k = ttmp[0][0]
+    v = ttmp[0][1]
+
+    if v[0] != 1:
+      logging.warning("Can not get a input name with gpu time: %s" % recomp.name())
+      return -1
+      # for k,v in ttmp:
+      #   logging.debug("%s: %s" % (k, str(v)))
+    else:
+      logging.debug("Chosse %s: %s for %s" % (k,str(v),recomp.name()))
+      i_name = k
 
     t_ac = tac_f[t_name].access_list
     if i_name == None:
@@ -1196,8 +1241,8 @@ class GraphSim():
           continue
 
     return True
-    
-      
+
+
 
   def InitRecomp(self, tac_f):
     """ tac_f: all tensors which show up more than one """
@@ -1224,7 +1269,7 @@ class GraphSim():
 
       if swapinfo.tensor_name in self.mm_decision.keys():
         continue
-        
+
       t_colls[swapinfo.tensor_name] = tensor
       # logging.debug("%s: %d" % (tensor.name(), tensor.gpu_mem_allocated))
       # logging.debug("%s" % swapinfo.tensor_name)
@@ -1240,6 +1285,10 @@ class GraphSim():
       acc_time = swapinfo.GetFirstUseTimeAfterSwap()
       acc_index = swapinfo.GetFirstUseIndexAfterSwap()
       recomp = recomp_info.ReComp(v, (acc_index, acc_time))
+      # if not self.nodes[v.node_name].gpu_time:
+      #   # remove the target tensor without gpu time
+      #   logging.warning("%s is not gpu time" % k)
+      #   continue
       recomps[k] = recomp
 
     # Assert single chain now?
@@ -1279,9 +1328,15 @@ class GraphSim():
       # logging.debug("%s: recomp bytes: %d MB" % (recomp_.name(), recomp_.recomp_bytes))
       if self.recomp_colle.IsRoot(recomp_):
         continue
-      self.EvaluateRP(recomp_, tac_f)
-    # recomps_ = sorted(recomps.values(), key=lambda x: x.alloc_bytes, reverse=True)
+      s = self.EvaluateRP(recomp_, tac_f)
+      if s == -1:
+        logging.debug("Can not evaluate recomp: %s" % recomp_.name())
+        self.invalid_recomp.append(recomp_.name())
+    # recomps_ = sorted(recomps.values(), key=lambda x: x.alloc_bytes)
     # not reverse here due to the following pop() operation
+    for inv_rp in self.invalid_recomp:
+      logging.debug("Remove %s" % inv_rp)
+      del recomps[inv_rp]
     recomps_ = sorted(recomps.values(), key=lambda x: x.metric)
     # for recomp_ in recomps_:
     #   if recomp_colle.IsRoot(recomp_):
@@ -1292,7 +1347,7 @@ class GraphSim():
     # candidates = []
 
     r_peak_time = self.peakmem_util.right_peak_time
-    
+
 
     fout = open(self.metadata_dir+self.recomp_log, 'w')
 
@@ -1340,7 +1395,7 @@ class GraphSim():
             flag = False
             break
 
-      # 
+      #
       logging.debug("%s: prev: %d, succ: %d" % (recomp.name(), len(prev), len(succ)))
       if len(prev) > 1:
         logging.error("%s prev: %d" % (recomp.name(), len(prev)))
@@ -1384,7 +1439,7 @@ class GraphSim():
       self.mm_decision[recomp.name()] = 1
       if required_saving != None:
         required_saving -= recomp.alloc_bytes
-      
+
         if required_saving <= 0:
           logging.info("Already choose right tensors from recomputation!")
           break
@@ -1685,7 +1740,7 @@ class GraphSim():
         # init swapinfo swap time
         self.UpdateSwapTimeInfo([], swapinfo_)
       mm_left_queue.sort()
-      
+
       while True:
         if len(mm_left_queue) == 0:
           logging.info("Already choose swapping AMAP")
@@ -1809,7 +1864,7 @@ class GraphSim():
                                                 swapin_total_rc,
                                                 swapin_total_rc-swapin_rc))
 
-        
+
 
     fout.close()
     if required_saving > 0:
@@ -2118,12 +2173,21 @@ class GraphSim():
         self.swapped_tensors[k] = v
 
   def InitNodesExecutionTime(self):
-    with open(self.metadata_dir+self.nodeInfo_filename) as fin:
+    with open(self.metadata_dir+self.GpuNodeInfo_filename) as fin:
       for line in fin:
         tmp = line.split()
         assert (len(tmp) == 3)
         node_name = tmp[0]
-        node = Node(tmp[0], int(tmp[1]), int(tmp[2]))
+        node = Node(tmp[0], int(tmp[1]), int(tmp[2]), gpu_time=True)
+        assert (not self.nodes.__contains__(node_name))
+        self.nodes[node_name] = node
+
+    with open(self.metadata_dir+self.CpuNodeInfo_filename) as fin:
+      for line in fin:
+        tmp = line.split()
+        assert (len(tmp) == 3)
+        node_name = tmp[0]
+        node = Node(tmp[0], int(tmp[1]), int(tmp[2]), gpu_time=False)
         assert (not self.nodes.__contains__(node_name))
         self.nodes[node_name] = node
 
@@ -2616,7 +2680,7 @@ if __name__ == '__main__':
   graph_sim.InitNodesFanout()
   graph_sim.InitNodesFanin()
   graph_sim.InitTensorSize()
-  graph_sim.SimTensorAccess()
+  # graph_sim.SimTensorAccess()
   # graph_sim.DrawNodeExecTime()
   graph_sim.InitReComputationInfo()
 
