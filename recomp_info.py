@@ -631,6 +631,11 @@ class ReComp():
     return flag
 
   def SetTrigger(self, tac, graphsim, r_peak_time, on_demand=False):
+    swapinfo = tac[self.name()]
+    swapout_rc = swapinfo.GetSwapoutRc()
+    swapout_total_rc = len(swapinfo.access_list)
+    self.out_trigger = (swapout_total_rc, swapout_total_rc-swapout_rc)
+
     if on_demand:
       self.in_trigger = ("fxxxxxxxxxxxxk", 0, 0)
       return True
@@ -649,11 +654,6 @@ class ReComp():
       if d_time > self.eva_time * recomp_ratio:
         in_trigger_name = graphsim.tf_tensor_access[in_trigger_index][1]
         break
-
-    swapinfo = tac[self.name()]
-    swapout_rc = swapinfo.GetSwapoutRc()
-    swapout_total_rc = len(swapinfo.access_list)
-    self.out_trigger = (swapout_total_rc, swapout_total_rc-swapout_rc)
 
     swapin_rc = 0
     swapin_total_rc = 1

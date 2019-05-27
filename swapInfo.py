@@ -215,9 +215,9 @@ class PeakMemory():
 
       self.meminfos.put(meminfo_a)
       self.meminfos.put(meminfo_d)
-      logging.debug("%s: %d, %d" % (swapinfo.tensor_name,
-                                    swapinfo.allocated_time,
-                                    swapinfo.deallocate_time))
+      # logging.debug("%s: %d, %d" % (swapinfo.tensor_name,
+      #                               swapinfo.allocated_time,
+      #                               swapinfo.deallocate_time))
       self.meminfos_dict[swapinfo.tensor_name] = (swapinfo.allocated_time, swapinfo.deallocate_time)
       
 
@@ -231,7 +231,7 @@ class PeakMemory():
       meminfo = self.meminfos.get()
       total_mem += meminfo.allocated_bytes
 
-      logging.debug("%s: %d" % (meminfo.tensor_name, meminfo.allocated_bytes))
+      # logging.debug("%s: %d" % (meminfo.tensor_name, meminfo.allocated_bytes))
       
       
       if meminfo.IsDeallocate():

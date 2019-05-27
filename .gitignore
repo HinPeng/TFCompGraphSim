@@ -10,3 +10,5 @@
 *.pdf
 
 **/swap_policy.txt
+
+*.sh

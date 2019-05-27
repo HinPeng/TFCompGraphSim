@@ -43,7 +43,7 @@ class Tensor():
 
 
   def name(self):
-    return self.node_name+'_'+str(self.tid)
+    return self.node_name+':'+str(self.tid)
 
   def MemAllocated(self):
     if self.allocator_name == "GPU_0_bfc":
