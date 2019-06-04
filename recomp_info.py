@@ -766,6 +766,9 @@ class ReComp():
 
   def IsRoot(self):
     self.srcs.sort(key=lambda x: x[0])
+    if len(self.srcs) == 0:
+      logging.info("%s has no inputs" % self.name())
+      return True
     # Only var or root input
     if self.srcs[0][0] >= 2:
       return True

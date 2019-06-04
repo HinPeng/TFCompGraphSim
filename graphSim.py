@@ -115,7 +115,7 @@ class GraphSim():
     # Ignore the weights tensors when making swapping decision
     self.keys_filter = ["kernel", "beta", "grad", "bias", "batchnorm", "learning_rate", "weight"]
     self.variables = ['kernel', 'bias', 'const', 'read']
-    self.var_exce = ['read']      # which is not a in-memory var
+    self.var_exce = ['shape', 'perm', 'axis']      # which is not a in-memory var
     self.v_filters = ['biasadd']  # which is not a var
     # 'relu' should prioritize 'conv' as it's node name contains 'conv'
     self.layer_names = ["relu", "conv", "maxpool", "avgpool"]
@@ -155,8 +155,8 @@ class GraphSim():
     self.required_saving = -1   # set by peak_mem-self.mem_limit if mem_limit is not zero
 
     # the memory saving ratio from recomputation
-    # self.recomp_ratio = 1.0
-    self.recomp_ratio = 0.0
+    self.recomp_ratio = 1.0
+    # self.recomp_ratio = 0.0
 
     # if true, we play a on-demand swapping or recompute
     self.recomp_ondemand = True
@@ -1076,6 +1076,9 @@ class GraphSim():
     """
     if len(t.inputs) == 0:
       # logging.debug("Root input: %s" % t.name())
+      # TODO: some tensors here cannot be found
+      if self.IsVarExce(t.name()):
+        return      
       recomp.AddSrc((3, t.name()))
       # return None
     for input_ in t.inputs:
