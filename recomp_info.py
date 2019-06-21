@@ -33,7 +33,7 @@ recomp_ratio = 0.8
 
 
 # For two use
-# 1. recomps in sub_recomp will only recompute root_, the other can be recomputed by other recomp is this sub_recomp
+# 1. recomps in sub_recomp will only recompute root_, the other can be recomputed root_ is this sub_recomp
 # 2. recomps in sub_recomp will all be recomputed, so we need to set right inputs for each recomp (Current)
 class SubReComp():
   def __init__(self, recomp):
@@ -497,6 +497,7 @@ class ReCompColl():
 
   def InitRPConnection(self):
     curr_queue = []
+    logging.info("Add self.root_: %s" % self.root_.name())
     curr_queue.append(self.root_)
     left_queue = [i for i in self.collection.values()]
     left_queue.remove(self.root_)
@@ -581,6 +582,8 @@ class ReComp():
 
     # the inputs can be changed due to other recomps been chosen
     self.inputs = []
+    # which op needs to be recomputed at this inputs
+    self.ops = []
 
     # 0: not set yet
     # 1. been set already
