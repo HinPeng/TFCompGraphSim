@@ -444,7 +444,8 @@ class SubReComp():
 class ReCompColl():
   def __init__(self):
     # root swapinfo where other tensors can be computed from
-    self.root_ = None
+    # self.root_ = None # only record one root
+    self.root_ = [] # record multi root
     self.collection = dict() # ReComp collection
     # store sub re-computation info
     self.sub_rp = []
@@ -457,10 +458,12 @@ class ReCompColl():
     return self.root_
 
   def IsRoot(self, recomp):
-    return recomp == self.GetRoot()
+    # return recomp == self.GetRoot()
+    return recomp in self.GetRoot()
 
   def SetRoot(self, new_root):
-    self.root_ = new_root
+    # self.root_ = new_root
+    self.root_.append(new_root)
 
 
   def IsInColl(self, tensor):
@@ -497,11 +500,16 @@ class ReCompColl():
 
   def InitRPConnection(self):
     curr_queue = []
-    curr_queue.append(self.root_)
+    logging.info("Add self.root_: %s" % self.root_.name())
+    # curr_queue.append(self.root_)
+    curr_queue += self.root_
     left_queue = [i for i in self.collection.values()]
-    left_queue.remove(self.root_)
+    for root in self.root_:
+      root.rank=0
+      left_queue.remove(root)
+    # left_queue.remove(self.root_)
     # logging.debug("Start from %s" % self.root_.name())
-    self.root_.rank = 0
+    # self.root_.rank = 0
     # traverse from root_ to set each rp's rank
     while len(curr_queue) > 0:
       t_recomp = curr_queue.pop()
@@ -581,6 +589,8 @@ class ReComp():
 
     # the inputs can be changed due to other recomps been chosen
     self.inputs = []
+    # which op needs to be recomputed at this inputs
+    self.ops = []
 
     # 0: not set yet
     # 1. been set already

@@ -149,13 +149,13 @@ class SwapInfo():
   #           second order is swap_start_time (ascending)
   def __cmp__(self, other):
     if self.swap_free_time == other.swap_free_time:
-      if self.swapout_info.start_time == \
-        other.swapout_info.start_time:
+      if self.swapin_info.start_time == \
+        other.swapin_info.start_time:
         return 0
       # if self.swapout_start_time == other.swapout_start_time:
       #   return 0
-      elif self.swapout_info.start_time > \
-          other.swapout_info.start_time:
+      elif self.swapin_info.start_time > \
+          other.swapin_info.start_time:
           return 1
       else:
         return -1
@@ -215,11 +215,10 @@ class PeakMemory():
 
       self.meminfos.put(meminfo_a)
       self.meminfos.put(meminfo_d)
-      # logging.debug("%s: %d, %d" % (swapinfo.tensor_name,
-      #                               swapinfo.allocated_time,
-      #                               swapinfo.deallocate_time))
+      logging.debug("%s: %d, %d" % (swapinfo.tensor_name,
+                                    swapinfo.allocated_time,
+                                    swapinfo.deallocate_time))
       self.meminfos_dict[swapinfo.tensor_name] = (swapinfo.allocated_time, swapinfo.deallocate_time)
-      
 
     # pass
 
@@ -230,10 +229,8 @@ class PeakMemory():
     while not self.meminfos.empty():
       meminfo = self.meminfos.get()
       total_mem += meminfo.allocated_bytes
-
+      
       # logging.debug("%s: %d" % (meminfo.tensor_name, meminfo.allocated_bytes))
-      
-      
       if meminfo.IsDeallocate():
         self.curr_deallocate_.append(meminfo.tensor_name)
       else:
@@ -270,10 +267,11 @@ class PeakMemory():
 
     # the earliest time of peak memory: earliest allocation time in peakmem_tensors_collec
     # the lastest time of peak memory: lastest deallocation time in peakmem_tensors_collec
+    logging.debug("Peak Memory: %d, %d" % (total_mem, peak_mem))
     l_times = []
     r_times = []
     for t_name in self.peakmem_tensors_collec:
-      # logging.debug("%s: %d, %d" % (t_name, self.meminfos_dict[t_name][0], self.meminfos_dict[t_name][1]))
+      logging.debug("%s: %d, %d" % (t_name, self.meminfos_dict[t_name][0], self.meminfos_dict[t_name][1]))
       assert t_name in self.meminfos_dict.keys()
       l_times.append(self.meminfos_dict[t_name][0])
       r_times.append(self.meminfos_dict[t_name][1])

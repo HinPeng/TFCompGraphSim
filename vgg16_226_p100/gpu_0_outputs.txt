@@ -1,728 +1,742 @@
 SrcNode GradientDescent/update_v/cg/conv11/conv2d/kernel/ApplyGradientDescent 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075342210
+Output 0 9437184 9437184 GPU_0_bfc 1561001502079299
 SrcNode v/tower_0/gradients/AddN_1 1
-Output 0 16400384 16400384 GPU_0_bfc 1554082075278987
+Output 0 16400384 16400384 GPU_0_bfc 1561001501975073
 SrcNode v/tower_0/gradients/AddN_2 1
-Output 0 16384 16384 GPU_0_bfc 1554082075281378
+Output 0 16384 16384 GPU_0_bfc 1561001501977450
 SrcNode v/tower_0/gradients/AddN_3 1
-Output 0 67108864 67108864 GPU_0_bfc 1554082075281386
+Output 0 67108864 67108864 GPU_0_bfc 1561001501977459
 SrcNode v/tower_0/gradients/AddN_4 1
-Output 0 16384 16384 GPU_0_bfc 1554082075293574
+Output 0 16384 16384 GPU_0_bfc 1561001501989657
 SrcNode v/tower_0/cg/conv3/BiasAdd 1
-Output 0 1451491328 1451491328 GPU_0_bfc 1554082074911626
+Output 0 1464336384 1464336384 GPU_0_bfc 1561001501535312
 SrcNode v/tower_0/cg/conv9/conv2d/Conv2D 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075173652
+Output 0 366084096 366084096 GPU_0_bfc 1561001501855051
 SrcNode v/tower_0/gradients/AddN_7 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075320296
+Output 0 9437184 9437184 GPU_0_bfc 1561001502036865
 SrcNode v/tower_0/gradients/AddN_8 1
-Output 0 2048 2048 GPU_0_bfc 1554082075341617
+Output 0 2048 2048 GPU_0_bfc 1561001502078701
 SrcNode v/tower_0/gradients/AddN_9 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075341625
+Output 0 9437184 9437184 GPU_0_bfc 1561001502078710
 SrcNode v/tower_0/cg/conv5/conv2d/Conv2D 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082074957310
+Output 0 732168192 732168192 GPU_0_bfc 1561001501580950
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv3/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 589824 589824 GPU_0_bfc 1554082076296867
+Output 0 589824 589824 GPU_0_bfc 1561001503048680
 SrcNode v/tower_0/cg/conv2/conv2d/Conv2D 1
-Output 0 1451491328 1451491328 GPU_0_bfc 1554082074806648
+Output 0 1464336384 1464336384 GPU_0_bfc 1561001501432975
 SrcNode v/tower_0/cg/conv11/BiasAdd 1
-Output 0 90718208 90718208 GPU_0_bfc 1554082075257799
+Output 0 91521024 91521024 GPU_0_bfc 1561001501949127
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_10_grad/mul 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082074664685
+Output 0 2359296 2359296 GPU_0_bfc 1561001501292857
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv9/BiasAdd_grad/BiasAddGrad 1
-Output 0 2048 3840 GPU_0_bfc 1554082075425815
+Output 0 2048 2048 GPU_0_bfc 1561001502183977
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv9/Relu_grad/ReluGrad 1
-Output 0 362872832 494551040 GPU_0_bfc 1554082075365196
+Output 0 366084096 366084096 GPU_0_bfc 1561001502122819
 SrcNode v/tower_0/gradients/v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/xentropy/xentropy_grad/mul 1
-Output 0 904904 1179648 GPU_0_bfc 1554082075278284
+Output 0 912912 1179648 GPU_0_bfc 1561001501974307
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_17_grad/mul 1
-Output 0 2048 2048 GPU_0_bfc 1554082074665097
+Output 0 2048 2048 GPU_0_bfc 1561001501293105
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_14_grad/mul 1
-Output 0 4718592 4718592 GPU_0_bfc 1554082074664787
+Output 0 4718592 4718592 GPU_0_bfc 1561001501292973
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv3/Relu_grad/ReluGrad 1
-Output 0 1451491328 1451491328 GPU_0_bfc 1554082076224992
+Output 0 1464336384 1464336384 GPU_0_bfc 1561001502981863
 SrcNode v/tower_0/gradients/v/tower_0/cg/mpool4/MaxPool_grad/MaxPoolGrad 1
-Output 0 90718208 90718208 GPU_0_bfc 1554082075298180
+Output 0 91521024 91521024 GPU_0_bfc 1561001501994265
 SrcNode v/tower_0/cg/conv12/BiasAdd 1
-Output 0 90718208 171999232 GPU_0_bfc 1554082075268922
+Output 0 91521024 91521024 GPU_0_bfc 1561001501964911
 SrcNode v/tower_0/cg/conv5/Relu 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082075020474
+Output 0 732168192 732168192 GPU_0_bfc 1561001501623301
 SrcNode GradientDescent/update_v/cg/conv6/conv2d/kernel/ApplyGradientDescent 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082076130354
+Output 0 2359296 2359296 GPU_0_bfc 1561001502888511
 SrcNode v/tower_0/cg/conv12/Relu 1
-Output 0 90718208 171999232 GPU_0_bfc 1554082075269381
+Output 0 91521024 91521024 GPU_0_bfc 1561001501965380
 SrcNode v/tower_0/gradients/v/tower_0/cg/mpool0/MaxPool_grad/MaxPoolGrad 1
-Output 0 2902982656 2902982656 GPU_0_bfc 1554082076513628
+Output 0 2928672768 2928672768 GPU_0_bfc 1561001503261893
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv10/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075342700
+Output 0 9437184 9437184 GPU_0_bfc 1561001502079569
 SrcNode GradientDescent/update_v/cg/conv8/biases/ApplyGradientDescent 1
-Output 0 2048 2048 GPU_0_bfc 1554082075777482
+Output 0 2048 2048 GPU_0_bfc 1561001502536147
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv10/Relu_grad/ReluGrad 1
-Output 0 90718208 100155392 GPU_0_bfc 1554082075341685
+Output 0 91521024 91521024 GPU_0_bfc 1561001502078770
 SrcNode v/tower_0/gradients/v/tower_0/cg/mpool1/MaxPool_grad/MaxPoolGrad 1
-Output 0 1451491328 1451491328 GPU_0_bfc 1554082076214031
+Output 0 1464336384 1464336384 GPU_0_bfc 1561001502970755
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv3/BiasAdd_grad/BiasAddGrad 1
-Output 0 512 512 GPU_0_bfc 1554082076288942
+Output 0 512 512 GPU_0_bfc 1561001503046243
 SrcNode v/tower_0/cg/conv11/Relu 1
-Output 0 90718208 90718208 GPU_0_bfc 1554082075258260
+Output 0 91521024 91521024 GPU_0_bfc 1561001501949588
 SrcNode v/tower_0/cg/conv10/BiasAdd 1
-Output 0 90718208 90718208 GPU_0_bfc 1554082075246696
+Output 0 91521024 91521024 GPU_0_bfc 1561001501933348
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_21_grad/mul 1
-Output 0 2048 2048 GPU_0_bfc 1554082074663064
+Output 0 2048 2048 GPU_0_bfc 1561001501291189
 SrcNode v/tower_0/L2Loss_12 1
-Output 0 4 256 GPU_0_bfc 1554082074664737
+Output 0 4 256 GPU_0_bfc 1561001501292888
 SrcNode v/tower_0/L2Loss_13 1
-Output 0 4 256 GPU_0_bfc 1554082074664758
+Output 0 4 256 GPU_0_bfc 1561001501292923
 SrcNode v/tower_0/L2Loss_10 1
-Output 0 4 256 GPU_0_bfc 1554082074664698
+Output 0 4 256 GPU_0_bfc 1561001501292834
 SrcNode v/tower_0/L2Loss_11 1
-Output 0 4 256 GPU_0_bfc 1554082074664720
+Output 0 4 256 GPU_0_bfc 1561001501292870
 SrcNode v/tower_0/L2Loss_16 1
-Output 0 4 256 GPU_0_bfc 1554082074664936
+Output 0 4 256 GPU_0_bfc 1561001501293013
 SrcNode v/tower_0/L2Loss_17 1
-Output 0 4 256 GPU_0_bfc 1554082074665054
+Output 0 4 256 GPU_0_bfc 1561001501293094
 SrcNode v/tower_0/L2Loss_14 1
-Output 0 4 256 GPU_0_bfc 1554082074664763
+Output 0 4 256 GPU_0_bfc 1561001501292941
 SrcNode v/tower_0/L2Loss_15 1
-Output 0 4 256 GPU_0_bfc 1554082074664825
+Output 0 4 256 GPU_0_bfc 1561001501292995
 SrcNode v/tower_0/L2Loss_18 1
-Output 0 4 256 GPU_0_bfc 1554082074665202
+Output 0 4 256 GPU_0_bfc 1561001501293115
 SrcNode v/tower_0/L2Loss_19 1
-Output 0 4 256 GPU_0_bfc 1554082074662647
+Output 0 4 256 GPU_0_bfc 1561001501293195
 SrcNode v/tower_0/gradients/v/tower_0/cg/affine0/affine0_grad/ReluGrad 1
-Output 0 3702784 5734400 GPU_0_bfc 1554082075281765
+Output 0 3735552 3735552 GPU_0_bfc 1561001501977833
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv2/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082076414684
+Output 0 732168192 732168192 GPU_0_bfc 1561001503167622
 SrcNode v/tower_0/gradients/AddN_20 1
-Output 0 1024 1024 GPU_0_bfc 1554082076134793
+Output 0 1024 1024 GPU_0_bfc 1561001502892993
 SrcNode v/tower_0/cg/conv10/Relu 1
-Output 0 90718208 90718208 GPU_0_bfc 1554082075247158
+Output 0 91521024 91521024 GPU_0_bfc 1561001501933808
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv4/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082076134821
+Output 0 366084096 366084096 GPU_0_bfc 1561001502893024
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_13_grad/mul 1
-Output 0 1024 1024 GPU_0_bfc 1554082074664753
+Output 0 1024 1024 GPU_0_bfc 1561001501292932
 SrcNode v/tower_0/cg/conv9/BiasAdd 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075232142
+Output 0 366084096 366084096 GPU_0_bfc 1561001501914052
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv8/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075591049
+Output 0 9437184 9437184 GPU_0_bfc 1561001502348975
 SrcNode v/tower_0/gradients/AddN_26 1
-Output 0 512 512 GPU_0_bfc 1554082076535378
+Output 0 512 512 GPU_0_bfc 1561001503283952
 SrcNode v/tower_0/gradients/AddN_23 1
-Output 0 1179648 1179648 GPU_0_bfc 1554082076224978
+Output 0 1179648 1179648 GPU_0_bfc 1561001502981848
 SrcNode v/tower_0/gradients/AddN_22 1
-Output 0 1024 1024 GPU_0_bfc 1554082076224971
+Output 0 1024 1024 GPU_0_bfc 1561001502981839
 SrcNode v/tower_0/gradients/AddN_21 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082076134801
+Output 0 2359296 2359296 GPU_0_bfc 1561001502893002
 SrcNode v/tower_0/cg/conv0/conv2d/Conv2D 1
-Output 0 2902982656 2902982656 GPU_0_bfc 1554082074668275
+Output 0 2928672768 2928672768 GPU_0_bfc 1561001501293213
 SrcNode v/tower_0/gradients/AddN_27 1
-Output 0 294912 294912 GPU_0_bfc 1554082076535384
+Output 0 294912 294912 GPU_0_bfc 1561001503283958
 SrcNode v/tower_0/cg/affine1/xw_plus_b/MatMul 1
-Output 0 3702784 5734400 GPU_0_bfc 1554082075276311
+Output 0 3735552 3735552 GPU_0_bfc 1561001501972316
 SrcNode v/tower_0/gradients/AddN_25 1
-Output 0 589824 589824 GPU_0_bfc 1554082076414675
+Output 0 589824 589824 GPU_0_bfc 1561001503167612
 SrcNode v/tower_0/gradients/AddN_24 1
-Output 0 512 512 GPU_0_bfc 1554082076414669
+Output 0 512 512 GPU_0_bfc 1561001503167605
 SrcNode GradientDescent/update_v/cg/conv7/conv2d/kernel/ApplyGradientDescent 1
-Output 0 4718592 5013504 GPU_0_bfc 1554082075788725
+Output 0 4718592 4859136 GPU_0_bfc 1561001502547689
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_9_grad/mul 1
-Output 0 1024 1024 GPU_0_bfc 1554082074664676
+Output 0 1024 1024 GPU_0_bfc 1561001501292825
 SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/xentropy/xentropy 2
-Output 1 904904 1179648 GPU_0_bfc 1554082075277977
-Output 0 904 1024 GPU_0_bfc 1554082075277977
+Output 1 912912 1179648 GPU_0_bfc 1561001501973993
+Output 0 912 1024 GPU_0_bfc 1561001501973993
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv6/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082075851652
+Output 0 2359296 2359296 GPU_0_bfc 1561001502609219
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_3_grad/mul 1
-Output 0 256 256 GPU_0_bfc 1554082074664581
+Output 0 256 256 GPU_0_bfc 1561001501292656
 SrcNode GradientDescent/update_v/cg/affine2/weights/ApplyGradientDescent 1
-Output 0 16400384 16400384 GPU_0_bfc 1554082075279130
+Output 0 16400384 16400384 GPU_0_bfc 1561001501975219
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv0/BiasAdd_grad/BiasAddGrad 1
-Output 0 256 256 GPU_0_bfc 1554082076815407
+Output 0 256 256 GPU_0_bfc 1561001503548789
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_5_grad/mul 1
-Output 0 512 512 GPU_0_bfc 1554082074664609
+Output 0 512 512 GPU_0_bfc 1561001501292705
 SrcNode v/tower_0/gradients/v/tower_0/cg/affine1/xw_plus_b/MatMul_grad/MatMul_1 1
-Output 0 67108864 67108864 GPU_0_bfc 1554082075279266
+Output 0 67108864 87785472 GPU_0_bfc 1561001501975347
 SrcNode GradientDescent/update_v/cg/conv3/biases/ApplyGradientDescent 1
-Output 0 512 512 GPU_0_bfc 1554082076513615
+Output 0 512 512 GPU_0_bfc 1561001503261877
 SrcNode v/tower_0/gradients/AddN_29 1
-Output 0 147456 147456 GPU_0_bfc 1554082076815395
+Output 0 147456 147456 GPU_0_bfc 1561001503548776
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv1/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 2902982656 2902982656 GPU_0_bfc 1554082076553924
+Output 0 2928672768 2928672768 GPU_0_bfc 1561001503302597
 SrcNode v/tower_0/gradients/v/tower_0/cg/affine2/xw_plus_b/MatMul_grad/MatMul_1 1
-Output 0 16400384 16400384 GPU_0_bfc 1554082075278334
+Output 0 16400384 30384128 GPU_0_bfc 1561001501974359
 SrcNode v/tower_0/gradients/AddN_28 1
-Output 0 256 256 GPU_0_bfc 1554082076815389
+Output 0 256 256 GPU_0_bfc 1561001503548769
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv12/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075299988
+Output 0 9437184 16400384 GPU_0_bfc 1561001501995890
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv1/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 147456 147456 GPU_0_bfc 1554082076644490
+Output 0 147456 147456 GPU_0_bfc 1561001503377419
 SrcNode v/tower_0/cg/affine0/xw_plus_b/MatMul 1
-Output 0 3702784 3702784 GPU_0_bfc 1554082075270021
+Output 0 3735552 3735552 GPU_0_bfc 1561001501966026
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv8/BiasAdd_grad/BiasAddGrad 1
-Output 0 2048 3840 GPU_0_bfc 1554082075589426
+Output 0 2048 2048 GPU_0_bfc 1561001502348262
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_11_grad/mul 1
-Output 0 1024 1024 GPU_0_bfc 1554082074664715
+Output 0 1024 1024 GPU_0_bfc 1561001501292880
 SrcNode v/tower_0/L2Loss_8 1
-Output 0 4 256 GPU_0_bfc 1554082074664658
+Output 0 4 256 GPU_0_bfc 1561001501292771
 SrcNode v/tower_0/L2Loss_9 1
-Output 0 4 256 GPU_0_bfc 1554082074664681
+Output 0 4 256 GPU_0_bfc 1561001501292816
 SrcNode v/tower_0/cg/affine0/affine0 1
-Output 0 3702784 3702784 GPU_0_bfc 1554082075276287
+Output 0 3735552 3735552 GPU_0_bfc 1561001501972287
 SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/Sum 1
-Output 0 4 256 GPU_0_bfc 1554082075278300
+Output 0 4 256 GPU_0_bfc 1561001501974319
 SrcNode v/tower_0/cg/conv6/conv2d/Conv2D 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082075023323
+Output 0 732168192 732168192 GPU_0_bfc 1561001501626175
 SrcNode v/tower_0/L2Loss_1 1
-Output 0 4 256 GPU_0_bfc 1554082074664558
-SrcNode v/tower_0/L2Loss_2 1
-Output 0 4 256 GPU_0_bfc 1554082074664569
-SrcNode v/tower_0/L2Loss_3 1
-Output 0 4 256 GPU_0_bfc 1554082074664586
-SrcNode v/tower_0/L2Loss_4 1
-Output 0 4 256 GPU_0_bfc 1554082074664597
-SrcNode v/tower_0/L2Loss_5 1
-Output 0 4 256 GPU_0_bfc 1554082074664614
-SrcNode v/tower_0/L2Loss_6 1
-Output 0 4 256 GPU_0_bfc 1554082074664626
-SrcNode v/tower_0/L2Loss_7 1
-Output 0 4 256 GPU_0_bfc 1554082074664644
-SrcNode v/tower_0/gradients/AddN_30 1
-Output 0 256 256 GPU_0_bfc 1554082076859961
-SrcNode v/tower_0/gradients/AddN_31 1
-Output 0 6912 6912 GPU_0_bfc 1554082076859966
-SrcNode GradientDescent/update_v/cg/affine0/biases/ApplyGradientDescent 1
-Output 0 16384 16384 GPU_0_bfc 1554082075295875
-SrcNode v/tower_0/cg/conv1/BiasAdd 1
-Output 0 2902982656 2902982656 GPU_0_bfc 1554082074772941
-SrcNode v/tower_0/cg/conv7/BiasAdd 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075108741
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv7/BiasAdd_grad/BiasAddGrad 1
-Output 0 2048 3840 GPU_0_bfc 1554082075723950
-SrcNode GradientDescent/update_v/cg/conv2/conv2d/kernel/ApplyGradientDescent 1
-Output 0 294912 294912 GPU_0_bfc 1554082076553917
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv5/Relu_grad/ReluGrad 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082075957261
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv2/Relu_grad/ReluGrad 1
-Output 0 1451491328 1451491328 GPU_0_bfc 1554082076405638
-SrcNode GradientDescent/update_v/cg/conv4/biases/ApplyGradientDescent 1
-Output 0 1024 1024 GPU_0_bfc 1554082076234046
-SrcNode v/tower_0/gradients/AddN_16 1
-Output 0 2048 2048 GPU_0_bfc 1554082075784242
-SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/value 1
-Output 0 4 256 GPU_0_bfc 1554082075279113
-SrcNode GradientDescent/update_v/cg/conv9/biases/ApplyGradientDescent 1
-Output 0 2048 2048 GPU_0_bfc 1554082075692505
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_22_grad/mul 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074662695
-SrcNode v/tower_0/cg/conv1/conv2d/Conv2D 1
-Output 0 2902982656 2902982656 GPU_0_bfc 1554082074703669
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv8/Relu_grad/ReluGrad 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075528746
-SrcNode v/tower_0/cg/affine1/xw_plus_b 1
-Output 0 3702784 5734400 GPU_0_bfc 1554082075277432
-SrcNode GradientDescent/update_v/cg/affine1/biases/ApplyGradientDescent 1
-Output 0 16384 16384 GPU_0_bfc 1554082075281794
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_28_grad/mul 1
-Output 0 67108864 67108864 GPU_0_bfc 1554082074665565
-SrcNode GradientDescent/update_v/cg/conv1/biases/ApplyGradientDescent 1
-Output 0 256 256 GPU_0_bfc 1554082076859948
-SrcNode GradientDescent/update_v/cg/conv5/conv2d/kernel/ApplyGradientDescent 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082076214009
-SrcNode GradientDescent/update_v/cg/conv5/biases/ApplyGradientDescent 1
-Output 0 1024 1024 GPU_0_bfc 1554082076214001
-SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/div 1
-Output 0 4 256 GPU_0_bfc 1554082075278971
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_8_grad/mul 1
-Output 0 1179648 1179648 GPU_0_bfc 1554082074664649
-SrcNode v/tower_0/cg/conv2/BiasAdd 1
-Output 0 1451491328 1451491328 GPU_0_bfc 1554082074840196
-SrcNode v/tower_0/cg/conv7/conv2d/Conv2D 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075090988
-SrcNode v/tower_0/gradients/v/tower_0/cg/affine2/xw_plus_b_grad/BiasAddGrad 1
-Output 0 4004 4096 GPU_0_bfc 1554082075278318
-SrcNode v/tower_0/AddN 1
-Output 0 4 256 GPU_0_bfc 1554082074677191
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv7/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 181436416 181436416 GPU_0_bfc 1554082075694760
-SrcNode v/tower_0/cg/mpool3/MaxPool 1
-Output 0 90718208 90718208 GPU_0_bfc 1554082075235370
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv5/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082075961692
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv2/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 294912 294912 GPU_0_bfc 1554082076452611
-SrcNode v/tower_0/cg/conv8/Relu 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075172237
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_19_grad/mul 1
-Output 0 2048 2048 GPU_0_bfc 1554082074662608
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv4/BiasAdd_grad/BiasAddGrad 1
-Output 0 1024 1024 GPU_0_bfc 1554082076156508
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv7/Relu_grad/ReluGrad 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075692568
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv5/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082076024646
-SrcNode v/tower_0/gradients/v/tower_0/cg/mpool3/MaxPool_grad/MaxPoolGrad 1
-Output 0 362872832 494551040 GPU_0_bfc 1554082075363070
-SrcNode v/tower_0/gradients/v/tower_0/cg/affine1/xw_plus_b_grad/BiasAddGrad 1
-Output 0 16384 16384 GPU_0_bfc 1554082075279237
-SrcNode v/tower_0/cg/conv0/Relu 1
-Output 0 2902982656 2902982656 GPU_0_bfc 1554082074692152
-SrcNode GradientDescent/update_v/cg/conv8/conv2d/kernel/ApplyGradientDescent 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075777491
-SrcNode v/tower_0/cg/conv2/Relu 1
-Output 0 1451491328 1451491328 GPU_0_bfc 1554082074847568
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_18_grad/mul 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074665138
-SrcNode GradientDescent/update_v/cg/conv10/biases/ApplyGradientDescent 1
-Output 0 2048 2048 GPU_0_bfc 1554082075365126
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_30_grad/mul 1
-Output 0 16400384 16400384 GPU_0_bfc 1554082074665358
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv2/BiasAdd_grad/BiasAddGrad 1
-Output 0 512 512 GPU_0_bfc 1554082076444673
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv12/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 90718208 162562048 GPU_0_bfc 1554082075310003
-SrcNode GradientDescent/update_v/cg/conv2/biases/ApplyGradientDescent 1
-Output 0 512 512 GPU_0_bfc 1554082076553911
-SrcNode GradientDescent/update_v/cg/conv4/conv2d/kernel/ApplyGradientDescent 1
-Output 0 1179648 1179648 GPU_0_bfc 1554082076234054
-SrcNode v/tower_0/gradients/v/tower_0/cg/affine0/xw_plus_b_grad/BiasAddGrad 1
-Output 0 16384 21760 GPU_0_bfc 1554082075282182
-SrcNode GradientDescent/update_v/cg/conv9/conv2d/kernel/ApplyGradientDescent 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075692512
-SrcNode v/tower_0/L2Loss 1
-Output 0 4 256 GPU_0_bfc 1554082074664547
-SrcNode v/tower_0/gradients/v/tower_0/cg/affine0/xw_plus_b/MatMul_grad/MatMul_1 1
-Output 0 411041792 411041792 GPU_0_bfc 1554082075282212
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv0/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 6912 7424 GPU_0_bfc 1554082076836691
-SrcNode v/tower_0/cg/mpool0/MaxPool 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082074799409
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv11/BiasAdd_grad/BiasAddGrad 1
-Output 0 2048 3840 GPU_0_bfc 1554082075320942
-SrcNode v/tower_0/cg/conv9/Relu 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075233952
-SrcNode v/tower_0/gradients/AddN_18 1
-Output 0 1024 1024 GPU_0_bfc 1554082075961664
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_26_grad/mul 1
-Output 0 411041792 411041792 GPU_0_bfc 1554082074665967
-SrcNode v/tower_0/cg/affine0/xw_plus_b 1
-Output 0 3702784 3702784 GPU_0_bfc 1554082075276266
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_12_grad/mul 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082074664725
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv11/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 90718208 100155392 GPU_0_bfc 1554082075331389
-SrcNode v/tower_0/cg/affine1/affine1 1
-Output 0 3702784 5734400 GPU_0_bfc 1554082075277459
-SrcNode v/tower_0/cg/conv10/conv2d/Conv2D 1
-Output 0 90718208 90718208 GPU_0_bfc 1554082075236402
-SrcNode v/tower_0/cg/conv8/conv2d/Conv2D 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075111966
-SrcNode v/tower_0/gradients/AddN_13 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075530880
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_15_grad/mul 1
-Output 0 2048 2048 GPU_0_bfc 1554082074664876
-SrcNode v/tower_0/mul 1
-Output 0 4 256 GPU_0_bfc 1554082074692144
-SrcNode v/tower_0/cg/affine2/xw_plus_b/MatMul 1
-Output 0 904904 1179648 GPU_0_bfc 1554082075277472
-SrcNode v/tower_0/gradients/AddN_17 1
-Output 0 4718592 4718592 GPU_0_bfc 1554082075784250
-SrcNode v/tower_0/gradients/AddN_14 1
-Output 0 2048 2048 GPU_0_bfc 1554082075694693
-SrcNode v/tower_0/gradients/AddN_15 1
-Output 0 9437184 17678336 GPU_0_bfc 1554082075694701
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv1/BiasAdd_grad/BiasAddGrad 1
-Output 0 256 256 GPU_0_bfc 1554082076623204
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv4/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 1179648 1179648 GPU_0_bfc 1554082076159750
-SrcNode GradientDescent/update_v/cg/conv6/biases/ApplyGradientDescent 1
-Output 0 1024 1024 GPU_0_bfc 1554082076130346
-SrcNode v/tower_0/gradients/v/tower_0/cg/affine0/xw_plus_b/MatMul_grad/MatMul 1
-Output 0 22679552 22679552 GPU_0_bfc 1554082075287725
-SrcNode v/tower_0/cg/conv4/BiasAdd 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082074950800
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_27_grad/mul 1
-Output 0 16384 16384 GPU_0_bfc 1554082074665952
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv10/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 90718208 100155392 GPU_0_bfc 1554082075352722
-SrcNode v/tower_0/synthetic_labels 1
-Output 0 904 1024 GPU_0_bfc 1554082074662146
-SrcNode v/tower_0/gradients/AddN_12 1
-Output 0 2048 2048 GPU_0_bfc 1554082075530872
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_20_grad/mul 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074662918
-SrcNode v/tower_0/gradients/v/tower_0/cg/affine1/xw_plus_b/MatMul_grad/MatMul 1
-Output 0 3702784 5734400 GPU_0_bfc 1554082075280226
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv0/Relu_grad/ReluGrad 1
-Output 0 2902982656 2902982656 GPU_0_bfc 1554082076796854
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv4/Relu_grad/ReluGrad 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082076130377
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv12/Relu_grad/ReluGrad 1
-Output 0 90718208 90718208 GPU_0_bfc 1554082075299033
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv6/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082075788758
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv11/Relu_grad/ReluGrad 1
-Output 0 90718208 162562048 GPU_0_bfc 1554082075320355
-SrcNode GradientDescent/update_v/cg/conv7/biases/ApplyGradientDescent 1
-Output 0 2048 2048 GPU_0_bfc 1554082075788714
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv9/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075427439
-SrcNode v/tower_0/cg/mpool2/MaxPool 1
-Output 0 181436416 181436416 GPU_0_bfc 1554082075089152
-SrcNode v/tower_0/gradients/AddN_11 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075363009
-SrcNode v/tower_0/gradients/v/tower_0/cg/affine2/xw_plus_b/MatMul_grad/MatMul 1
-Output 0 3702784 3702784 GPU_0_bfc 1554082075278607
-SrcNode GradientDescent/update_v/cg/conv12/biases/ApplyGradientDescent 1
-Output 0 2048 2048 GPU_0_bfc 1554082075320866
-SrcNode v/tower_0/cg/conv4/Relu 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082074954459
-SrcNode GradientDescent/update_v/cg/affine2/biases/ApplyGradientDescent 1
-Output 0 4004 4096 GPU_0_bfc 1554082075279122
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_6_grad/mul 1
-Output 0 589824 589824 GPU_0_bfc 1554082074664619
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_16_grad/mul 1
-Output 0 9437184 17678336 GPU_0_bfc 1554082074665006
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv12/BiasAdd_grad/BiasAddGrad 1
-Output 0 2048 2048 GPU_0_bfc 1554082075299560
-SrcNode v/tower_0/gradients/v/tower_0/cg/affine1/affine1_grad/ReluGrad 1
-Output 0 3702784 3702784 GPU_0_bfc 1554082075279084
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_1_grad/mul 1
-Output 0 256 256 GPU_0_bfc 1554082074664553
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_29_grad/mul 1
-Output 0 16384 16384 GPU_0_bfc 1554082074665491
-SrcNode GradientDescent/update_v/cg/affine0/weights/ApplyGradientDescent 1
-Output 0 411041792 411041792 GPU_0_bfc 1554082075295883
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv3/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 1451491328 1451491328 GPU_0_bfc 1554082076234068
-SrcNode v/tower_0/cg/conv7/Relu 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075110551
-SrcNode v/tower_0/cg/mpool4/MaxPool 1
-Output 0 22679552 22679552 GPU_0_bfc 1554082075269737
-SrcNode GradientDescent/update_v/cg/conv0/biases/ApplyGradientDescent 1
-Output 0 256 256 GPU_0_bfc 1554082076859971
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv9/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075367335
-SrcNode v/tower_0/cg/mpool1/MaxPool 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082074924734
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_7_grad/mul 1
-Output 0 512 512 GPU_0_bfc 1554082074664639
-SrcNode v/tower_0/add 1
-Output 0 4 256 GPU_0_bfc 1554082075281370
-SrcNode v/tower_0/cg/conv1/Relu 1
-Output 0 2902982656 2902982656 GPU_0_bfc 1554082074787864
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_4_grad/mul 1
-Output 0 294912 294912 GPU_0_bfc 1554082074664591
-SrcNode v/tower_0/cg/affine2/xw_plus_b 1
-Output 0 904904 1179648 GPU_0_bfc 1554082075277967
-SrcNode v/tower_0/transpose 1
-Output 0 136077312 136077312 GPU_0_bfc 1554082074663172
-SrcNode GradientDescent/update_v/cg/conv10/conv2d/kernel/ApplyGradientDescent 1
-Output 0 9437184 16246016 GPU_0_bfc 1554082075365134
-SrcNode v/tower_0/cg/conv6/BiasAdd 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082075082649
+Output 0 4 256 GPU_0_bfc 1561001501292600
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_grad/mul 1
-Output 0 6912 6912 GPU_0_bfc 1554082074664541
+Output 0 6912 6912 GPU_0_bfc 1561001501292591
+SrcNode v/tower_0/L2Loss_3 1
+Output 0 4 256 GPU_0_bfc 1561001501292647
+SrcNode v/tower_0/L2Loss_4 1
+Output 0 4 256 GPU_0_bfc 1561001501292664
+SrcNode v/tower_0/L2Loss_5 1
+Output 0 4 256 GPU_0_bfc 1561001501292697
+SrcNode v/tower_0/L2Loss_6 1
+Output 0 4 256 GPU_0_bfc 1561001501292715
+SrcNode v/tower_0/L2Loss_7 1
+Output 0 4 256 GPU_0_bfc 1561001501292752
+SrcNode v/tower_0/gradients/AddN_30 1
+Output 0 256 256 GPU_0_bfc 1561001503577443
+SrcNode v/tower_0/gradients/AddN_31 1
+Output 0 6912 6912 GPU_0_bfc 1561001503577449
+SrcNode GradientDescent/update_v/cg/affine0/biases/ApplyGradientDescent 1
+Output 0 16384 16384 GPU_0_bfc 1561001501991963
+SrcNode v/tower_0/cg/conv1/BiasAdd 1
+Output 0 2928672768 2928672768 GPU_0_bfc 1561001501398943
+SrcNode v/tower_0/cg/conv7/BiasAdd 1
+Output 0 366084096 366084096 GPU_0_bfc 1561001501789522
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv7/BiasAdd_grad/BiasAddGrad 1
+Output 0 2048 2048 GPU_0_bfc 1561001502483016
+SrcNode GradientDescent/update_v/cg/conv2/conv2d/kernel/ApplyGradientDescent 1
+Output 0 294912 294912 GPU_0_bfc 1561001503302588
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv5/Relu_grad/ReluGrad 1
+Output 0 732168192 732168192 GPU_0_bfc 1561001502715924
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv2/Relu_grad/ReluGrad 1
+Output 0 1464336384 1464336384 GPU_0_bfc 1561001503158452
+SrcNode GradientDescent/update_v/cg/conv4/biases/ApplyGradientDescent 1
+Output 0 1024 1024 GPU_0_bfc 1561001502991022
+SrcNode v/tower_0/gradients/AddN_16 1
+Output 0 2048 2048 GPU_0_bfc 1561001502543153
+SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/value 1
+Output 0 4 256 GPU_0_bfc 1561001501975202
+SrcNode GradientDescent/update_v/cg/conv9/biases/ApplyGradientDescent 1
+Output 0 2048 2048 GPU_0_bfc 1561001502451286
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_22_grad/mul 1
+Output 0 9437184 9437184 GPU_0_bfc 1561001501291059
+SrcNode v/tower_0/cg/conv1/conv2d/Conv2D 1
+Output 0 2928672768 2928672768 GPU_0_bfc 1561001501328979
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv8/Relu_grad/ReluGrad 1
+Output 0 366084096 366084096 GPU_0_bfc 1561001502287052
+SrcNode v/tower_0/cg/affine1/xw_plus_b 1
+Output 0 3735552 3735552 GPU_0_bfc 1561001501973448
+SrcNode GradientDescent/update_v/cg/affine1/biases/ApplyGradientDescent 1
+Output 0 16384 16384 GPU_0_bfc 1561001501977866
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_28_grad/mul 1
+Output 0 67108864 67108864 GPU_0_bfc 1561001501288354
+SrcNode GradientDescent/update_v/cg/conv1/biases/ApplyGradientDescent 1
+Output 0 256 256 GPU_0_bfc 1561001503577429
+SrcNode GradientDescent/update_v/cg/conv5/conv2d/kernel/ApplyGradientDescent 1
+Output 0 2359296 2359296 GPU_0_bfc 1561001502970733
+SrcNode GradientDescent/update_v/cg/conv5/biases/ApplyGradientDescent 1
+Output 0 1024 1024 GPU_0_bfc 1561001502970723
+SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/div 1
+Output 0 4 256 GPU_0_bfc 1561001501975056
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_8_grad/mul 1
+Output 0 1179648 1179648 GPU_0_bfc 1561001501292803
+SrcNode v/tower_0/cg/conv2/BiasAdd 1
+Output 0 1464336384 1464336384 GPU_0_bfc 1561001501466844
+SrcNode v/tower_0/cg/conv7/conv2d/Conv2D 1
+Output 0 366084096 366084096 GPU_0_bfc 1561001501758666
+SrcNode v/tower_0/gradients/v/tower_0/cg/affine2/xw_plus_b_grad/BiasAddGrad 1
+Output 0 4004 4096 GPU_0_bfc 1561001501974341
+SrcNode v/tower_0/AddN 1
+Output 0 4 256 GPU_0_bfc 1561001501302222
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv7/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 183042048 183042048 GPU_0_bfc 1561001502453587
+SrcNode v/tower_0/cg/mpool3/MaxPool 1
+Output 0 91521024 91521024 GPU_0_bfc 1561001501917323
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv5/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 732168192 732168192 GPU_0_bfc 1561001502720427
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv2/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 294912 294912 GPU_0_bfc 1561001503200325
+SrcNode v/tower_0/cg/conv8/Relu 1
+Output 0 366084096 366084096 GPU_0_bfc 1561001501853619
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_19_grad/mul 1
+Output 0 2048 2048 GPU_0_bfc 1561001501293204
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv4/BiasAdd_grad/BiasAddGrad 1
+Output 0 1024 1024 GPU_0_bfc 1561001502914741
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv7/Relu_grad/ReluGrad 1
+Output 0 366084096 366084096 GPU_0_bfc 1561001502451351
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv5/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 2359296 2359296 GPU_0_bfc 1561001502781822
+SrcNode v/tower_0/gradients/v/tower_0/cg/mpool3/MaxPool_grad/MaxPoolGrad 1
+Output 0 366084096 366084096 GPU_0_bfc 1561001502120626
+SrcNode v/tower_0/gradients/v/tower_0/cg/affine1/xw_plus_b_grad/BiasAddGrad 1
+Output 0 16384 16384 GPU_0_bfc 1561001501975325
+SrcNode v/tower_0/cg/conv0/Relu 1
+Output 0 2928672768 2928672768 GPU_0_bfc 1561001501317324
+SrcNode GradientDescent/update_v/cg/conv8/conv2d/kernel/ApplyGradientDescent 1
+Output 0 9437184 9437184 GPU_0_bfc 1561001502536157
+SrcNode v/tower_0/cg/conv2/Relu 1
+Output 0 1464336384 1464336384 GPU_0_bfc 1561001501474290
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_18_grad/mul 1
+Output 0 9437184 9437184 GPU_0_bfc 1561001501293155
+SrcNode GradientDescent/update_v/cg/conv10/biases/ApplyGradientDescent 1
+Output 0 2048 2048 GPU_0_bfc 1561001502122748
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_30_grad/mul 1
+Output 0 16400384 16400384 GPU_0_bfc 1561001501288112
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv2/BiasAdd_grad/BiasAddGrad 1
+Output 0 512 512 GPU_0_bfc 1561001503197878
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv12/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 91521024 91521024 GPU_0_bfc 1561001502021911
+SrcNode GradientDescent/update_v/cg/conv2/biases/ApplyGradientDescent 1
+Output 0 512 512 GPU_0_bfc 1561001503302581
+SrcNode GradientDescent/update_v/cg/conv4/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1179648 1179648 GPU_0_bfc 1561001502991031
+SrcNode v/tower_0/gradients/v/tower_0/cg/affine0/xw_plus_b_grad/BiasAddGrad 1
+Output 0 16384 20480 GPU_0_bfc 1561001501978266
+SrcNode GradientDescent/update_v/cg/conv9/conv2d/kernel/ApplyGradientDescent 1
+Output 0 9437184 9437184 GPU_0_bfc 1561001502451295
+SrcNode v/tower_0/L2Loss 1
+Output 0 4 256 GPU_0_bfc 1561001501292579
+SrcNode v/tower_0/gradients/v/tower_0/cg/affine0/xw_plus_b/MatMul_grad/MatMul_1 1
+Output 0 411041792 418433536 GPU_0_bfc 1561001501978294
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv0/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 6912 6912 GPU_0_bfc 1561001503553653
+SrcNode v/tower_0/cg/mpool0/MaxPool 1
+Output 0 732168192 732168192 GPU_0_bfc 1561001501425641
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv11/BiasAdd_grad/BiasAddGrad 1
+Output 0 2048 2048 GPU_0_bfc 1561001502037533
+SrcNode v/tower_0/cg/conv9/Relu 1
+Output 0 366084096 366084096 GPU_0_bfc 1561001501915890
+SrcNode v/tower_0/gradients/AddN_18 1
+Output 0 1024 1024 GPU_0_bfc 1561001502720394
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_26_grad/mul 1
+Output 0 411041792 411041792 GPU_0_bfc 1561001501289350
+SrcNode v/tower_0/cg/affine0/xw_plus_b 1
+Output 0 3735552 3735552 GPU_0_bfc 1561001501972266
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_12_grad/mul 1
+Output 0 2359296 2359296 GPU_0_bfc 1561001501292912
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv11/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 91521024 91521024 GPU_0_bfc 1561001502063750
+SrcNode v/tower_0/cg/affine1/affine1 1
+Output 0 3735552 3735552 GPU_0_bfc 1561001501973472
+SrcNode v/tower_0/cg/conv10/conv2d/Conv2D 1
+Output 0 91521024 91521024 GPU_0_bfc 1561001501918380
+SrcNode v/tower_0/cg/conv8/conv2d/Conv2D 1
+Output 0 366084096 366084096 GPU_0_bfc 1561001501792784
+SrcNode v/tower_0/gradients/AddN_13 1
+Output 0 9437184 9437184 GPU_0_bfc 1561001502289203
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_15_grad/mul 1
+Output 0 2048 2048 GPU_0_bfc 1561001501293005
+SrcNode v/tower_0/mul 1
+Output 0 4 256 GPU_0_bfc 1561001501317315
+SrcNode v/tower_0/cg/affine2/xw_plus_b/MatMul 1
+Output 0 912912 1179648 GPU_0_bfc 1561001501973486
+SrcNode v/tower_0/gradients/AddN_17 1
+Output 0 4718592 4718592 GPU_0_bfc 1561001502543163
+SrcNode v/tower_0/gradients/AddN_14 1
+Output 0 2048 2048 GPU_0_bfc 1561001502453516
+SrcNode v/tower_0/gradients/AddN_15 1
+Output 0 9437184 10715136 GPU_0_bfc 1561001502453525
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv1/BiasAdd_grad/BiasAddGrad 1
+Output 0 256 256 GPU_0_bfc 1561001503372563
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv4/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1179648 1179648 GPU_0_bfc 1561001502916011
+SrcNode GradientDescent/update_v/cg/conv6/biases/ApplyGradientDescent 1
+Output 0 1024 1024 GPU_0_bfc 1561001502888502
+SrcNode v/tower_0/gradients/v/tower_0/cg/affine0/xw_plus_b/MatMul_grad/MatMul 1
+Output 0 22880256 37855232 GPU_0_bfc 1561001501983812
+SrcNode v/tower_0/cg/conv4/BiasAdd 1
+Output 0 732168192 732168192 GPU_0_bfc 1561001501574386
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_27_grad/mul 1
+Output 0 16384 16384 GPU_0_bfc 1561001501288624
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv10/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 91521024 91521024 GPU_0_bfc 1561001502105589
+SrcNode v/tower_0/synthetic_labels 1
+Output 0 912 1024 GPU_0_bfc 1561001501287607
+SrcNode v/tower_0/gradients/AddN_12 1
+Output 0 2048 2048 GPU_0_bfc 1561001502289194
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_20_grad/mul 1
+Output 0 9437184 9437184 GPU_0_bfc 1561001501291145
+SrcNode v/tower_0/gradients/v/tower_0/cg/affine1/xw_plus_b/MatMul_grad/MatMul 1
+Output 0 3735552 3735552 GPU_0_bfc 1561001501976295
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv0/Relu_grad/ReluGrad 1
+Output 0 2928672768 2928672768 GPU_0_bfc 1561001503530086
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv4/Relu_grad/ReluGrad 1
+Output 0 732168192 732168192 GPU_0_bfc 1561001502888533
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv12/Relu_grad/ReluGrad 1
+Output 0 91521024 91521024 GPU_0_bfc 1561001501995158
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv6/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 732168192 732168192 GPU_0_bfc 1561001502547722
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv11/Relu_grad/ReluGrad 1
+Output 0 91521024 91521024 GPU_0_bfc 1561001502036929
+SrcNode GradientDescent/update_v/cg/conv7/biases/ApplyGradientDescent 1
+Output 0 2048 2048 GPU_0_bfc 1561001502547679
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv9/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 9437184 9437184 GPU_0_bfc 1561001502184692
+SrcNode v/tower_0/cg/mpool2/MaxPool 1
+Output 0 183042048 183042048 GPU_0_bfc 1561001501756820
+SrcNode v/tower_0/gradients/AddN_11 1
+Output 0 9437184 9437184 GPU_0_bfc 1561001502120565
+SrcNode v/tower_0/gradients/v/tower_0/cg/affine2/xw_plus_b/MatMul_grad/MatMul 1
+Output 0 3735552 3735552 GPU_0_bfc 1561001501974688
+SrcNode GradientDescent/update_v/cg/conv12/biases/ApplyGradientDescent 1
+Output 0 2048 2048 GPU_0_bfc 1561001502037453
+SrcNode v/tower_0/cg/conv4/Relu 1
+Output 0 732168192 732168192 GPU_0_bfc 1561001501578074
+SrcNode GradientDescent/update_v/cg/affine2/biases/ApplyGradientDescent 1
+Output 0 4004 4096 GPU_0_bfc 1561001501975211
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_6_grad/mul 1
+Output 0 589824 589824 GPU_0_bfc 1561001501292741
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_16_grad/mul 1
+Output 0 9437184 10715136 GPU_0_bfc 1561001501293056
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv12/BiasAdd_grad/BiasAddGrad 1
+Output 0 2048 2048 GPU_0_bfc 1561001501995683
+SrcNode v/tower_0/gradients/v/tower_0/cg/affine1/affine1_grad/ReluGrad 1
+Output 0 3735552 3735552 GPU_0_bfc 1561001501975169
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_1_grad/mul 1
+Output 0 256 256 GPU_0_bfc 1561001501292609
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_29_grad/mul 1
+Output 0 16384 16384 GPU_0_bfc 1561001501288187
+SrcNode GradientDescent/update_v/cg/affine0/weights/ApplyGradientDescent 1
+Output 0 411041792 411041792 GPU_0_bfc 1561001501991972
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv3/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 1464336384 1464336384 GPU_0_bfc 1561001502991045
+SrcNode v/tower_0/cg/conv7/Relu 1
+Output 0 366084096 366084096 GPU_0_bfc 1561001501791353
+SrcNode v/tower_0/cg/mpool4/MaxPool 1
+Output 0 22880256 22880256 GPU_0_bfc 1561001501965739
+SrcNode GradientDescent/update_v/cg/conv0/biases/ApplyGradientDescent 1
+Output 0 256 256 GPU_0_bfc 1561001503577455
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv9/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 366084096 366084096 GPU_0_bfc 1561001502124986
+SrcNode v/tower_0/cg/mpool1/MaxPool 1
+Output 0 366084096 366084096 GPU_0_bfc 1561001501548532
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_7_grad/mul 1
+Output 0 512 512 GPU_0_bfc 1561001501292762
+SrcNode v/tower_0/add 1
+Output 0 4 256 GPU_0_bfc 1561001501977442
+SrcNode v/tower_0/cg/conv1/Relu 1
+Output 0 2928672768 2928672768 GPU_0_bfc 1561001501414012
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_4_grad/mul 1
+Output 0 294912 294912 GPU_0_bfc 1561001501292685
+SrcNode v/tower_0/cg/affine2/xw_plus_b 1
+Output 0 912912 1179648 GPU_0_bfc 1561001501973981
+SrcNode v/tower_0/transpose 1
+Output 0 137281536 137281536 GPU_0_bfc 1561001501291195
+SrcNode GradientDescent/update_v/cg/conv10/conv2d/kernel/ApplyGradientDescent 1
+Output 0 9437184 16400384 GPU_0_bfc 1561001502122757
+SrcNode v/tower_0/cg/conv6/BiasAdd 1
+Output 0 732168192 732168192 GPU_0_bfc 1561001501750273
+SrcNode v/tower_0/L2Loss_2 1
+Output 0 4 256 GPU_0_bfc 1561001501292618
 SrcNode v/tower_0/cg/conv8/BiasAdd 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075170418
+Output 0 366084096 366084096 GPU_0_bfc 1561001501851787
 SrcNode GradientDescent/update_v/cg/conv12/conv2d/kernel/ApplyGradientDescent 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075320875
+Output 0 9437184 9437184 GPU_0_bfc 1561001502037462
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv11/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082075321366
+Output 0 9437184 9437184 GPU_0_bfc 1561001502037736
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_24_grad/mul 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074662289
+Output 0 9437184 9437184 GPU_0_bfc 1561001501290973
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv7/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
-Output 0 4718592 4718592 GPU_0_bfc 1554082075725565
+Output 0 4718592 4718592 GPU_0_bfc 1561001502483724
 SrcNode v/tower_0/cg/conv4/conv2d/Conv2D 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082074928425
+Output 0 732168192 732168192 GPU_0_bfc 1561001501552264
 SrcNode v/tower_0/gradients/AddN_10 1
-Output 0 2048 2048 GPU_0_bfc 1554082075363002
+Output 0 2048 2048 GPU_0_bfc 1561001502120557
 SrcNode v/tower_0/gradients/AddN_19 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082075961671
+Output 0 2359296 2359296 GPU_0_bfc 1561001502720403
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_23_grad/mul 1
-Output 0 2048 2048 GPU_0_bfc 1554082074662839
+Output 0 2048 2048 GPU_0_bfc 1561001501291103
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv8/conv2d/Conv2D_grad/Conv2DBackpropInput 1
-Output 0 362872832 362872832 GPU_0_bfc 1554082075530939
+Output 0 366084096 366084096 GPU_0_bfc 1561001502289265
 SrcNode v/tower_0/cg/conv12/conv2d/Conv2D 1
-Output 0 90718208 171999232 GPU_0_bfc 1554082075258617
+Output 0 91521024 91521024 GPU_0_bfc 1561001501949949
 SrcNode v/tower_0/L2Loss_29 1
-Output 0 4 256 GPU_0_bfc 1554082074665531
+Output 0 4 256 GPU_0_bfc 1561001501288175
 SrcNode v/tower_0/L2Loss_28 1
-Output 0 4 256 GPU_0_bfc 1554082074665821
+Output 0 4 256 GPU_0_bfc 1561001501288221
 SrcNode v/tower_0/cg/conv3/Relu 1
-Output 0 1451491328 1451491328 GPU_0_bfc 1554082074919000
+Output 0 1464336384 1464336384 GPU_0_bfc 1561001501542749
 SrcNode v/tower_0/L2Loss_23 1
-Output 0 4 256 GPU_0_bfc 1554082074662881
+Output 0 4 256 GPU_0_bfc 1561001501291096
 SrcNode v/tower_0/L2Loss_22 1
-Output 0 4 256 GPU_0_bfc 1554082074662766
+Output 0 4 256 GPU_0_bfc 1561001501291023
 SrcNode v/tower_0/L2Loss_21 1
-Output 0 4 256 GPU_0_bfc 1554082074663111
+Output 0 4 256 GPU_0_bfc 1561001501291182
 SrcNode v/tower_0/L2Loss_20 1
-Output 0 4 256 GPU_0_bfc 1554082074662998
+Output 0 4 256 GPU_0_bfc 1561001501291109
 SrcNode v/tower_0/L2Loss_27 1
-Output 0 4 256 GPU_0_bfc 1554082074665958
+Output 0 4 256 GPU_0_bfc 1561001501288611
 SrcNode v/tower_0/L2Loss_26 1
-Output 0 4 256 GPU_0_bfc 1554082074667556
+Output 0 4 256 GPU_0_bfc 1561001501288630
 SrcNode v/tower_0/L2Loss_25 1
-Output 0 4 256 GPU_0_bfc 1554082074662556
+Output 0 4 256 GPU_0_bfc 1561001501291010
 SrcNode v/tower_0/L2Loss_24 1
-Output 0 4 256 GPU_0_bfc 1554082074662412
+Output 0 4 256 GPU_0_bfc 1561001501290937
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv6/BiasAdd_grad/BiasAddGrad 1
-Output 0 1024 1024 GPU_0_bfc 1554082075848403
+Output 0 1024 1024 GPU_0_bfc 1561001502607941
 SrcNode v/tower_0/cg/conv6/Relu 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082075086302
+Output 0 732168192 732168192 GPU_0_bfc 1561001501753956
 SrcNode v/tower_0/gradients/v/tower_0/cg/mpool2/MaxPool_grad/MaxPoolGrad 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082075777547
+Output 0 732168192 732168192 GPU_0_bfc 1561001502536220
 SrcNode v/tower_0/cg/conv0/BiasAdd 1
-Output 0 2902982656 2902982656 GPU_0_bfc 1554082074677214
+Output 0 2928672768 2928672768 GPU_0_bfc 1561001501302258
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv10/BiasAdd_grad/BiasAddGrad 1
-Output 0 2048 3072 GPU_0_bfc 1554082075342275
+Output 0 2048 2048 GPU_0_bfc 1561001502079369
 SrcNode GradientDescent/update_v/cg/conv1/conv2d/kernel/ApplyGradientDescent 1
-Output 0 147456 147456 GPU_0_bfc 1554082076859954
+Output 0 147456 147456 GPU_0_bfc 1561001503577435
 SrcNode v/tower_0/gradients/v/tower_0/L2Loss_25_grad/mul 1
-Output 0 2048 2560 GPU_0_bfc 1554082074662510
+Output 0 2048 2048 GPU_0_bfc 1561001501291017
 SrcNode v/tower_0/gradients/v/tower_0/cg/conv5/BiasAdd_grad/BiasAddGrad 1
-Output 0 1024 1024 GPU_0_bfc 1554082076021392
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_2_grad/mul 1
-Output 0 147456 147456 GPU_0_bfc 1554082074664563
-SrcNode v/tower_0/cg/conv3/conv2d/Conv2D 1
-Output 0 1451491328 1451491328 GPU_0_bfc 1554082074853300
-SrcNode GradientDescent/update_v/cg/conv11/biases/ApplyGradientDescent 1
-Output 0 2048 2048 GPU_0_bfc 1554082075342202
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv6/Relu_grad/ReluGrad 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082075784286
-SrcNode v/tower_0/gradients/AddN_5 1
-Output 0 411041792 411041792 GPU_0_bfc 1554082075293582
-SrcNode GradientDescent/update_v/cg/conv0/conv2d/kernel/ApplyGradientDescent 1
-Output 0 6912 6912 GPU_0_bfc 1554082076859976
-SrcNode v/tower_0/gradients/AddN 1
-Output 0 4004 4096 GPU_0_bfc 1554082075278979
-SrcNode GradientDescent/update_v/cg/affine1/weights/ApplyGradientDescent 1
-Output 0 67108864 67108864 GPU_0_bfc 1554082075281801
-SrcNode v/tower_0/cg/conv5/BiasAdd 1
-Output 0 725745664 725745664 GPU_0_bfc 1554082075016824
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv1/Relu_grad/ReluGrad 1
-Output 0 2902982656 2902982656 GPU_0_bfc 1554082076535392
-SrcNode v/tower_0/gradients/v/tower_0/L2Loss_31_grad/mul 1
-Output 0 4004 4096 GPU_0_bfc 1554082074665272
-SrcNode v/tower_0/cg/conv11/conv2d/Conv2D 1
-Output 0 90718208 90718208 GPU_0_bfc 1554082075247512
-SrcNode v/tower_0/L2Loss_30 1
-Output 0 4 256 GPU_0_bfc 1554082074665426
+Output 0 1024 1024 GPU_0_bfc 1561001502780543
 SrcNode v/tower_0/L2Loss_31 1
-Output 0 4 256 GPU_0_bfc 1554082074665313
+Output 0 4 256 GPU_0_bfc 1561001501287952
+SrcNode v/tower_0/cg/conv3/conv2d/Conv2D 1
+Output 0 1464336384 1464336384 GPU_0_bfc 1561001501480087
+SrcNode GradientDescent/update_v/cg/conv11/biases/ApplyGradientDescent 1
+Output 0 2048 2048 GPU_0_bfc 1561001502079291
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv6/Relu_grad/ReluGrad 1
+Output 0 732168192 732168192 GPU_0_bfc 1561001502543198
+SrcNode v/tower_0/gradients/AddN_5 1
+Output 0 411041792 411041792 GPU_0_bfc 1561001501989667
+SrcNode GradientDescent/update_v/cg/conv0/conv2d/kernel/ApplyGradientDescent 1
+Output 0 6912 6912 GPU_0_bfc 1561001503577461
+SrcNode v/tower_0/gradients/AddN 1
+Output 0 4004 4096 GPU_0_bfc 1561001501975065
+SrcNode GradientDescent/update_v/cg/affine1/weights/ApplyGradientDescent 1
+Output 0 67108864 67108864 GPU_0_bfc 1561001501977875
+SrcNode v/tower_0/cg/conv5/BiasAdd 1
+Output 0 732168192 732168192 GPU_0_bfc 1561001501619612
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv1/Relu_grad/ReluGrad 1
+Output 0 2928672768 2928672768 GPU_0_bfc 1561001503283966
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_31_grad/mul 1
+Output 0 4004 4096 GPU_0_bfc 1561001501288001
+SrcNode v/tower_0/cg/conv11/conv2d/Conv2D 1
+Output 0 91521024 91521024 GPU_0_bfc 1561001501934172
+SrcNode v/tower_0/L2Loss_30 1
+Output 0 4 256 GPU_0_bfc 1561001501288053
+SrcNode v/tower_0/gradients/v/tower_0/L2Loss_2_grad/mul 1
+Output 0 147456 147456 GPU_0_bfc 1561001501292639
 SrcNode v/tower_0/gradients/AddN_6 1
-Output 0 2048 2560 GPU_0_bfc 1554082075320288
+Output 0 2048 2048 GPU_0_bfc 1561001502036855
 SrcNode GradientDescent/update_v/cg/conv3/conv2d/kernel/ApplyGradientDescent 1
-Output 0 589824 589824 GPU_0_bfc 1554082076513620
+Output 0 589824 589824 GPU_0_bfc 1561001503261884
 SrcNode v/cg/conv11/biases 1
-Output 0 2048 2048 GPU_0_bfc 1554082074660701
+Output 0 2048 2048 GPU_0_bfc 1561001501287335
 SrcNode v/tower_0/mul/x 1
-Output 0 4 256 GPU_0_bfc 1554082074661393
+Output 0 4 256 GPU_0_bfc 1561001501287228
 SrcNode v/cg/conv6/biases 1
-Output 0 1024 1024 GPU_0_bfc 1554082074660996
+Output 0 1024 1024 GPU_0_bfc 1561001501287445
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv5/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501292388
 SrcNode v/cg/conv10/conv2d/kernel 1
-Output 0 9437184 16246016 GPU_0_bfc 1554082074660721
+Output 0 9437184 16400384 GPU_0_bfc 1561001501287341
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv4/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501292145
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv4/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501292159
 SrcNode v/tower_0/gpu_cached_images/read 1
-Output 0 136077312 207855616 GPU_0_bfc 1554082074661672
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv5/conv2d/Conv2D_grad/Const 1
-Output 0 16 256 cuda_host_bfc 1554082074661282
+Output 0 137281536 206651392 GPU_0_bfc 1561001501287732
+SrcNode v/cg/affine1/weights/read 1
+Output 0 67108864 67108864 GPU_0_bfc 1561001501287666
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv10/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501293658
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv10/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501293650
 SrcNode v/cg/affine2/weights 1
-Output 0 16400384 16400384 GPU_0_bfc 1554082074661495
+Output 0 16400384 16400384 GPU_0_bfc 1561001501287272
 SrcNode v/cg/conv2/biases/read 1
-Output 0 512 512 GPU_0_bfc 1554082074661747
+Output 0 512 512 GPU_0_bfc 1561001501287777
 SrcNode v/cg/conv3/biases/read 1
-Output 0 512 512 GPU_0_bfc 1554082074661771
+Output 0 512 512 GPU_0_bfc 1561001501287792
 SrcNode v/cg/conv10/conv2d/kernel/read 1
-Output 0 9437184 16246016 GPU_0_bfc 1554082074661649
-SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/Mul_grad/BroadcastGradientArgs-folded-1 1
-Output 0 4 256 cuda_host_bfc 1554082074661075
+Output 0 9437184 16400384 GPU_0_bfc 1561001501287717
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv2/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501290993
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv2/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501291001
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv7/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501293021
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv7/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501293013
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv11/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501293859
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv11/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501293871
 SrcNode v/cg/conv4/conv2d/kernel/read 1
-Output 0 1179648 1179648 GPU_0_bfc 1554082074661801
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv2/conv2d/Conv2D_grad/Const 1
-Output 0 16 256 cuda_host_bfc 1554082074661170
+Output 0 1179648 1179648 GPU_0_bfc 1561001501287813
 SrcNode v/cg/affine2/biases/read 1
-Output 0 4004 4096 GPU_0_bfc 1554082074661942
+Output 0 4004 4096 GPU_0_bfc 1561001501287499
 SrcNode v/tower_0/gradients/v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/xentropy/xentropy_grad/ExpandDims 1
-Output 0 904 1024 GPU_0_bfc 1554082074661047
+Output 0 912 1024 GPU_0_bfc 1561001501287241
 SrcNode group_deps_3/_74 1
-Output 0 0 0  1554082074683622
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv0/conv2d/Conv2D_grad/Const_1 1
-Output 0 16 256 cuda_host_bfc 1554082074661126
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv10/conv2d/Conv2D_grad/Const 1
-Output 0 16 256 cuda_host_bfc 1554082074661417
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv1/conv2d/Conv2D_grad/Const_1 1
-Output 0 16 256 cuda_host_bfc 1554082074661158
+Output 0 0 0  1561001501303636
 SrcNode v/cg/conv8/conv2d/kernel 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074661307
+Output 0 9437184 9437184 GPU_0_bfc 1561001501287466
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv5/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501292380
 SrcNode GradientDescent 0
 SrcNode v/cg/conv6/conv2d/kernel 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082074660982
+Output 0 2359296 2359296 GPU_0_bfc 1561001501287439
 SrcNode v/cg/conv11/conv2d/kernel/read 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074661626
+Output 0 9437184 9437184 GPU_0_bfc 1561001501287702
 SrcNode v/cg/conv3/biases 1
-Output 0 512 512 GPU_0_bfc 1554082074660906
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv10/conv2d/Conv2D_grad/Const_1 1
-Output 0 16 256 cuda_host_bfc 1554082074661202
+Output 0 512 512 GPU_0_bfc 1561001501287409
+SrcNode v/cg/conv8/conv2d/kernel/read 1
+Output 0 9437184 9437184 GPU_0_bfc 1561001501287878
 SrcNode v/cg/conv11/conv2d/kernel 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074660683
+Output 0 9437184 9437184 GPU_0_bfc 1561001501287328
 SrcNode v/cg/conv9/biases/read 1
-Output 0 2048 2048 GPU_0_bfc 1554082074661614
+Output 0 2048 2048 GPU_0_bfc 1561001501287899
 SrcNode v/tower_0/gradients/v/tower_0/cg/Reshape_grad/Reshape 1
-Output 0 22679552 22679552 GPU_0_bfc 1554082074672901
+Output 0 22880256 37855232 GPU_0_bfc 1561001501296082
 SrcNode _SOURCE 0
-SrcNode v/cg/conv4/biases/read 1
-Output 0 1024 1024 GPU_0_bfc 1554082074661811
 SrcNode ConstantFolding/v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/div_recip 1
-Output 0 4 256 GPU_0_bfc 1554082074661062
+Output 0 4 256 GPU_0_bfc 1561001501287198
 SrcNode v/cg/conv12/conv2d/kernel 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074660616
+Output 0 9437184 9437184 GPU_0_bfc 1561001501287316
 SrcNode group_deps_3 0
 SrcNode group_deps_2 0
 SrcNode group_deps_1 0
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv7/conv2d/Conv2D_grad/Const_1 1
-Output 0 16 256 cuda_host_bfc 1554082074661350
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv4/conv2d/Conv2D_grad/Const 1
-Output 0 16 256 cuda_host_bfc 1554082074661253
-SrcNode v/cg/affine1/weights/read 1
-Output 0 67108864 67108864 GPU_0_bfc 1554082074662184
-SrcNode v/tower_0/gradients/v/tower_0/mul_grad/Mul_1 1
-Output 0 4 256 GPU_0_bfc 1554082074661404
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv12/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501294062
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv12/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501294055
 SrcNode v/cg/affine2/biases 1
-Output 0 4004 4096 GPU_0_bfc 1554082074661443
+Output 0 4004 4096 GPU_0_bfc 1561001501287249
 SrcNode v/cg/conv3/conv2d/kernel/read 1
-Output 0 589824 589824 GPU_0_bfc 1554082074661759
+Output 0 589824 589824 GPU_0_bfc 1561001501287783
 SrcNode v/cg/affine0/biases/read 1
-Output 0 16384 16384 GPU_0_bfc 1554082074662195
+Output 0 16384 16384 GPU_0_bfc 1561001501287675
 SrcNode v/cg/affine1/weights 1
-Output 0 67108864 67108864 GPU_0_bfc 1554082074661526
+Output 0 67108864 67108864 GPU_0_bfc 1561001501287285
 SrcNode v/cg/conv9/conv2d/kernel/read 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074661928
+Output 0 9437184 9437184 GPU_0_bfc 1561001501287893
 SrcNode v/cg/conv2/biases 1
-Output 0 512 512 GPU_0_bfc 1554082074660871
+Output 0 512 512 GPU_0_bfc 1561001501287397
 SrcNode v/cg/affine0/biases 1
-Output 0 16384 16384 GPU_0_bfc 1554082074661557
+Output 0 16384 16384 GPU_0_bfc 1561001501287298
 SrcNode v/cg/conv6/conv2d/kernel/read 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082074661844
+Output 0 2359296 2359296 GPU_0_bfc 1561001501287851
 SrcNode v/cg/conv5/conv2d/kernel 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082074660949
+Output 0 2359296 2359296 GPU_0_bfc 1561001501287427
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv0/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501290297
 SrcNode v/cg/conv1/biases 1
-Output 0 256 256 GPU_0_bfc 1554082074660838
+Output 0 256 256 GPU_0_bfc 1561001501287383
 SrcNode v/tower_0/gpu_cached_images 1
-Output 0 136077312 207855616 GPU_0_bfc 1554082074660753
+Output 0 137281536 206651392 GPU_0_bfc 1561001501287353
 SrcNode v/cg/conv1/conv2d/kernel 1
-Output 0 147456 147456 GPU_0_bfc 1554082074660822
+Output 0 147456 147456 GPU_0_bfc 1561001501287377
 SrcNode learning_rate/input 1
-Output 0 4 256 GPU_0_bfc 1554082074661375
+Output 0 4 256 GPU_0_bfc 1561001501287213
 SrcNode v/tower_0/transpose/perm 1
-Output 0 16 256 cuda_host_bfc 1554082074660773
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv3/conv2d/Conv2D_grad/Const 1
-Output 0 16 256 cuda_host_bfc 1554082074661231
+Output 0 16 256 cuda_host_bfc 1561001501287360
 SrcNode v/cg/conv9/biases 1
-Output 0 2048 2048 GPU_0_bfc 1554082074660667
+Output 0 2048 2048 GPU_0_bfc 1561001501287487
 SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/Mul 1
-Output 0 904 1024 GPU_0_bfc 1554082074671220
+Output 0 912 1024 GPU_0_bfc 1561001501294920
 SrcNode v/cg/affine0/weights/read 1
-Output 0 411041792 411041792 GPU_0_bfc 1554082074662205
+Output 0 411041792 411041792 GPU_0_bfc 1561001501287681
 SrcNode v/cg/conv12/conv2d/kernel/read 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074661589
-SrcNode v/tower_0/cg/Reshape/shape 1
-Output 0 8 256 cuda_host_bfc 1554082074661542
+Output 0 9437184 9437184 GPU_0_bfc 1561001501287687
+SrcNode v/cg/conv4/biases/read 1
+Output 0 1024 1024 GPU_0_bfc 1561001501287823
 SrcNode v/cg/conv12/biases 1
-Output 0 2048 2048 GPU_0_bfc 1554082074660649
+Output 0 2048 2048 GPU_0_bfc 1561001501287322
 SrcNode v/cg/conv10/biases/read 1
-Output 0 2048 2048 GPU_0_bfc 1554082074661663
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv4/conv2d/Conv2D_grad/Const_1 1
-Output 0 16 256 cuda_host_bfc 1554082074661269
+Output 0 2048 2048 GPU_0_bfc 1561001501287726
 SrcNode v/cg/conv1/conv2d/kernel/read 1
-Output 0 147456 147456 GPU_0_bfc 1554082074661707
+Output 0 147456 147456 GPU_0_bfc 1561001501287752
 SrcNode v/cg/conv0/biases/read 1
-Output 0 256 256 GPU_0_bfc 1554082074661696
+Output 0 256 256 GPU_0_bfc 1561001501287746
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv1/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501290700
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv1/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501290692
 SrcNode ConstantFolding/Mean/input_const_axis 1
-Output 0 4 256 cuda_host_bfc 1554082074672453
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv5/conv2d/Conv2D_grad/Const_1 1
-Output 0 16 256 cuda_host_bfc 1554082074661295
+Output 0 4 256 cuda_host_bfc 1561001501295777
 SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/Greater 1
-Output 0 1 256 GPU_0_bfc 1554082074661036
+Output 0 1 256 GPU_0_bfc 1561001501287152
 SrcNode v/cg/conv7/biases/read 1
-Output 0 2048 2048 GPU_0_bfc 1554082074661880
-SrcNode v/cg/affine1/biases 1
-Output 0 16384 16384 GPU_0_bfc 1554082074661511
-SrcNode Mean/input 1
-Output 0 4 256 GPU_0_bfc 1554082074672784
-SrcNode v/cg/affine1/biases/read 1
-Output 0 16384 16384 GPU_0_bfc 1554082074662167
-SrcNode v/cg/conv1/biases/read 1
-Output 0 256 256 GPU_0_bfc 1554082074661722
-SrcNode v/tower_0/synthetic_labels/min 1
-Output 0 4 256 cuda_host_bfc 1554082074661471
-SrcNode v/cg/conv8/biases 1
-Output 0 2048 2048 GPU_0_bfc 1554082074661335
-SrcNode v/cg/conv6/biases/read 1
-Output 0 1024 1024 GPU_0_bfc 1554082074661853
-SrcNode v/cg/conv4/biases 1
-Output 0 1024 1024 GPU_0_bfc 1554082074660937
-SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/Const_1 1
-Output 0 4 256 cuda_host_bfc 1554082074661011
-SrcNode v/cg/conv0/biases 1
-Output 0 256 256 GPU_0_bfc 1554082074660806
-SrcNode v/cg/conv3/conv2d/kernel 1
-Output 0 589824 589824 GPU_0_bfc 1554082074660886
-SrcNode v/cg/conv12/biases/read 1
-Output 0 2048 2048 GPU_0_bfc 1554082074661604
+Output 0 2048 2048 GPU_0_bfc 1561001501287873
 SrcNode v/cg/affine0/weights 1
-Output 0 411041792 411041792 GPU_0_bfc 1554082074661571
-SrcNode v/cg/conv8/conv2d/kernel/read 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074661895
-SrcNode v/cg/conv9/conv2d/kernel 1
-Output 0 9437184 9437184 GPU_0_bfc 1554082074661430
-SrcNode v/cg/conv4/conv2d/kernel 1
-Output 0 1179648 1179648 GPU_0_bfc 1554082074660919
-SrcNode v/cg/conv8/biases/read 1
-Output 0 2048 2048 GPU_0_bfc 1554082074661916
-SrcNode v/cg/conv0/conv2d/kernel/read 1
-Output 0 6912 6912 GPU_0_bfc 1554082074661688
-SrcNode v/cg/conv5/biases 1
-Output 0 1024 1024 GPU_0_bfc 1554082074660964
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv8/conv2d/Conv2D_grad/Const 1
-Output 0 16 256 cuda_host_bfc 1554082074661363
-SrcNode v/tower_0/cg/Reshape 1
-Output 0 22679552 22679552 GPU_0_bfc 1554082074670326
-SrcNode v/cg/conv5/biases/read 1
-Output 0 1024 1024 GPU_0_bfc 1554082074661835
-SrcNode v/tower_0/synthetic_labels/max 1
-Output 0 4 256 cuda_host_bfc 1554082074661482
-SrcNode v/cg/conv11/biases/read 1
-Output 0 2048 2048 GPU_0_bfc 1554082074661639
-SrcNode v/cg/conv7/biases 1
-Output 0 2048 2048 GPU_0_bfc 1554082074661185
-SrcNode v/cg/conv2/conv2d/kernel 1
-Output 0 294912 294912 GPU_0_bfc 1554082074660855
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv1/conv2d/Conv2D_grad/Const 1
-Output 0 16 256 cuda_host_bfc 1554082074661143
-SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/zeros_like 1
-Output 0 4 256 GPU_0_bfc 1554082074661026
-SrcNode v/cg/conv10/biases 1
-Output 0 2048 2048 GPU_0_bfc 1554082074660738
-SrcNode v/cg/conv5/conv2d/kernel/read 1
-Output 0 2359296 2359296 GPU_0_bfc 1554082074661820
+Output 0 411041792 411041792 GPU_0_bfc 1561001501287304
+SrcNode Mean/input 1
+Output 0 4 256 GPU_0_bfc 1561001501295993
+SrcNode v/cg/affine1/biases/read 1
+Output 0 16384 16384 GPU_0_bfc 1561001501287660
+SrcNode v/cg/conv1/biases/read 1
+Output 0 256 256 GPU_0_bfc 1561001501287762
 SrcNode Mean 1
-Output 0 4 256 GPU_0_bfc 1554082074672918
-SrcNode v/cg/conv0/conv2d/kernel 1
-Output 0 6912 6912 GPU_0_bfc 1554082074660785
+Output 0 4 256 GPU_0_bfc 1561001501296093
+SrcNode v/cg/conv4/conv2d/kernel 1
+Output 0 1179648 1179648 GPU_0_bfc 1561001501287415
+SrcNode v/tower_0/synthetic_labels/min 1
+Output 0 4 256 cuda_host_bfc 1561001501287263
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv9/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501293412
+SrcNode v/cg/conv8/biases 1
+Output 0 2048 2048 GPU_0_bfc 1561001501287473
 SrcNode v/cg/conv2/conv2d/kernel/read 1
-Output 0 294912 294912 GPU_0_bfc 1554082074661735
+Output 0 294912 294912 GPU_0_bfc 1561001501287768
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv3/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501291255
+SrcNode v/cg/conv4/biases 1
+Output 0 1024 1024 GPU_0_bfc 1561001501287421
+SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/Const_1 1
+Output 0 4 256 cuda_host_bfc 1561001501287189
+SrcNode v/cg/conv0/biases 1
+Output 0 256 256 GPU_0_bfc 1561001501287371
+SrcNode v/cg/conv3/conv2d/kernel 1
+Output 0 589824 589824 GPU_0_bfc 1561001501287403
+SrcNode v/cg/conv12/biases/read 1
+Output 0 2048 2048 GPU_0_bfc 1561001501287696
+SrcNode v/cg/affine1/biases 1
+Output 0 16384 16384 GPU_0_bfc 1561001501287279
+SrcNode v/cg/conv9/conv2d/kernel 1
+Output 0 9437184 9437184 GPU_0_bfc 1561001501287479
+SrcNode v/tower_0/cg/Reshape/shape 1
+Output 0 8 256 cuda_host_bfc 1561001501287292
+SrcNode v/cg/conv8/biases/read 1
+Output 0 2048 2048 GPU_0_bfc 1561001501287887
+SrcNode v/cg/conv0/conv2d/kernel/read 1
+Output 0 6912 6912 GPU_0_bfc 1561001501287740
+SrcNode v/cg/conv5/biases 1
+Output 0 1024 1024 GPU_0_bfc 1561001501287433
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv6/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501292736
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv6/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501292744
+SrcNode v/tower_0/cg/Reshape 1
+Output 0 22880256 22880256 GPU_0_bfc 1561001501294294
+SrcNode v/cg/conv5/biases/read 1
+Output 0 1024 1024 GPU_0_bfc 1561001501287839
+SrcNode v/tower_0/synthetic_labels/max 1
+Output 0 4 256 cuda_host_bfc 1561001501287268
+SrcNode v/cg/conv11/biases/read 1
+Output 0 2048 2048 GPU_0_bfc 1561001501287711
+SrcNode v/cg/conv7/biases 1
+Output 0 2048 2048 GPU_0_bfc 1561001501287460
+SrcNode v/cg/conv2/conv2d/kernel 1
+Output 0 294912 294912 GPU_0_bfc 1561001501287390
+SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/zeros_like 1
+Output 0 4 256 GPU_0_bfc 1561001501287204
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv9/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501293419
+SrcNode v/cg/conv10/biases 1
+Output 0 2048 2048 GPU_0_bfc 1561001501287347
+SrcNode v/cg/conv5/conv2d/kernel/read 1
+Output 0 2359296 2359296 GPU_0_bfc 1561001501287829
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv8/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501293216
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv8/conv2d/Conv2D_grad/ShapeN-matshapes-1 1
+Output 0 16 256 cuda_host_bfc 1561001501293229
+SrcNode v/cg/conv0/conv2d/kernel 1
+Output 0 6912 6912 GPU_0_bfc 1561001501287365
+SrcNode v/cg/conv6/biases/read 1
+Output 0 1024 1024 GPU_0_bfc 1561001501287858
 SrcNode v/tower_0/gradients/v/tower_0/cg/Reshape_grad/Shape 1
-Output 0 16 256 cuda_host_bfc 1554082074660567
+Output 0 16 256 cuda_host_bfc 1561001501287311
 SrcNode v/cg/conv7/conv2d/kernel 1
-Output 0 4718592 5013504 GPU_0_bfc 1554082074661092
+Output 0 4718592 4859136 GPU_0_bfc 1561001501287451
 SrcNode v/tower_0/synthetic_labels/shape 1
-Output 0 4 256 cuda_host_bfc 1554082074661456
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv7/conv2d/Conv2D_grad/Const 1
-Output 0 16 256 cuda_host_bfc 1554082074661322
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv3/conv2d/Conv2D_grad/Const_1 1
-Output 0 16 256 cuda_host_bfc 1554082074661242
+Output 0 4 256 cuda_host_bfc 1561001501287258
 SrcNode v/cg/conv7/conv2d/kernel/read 1
-Output 0 4718592 5013504 GPU_0_bfc 1554082074661866
+Output 0 4718592 4859136 GPU_0_bfc 1561001501287863
 SrcNode v/cg/affine2/weights/read 1
-Output 0 16400384 16400384 GPU_0_bfc 1554082074662152
-SrcNode v/tower_0/gradients/v/tower_0/cg/conv2/conv2d/Conv2D_grad/Const_1 1
-Output 0 16 256 cuda_host_bfc 1554082074661215
+Output 0 16400384 16400384 GPU_0_bfc 1561001501287648
+SrcNode ConstantFolding/v/tower_0/gradients/v/tower_0/cg/conv3/conv2d/Conv2D_grad/ShapeN-matshapes-0 1
+Output 0 16 256 cuda_host_bfc 1561001501291236

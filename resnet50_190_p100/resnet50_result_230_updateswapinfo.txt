@@ -1,0 +1,985 @@
+2019-06-21 09:31:46.555726: I tensorflow/core/common_runtime/recompute.cc:199] No recompute policy specified
+2019-06-21 09:31:46.555801: I tensorflow/core/common_runtime/executor.cc:1723] TF_MODEL_NUM_NODES set to: 2151
+W0621 09:31:47.800919 139645106689792 tf_logging.py:125] From /mnt/maweiliang/models/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:1589: __init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2019-06-21 09:31:48.469777: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:964] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-06-21 09:31:48.471105: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1522] Found device 0 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:00:08.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2019-06-21 09:31:48.471134: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1601] Adding visible gpu devices: 0
+2019-06-21 09:31:48.822575: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1082] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-21 09:31:48.822629: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1088]      0 
+2019-06-21 09:31:48.822637: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1101] 0:   N 
+2019-06-21 09:31:48.823040: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:393] Load /mnt/maweiliang/TFCompGraphSim/resnet50_190_p100/swapping_decision.log succeeded.
+2019-06-21 09:31:48.823213: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1214] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15117 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:00:08.0, compute capability: 6.0)
+2019-06-21 09:31:49.485310: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 1
+I0621 09:31:49.493937 139645106689792 tf_logging.py:115] Running local_init_op.
+2019-06-21 09:31:49.526262: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 2
+I0621 09:31:50.686717 139645106689792 tf_logging.py:115] Done running local_init_op.
+2019-06-21 09:31:50.845346: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 3
+2019-06-21 09:31:50.875895: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 4
+2019-06-21 09:31:50.900977: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 5
+2019-06-21 09:31:50.901026: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 6
+2019-06-21 09:31:50.901585: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 7
+2019-06-21 09:31:50.925953: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 8
+2019-06-21 09:31:51.959134: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 9
+2019-06-21 09:31:55.356078: W tensorflow/core/common_runtime/bfc_allocator.cc:215] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.59GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-06-21 09:31:55.663746: W tensorflow/core/common_runtime/bfc_allocator.cc:215] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.59GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-06-21 09:31:57.581222: W tensorflow/core/common_runtime/bfc_allocator.cc:215] Allocator (GPU_0_bfc) ran out of memory trying to allocate 850.50MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-06-21 09:31:57.589987: W tensorflow/core/common_runtime/bfc_allocator.cc:215] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.04GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-06-21 09:31:57.608929: W tensorflow/core/common_runtime/bfc_allocator.cc:215] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.51GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-06-21 09:31:57.608967: W tensorflow/core/common_runtime/bfc_allocator.cc:215] Allocator (GPU_0_bfc) ran out of memory trying to allocate 684.52MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-06-21 09:31:57.625064: W tensorflow/core/common_runtime/bfc_allocator.cc:215] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.29GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-06-21 09:31:57.625101: W tensorflow/core/common_runtime/bfc_allocator.cc:215] Allocator (GPU_0_bfc) ran out of memory trying to allocate 684.52MiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-06-21 09:31:57.667601: W tensorflow/core/common_runtime/bfc_allocator.cc:215] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.34GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-06-21 09:31:57.682433: W tensorflow/core/common_runtime/bfc_allocator.cc:215] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.29GiB. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2019-06-21 09:31:57.819871: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:57.900039: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:58.081081: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:31:58.089562: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:31:58.109099: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:31:58.117591: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:31:58.144948: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:58.172550: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:58.190465: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:58.261930: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:58.278342: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:58.538923: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:58.550470: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:58.576134: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:58.587525: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:58.739748: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:58.750930: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:59.190312: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:59.209023: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:59.255968: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:31:59.278259: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:59.297988: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:31:59.423061: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 10
+2019-06-21 09:31:59.423183: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 11
+2019-06-21 09:32:00.032367: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.060295: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.079877: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:00.088717: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:00.108588: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:00.117404: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:00.137324: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:00.146089: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:00.173194: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.202591: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.222231: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.252566: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.270320: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.293485: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.305458: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.331797: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.343859: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.370133: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.382184: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.423352: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:00.427805: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.443044: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.483612: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.502920: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.550559: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.569423: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.616321: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:00.639504: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.658828: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:00.704711: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 12
+2019-06-21 09:32:00.704851: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 13
+2019-06-21 09:32:01.312352: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.340681: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.360367: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:01.369173: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:01.389160: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:01.397936: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:01.417892: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:01.426621: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:01.454718: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.483004: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.502629: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.534094: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.551855: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.574976: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.587102: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.613397: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.625351: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.651613: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.663644: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.704688: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:01.709115: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.724245: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.764797: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.784021: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.832146: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.850497: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.897582: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:01.920192: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.939959: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:01.986383: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 14
+2019-06-21 09:32:01.986530: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 15
+2019-06-21 09:32:02.596251: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.624215: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.643752: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:02.652565: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:02.672376: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:02.681331: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:02.701242: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:02.710067: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:02.738131: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.766587: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.786073: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.816552: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.834313: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.857267: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.869396: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.895744: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.907821: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.934157: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.946211: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:02.987326: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:02.991992: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:03.007207: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:03.047711: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:03.067026: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:03.114641: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:03.133423: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:03.180443: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:03.203200: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:03.223033: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:03.269451: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 16
+2019-06-21 09:32:03.269487: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 17
+2019-06-21 09:32:03.877973: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:03.906101: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:03.925727: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:03.934649: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:03.954452: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:03.963334: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:03.983300: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:03.992072: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:04.020128: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.048530: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.068099: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.098403: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.116265: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.139403: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.151494: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.177724: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.189832: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.216170: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.228250: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.269403: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:04.273913: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.289168: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.329700: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.349091: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.396483: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.415480: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.462457: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:04.485504: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.504933: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:04.550858: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 18
+2019-06-21 09:32:04.550976: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 19
+2019-06-21 09:32:05.159030: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.186705: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.206240: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:05.215050: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:05.234880: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:05.243688: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:05.263598: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:05.272358: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:05.300525: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.328813: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.348378: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.379969: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.397737: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.420736: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.432837: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.458983: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.471070: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.497293: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.509321: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.550440: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:05.554923: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.570138: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.611067: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.629934: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.677368: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.696118: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.743146: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:05.765867: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.785559: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:05.831510: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 20
+2019-06-21 09:32:05.831666: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 21
+2019-06-21 09:32:06.437556: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.466862: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.486483: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:06.495327: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:06.515184: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:06.523903: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:06.543837: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:06.552585: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:06.579712: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.609114: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.628621: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.659811: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.677561: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.700683: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.712840: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.739087: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.751074: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.777384: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.789346: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.830492: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:06.835129: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.850300: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.890791: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.910053: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.957517: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:06.976424: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:07.023385: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:07.046099: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:07.065786: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:07.111862: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 22
+2019-06-21 09:32:07.112032: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 23
+2019-06-21 09:32:07.719359: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:07.747415: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:07.767030: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:07.775786: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:07.795667: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:07.804466: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:07.824370: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:07.833232: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:07.861318: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:07.888571: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:07.909164: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:07.940516: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:07.958287: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:07.981453: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:07.993532: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.019704: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.031828: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.058009: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.070048: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.111190: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:08.115802: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.131015: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.171678: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.191014: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.238620: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.257524: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.304655: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:08.327311: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.347199: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:08.393452: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 24
+2019-06-21 09:32:08.393535: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 25
+2019-06-21 09:32:09.000362: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.029446: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.049064: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:09.057816: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:09.077750: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:09.086562: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:09.106506: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:09.115269: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:09.143257: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.171664: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.191219: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.222497: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.240245: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.263251: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.275435: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.301608: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.313588: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.339832: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.351828: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.397497: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.412633: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.453229: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.472528: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.519911: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.538657: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.585684: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:09.608241: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.628036: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:09.674157: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 26
+2019-06-21 09:32:09.674318: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 27
+2019-06-21 09:32:10.282465: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.310522: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.330059: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:10.338971: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:10.358832: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:10.367687: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:10.387635: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:10.396326: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:10.424406: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.452744: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.472304: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.503698: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.521501: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.544475: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.556581: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.582736: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.594770: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.620996: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.632925: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.674052: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:10.678663: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.693782: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.734308: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.753720: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.801209: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.820117: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.868185: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:10.889675: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.909534: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:10.955521: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 28
+2019-06-21 09:32:10.955640: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 29
+2019-06-21 09:32:11.563330: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.592082: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.611759: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:11.620534: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:11.640435: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:11.649273: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:11.669132: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:11.678043: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:11.706056: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.734386: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.753935: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.785367: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.803167: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.826247: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.838341: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.864608: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.876676: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.902851: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.914911: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.955983: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:11.960552: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:11.975757: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:12.016376: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:12.035789: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:12.083030: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:12.101931: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:12.148909: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:12.171517: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:12.191313: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:12.237939: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 30
+2019-06-21 09:32:12.238041: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 31
+2019-06-21 09:32:12.846495: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:12.874436: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:12.894112: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:12.902907: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:12.922718: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:12.931498: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:12.951392: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:12.960155: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:12.988226: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.016582: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.036134: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.066400: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.084238: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.107402: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.119493: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.145881: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.157896: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.184295: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.196308: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.237407: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:13.242030: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.257186: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.297712: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.316990: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.364298: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.383202: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.430119: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:13.453261: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.472616: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:13.518711: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 32
+2019-06-21 09:32:13.518796: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 33
+2019-06-21 09:32:14.124968: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.154059: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.173700: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:14.182493: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:14.202362: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:14.211137: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:14.230977: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:14.239827: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:14.267842: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.295208: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.315866: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.347251: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.365087: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.388026: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.400275: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.426490: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.438499: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.464771: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.476755: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.517944: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:14.522509: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.537614: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.578126: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.597421: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.644962: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.663781: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.710761: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:14.733379: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.753214: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:14.799231: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 34
+2019-06-21 09:32:14.799438: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 35
+2019-06-21 09:32:15.407021: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.434913: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.454456: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:15.463359: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:15.483332: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:15.492138: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:15.511972: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:15.520826: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:15.548758: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.577069: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.596694: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.627826: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.645616: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.668787: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.680838: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.707060: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.719114: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.745377: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.757401: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.798581: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:15.803110: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.818345: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.858835: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.878183: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.925525: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.944437: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:15.991463: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:16.014621: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.033938: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.080026: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 36
+2019-06-21 09:32:16.080146: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 37
+2019-06-21 09:32:16.687175: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.715268: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.734774: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:16.743532: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:16.763393: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:16.772232: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:16.792071: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:16.801005: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:16.829069: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.857492: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.877057: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.907265: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.925066: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.948171: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.960226: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.986337: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:16.998478: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.024695: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.036722: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.077895: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:17.082377: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.097628: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.138136: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.157545: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.204981: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.223902: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.270904: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:17.293472: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.313304: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.359342: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 38
+2019-06-21 09:32:17.359450: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 39
+2019-06-21 09:32:17.968625: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:17.996284: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.015791: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:18.024619: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:18.044487: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:18.053294: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:18.073337: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:18.082121: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:18.110110: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.138481: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.158107: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.189610: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.207513: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.230606: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.242691: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.269016: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.281068: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.307408: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.319497: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.360686: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:18.365317: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.380535: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.421027: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.440448: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.488106: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.506992: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.554207: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:18.577589: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.597010: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:18.643073: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 40
+2019-06-21 09:32:18.643234: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 41
+2019-06-21 09:32:19.252016: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.280183: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.299695: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:19.308502: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:19.328420: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:19.337210: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:19.357227: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:19.365991: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:19.394016: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.422391: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.441930: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.473316: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.491006: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.514273: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.526312: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.552530: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.564586: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.590898: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.602840: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.644015: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:19.648594: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.663733: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.704197: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.723538: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.770961: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.789786: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.836775: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:19.859286: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.879014: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:19.925268: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 42
+2019-06-21 09:32:19.925323: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 43
+2019-06-21 09:32:20.533729: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.561898: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.581477: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:20.590215: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:20.610058: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:20.618752: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:20.638699: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:20.647434: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:20.675444: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.703690: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.723355: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.754788: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.772564: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.795784: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.807809: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.833915: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.845961: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.872206: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.884263: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.925314: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:20.929827: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.944996: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:20.985534: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:21.004885: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:21.052761: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:21.071249: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:21.118275: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:21.141035: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:21.160886: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:21.207187: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 44
+2019-06-21 09:32:21.207272: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 45
+2019-06-21 09:32:21.816755: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:21.844790: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:21.864437: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:21.873140: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:21.893115: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:21.901985: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:21.921826: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:21.930609: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:21.958636: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:21.985789: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.006479: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.036901: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.054701: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.077752: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.089914: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.116228: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.128267: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.154468: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.166505: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.207728: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:22.212326: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.227479: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.268051: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.287423: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.335629: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.354096: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.401147: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:22.424316: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.443708: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:22.489766: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 46
+2019-06-21 09:32:22.489929: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 47
+2019-06-21 09:32:23.096884: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.126108: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.145532: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:23.154450: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:23.174346: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:23.183231: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:23.203081: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:23.211932: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:23.240065: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.268308: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.287843: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.318130: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.335855: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.358900: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.371015: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.397212: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.409223: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.435552: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.447644: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.488748: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:23.493246: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.508441: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.548955: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.568280: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.615797: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.634613: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.681666: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:23.704635: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.723991: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:23.770282: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 48
+2019-06-21 09:32:23.770908: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 49
+2019-06-21 09:32:24.379702: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.407544: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.427001: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:24.435902: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:24.455752: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:24.464609: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:24.484430: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:24.493368: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:24.521381: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.549803: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.569343: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.600792: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.618665: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.641545: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.653695: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.679926: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.691911: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.718228: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.730287: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.771320: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:24.775813: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.791067: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.831473: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.850824: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.898206: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.917113: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:24.965271: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:24.986877: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.006646: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.052682: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 50
+2019-06-21 09:32:25.052822: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 51
+2019-06-21 09:32:25.661374: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.689264: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.708846: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:25.717646: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:25.737546: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:25.746375: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:25.766217: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:25.775097: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:25.802129: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.831418: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.850948: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.882616: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.900458: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.923520: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.935659: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.961900: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:25.973993: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.000244: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.012254: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.053433: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:26.057970: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.073222: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.113750: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.133088: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.180734: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.199385: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.246437: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:26.269212: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.288953: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.335123: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 52
+2019-06-21 09:32:26.335148: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 53
+2019-06-21 09:32:26.943784: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.971881: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:26.991408: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:27.000223: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:27.020106: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:27.028893: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:27.048801: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:27.057533: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:27.085632: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.113919: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.133492: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.164982: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.182710: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.205786: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.217846: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.244057: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.256124: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.282361: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.294381: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.335595: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:27.340162: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.355385: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.395969: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.415251: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.463336: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.481714: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.528637: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:27.551247: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.570984: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:27.617345: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 54
+2019-06-21 09:32:27.617362: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 55
+2019-06-21 09:32:28.224634: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.253512: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.273069: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:28.281889: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:28.301899: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:28.310675: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:28.330530: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:28.339373: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:28.367422: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.395665: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.415245: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.445633: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.463427: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.486712: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.498706: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.525004: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.536987: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.563383: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.575355: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.616604: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:28.621083: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.636294: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.676814: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.696085: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.744077: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.762618: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.809499: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:28.832331: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.852085: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:28.898178: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 56
+2019-06-21 09:32:28.898260: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 57
+2019-06-21 09:32:29.505435: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.533209: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.552764: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:29.561579: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:29.581453: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:29.590339: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:29.610138: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:29.618975: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:29.645896: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.674352: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.694969: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.726492: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.744310: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.767351: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.779534: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.805803: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.817740: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.844080: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.856116: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.897302: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:29.901795: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.917067: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.957782: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:29.976957: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:30.024337: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:30.043111: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:30.090096: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:30.112709: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:30.132494: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:30.178517: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 58
+2019-06-21 09:32:30.178634: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 59
+2019-06-21 09:32:30.785931: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:30.813855: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:30.833401: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:30.842326: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:30.862225: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:30.871002: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:30.890989: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:30.899722: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:30.926662: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:30.956090: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:30.975605: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.007207: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.025043: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.048185: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.060294: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.086599: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.098649: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.124985: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.137017: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.178114: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:31.182628: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.197844: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.238456: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.257811: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.305386: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.324327: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.371372: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:31.394248: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.414088: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:31.460369: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 60
+2019-06-21 09:32:31.460454: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 61
+2019-06-21 09:32:32.068717: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.096482: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.116014: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:32.124855: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:32.144715: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:32.153632: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:32.173462: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:32.182333: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:32.210283: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.238658: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.258201: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.289701: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.307467: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.330577: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.342757: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.368986: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.381015: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.407338: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.419449: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.460515: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:32.465051: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.480380: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.520838: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.540137: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.587690: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.606482: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.653539: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:32.676219: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.696028: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:32.742347: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 62
+2019-06-21 09:32:32.742377: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 63
+2019-06-21 09:32:33.349106: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.377908: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.397476: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:33.406384: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:33.426371: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:33.435150: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:33.455099: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:33.463959: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:33.492108: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.520471: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.540052: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.571404: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.589191: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.612498: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.624553: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.650853: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.662915: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.689160: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.701073: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.742267: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:33.746970: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.762122: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.802680: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.821954: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.869673: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.888489: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.935439: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:33.958230: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:33.977871: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.024154: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 64
+2019-06-21 09:32:34.024184: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 65
+2019-06-21 09:32:34.632458: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.660737: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.680144: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:34.688968: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:34.708879: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:34.717742: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:34.737688: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:34.746398: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:34.774422: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.802900: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.822479: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.853914: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.871737: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.894724: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.906819: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.933073: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.945077: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.971341: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:34.983271: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:35.024403: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:35.028989: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:35.044207: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:35.084717: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:35.103983: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:35.151656: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:35.170479: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:35.217536: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:35.240857: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:35.260103: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:35.306154: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 66
+2019-06-21 09:32:35.306288: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 67
+2019-06-21 09:32:35.913083: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:35.942220: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:35.961728: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv41/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:35.970531: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v112/conv40/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:35.990418: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv38/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:35.999214: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v111/conv37/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:36.019189: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv35/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:36.028029: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v110/conv34/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:36.056122: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.084447: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.104013: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.134377: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.152257: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.175397: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.187453: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.213725: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.225700: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.252044: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.263936: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.305126: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/Relu:0 not finish swap in before comp.
+2019-06-21 09:32:36.309697: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.324876: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.365391: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.384654: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.432005: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.450879: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.497948: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/mpool0/MaxPool:0 not finish swap in before comp.
+2019-06-21 09:32:36.521100: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.540387: I tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:330] v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D:0 not finish swap in before comp.
+2019-06-21 09:32:36.586737: I tensorflow/core/common_runtime/direct_session.cc:500] Running step 68
+[benchmark_cnn]: Use NO_MEM_OPT
+TensorFlow:  1.11
+Model:       resnet50
+Dataset:     imagenet (synthetic)
+Mode:        training
+SingleSess:  False
+Batch size:  236 global
+             236 per device
+Num batches: 20
+Num epochs:  0.00
+Devices:     ['/gpu:0']
+Data format: NCHW
+Layout optimizer: False
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating model
+[benchmark_cnn]: Use NO_MEM_OPT
+Running warm up
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 184.1 +/- 0.0 (jitter = 0.0)	8.332
+10	images/sec: 184.2 +/- 0.1 (jitter = 0.2)	8.276
+20	images/sec: 184.2 +/- 0.0 (jitter = 0.1)	8.211
+----------------------------------------------------------------
+total images/sec: 184.15
+----------------------------------------------------------------
