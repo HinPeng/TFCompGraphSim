@@ -215,9 +215,9 @@ class PeakMemory():
 
       self.meminfos.put(meminfo_a)
       self.meminfos.put(meminfo_d)
-      logging.debug("%s: %d, %d" % (swapinfo.tensor_name,
-                                    swapinfo.allocated_time,
-                                    swapinfo.deallocate_time))
+      # logging.debug("%s: %d, %d" % (swapinfo.tensor_name,
+      #                               swapinfo.allocated_time,
+      #                               swapinfo.deallocate_time))
       self.meminfos_dict[swapinfo.tensor_name] = (swapinfo.allocated_time, swapinfo.deallocate_time)
 
     # pass
@@ -271,7 +271,7 @@ class PeakMemory():
     l_times = []
     r_times = []
     for t_name in self.peakmem_tensors_collec:
-      logging.debug("%s: %d, %d" % (t_name, self.meminfos_dict[t_name][0], self.meminfos_dict[t_name][1]))
+      # logging.debug("%s: %d, %d" % (t_name, self.meminfos_dict[t_name][0], self.meminfos_dict[t_name][1]))
       assert t_name in self.meminfos_dict.keys()
       l_times.append(self.meminfos_dict[t_name][0])
       r_times.append(self.meminfos_dict[t_name][1])

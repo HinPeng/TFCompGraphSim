@@ -9,6 +9,8 @@
 
 *.pdf
 
+*.md
+
 **/swap_policy.txt
 
 *.sh

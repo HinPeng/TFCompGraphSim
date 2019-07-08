@@ -76,6 +76,13 @@ class SubReComp():
     # name: (swapout_rc, swapout_total_rc)
     self.out_triggers = dict()
 
+  def print_info(self):
+    logging.debug("subrecomp root %s, root_rank: %d" % (self.root_.name(), self.root_.rank))
+    colls = sorted(self.coll.values(), key=lambda x: x.rank)
+    for recomp in colls:
+      logging.debug("subrecomp child %s, rank: %d" % (recomp.name(), recomp.rank))
+      logging.debug("Inputs:%s" % str(recomp.inputs))
+
   def name(self):
     return self.root_.name()
 
@@ -99,27 +106,47 @@ class SubReComp():
     #   return srcs
     # else:
     #   return None
+  def updateRoot(self):
+    coll = [recomp for recomp in self.coll.values()]
+    coll = sorted(coll, key=lambda x:x.rank)
+    self.root_ = coll[0]
+    self.max_rank_var = coll[-1].rank-coll[0].rank
 
   def MergeSucc(self, recomp):
     self.coll[recomp.name()] = recomp
     rv = recomp.rank - self.root_.rank
     if rv > self.max_rank_var:
       self.max_rank_var = rv
-    for src in recomp.srcs:
-      if src[1] in self.coll.keys():
-        recomp.inputs.remove(src[1])
-        recomp.inputs += self.coll[src[1]].inputs        
+    # for src in recomp.srcs:
+    #   if src[1] in self.coll.keys():
+    #     if src[1] in recomp.inputs:
+    #       recomp.inputs.remove(src[1])
+    #     recomp.inputs += self.coll[src[1]].inputs  
+    #     recomp.inputs = list(set(recomp.inputs))      
+    #   else:
+    #     # recomp.inputs.append(src[1])
+    #     if src[1] not in self.src_inputs:
+    #       self.src_inputs.append(src[1])
+    replace_inputs = []
+    for input_ in recomp.inputs:
+      if input_ in self.coll.keys():
+        replace_inputs.append(input_)
       else:
-        # recomp.inputs.append(src[1])
-        if src[1] not in self.src_inputs:
-          self.src_inputs.append(src[1])
+        if input_ not in self.src_inputs:
+          self.src_inputs.append(input_)
+    for input_ in replace_inputs:
+      recomp.inputs.remove(input_)
+      recomp.inputs += self.coll[input_].inputs
+    recomp.inputs = list(set(recomp.inputs))
 
   def MergePrev(self, recomp):
     rvs = [abs(rp.rank-recomp.rank) for rp in self.coll.values()]
     self.max_rank_var = max(rvs)
     self.coll[recomp.name()] = recomp
-    self.src_inputs.remove(recomp.name())
+    if recomp.name() in self.src_inputs:
+      self.src_inputs.remove(recomp.name())
     self.src_inputs += recomp.inputs
+    self.src_inputs = list(set(self.src_inputs))
     if recomp.rank < self.root_.rank:
       self.root_ = recomp
     # recomp.inputs = [src[1] for src in recomp.srcs]
@@ -127,6 +154,13 @@ class SubReComp():
       if recomp.name() in rp.inputs:
         rp.inputs.remove(recomp.name())
         rp.inputs += recomp.inputs
+        rp.inputs = list(set(rp.inputs))
+
+  def MergeRecomp(self, recomp):
+    self.MergeSucc(recomp)
+    self.MergePrev(recomp)
+    logging.debug("%s merge recomp %s." % (self.root_.name(), recomp.name()))
+
 
   def TryMerge(self, recomp):
     rp_srcs = self.IsSrc(recomp)
@@ -500,43 +534,100 @@ class ReCompColl():
 
   def InitRPConnection(self):
     curr_queue = []
-    logging.info("Add self.root_: %s" % self.root_.name())
+    # for root in self.root_:
+    #   logging.info("Add self.root_: %s" % root.name())
     # curr_queue.append(self.root_)
     curr_queue += self.root_
     left_queue = [i for i in self.collection.values()]
+    # record not root but len(srcs_mask) == 0 recomp
+    tmp = []
+    for recomp in left_queue:
+      recomp.InitSrcsMask()
+      if len(recomp.srcs_mask) == 0:
+        recomp.rank=0
+        tmp.append(recomp)
+    curr_queue += tmp
+    for rp in tmp:
+      left_queue.remove(rp)
+
     for root in self.root_:
       root.rank=0
-      left_queue.remove(root)
+      if root in left_queue:
+        left_queue.remove(root)
+    logging.info("InitRPConnection:%d" % len(left_queue))    
     # left_queue.remove(self.root_)
     # logging.debug("Start from %s" % self.root_.name())
     # self.root_.rank = 0
     # traverse from root_ to set each rp's rank
-    while len(curr_queue) > 0:
-      t_recomp = curr_queue.pop()
-      for recomp in left_queue:
-        assert recomp != t_recomp
-
-        # check if t_recomp in recomp's inputs
-        if recomp.IsInSrcs(t_recomp):
-          if t_recomp.IsInSrcs(recomp):
-            logging.error("Meet a loop, %s and %s" % (recomp.name(), t_recomp.name()))
-            exit(1)
-          # logging.debug("P: %s, S: %s" % (recomp.name(), t_recomp.name()))
-          recomp.AddPrev(t_recomp)
-          t_recomp.AddSucc(recomp)
-          if recomp.IsUnsetRank():
-            recomp.rank = t_recomp.rank+1
-          else:
-            if recomp.rank < t_recomp.rank+1:
+    skip_list = []
+    add_cur_list = []
+    while len(left_queue) > 0:
+      for t_recomp in curr_queue:
+        for recomp in left_queue:
+          if recomp.IsInSrcs(t_recomp):
+            if t_recomp.IsInSrcs(recomp):
+              logging.error("Meet a loop, %s and %s" % (recomp.name(), t_recomp.name()))
+              exit(1)
+            logging.debug("P: %s, S: %s" % (recomp.name(), t_recomp.name()))
+            recomp.AddPrev(t_recomp)
+            t_recomp.AddSucc(recomp)
+            if recomp.IsUnsetRank():
               recomp.rank = t_recomp.rank+1
-          curr_queue.append(recomp)
-          left_queue.remove(recomp)
+              logging.debug("%s, rank: %d" % (recomp.name(), recomp.rank))
+            else:
+              if recomp.rank < t_recomp.rank+1:
+                recomp.rank = t_recomp.rank+1
+                logging.debug("%s, rank: %d" % (recomp.name(), recomp.rank))
+            if recomp.IsDone():
+              add_cur_list.append(recomp)
+              skip_list.append(recomp)
+        for tmp in skip_list:
+          left_queue.remove(tmp)
+        # del skip_list
+        skip_list=[]
+      # if len(add_cur_list) == 0:
+      #   for recomp in left_queue:
+      #     if recomp.IsDone() == False:
+      #       logging.debug("recomp %s: couldn't get input %s rank." % (recomp.name(), str(recomp.srcs_mask)))
+      #   break
+      for tmp in add_cur_list:
+        curr_queue.append(tmp)
+      add_cur_list=[]
+
+            
+    # while len(curr_queue) > 0:
+    #   t_recomp = curr_queue.pop()
+    #   tmp = []
+    #   for recomp in left_queue:
+    #     assert recomp != t_recomp
+    #     # check if t_recomp in recomp's inputs 
+    #     if recomp.IsInSrcs(t_recomp):
+    #       if t_recomp.IsInSrcs(recomp):
+    #         logging.error("Meet a loop, %s and %s" % (recomp.name(), t_recomp.name()))
+    #         exit(1)
+    #       logging.debug("P: %s, S: %s" % (recomp.name(), t_recomp.name()))
+    #       recomp.AddPrev(t_recomp)
+    #       t_recomp.AddSucc(recomp)
+    #       if recomp.IsUnsetRank():
+    #         recomp.rank = t_recomp.rank+1
+    #       else:
+    #         if recomp.rank < t_recomp.rank+1:
+    #           recomp.rank = t_recomp.rank+1
+    #       curr_queue.append(recomp)
+    #       # left_queue.remove(recomp)
+    #       tmp.append(recomp)
+    #   if len(tmp):
+    #     for recomp in tmp:
+    #       left_queue.remove(recomp)
+    #     del tmp
+          
 
     # for debug log
-    # recomps_ = sorted(self.collection.values(), key=lambda x: x.rank)
-    # for recomp in recomps_:
-    #   logging.debug("%s, rank: %d" % (recomp.name(), recomp.rank))
-      # logging.debug("prev: %d, succ: %d" % (len(recomp.prev), len(recomp.succ)))
+    recomps_ = sorted(self.collection.values(), key=lambda x: x.rank)
+    for recomp in recomps_:
+      # if recomp.IsUnsetRank():
+      logging.debug("%s, rank: %d" % (recomp.name(), recomp.rank))
+      logging.debug("prev: %d, succ: %d" % (len(recomp.prev), len(recomp.succ)))
 
    # def InitRank(self, rp):
   #   for input_t in rp.tensor.inputs:
@@ -587,6 +678,8 @@ class ReComp():
     # 3: Root input: which has no inputs
     self.srcs = []
 
+    self.srcs_mask = []
+
     # the inputs can be changed due to other recomps been chosen
     self.inputs = []
     # which op needs to be recomputed at this inputs
@@ -612,6 +705,11 @@ class ReComp():
     self.out_trigger = None
     self.in_trigger = None
 
+  def InitSrcsMask(self):
+    self.srcs_mask = [name for k, name in self.srcs if k == 0]
+
+  def IsDone(self):
+    return len(self.srcs_mask) == 0
 
   def name(self):
     return self.tensor.name()
@@ -748,6 +846,9 @@ class ReComp():
   def IsInSrcs(self, recomp):
     for _, name in self.srcs:
       if recomp.name() == name:
+        if not name in self.srcs_mask:
+          return False
+        self.srcs_mask.remove(name)
         return True
     return False
 
@@ -758,7 +859,9 @@ class ReComp():
     self.succ.append(succ)
 
   def AddSrc(self, src):
-    self.srcs.append(src)
+    srcs = [tmp[1] for tmp in self.srcs]
+    if src[1] not in srcs:
+      self.srcs.append(src)
 
   def PrintSrc(self):
     for num, name in self.srcs:
@@ -784,7 +887,12 @@ class ReComp():
       return True
     else:
       return False
-
+  
+  def IsInputRight(self):
+    for src in self.srcs:
+      if src[0] < 0:
+        return False
+    return True
   # def GetRecompSrcInputs(self):
   #   recomp_src = []
   #   for input_ in self.tensor.inputs:

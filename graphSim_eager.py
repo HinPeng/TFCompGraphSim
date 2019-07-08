@@ -49,9 +49,9 @@ class GraphSim():
     # self.metadata_dir = "./vgg16_226_p100/"
     # self.metadata_dir = "./resnet50_190_p100/"
     # self.metadata_dir = "./resnet152_86_p100/"
-    self.metadata_dir = "./bert_66_p100/"
+    # self.metadata_dir = "./bert_66_p100/"
     # self.metadata_dir = "./resnet50_64_eager/"
-    # self.metadata_dir = "./spinn_1024_eager/"
+    self.metadata_dir = "./spinn_1024_eager/"
 
     self.CpuNodeInfo_filename = "gpu_0_nodetime.txt"  # Initiate node execution time
     self.GpuNodeInfo_filename = "gpu_0_stream_all_nodetime.txt"  # Initiate node execution time
@@ -1382,9 +1382,9 @@ class GraphSim():
       if swapinfo.tensor_name == 'bert/encoder/layer_0/output/LayerNorm/batchnorm/Rsqrt:0':
         logging.debug("??? Rsqrt: %s" % str(swapinfo.access_list))
       
-      # if self.IsWeights(swapinfo.tensor_name):
+      if self.IsWeights(swapinfo.tensor_name):
       # # for bert
-      if self.IsVar(swapinfo.tensor_name):
+      # if self.IsVar(swapinfo.tensor_name):
         # logging.debug("Ignore weights: %s" % swapinfo.tensor_name)
         continue
       if self.IsSize(swapinfo.tensor_name):
@@ -2643,8 +2643,6 @@ class GraphSim():
             raise AssertionError
 
           output_slot = int(ttmp[1])
-          # requested_bytes = long(ttmp[2])
-          # allocated_bytes = long(ttmp[3])
           requested_bytes = int(ttmp[2])
           allocated_bytes = int(ttmp[3])
           try:
@@ -3084,7 +3082,7 @@ if __name__ == '__main__':
   graph_sim.InitNodesFanout()
   graph_sim.InitNodesFanin()
   graph_sim.InitTensorSize()
-  graph_sim.InitNode2Id()
+  # graph_sim.InitNode2Id()
   # graph_sim.SimTensorAccess()
   # graph_sim.DrawNodeExecTime()
   graph_sim.InitReComputationInfo()
