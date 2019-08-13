@@ -40,6 +40,10 @@ class Tensor():
     self.inputs = []    # store tensors which can produce this tensor
     # self.func = self.node_name  # how this tensor be produced by inputs
     # May we do not need to consider the kernel?
+    self.vdnn_swapout_controller = []
+
+    # tensor create time
+    self.create_time = -1
 
 
   def name(self):
@@ -56,3 +60,6 @@ class Tensor():
       self.gpu_mem_requested = float(self.requested_bytes) / self.metric
     else:
       self.gpu_mem_requested = 0
+  
+  def InitCreateTime(self, time_):
+    self.create_time = time_

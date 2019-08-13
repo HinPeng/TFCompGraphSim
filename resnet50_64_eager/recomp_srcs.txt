@@ -1,0 +1,549 @@
+BiasAdd_51:0	1
+2
+0	Relu_46:0
+BiasAdd_51
+Conv2D_51
+BiasAdd_34:0	1
+2
+0	Relu_30:0
+BiasAdd_34
+Conv2D_34
+Relu_31:0	1
+2
+0	BiasAdd_34:0
+Relu_31
+FusedBatchNorm_34
+BiasAdd_23:0	1
+2
+0	Relu_20:0
+BiasAdd_23
+Conv2D_23
+Relu_17:0	1
+2
+0	BiasAdd_19:0
+Relu_17
+FusedBatchNorm_19
+BiasAdd_11:0	1
+2
+0	Relu_9:0
+BiasAdd_11
+Conv2D_11
+BiasAdd_21:0	1
+2
+0	Relu_18:0
+BiasAdd_21
+Conv2D_21
+BiasAdd_32:0	1
+2
+0	Relu_28:0
+BiasAdd_32
+Conv2D_32
+BiasAdd_33:0	1
+2
+0	Relu_29:0
+BiasAdd_33
+Conv2D_33
+BiasAdd_35:0	1
+2
+0	Relu_31:0
+BiasAdd_35
+Conv2D_35
+BiasAdd_42:0	1
+2
+0	Relu_38:0
+BiasAdd_42
+Conv2D_42
+BiasAdd_44:0	1
+2
+0	Relu_40:0
+BiasAdd_44
+Conv2D_44
+BiasAdd_31:0	1
+2
+0	Relu_27:0
+BiasAdd_31
+Conv2D_31
+BiasAdd_40:0	1
+2
+0	Relu_36:0
+BiasAdd_40
+Conv2D_40
+Relu_44:0	1
+2
+0	BiasAdd_48:0
+Relu_44
+FusedBatchNorm_48
+Relu_43:0	1
+2
+0	BiasAdd_47:0
+Relu_43
+FusedBatchNorm_47
+Relu_46:0	1
+2
+0	BiasAdd_50:0
+Relu_46
+FusedBatchNorm_50
+BiasAdd_29:0	1
+2
+0	Relu_25:0
+BiasAdd_29
+Conv2D_29
+Relu_48:0	2
+3
+0	Relu_45:0
+0	BiasAdd_52:0
+Relu_48
+Add_15
+FusedBatchNorm_52
+Relu_40:0	1
+2
+0	BiasAdd_43:0
+Relu_40
+FusedBatchNorm_43
+BiasAdd_9:0	1
+2
+0	Relu_7:0
+BiasAdd_9
+Conv2D_9
+BiasAdd_15:0	1
+2
+0	Relu_12:0
+BiasAdd_15
+Conv2D_15
+BiasAdd_49:0	1
+2
+0	Relu_44:0
+BiasAdd_49
+Conv2D_49
+Relu_13:0	1
+2
+0	BiasAdd_15:0
+Relu_13
+FusedBatchNorm_15
+Relu_18:0	2
+3
+0	Relu_15:0
+0	BiasAdd_20:0
+Relu_18
+Add_5
+FusedBatchNorm_20
+BiasAdd_45:0	1
+2
+0	Relu_41:0
+BiasAdd_45
+Conv2D_45
+BiasAdd_37:0	1
+2
+0	Relu_33:0
+BiasAdd_37
+Conv2D_37
+BiasAdd_47:0	1
+2
+0	Relu_42:0
+BiasAdd_47
+Conv2D_47
+BiasAdd_20:0	1
+2
+0	Relu_17:0
+BiasAdd_20
+Conv2D_20
+BiasAdd_1:0	1
+2
+0	MaxPool_0:0
+BiasAdd_1
+Conv2D_1
+Relu_25:0	1
+2
+0	BiasAdd_28:0
+Relu_25
+FusedBatchNorm_28
+Relu_28:0	1
+2
+0	BiasAdd_31:0
+Relu_28
+FusedBatchNorm_31
+BiasAdd_5:0	1
+2
+0	Relu_3:0
+BiasAdd_5
+Conv2D_5
+Relu_39:0	2
+3
+0	Relu_36:0
+0	BiasAdd_42:0
+Relu_39
+Add_12
+FusedBatchNorm_42
+Relu_36:0	2
+3
+0	Relu_33:0
+0	BiasAdd_39:0
+Relu_36
+Add_11
+FusedBatchNorm_39
+Relu_27:0	2
+3
+0	Relu_24:0
+0	BiasAdd_30:0
+Relu_27
+Add_8
+FusedBatchNorm_30
+BiasAdd_17:0	1
+2
+0	Relu_14:0
+BiasAdd_17
+Conv2D_17
+BiasAdd_7:0	1
+2
+0	Relu_5:0
+BiasAdd_7
+Conv2D_7
+BiasAdd_28:0	1
+2
+0	Relu_24:0
+BiasAdd_28
+Conv2D_28
+Relu_38:0	1
+2
+0	BiasAdd_41:0
+Relu_38
+FusedBatchNorm_41
+Relu_9:0	2
+3
+0	Relu_6:0
+0	BiasAdd_10:0
+Relu_9
+Add_2
+FusedBatchNorm_10
+BiasAdd_8:0	1
+2
+0	Relu_6:0
+BiasAdd_8
+Conv2D_8
+BiasAdd_48:0	1
+2
+0	Relu_43:0
+BiasAdd_48
+Conv2D_48
+Relu_19:0	1
+2
+0	BiasAdd_21:0
+Relu_19
+FusedBatchNorm_21
+MaxPool_0:0	1
+1
+0	Relu_0:0
+MaxPool_0
+BiasAdd_50:0	1
+2
+0	Relu_45:0
+BiasAdd_50
+Conv2D_50
+BiasAdd_38:0	1
+2
+0	Relu_34:0
+BiasAdd_38
+Conv2D_38
+Relu_32:0	1
+2
+0	BiasAdd_35:0
+Relu_32
+FusedBatchNorm_35
+Relu_3:0	2
+4
+0	BiasAdd_4:0
+0	BiasAdd_3:0
+Relu_3
+Add_0
+FusedBatchNorm_3
+FusedBatchNorm_4
+Relu_29:0	1
+2
+0	BiasAdd_32:0
+Relu_29
+FusedBatchNorm_32
+Relu_30:0	2
+3
+0	Relu_27:0
+0	BiasAdd_33:0
+Relu_30
+Add_9
+FusedBatchNorm_33
+Relu_34:0	1
+2
+0	BiasAdd_37:0
+Relu_34
+FusedBatchNorm_37
+BiasAdd_46:0	1
+2
+0	Relu_39:0
+BiasAdd_46
+Conv2D_46
+Relu_33:0	2
+3
+0	Relu_30:0
+0	BiasAdd_36:0
+Relu_33
+Add_10
+FusedBatchNorm_36
+Relu_35:0	1
+2
+0	BiasAdd_38:0
+Relu_35
+FusedBatchNorm_38
+Relu_7:0	1
+2
+0	BiasAdd_8:0
+Relu_7
+FusedBatchNorm_8
+BiasAdd_2:0	1
+2
+0	Relu_1:0
+BiasAdd_2
+Conv2D_2
+Relu_37:0	1
+2
+0	BiasAdd_40:0
+Relu_37
+FusedBatchNorm_40
+Relu_10:0	1
+2
+0	BiasAdd_11:0
+Relu_10
+FusedBatchNorm_11
+BiasAdd_16:0	1
+2
+0	Relu_13:0
+BiasAdd_16
+Conv2D_16
+BiasAdd_6:0	1
+2
+0	Relu_4:0
+BiasAdd_6
+Conv2D_6
+BiasAdd_27:0	1
+2
+0	Relu_21:0
+BiasAdd_27
+Conv2D_27
+Relu_21:0	2
+3
+0	Relu_18:0
+0	BiasAdd_23:0
+Relu_21
+Add_6
+FusedBatchNorm_23
+Relu_5:0	1
+2
+0	BiasAdd_6:0
+Relu_5
+FusedBatchNorm_6
+Relu_23:0	1
+2
+0	BiasAdd_25:0
+Relu_23
+FusedBatchNorm_25
+BiasAdd_18:0	1
+2
+0	Relu_15:0
+BiasAdd_18
+Conv2D_18
+BiasAdd_3:0	1
+2
+0	Relu_2:0
+BiasAdd_3
+Conv2D_3
+Relu_20:0	1
+2
+0	BiasAdd_22:0
+Relu_20
+FusedBatchNorm_22
+BiasAdd_0:0	0
+2
+BiasAdd_0
+Conv2D_0
+Relu_42:0	2
+4
+0	BiasAdd_46:0
+0	BiasAdd_45:0
+Relu_42
+Add_13
+FusedBatchNorm_45
+FusedBatchNorm_46
+Relu_26:0	1
+2
+0	BiasAdd_29:0
+Relu_26
+FusedBatchNorm_29
+Relu_24:0	2
+4
+0	BiasAdd_27:0
+0	BiasAdd_26:0
+Relu_24
+Add_7
+FusedBatchNorm_27
+FusedBatchNorm_26
+BiasAdd_39:0	1
+2
+0	Relu_35:0
+BiasAdd_39
+Conv2D_39
+Relu_8:0	1
+2
+0	BiasAdd_9:0
+Relu_8
+FusedBatchNorm_9
+BiasAdd_25:0	1
+2
+0	Relu_22:0
+BiasAdd_25
+Conv2D_25
+BiasAdd_12:0	1
+2
+0	Relu_10:0
+BiasAdd_12
+Conv2D_12
+BiasAdd_52:0	1
+2
+0	Relu_47:0
+BiasAdd_52
+Conv2D_52
+Relu_14:0	1
+2
+0	BiasAdd_16:0
+Relu_14
+FusedBatchNorm_16
+BiasAdd_10:0	1
+2
+0	Relu_8:0
+BiasAdd_10
+Conv2D_10
+Relu_16:0	1
+2
+0	BiasAdd_18:0
+Relu_16
+FusedBatchNorm_18
+Relu_12:0	2
+4
+0	BiasAdd_14:0
+0	BiasAdd_13:0
+Relu_12
+Add_3
+FusedBatchNorm_13
+FusedBatchNorm_14
+Relu_1:0	1
+2
+0	BiasAdd_1:0
+Relu_1
+FusedBatchNorm_1
+BiasAdd_14:0	1
+2
+0	Relu_9:0
+BiasAdd_14
+Conv2D_14
+Relu_15:0	2
+3
+0	Relu_12:0
+0	BiasAdd_17:0
+Relu_15
+Add_4
+FusedBatchNorm_17
+Relu_2:0	1
+2
+0	BiasAdd_2:0
+Relu_2
+FusedBatchNorm_2
+BiasAdd_13:0	1
+2
+0	Relu_11:0
+BiasAdd_13
+Conv2D_13
+BiasAdd_43:0	1
+2
+0	Relu_39:0
+BiasAdd_43
+Conv2D_43
+BiasAdd_24:0	1
+2
+0	Relu_21:0
+BiasAdd_24
+Conv2D_24
+BiasAdd_22:0	1
+2
+0	Relu_19:0
+BiasAdd_22
+Conv2D_22
+Relu_0:0	1
+2
+0	BiasAdd_0:0
+Relu_0
+FusedBatchNorm_0
+Relu_11:0	1
+2
+0	BiasAdd_12:0
+Relu_11
+FusedBatchNorm_12
+Relu_6:0	2
+3
+0	Relu_3:0
+0	BiasAdd_7:0
+Relu_6
+Add_1
+FusedBatchNorm_7
+BiasAdd_26:0	1
+2
+0	Relu_23:0
+BiasAdd_26
+Conv2D_26
+Relu_47:0	1
+2
+0	BiasAdd_51:0
+Relu_47
+FusedBatchNorm_51
+BiasAdd_30:0	1
+2
+0	Relu_26:0
+BiasAdd_30
+Conv2D_30
+Relu_4:0	1
+2
+0	BiasAdd_5:0
+Relu_4
+FusedBatchNorm_5
+Relu_45:0	2
+3
+0	Relu_42:0
+0	BiasAdd_49:0
+Relu_45
+Add_14
+FusedBatchNorm_49
+Relu_41:0	1
+2
+0	BiasAdd_44:0
+Relu_41
+FusedBatchNorm_44
+BiasAdd_41:0	1
+2
+0	Relu_37:0
+BiasAdd_41
+Conv2D_41
+Relu_22:0	1
+2
+0	BiasAdd_24:0
+Relu_22
+FusedBatchNorm_24
+BiasAdd_36:0	1
+2
+0	Relu_32:0
+BiasAdd_36
+Conv2D_36
+BiasAdd_4:0	1
+2
+0	MaxPool_0:0
+BiasAdd_4
+Conv2D_4
+BiasAdd_19:0	1
+2
+0	Relu_16:0
+BiasAdd_19
+Conv2D_19

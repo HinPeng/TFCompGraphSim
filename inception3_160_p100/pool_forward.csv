@@ -1,0 +1,14 @@
+v/tower_0/cg/apool8/AvgPool,333
+v/tower_0/cg/incept_v3_d0/mpool3/MaxPool,567
+v/tower_0/cg/incept_v3_b0/mpool2/MaxPool,986
+v/tower_0/cg/incept_v3_e0/apool7/AvgPool,1145
+v/tower_0/cg/incept_v3_e0_1/mpool4/MaxPool,1499
+v/tower_0/cg/mpool1/MaxPool,2804
+v/tower_0/cg/incept_v3_c0/apool3/AvgPool,3167
+v/tower_0/cg/incept_v3_a0/apool0/AvgPool,3352
+v/tower_0/cg/incept_v3_c0_1/apool4/AvgPool,3368
+v/tower_0/cg/incept_v3_c0_2/apool5/AvgPool,3402
+v/tower_0/cg/incept_v3_c0_3/apool6/AvgPool,3421
+v/tower_0/cg/mpool0/MaxPool,3909
+v/tower_0/cg/incept_v3_a0_1/apool1/AvgPool,4703
+v/tower_0/cg/incept_v3_a0_2/apool2/AvgPool,5357

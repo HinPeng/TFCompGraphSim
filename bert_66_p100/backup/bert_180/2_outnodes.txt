@@ -1,0 +1,28 @@
+_SOURCE	_SINK	_SINK	loss/tags	IteratorV2	bert/embeddings/assert_less_equal/Assert/Assert/data_0	bert/embeddings/assert_less_equal/Assert/Assert/data_1	bert/embeddings/assert_less_equal/Assert/Assert/data_3	bert/embeddings/assert_less_equal/All/_2477	bert/embeddings/assert_less_equal/x/_2479	bert/embeddings/assert_less_equal/y/_2481	add_1/_2517	global_step/add/_2521	
+_SINK	
+loss/tags	loss	
+IteratorV2	IteratorGetNext	
+bert/embeddings/assert_less_equal/Assert/Assert/data_0	bert/embeddings/assert_less_equal/Assert/Assert	
+bert/embeddings/assert_less_equal/Assert/Assert/data_1	bert/embeddings/assert_less_equal/Assert/Assert	
+bert/embeddings/assert_less_equal/Assert/Assert/data_3	bert/embeddings/assert_less_equal/Assert/Assert	
+IteratorGetNext	IteratorGetNext/_2482	IteratorGetNext/_2484	IteratorGetNext/_2486	IteratorGetNext/_2488	IteratorGetNext/_2490	IteratorGetNext/_2492	IteratorGetNext/_2494	
+bert/embeddings/assert_less_equal/All/_2477	bert/embeddings/assert_less_equal/Assert/Assert	
+bert/embeddings/assert_less_equal/x/_2479	bert/embeddings/assert_less_equal/Assert/Assert	
+bert/embeddings/assert_less_equal/y/_2481	bert/embeddings/assert_less_equal/Assert/Assert	
+bert/embeddings/assert_less_equal/Assert/Assert	bert/embeddings/assert_less_equal/Assert/Assert/_2496	
+IteratorGetNext/_2482	_SINK	
+IteratorGetNext/_2484	_SINK	
+IteratorGetNext/_2486	_SINK	
+IteratorGetNext/_2488	_SINK	
+IteratorGetNext/_2490	_SINK	
+IteratorGetNext/_2492	_SINK	
+IteratorGetNext/_2494	_SINK	
+bert/embeddings/assert_less_equal/Assert/Assert/_2496	bert/embeddings/assert_less_equal/Assert/Assert/_2497	
+bert/embeddings/assert_less_equal/Assert/Assert/_2497	_SINK	
+add_1/_2517	loss	_retval_add_1_0_1	
+loss	Merge/MergeSummary	
+Merge/MergeSummary	_retval_Merge/MergeSummary_0_0	
+_retval_Merge/MergeSummary_0_0	_SINK	
+_retval_add_1_0_1	_SINK	
+global_step/add/_2521	_retval_global_step/add_0_2	
+_retval_global_step/add_0_2	_SINK	

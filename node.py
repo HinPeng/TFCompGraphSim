@@ -7,7 +7,7 @@ class Node():
                end_time=0,
                gpu_time=False):
     self.node_name = node_name
-
+    self.depth = -1
     # Can be delayed due to other operation. such as swap in
     self.logic_time = 0
     self.tmp_time = []
@@ -117,7 +117,26 @@ class Node():
       return None
     else:
       return Nok_tensors
-
+  
+  def updateNodeDepth(self, nodes):
+    if self.depth != -1:
+      return
+    if len(self.fanin_tensors) == 0:
+      self.depth = 0
+    for in_tensor in self.fanin_tensors:
+      in_node_name = in_tensor.node_name  
+      in_node = nodes[in_node_name]
+      if in_node.depth == -1:
+        in_node.updateNodeDepth(nodes)
+      if self.depth < in_node.depth+1:
+        self.depth = in_node.depth+1
+    
+    
+  def getInputSlot(self, tensor_name):
+    for i in range(len(self.fanin_tensors)):
+      if tensor_name == self.fanin_tensors[i].name():
+        return i
+    return -1
 
 # class Port():
 #   def __init__(self,

@@ -1,0 +1,68 @@
+fxxxxxxxxxxx:k	0	0	1	Floor_4:0	7	Floor_4	Add_9	Add_8	Mul_30	RandomUniform_4	Sub_48	Shape_4	1	Conv2D_10:0	
+fxxxxxxxxxxx:k	0	0	1	Floor_4:0	7	Floor_4	Add_9	Add_8	Mul_30	RandomUniform_4	Sub_48	Shape_4	1	Conv2D_10:0	
+
+fxxxxxxxxxxx:k	0	0	1	Floor_3:0	7	Floor_3	Add_7	Add_6	Mul_24	Sub_39	RandomUniform_3	Shape_3	1	Conv2D_8:0	
+fxxxxxxxxxxx:k	0	0	1	Floor_3:0	7	Floor_3	Add_7	Add_6	Mul_24	Sub_39	RandomUniform_3	Shape_3	1	Conv2D_8:0	
+
+swap error tensor
+Conv2D_13:0
+Conv2D_13:0	2	1	fxxxxxxxxxxxxxxxxxxxk	0	0
+Relu_13:0	4	1	fxxxxxxxxxxxxxxxxxxxk	0	0
+
+ConcatV2_5:0	2	1	fxxxxxxxxxxxxxxxxxxxk	0	0
+Floor_5:0
+RealDiv_5:0
+
+Conv2D_12:0 
+Relu_12:0
+Conv2D_11:0
+Relu_11:0
+
+ConcatV2_4:0
+Floor_4:0
+RealDiv_4:0
+
+Conv2D_10:0
+Relu_10:0
+Conv2D_9:0
+Relu_9:0
+
+ConcatV2_3:0 
+Floor_3:0
+RealDiv_3:0
+
+Conv2D_8:0
+Relu_8:0
+Conv2D_7:0
+Relu_7:0
+
+ConcatV2_2:0
+Floor_2:0
+RealDiv_2:0
+
+Conv2D_6:0
+Relu_6:0
+Conv2D_5:0
+Relu_5:0
+
+ConcatV2_1:0
+Floor_1:0
+RealDiv_1:0
+
+Conv2D_4:0
+Relu_4:0
+Conv2D_3:0
+Relu_3:0
+
+ConcatV2_0:0
+Floor_0:0
+RealDiv_0:0
+
+Conv2D_2:0
+Relu_2:0
+Conv2D_1:0
+Relu_1:0
+
+MaxPool_0:0
+Relu_0:0
+Conv2D_0:0

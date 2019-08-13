@@ -1,0 +1,537 @@
+ERROR 1
+2019-07-22 22:12:42.777124: I tensorflow/core/common_runtime/eager/recompute.cc:88] Save Floor_7:0
+2019-07-22 22:12:42.777164: I tensorflow/core/common_runtime/eager/recompute.cc:136] Recompute Floor_7:0 done
+2019-07-22 22:12:42.777306: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute RealDiv_7:0
+2019-07-22 22:12:42.777402: I tensorflow/core/common_runtime/eager/recompute.cc:88] Save RealDiv_7:0
+2019-07-22 22:12:42.777443: I tensorflow/core/common_runtime/eager/recompute.cc:136] Recompute RealDiv_7:0 done
+2019-07-22 22:12:42.778918: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Conv2D_16:0
+2019-07-22 22:12:42.779123: I tensorflow/core/common_runtime/eager/recompute.cc:88] Save Conv2D_16:0
+2019-07-22 22:12:42.779170: I tensorflow/core/common_runtime/eager/recompute.cc:136] Recompute Conv2D_16:0 done
+2019-07-22 22:12:42.790958: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Floor_6:0
+*** Received signal 11 ***
+*** BEGIN MANGLED STACK TRACE ***
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/../libtensorflow_framework.so(+0x6f516e)[0x7f4ade9e916e]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x11390)[0x7f4b026ac390]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/../libtensorflow_framework.so(_ZNK10tensorflow6Tensor30CheckIsAlignedAndSingleElementEv+0x2c)[0x7f4ade784b9c]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZNK10tensorflow6Tensor6scalarIfEENS_6TTypesIT_Li1ElE11ConstScalarEv+0x11)[0x7f4ae0daba41]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow8BinaryOpIN5Eigen9GpuDeviceENS_7functor3addIfEEE7ComputeEPNS_15OpKernelContextE+0x87d)[0x7f4ae320a62d]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/../libtensorflow_framework.so(_ZN10tensorflow13BaseGPUDevice13ComputeHelperEPNS_8OpKernelEPNS_15OpKernelContextE+0x3f5)[0x7f4ade90d6e5]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/../libtensorflow_framework.so(_ZN10tensorflow13BaseGPUDevice7ComputeEPNS_8OpKernelEPNS_15OpKernelContextE+0x8d)[0x7f4ade90dd2d]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow15KernelAndDevice3RunEPNS_19ScopedStepContainerEPSt6vectorINS_6TensorESaIS4_EES7_PNS_13NodeExecStatsERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEb+0x1865)[0x7f4ae3dabdb5]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow13RealRecomputeERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EESA_RKS6_+0x4a3)[0x7f4ae3d8c9b3]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow9RecomputeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKSt6vectorIS5_SaIS5_EESC_+0x105)[0x7f4ae3d8d785]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow20EagerRecomputeHelper15RecomputeTensorERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0x255)[0x7f4ae3d9e325]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow20EagerRecomputeHelper18RecordTensorAccessERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEy+0x16b)[0x7f4ae3d9eb5b]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow12EagerExecuteEPNS_12EagerContextEPNS_6DeviceERKNS_3gtl13InlinedVectorIPNS_12TensorHandleELi4EEEPNS_15KernelAndDeviceEPNS_13NodeExecStatsEPS7_iRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0x4d9)[0x7f4ae3d8b9f9]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow12EagerExecuteEPNS_14EagerOperationEPNS_3gtl13InlinedVectorIPNS_12TensorHandleELi2EEEPi+0x1b94)[0x7f4ae3d924e4]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(TFE_Execute+0x87)[0x7f4ae0c8bad7]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_Z24TFE_Py_FastPathExecute_CP7_objectS0_+0x290e)[0x7f4ae0c7bf7e]
+python(PyEval_EvalFrameEx+0x5ca)[0x4bc4aa]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python[0x4d5669]
+python(PyObject_Call+0x3e)[0x4a587e]
+python(PyEval_EvalFrameEx+0x263e)[0x4be51e]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python[0x4d5669]
+python(PyObject_Call+0x3e)[0x4a587e]
+python(PyEval_CallObjectWithKeywords+0x30)[0x4c5ef0]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0x1996454)[0x7f4ae0c63454]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0x19a8c19)[0x7f4ae0c75c19]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow5eager12GradientTapeI7_objectSt8functionIFPS2_S4_EEE15ComputeGradientERKNS0_6VSpaceIS2_S6_EEN4absl4SpanIKxEESF_NSD_IKS4_EEPSt6vectorIS4_SaIS4_EE+0xf8c)[0x7f4ae0c76e3c]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_Z19TFE_Py_TapeGradientP7_objectS0_S0_S0_S0_P9TF_Status+0x3a2)[0x7f4ae0c79082]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0x17ffeea)[0x7f4ae0acceea]
+python(PyEval_EvalFrameEx+0x5ca)[0x4bc4aa]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python[0x4eb69f]
+python(PyRun_FileExFlags+0x82)[0x4e58f2]
+python(PyRun_SimpleFileExFlags+0x186)[0x4e41a6]
+python(Py_Main+0x54e)[0x4938ce]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf0)[0x7f4b022f1830]
+python(_start+0x29)[0x493299]
+*** END MANGLED STACK TRACE ***
+
+*** Begin stack trace ***
+        tensorflow::CurrentStackTrace[abi:cxx11]()
+
+
+        tensorflow::Tensor::CheckIsAlignedAndSingleElement() const
+        tensorflow::TTypes<float, 1, long>::ConstScalar tensorflow::Tensor::scalar<float>() const
+        tensorflow::BinaryOp<Eigen::GpuDevice, tensorflow::functor::add<float> >::Compute(tensorflow::OpKernelContext*)
+        tensorflow::BaseGPUDevice::ComputeHelper(tensorflow::OpKernel*, tensorflow::OpKernelContext*)
+        tensorflow::BaseGPUDevice::Compute(tensorflow::OpKernel*, tensorflow::OpKernelContext*)
+        tensorflow::KernelAndDevice::Run(tensorflow::ScopedStepContainer*, std::vector<tensorflow::Tensor, std::allocator<tensorflow::Tensor> >*, std::vector<tensorflow::Tensor, std::allocator<tensorflow::Tensor> >*, tensorflow::NodeExecStats*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
+        tensorflow::RealRecompute(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::Recompute(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+        tensorflow::EagerRecomputeHelper::RecomputeTensor(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerRecomputeHelper::RecordTensorAccess(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long long)
+        tensorflow::EagerExecute(tensorflow::EagerContext*, tensorflow::Device*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 4> const&, tensorflow::KernelAndDevice*, tensorflow::NodeExecStats*, tensorflow::TensorHandle**, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerExecute(tensorflow::EagerOperation*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 2>*, int*)
+        TFE_Execute
+        TFE_Py_FastPathExecute_C(_object*, _object*)
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_CallObjectWithKeywords
+
+
+        tensorflow::eager::GradientTape<_object, std::function<_object* (_object*)> >::ComputeGradient(tensorflow::eager::VSpace<_object, std::function<_object* (_object*)> > const&, absl::Span<long long const>, absl::Span<long long const>, absl::Span<_object* const>, std::vector<_object*, std::allocator<_object*> >*)
+        TFE_Py_TapeGradient(_object*, _object*, _object*, _object*, _object*, TF_Status*)
+
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyRun_FileExFlags
+        PyRun_SimpleFileExFlags
+        Py_Main
+        __libc_start_main
+        _start
+*** End stack trace ***
+
+ERROR 2
+2019-07-22 22:16:23.351319: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute RealDiv_7:0
+2019-07-22 22:16:23.351389: I tensorflow/core/common_runtime/eager/recompute.cc:88] Save RealDiv_7:0
+2019-07-22 22:16:23.351416: I tensorflow/core/common_runtime/eager/recompute.cc:136] Recompute RealDiv_7:0 done
+2019-07-22 22:16:23.352901: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Conv2D_16:0
+2019-07-22 22:16:23.353096: I tensorflow/core/common_runtime/eager/recompute.cc:88] Save Conv2D_16:0
+2019-07-22 22:16:23.353130: I tensorflow/core/common_runtime/eager/recompute.cc:136] Recompute Conv2D_16:0 done
+2019-07-22 22:16:23.364879: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Floor_6:0
+
+*** Received signal 6 ***
+*** BEGIN MANGLED STACK TRACE ***
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/../libtensorflow_framework.so(+0x6f516e)[0x7ff3f6caf16e]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x11390)[0x7ff41a972390]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0x38)[0x7ff41a5cc428]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x16a)[0x7ff41a5ce02a]
+/lib/x86_64-linux-gnu/libc.so.6(+0x777ea)[0x7ff41a60e7ea]
+/lib/x86_64-linux-gnu/libc.so.6(+0x8037a)[0x7ff41a61737a]
+/lib/x86_64-linux-gnu/libc.so.6(cfree+0x4c)[0x7ff41a61b53c]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow13RealRecomputeERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EESA_RKS6_+0xca1)[0x7ff3fc0531b1]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow9RecomputeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKSt6vectorIS5_SaIS5_EESC_+0x105)[0x7ff3fc053785]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow20EagerRecomputeHelper15RecomputeTensorERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0x255)[0x7ff3fc064325]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow20EagerRecomputeHelper18RecordTensorAccessERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEy+0x16b)[0x7ff3fc064b5b]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow12EagerExecuteEPNS_12EagerContextEPNS_6DeviceERKNS_3gtl13InlinedVectorIPNS_12TensorHandleELi4EEEPNS_15KernelAndDeviceEPNS_13NodeExecStatsEPS7_iRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0x4d9)[0x7ff3fc0519f9]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow12EagerExecuteEPNS_14EagerOperationEPNS_3gtl13InlinedVectorIPNS_12TensorHandleELi2EEEPi+0x1b94)[0x7ff3fc0584e4]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(TFE_Execute+0x87)[0x7ff3f8f51ad7]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_Z24TFE_Py_FastPathExecute_CP7_objectS0_+0x290e)[0x7ff3f8f41f7e]
+python(PyEval_EvalFrameEx+0x5ca)[0x4bc4aa]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python[0x4d5669]
+python(PyObject_Call+0x3e)[0x4a587e]
+python(PyEval_EvalFrameEx+0x263e)[0x4be51e]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python[0x4d5669]
+python(PyObject_Call+0x3e)[0x4a587e]
+python(PyEval_CallObjectWithKeywords+0x30)[0x4c5ef0]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0x1996454)[0x7ff3f8f29454]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0x19a8c19)[0x7ff3f8f3bc19]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow5eager12GradientTapeI7_objectSt8functionIFPS2_S4_EEE15ComputeGradientERKNS0_6VSpaceIS2_S6_EEN4absl4SpanIKxEESF_NSD_IKS4_EEPSt6vectorIS4_SaIS4_EE+0xf8c)[0x7ff3f8f3ce3c]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_Z19TFE_Py_TapeGradientP7_objectS0_S0_S0_S0_P9TF_Status+0x3a2)[0x7ff3f8f3f082]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0x17ffeea)[0x7ff3f8d92eea]
+python(PyEval_EvalFrameEx+0x5ca)[0x4bc4aa]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python[0x4eb69f]
+python(PyRun_FileExFlags+0x82)[0x4e58f2]
+python(PyRun_SimpleFileExFlags+0x186)[0x4e41a6]
+python(Py_Main+0x54e)[0x4938ce]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf0)[0x7ff41a5b7830]
+python(_start+0x29)[0x493299]
+*** END MANGLED STACK TRACE ***
+
+*** Begin stack trace ***
+        tensorflow::CurrentStackTrace[abi:cxx11]()
+
+
+        gsignal
+        abort
+
+
+        cfree
+        tensorflow::RealRecompute(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::Recompute(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+        tensorflow::EagerRecomputeHelper::RecomputeTensor(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerRecomputeHelper::RecordTensorAccess(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long long)
+        tensorflow::EagerExecute(tensorflow::EagerContext*, tensorflow::Device*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 4> const&, tensorflow::KernelAndDevice*, tensorflow::NodeExecStats*, tensorflow::TensorHandle**, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerExecute(tensorflow::EagerOperation*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 2>*, int*)
+        TFE_Execute
+        TFE_Py_FastPathExecute_C(_object*, _object*)
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_CallObjectWithKeywords
+
+
+        tensorflow::eager::GradientTape<_object, std::function<_object* (_object*)> >::ComputeGradient(tensorflow::eager::VSpace<_object, std::function<_object* (_object*)> > const&, absl::Span<long long const>, absl::Span<long long const>, absl::Span<_object* const>, std::vector<_object*, std::allocator<_object*> >*)
+        TFE_Py_TapeGradient(_object*, _object*, _object*, _object*, _object*, TF_Status*)
+
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyRun_FileExFlags
+        PyRun_SimpleFileExFlags
+        Py_Main
+        __libc_start_main
+        _start
+*** End stack trace ***
+
+ERROR 3
+2019-07-22 22:18:20.238482: I tensorflow/core/common_runtime/eager/recompute.cc:88] Save RealDiv_7:0
+2019-07-22 22:18:20.238507: I tensorflow/core/common_runtime/eager/recompute.cc:136] Recompute RealDiv_7:0 done
+2019-07-22 22:18:20.239910: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Conv2D_16:0
+2019-07-22 22:18:20.240104: I tensorflow/core/common_runtime/eager/recompute.cc:88] Save Conv2D_16:0
+2019-07-22 22:18:20.240141: I tensorflow/core/common_runtime/eager/recompute.cc:136] Recompute Conv2D_16:0 done
+2019-07-22 22:18:20.251994: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Floor_6:0
+*** Received signal 11 ***
+*** BEGIN MANGLED STACK TRACE ***
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/../libtensorflow_framework.so(+0x6f516e)[0x7fbfaef8616e]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x11390)[0x7fbfd2c49390]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/../libtensorflow_framework.so(_ZN10tensorflow6Tensor18RecordTensorAccessERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEy+0x11)[0x7fbfaed1fb21]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow15KernelAndDevice3RunEPNS_19ScopedStepContainerEPSt6vectorINS_6TensorESaIS4_EES7_PNS_13NodeExecStatsERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEb+0x321)[0x7fbfb4347871]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow13RealRecomputeERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EESA_RKS6_+0x4a3)[0x7fbfb43299b3]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow9RecomputeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKSt6vectorIS5_SaIS5_EESC_+0x105)[0x7fbfb432a785]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow20EagerRecomputeHelper15RecomputeTensorERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0x255)[0x7fbfb433b325]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow20EagerRecomputeHelper18RecordTensorAccessERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEy+0x16b)[0x7fbfb433bb5b]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow12EagerExecuteEPNS_12EagerContextEPNS_6DeviceERKNS_3gtl13InlinedVectorIPNS_12TensorHandleELi4EEEPNS_15KernelAndDeviceEPNS_13NodeExecStatsEPS7_iRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE+0x4d9)[0x7fbfb43289f9]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow12EagerExecuteEPNS_14EagerOperationEPNS_3gtl13InlinedVectorIPNS_12TensorHandleELi2EEEPi+0x1b94)[0x7fbfb432f4e4]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(TFE_Execute+0x87)[0x7fbfb1228ad7]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_Z24TFE_Py_FastPathExecute_CP7_objectS0_+0x290e)[0x7fbfb1218f7e]
+python(PyEval_EvalFrameEx+0x5ca)[0x4bc4aa]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python[0x4d5669]
+python(PyObject_Call+0x3e)[0x4a587e]
+python(PyEval_EvalFrameEx+0x263e)[0x4be51e]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python[0x4d5669]
+python(PyObject_Call+0x3e)[0x4a587e]
+python(PyEval_CallObjectWithKeywords+0x30)[0x4c5ef0]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0x1996454)[0x7fbfb1200454]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0x19a8c19)[0x7fbfb1212c19]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow5eager12GradientTapeI7_objectSt8functionIFPS2_S4_EEE15ComputeGradientERKNS0_6VSpaceIS2_S6_EEN4absl4SpanIKxEESF_NSD_IKS4_EEPSt6vectorIS4_SaIS4_EE+0xf8c)[0x7fbfb1213e3c]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_Z19TFE_Py_TapeGradientP7_objectS0_S0_S0_S0_P9TF_Status+0x3a2)[0x7fbfb1216082]
+/mnt/maweiliang/tf_eager/local/lib/python2.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0x17ffeea)[0x7fbfb1069eea]
+python(PyEval_EvalFrameEx+0x5ca)[0x4bc4aa]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x6076)[0x4c1f56]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python(PyEval_EvalFrameEx+0x58e6)[0x4c17c6]
+python(PyEval_EvalCodeEx+0x306)[0x4b9b66]
+python[0x4eb69f]
+python(PyRun_FileExFlags+0x82)[0x4e58f2]
+python(PyRun_SimpleFileExFlags+0x186)[0x4e41a6]
+python(Py_Main+0x54e)[0x4938ce]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf0)[0x7fbfd288e830]
+python(_start+0x29)[0x493299]
+*** END MANGLED STACK TRACE ***
+
+*** Begin stack trace ***
+        tensorflow::CurrentStackTrace[abi:cxx11]()
+
+
+        tensorflow::Tensor::RecordTensorAccess(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long long)
+        tensorflow::KernelAndDevice::Run(tensorflow::ScopedStepContainer*, std::vector<tensorflow::Tensor, std::allocator<tensorflow::Tensor> >*, std::vector<tensorflow::Tensor, std::allocator<tensorflow::Tensor> >*, tensorflow::NodeExecStats*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
+        tensorflow::RealRecompute(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::Recompute(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+        tensorflow::EagerRecomputeHelper::RecomputeTensor(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerRecomputeHelper::RecordTensorAccess(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long long)
+        tensorflow::EagerExecute(tensorflow::EagerContext*, tensorflow::Device*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 4> const&, tensorflow::KernelAndDevice*, tensorflow::NodeExecStats*, tensorflow::TensorHandle**, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerExecute(tensorflow::EagerOperation*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 2>*, int*)
+        TFE_Execute
+        TFE_Py_FastPathExecute_C(_object*, _object*)
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_CallObjectWithKeywords
+
+
+        tensorflow::eager::GradientTape<_object, std::function<_object* (_object*)> >::ComputeGradient(tensorflow::eager::VSpace<_object, std::function<_object* (_object*)> > const&, absl::Span<long long const>, absl::Span<long long const>, absl::Span<_object* const>, std::vector<_object*, std::allocator<_object*> >*)
+        TFE_Py_TapeGradient(_object*, _object*, _object*, _object*, _object*, TF_Status*)
+
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyRun_FileExFlags
+        PyRun_SimpleFileExFlags
+        Py_Main
+        __libc_start_main
+        _start
+*** End stack trace ***
+
+
+ERROR 4
+depth = 0
+Floor_4:0
+2019-07-23 20:07:59.772646: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Floor_3:0
+hang out
+
+ERROR 5
+depth = 0
+Floor_6:0
+2019-07-23 20:04:12.385106: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Floor_6:0
+*** Begin stack trace ***
+        tensorflow::CurrentStackTrace[abi:cxx11]()
+
+
+        tensorflow::Tensor::CheckIsAlignedAndSingleElement() const
+        tensorflow::TTypes<float, 1, long>::ConstScalar tensorflow::Tensor::scalar<float>() const
+        tensorflow::BinaryOp<Eigen::GpuDevice, tensorflow::functor::add<float> >::Compute(tensorflow::OpKernelContext*)
+        tensorflow::BaseGPUDevice::ComputeHelper(tensorflow::OpKernel*, tensorflow::OpKernelContext*)
+        tensorflow::BaseGPUDevice::Compute(tensorflow::OpKernel*, tensorflow::OpKernelContext*)
+        tensorflow::KernelAndDevice::Run(tensorflow::ScopedStepContainer*, std::vector<tensorflow::Tensor, std::allocator<tensorflow::Tensor> >*, std::vector<tensorflow::Tensor, std::allocator<tensorflow::Tensor> >*, tensorflow::NodeExecStats*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
+        tensorflow::RealRecompute(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::Recompute(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+        tensorflow::EagerRecomputeHelper::RecomputeTensor(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerRecomputeHelper::RecordTensorAccess(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long long)
+        tensorflow::EagerExecute(tensorflow::EagerContext*, tensorflow::Device*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 4> const&, tensorflow::KernelAndDevice*, tensorflow::NodeExecStats*, tensorflow::TensorHandle**, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerExecute(tensorflow::EagerOperation*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 2>*, int*)
+        TFE_Execute
+        TFE_Py_FastPathExecute_C(_object*, _object*)
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_CallObjectWithKeywords
+
+
+        tensorflow::eager::GradientTape<_object, std::function<_object* (_object*)> >::ComputeGradient(tensorflow::eager::VSpace<_object, std::function<_object* (_object*)> > const&, absl::Span<long long const>, absl::Span<long long const>, absl::Span<_object* const>, std::vector<_object*, std::allocator<_object*> >*)
+        TFE_Py_TapeGradient(_object*, _object*, _object*, _object*, _object*, TF_Status*)
+
+
+ERROR 6
+Floor_6:0
+2019-07-23 20:06:02.747233: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Floor_6:0
+*** Begin stack trace ***
+        tensorflow::CurrentStackTrace[abi:cxx11]()
+
+
+        gsignal
+        abort
+
+
+        cfree
+        tensorflow::RealRecompute(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::Recompute(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+        tensorflow::EagerRecomputeHelper::RecomputeTensor(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerRecomputeHelper::RecordTensorAccess(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long long)
+        tensorflow::EagerExecute(tensorflow::EagerContext*, tensorflow::Device*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 4> const&, tensorflow::KernelAndDevice*, tensorflow::NodeExecStats*, tensorflow::TensorHandle**, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerExecute(tensorflow::EagerOperation*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 2>*, int*)
+        TFE_Execute
+        TFE_Py_FastPathExecute_C(_object*, _object*)
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_CallObjectWithKeywords
+
+
+        tensorflow::eager::GradientTape<_object, std::function<_object* (_object*)> >::ComputeGradient(tensorflow::eager::VSpace<_object, std::function<_object* (_object*)> > const&, absl::Span<long long const>, absl::Span<long long const>, absl::Span<_object* const>, std::vector<_object*, std::allocator<_object*> >*)
+        TFE_Py_TapeGradient(_object*, _object*, _object*, _object*, _object*, TF_Status*)
+
+ERROR 7
+two ERROR
+2019-07-23 20:07:59.772646: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Floor_3:0
+hang out
+
+2019-07-23 20:08:57.081047: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Floor_3:0
+2019-07-23 20:08:57.081106: F tensorflow/core/common_runtime/eager/execute.cc:789] Sub_39's 1th input is nullptr 0x7f7a55a3d810
+
+ERROR 8
+2019-07-23 20:09:51.361181: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Floor_7:0
+2019-07-23 20:09:51.361261: F tensorflow/core/common_runtime/eager/execute.cc:789] Sub_79's 1th input is nullptr 0x7fa88d2bd0a0
+
+ERROR 9
+2019-07-23 20:10:56.437446: I tensorflow/core/common_runtime/eager/recompute.cc:112] Recompute Floor_14:0
+*** Begin stack trace ***
+        tensorflow::CurrentStackTrace[abi:cxx11]()
+
+
+        tensorflow::Tensor::RecordTensorAccess(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long long)
+        tensorflow::KernelAndDevice::Run(tensorflow::ScopedStepContainer*, std::vector<tensorflow::Tensor, std::allocator<tensorflow::Tensor> >*, std::vector<tensorflow::Tensor, std::allocator<tensorflow::Tensor> >*, tensorflow::NodeExecStats*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
+        tensorflow::RealRecompute(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::Recompute(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)
+        tensorflow::EagerRecomputeHelper::RecomputeTensor(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerRecomputeHelper::RecordTensorAccess(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long long)
+        tensorflow::EagerExecute(tensorflow::EagerContext*, tensorflow::Device*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 4> const&, tensorflow::KernelAndDevice*, tensorflow::NodeExecStats*, tensorflow::TensorHandle**, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+        tensorflow::EagerExecute(tensorflow::EagerOperation*, tensorflow::gtl::InlinedVector<tensorflow::TensorHandle*, 2>*, int*)
+        TFE_Execute
+        TFE_Py_FastPathExecute_C(_object*, _object*)
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_EvalFrameEx
+        PyEval_EvalCodeEx
+
+        PyObject_Call
+        PyEval_CallObjectWithKeywords
+
+
+        tensorflow::eager::GradientTape<_object, std::function<_object* (_object*)> >::ComputeGradient(tensorflow::eager::VSpace<_object, std::function<_object* (_object*)> > const&, absl::Span<long long const>, absl::Span<long long const>, absl::Span<_object* const>, std::vector<_object*, std::allocator<_object*> >*)
+        TFE_Py_TapeGradient(_object*, _object*, _object*, _object*, _object*, TF_Status*)

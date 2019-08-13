@@ -77,13 +77,13 @@ def filterBert(filepath):
   # 'clip_by_global_norm/mul']
 
   # 100 dep=10 new
-  filterStrs = ['attention/output/add:0', 'attention/self/Reshape_3:0',
-  'attention/self/dropout/mul:0', 'attention/self/Softmax:0', 'Mul_5/y:0',
-  'bert/embeddings/one_hot', 'bert/embeddings/LayerNorm/batchnorm/Rsqrt',
-  'bert/encoder/layer_2/attention/output/LayerNorm/batchnorm/add_1', 'bert/encoder/layer_1/attention/output/LayerNorm/batchnorm/add_1',
-  'bert/encoder/layer_3/attention/output/LayerNorm/batchnorm/add_1' , 'bert/encoder/layer_0/attention/output/LayerNorm/batchnorm/Rsqrt',
-  'bert/encoder/layer_0/output/LayerNorm/batchnorm/Rsqrt', 'bert/encoder/layer_1/attention/output/LayerNorm/batchnorm/Rsqrt',
-  'bert/encoder/layer_1/output/LayerNorm/batchnorm/Rsqrt']
+  # filterStrs = ['attention/output/add:0', 'attention/self/Reshape_3:0',
+  # 'attention/self/dropout/mul:0', 'attention/self/Softmax:0', 'Mul_5/y:0',
+  # 'bert/embeddings/one_hot', 'bert/embeddings/LayerNorm/batchnorm/Rsqrt',
+  # 'bert/encoder/layer_2/attention/output/LayerNorm/batchnorm/add_1', 'bert/encoder/layer_1/attention/output/LayerNorm/batchnorm/add_1',
+  # 'bert/encoder/layer_3/attention/output/LayerNorm/batchnorm/add_1' , 'bert/encoder/layer_0/attention/output/LayerNorm/batchnorm/Rsqrt',
+  # 'bert/encoder/layer_0/output/LayerNorm/batchnorm/Rsqrt', 'bert/encoder/layer_1/attention/output/LayerNorm/batchnorm/Rsqrt',
+  # 'bert/encoder/layer_1/output/LayerNorm/batchnorm/Rsqrt']
   # ,'attention/output/LayerNorm/batchnorm/Rsqrt',
   # 'output/LayerNorm/batchnorm/Rsqrt', 'attention/output/LayerNorm/batchnorm/add_1']
 
@@ -153,6 +153,9 @@ def filterBert(filepath):
   # filterStrs = ['cls/predictions/transform/dense/BiasAdd', 'bert/embeddings/Slice/begin',
   # 'intermediate/dense/BiasAdd', 'attention/output/dropout/Floor',
   # 'attention/self/mul_1', 'bert/embeddings/word_embeddings/read:0']
+
+  filterStrs = ['attention/output/add:0', 'attention/self/Reshape_3:0',
+'attention/self/dropout/mul:0', 'attention/self/Softmax:0']
   
   policy = []
   comment = '#'
@@ -173,6 +176,66 @@ def filterBert(filepath):
     fin.writelines(policy)
 
 
+def filterDensenet(filepath):
+    # depth 0
+    filterNode = ['SplitV_40', 'SplitV_52', 'Floor','Floor_4:0','Floor_6:0', 'Floor_3:0', 'Floor_10:0', 'Floor_8:0']
+    # filterNode = ['SplitV_40', 'SplitV_52', 'Floor_4', 'Floor_6:0', 'Floor_3:0', 'Floor_7:0', 'Floor_8:0', 'Floor_10:0', 'Floor_2:0', 'Floor_12:0', 'Floor_0:0']
+    # filterNode = ['SplitV_40','SplitV_52', 'Floor_4:0', 'Floor_6:0', 'Floor_3:0', '']
+    # depth 1
+    # filterNode = ['SplitV_40', 'SplitV_52', 'Floor_3:0', 'Floor_4:0', 'Floor_5:0', 'ConcatV2_5:0', 'Floor_6:0','Floor_2:0','Floor_7:0','Floor']    
+    # filterNode = ['SplitV_40', 'SplitV_52','Floor_3:0','Floor_4:0','Floor_5:0','ConcatV2_5:0','Floor_6:0','Floor_2:0','Floor_7:0','Floor_8:0'\
+    #   , 'ConcatV2_1:0','Floor_10:0','Floor_11:0','ConcatV2_11:0', 'Floor_12:0','Floor_1:0','RealDiv_2:0','ConcatV2_13:0','Floor_13:0'\
+    #   , 'Floor_0:0','Floor_14:0', 'Floor']
+    # # filterNode = ['SplitV_40','SplitV_52','Conv2D_1:0','Relu_0:0','MaxPool_0:0', 'RealDiv_0:0','Floor_0:0'] # save multi tensor
+    # depth 2
+    # filterNode = ['SplitV_40', 'SplitV_52', 'Floor','Floor_3:0', 'Floor_4:0']
+    # filterNode = ['SplitV_40', 'SplitV_52','Relu_2:0', 'Conv2D_1:0', 'Relu_0:0','Conv2D_0:0', 'RealDiv_0:0', 'Floor_0:0']
+    # depth 3
+    # filterNode = ['SplitV_40', 'SplitV_52', 'RealDiv_5:0', 'Floor_5:0', 'Floor_4:0','ConcatV2_5:0', 'Relu_13:0', 'Conv2D_13:0',
+    # 'Floor_6:0', 'Floor_3:0', 'Floor_7:0','Floor_8:0', 'Floor']
+    # filterNode = ['SplitV_40', 'SplitV_52']
+    # depth 4
+    # filterNode = ['SplitV_40', 'SplitV_52', 'Floor']
+    # filterNode = ['SplitV_40', 'SplitV_52']
+    # depth 5
+    # filterNode = ['SplitV_40', 'SplitV_52', 'Floor']
+    # filterNode = ['SplitV_40', 'SplitV_52']
+    # depth 6
+    # filterNode = ['SplitV_40', 'SplitV_52', 'Floor']
+    # filterNode = ['SplitV_40', 'SplitV_52', 'Floor', 'ConcatV2_16:0','Conv2D_27:0', 'Relu_29:0','Floor_13:0','RealDiv_13:0','ConcatV2_5:0','Conv2D_4:0','Relu_5:0']    
+    # depth 7
+    # filterNode = ['SplitV_40', 'SplitV_52', 'Floor']
+    # filterNode = ['SplitV_40', 'SplitV_52','Floor']
+    
+
+
+    comment = '# '
+    lines = []
+    with open(filepath, 'r') as fout:
+      lines = fout.readlines()
+      print len(lines)
+      tensor_num = int(lines[0].split('\t')[0])
+      for i in range(1, tensor_num+1):
+        if comment not in lines[i]:
+          for node in filterNode:
+            if node in lines[i+tensor_num]:
+              lines[i+tensor_num] = comment+lines[i+tensor_num]
+              lines[i] = comment + lines[i]
+              break
+      # for i in range(1, tensor_num+1):
+      #     if comment not in lines[i]:
+      #       for tensor in filterTensor:
+      #         if tensor in lines[i]:
+      #           lines[i] = comment + lines[i]
+      #           lines[i+tensor_num] = comment+lines[i+tensor_num]
+      #           break
+    with open(filepath, 'w') as fin:
+      for line in lines:
+        fin.write(line)
+        # print line
+      # fin.writelines(lines) 
+
+
 if __name__ == '__main__':
   # filepath = '/home/frog/maweiliang/tmp/swap_policy.txt'
   # result = './result.log'
@@ -186,8 +249,9 @@ if __name__ == '__main__':
   # deleteConflictNodes(filepath, result)
   # print diff
   # print common
-  recompute_policy = "./bert_66_p100/recompute.log"
-  filterBert(recompute_policy)
+  # recompute_policy = "./bert_66_p100/recompute.log"
+  recompute_policy = "./densenet_64_eager/recompute.log"
+  filterDensenet(recompute_policy)
             
 
 

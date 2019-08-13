@@ -6,7 +6,7 @@ except ImportError:
 import logger
 import logging
 
-pcie_bw = 12 * (1 << 10)
+pcie_bw = 12 * (1 << 10) * 1
 
 class SwapOutTimeInfo():
   def __init__(self):
@@ -167,6 +167,17 @@ class SwapInfo():
       return -1
     else:
       return 1
+  
+  def Save(self, fin):
+    # fin.write("%s\t%d\t%d\t%f\t%d\t%d\t%d\n" % (self.tensor_name,\
+    #   self.allocated_time, self.deallocate_time,\
+    #   self.allocated_bytes, self.swap_start, \
+    #   self.max_access_interval, len(self.access_list)))
+    # for access in self.access_list:
+    #   fin.write("%d\t%d\n" % (access[0], access[1])) # (line, access_time)
+    # fin.write("\n")
+    fin.write("%s\n" % self.tensor_name)
+    
 
 class MemInfo():
   def __init__(self,
@@ -215,12 +226,12 @@ class PeakMemory():
 
       self.meminfos.put(meminfo_a)
       self.meminfos.put(meminfo_d)
-      # logging.debug("%s: %d, %d" % (swapinfo.tensor_name,
-      #                               swapinfo.allocated_time,
-      #                               swapinfo.deallocate_time))
+      logging.debug("%s: %d, %d, %d" % (swapinfo.tensor_name,
+                                    swapinfo.allocated_time,
+                                    swapinfo.deallocate_time,
+                                    swapinfo.allocated_bytes))
       self.meminfos_dict[swapinfo.tensor_name] = (swapinfo.allocated_time, swapinfo.deallocate_time)
 
-    # pass
 
   def GetPeakMemory(self):
     peak_mem = 0
@@ -230,19 +241,19 @@ class PeakMemory():
       meminfo = self.meminfos.get()
       total_mem += meminfo.allocated_bytes
       
-      # logging.debug("%s: %d" % (meminfo.tensor_name, meminfo.allocated_bytes))
+      logging.debug("%s: %d" % (meminfo.tensor_name, meminfo.allocated_bytes))
       if meminfo.IsDeallocate():
         self.curr_deallocate_.append(meminfo.tensor_name)
+        # logging.debug("%s is in current deallocation" % meminfo.tensor_name)
       else:
         tmp_.append(meminfo.tensor_name)
-        # logging.debug("%s is in current deallocation" % meminfo.tensor_name)
 
       if total_mem > peak_mem:
         assert (meminfo.IsDeallocate() == False)
         peak_mem = total_mem
         self.peakmem_tensors_collec += tmp_
         del tmp_[:]
-        # logging.debug("%s enter into peakmem collection" % meminfo.tensor_name)
+        logging.debug("%s enter into peakmem collection" % meminfo.tensor_name)
         # remove the tensor which has been deallocated as it's not
         # at peak memory usage
         if (len(self.curr_deallocate_) > 0):
@@ -253,9 +264,9 @@ class PeakMemory():
             except AssertionError:
               logging.error("Error when init peak memory")
               logging.debug("Error name: %s" % name)
-              # logging.debug("Current peakmem tensors collection:")
-              # for t_name in self.peakmem_tensors_collec:
-              #   logging.debug("%s" % t_name)
+              logging.debug("Current peakmem tensors collection:")
+              for t_name in self.peakmem_tensors_collec:
+                logging.debug("%s" % t_name)
               logging.debug("Allocation time: %d" % self.meminfos_dict[name][0])
               logging.debug("Deallocation time: %d" % self.meminfos_dict[name][1])
               exit(1)
@@ -267,7 +278,11 @@ class PeakMemory():
 
     # the earliest time of peak memory: earliest allocation time in peakmem_tensors_collec
     # the lastest time of peak memory: lastest deallocation time in peakmem_tensors_collec
-    logging.debug("Peak Memory: %d, %d" % (total_mem, peak_mem))
+    # for resnet50
+    special = "ReluGrad_0:0"
+    if special in self.peakmem_tensors_collec:
+      self.peakmem_tensors_collec.remove(special)
+      
     l_times = []
     r_times = []
     for t_name in self.peakmem_tensors_collec:
@@ -279,5 +294,6 @@ class PeakMemory():
     self.left_peak_time = max(l_times)
     self.right_peak_time = min(r_times)
     self.peak_mem = peak_mem
-
+    logging.debug("Peak Memory: %d, %d" % (total_mem, peak_mem))
+    logging.debug("Peak Memory Zone: %d, %d" % (self.left_peak_time, self.right_peak_time))    
     return peak_mem
