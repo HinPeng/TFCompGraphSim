@@ -14,3 +14,4 @@
 **/swap_policy.txt
 
 *.sh
+spinn_1024_eager/*
