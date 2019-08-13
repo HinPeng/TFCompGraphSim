@@ -117,6 +117,7 @@ class SwapInfo():
   #   self.swap_time = float(self.allocated_bytes) / pcie_bw * 1000000
 
   def GetFirstUseIndexAfterSwap(self):
+    # access_list = [(line_num, access_time)]
     return self.access_list[self.swap_start+1][0]
 
   def GetFirstUseTimeAfterSwap(self):
@@ -240,12 +241,19 @@ class PeakMemory():
     while not self.meminfos.empty():
       meminfo = self.meminfos.get()
       total_mem += meminfo.allocated_bytes
+<<<<<<< HEAD
       
       logging.debug("%s: %d" % (meminfo.tensor_name, meminfo.allocated_bytes))
+=======
+
+      #logging.debug("%s: %d, %d" % (meminfo.tensor_name, meminfo.allocated_bytes, meminfo.time))
+
+>>>>>>> d14c6fc75a1d000b40bf81b774b98cd106b0c67b
       if meminfo.IsDeallocate():
         self.curr_deallocate_.append(meminfo.tensor_name)
         # logging.debug("%s is in current deallocation" % meminfo.tensor_name)
       else:
+<<<<<<< HEAD
         tmp_.append(meminfo.tensor_name)
 
       if total_mem > peak_mem:
@@ -254,6 +262,14 @@ class PeakMemory():
         self.peakmem_tensors_collec += tmp_
         del tmp_[:]
         logging.debug("%s enter into peakmem collection" % meminfo.tensor_name)
+=======
+        self.peakmem_tensors_collec.append(meminfo.tensor_name)
+      
+      if total_mem > peak_mem:
+        assert (meminfo.IsDeallocate() == False)
+        peak_mem = total_mem  
+        # logging.debug("%s enter into peakmem collection" % meminfo.tensor_name)
+>>>>>>> d14c6fc75a1d000b40bf81b774b98cd106b0c67b
         # remove the tensor which has been deallocated as it's not
         # at peak memory usage
         if (len(self.curr_deallocate_) > 0):

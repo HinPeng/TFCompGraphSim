@@ -814,7 +814,7 @@ class ReComp():
       swapin_rc = len(access_indicies) - access_indicies.index(in_trigger_index) - 1
       swapin_total_rc = len(access_indicies)
     elif in_trigger_name in graphsim.ngpu_tensor_access.keys():
-      access_indicies = graphsim.ngpu_tensor_access[in_trigger_name]
+      access_indicies = [v for v,_ in graphsim.ngpu_tensor_access[in_trigger_name]]
       assert in_trigger_index in access_indicies
       swapin_rc = len(access_indicies) - access_indicies.index(in_trigger_index) - 1
       swapin_total_rc = len(access_indicies)

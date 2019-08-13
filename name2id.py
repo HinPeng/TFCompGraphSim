@@ -131,6 +131,7 @@ def NodeToId(metadir):
 if __name__ == "__main__":
   # pass
   # metadir = "./vgg16_226_p100/"
+<<<<<<< HEAD
   # metadir = "./inception3_160_p100/"
   # metadir = "./resnet50_190_p100/"
   metadir = "./bert_66_p100/"
@@ -139,3 +140,7 @@ if __name__ == "__main__":
 
   
     
+=======
+  metadir = "./inception3_160_p100/"
+  NodeToId(metadir)
+>>>>>>> d14c6fc75a1d000b40bf81b774b98cd106b0c67b
