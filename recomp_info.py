@@ -784,8 +784,11 @@ class ReComp():
   def SetTrigger(self, tac, graphsim, r_peak_time, on_demand=False):
     swapinfo = tac[self.name()]
     swapout_rc = swapinfo.GetSwapoutRc()
-    swapout_total_rc = len(swapinfo.access_list)
-    self.out_trigger = (swapout_total_rc, swapout_total_rc-swapout_rc)
+    if swapout_rc == -1:
+      self.out_trigger = (1, 0)
+    else:
+      swapout_total_rc = len(swapinfo.access_list)
+      self.out_trigger = (swapout_total_rc, swapout_total_rc-swapout_rc)
 
     if on_demand:
       self.in_trigger = ("fxxxxxxxxxxxxk", 0, 0)
@@ -879,6 +882,9 @@ class ReComp():
 
   def SetLastEvaTime(self, eva_time):
     self.last_eva_time = eva_time
+    self.tmp_eva_time = eva_time
+    assert self.alloc_bytes > 0
+    self.metric = float(self.alloc_bytes)/self.eva_time
 
   # def __cmp__(self, other)
   def IsUnsetRank(self):

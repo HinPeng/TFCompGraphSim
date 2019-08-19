@@ -14,4 +14,6 @@
 **/swap_policy.txt
 
 *.sh
+handleTensorInfo.py
 spinn_1024_eager/*
+transformer_6144_p100/*
