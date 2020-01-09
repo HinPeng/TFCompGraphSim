@@ -12,6 +12,13 @@ class Node():
     self.logic_time = 0
     self.tmp_time = []
 
+    # 0: normal node
+    # 1: variable node
+    # 2: send node
+    # 3: recv node
+    # TODO: if a node is a send node and its direct (or multi-level) input is a variable node, then it's a variable node
+    self.type = -1
+
     # Init by the run_metadata
     # start_time = node.all_start_micros
     # end_time = start_time + node.all_end_rel_micros

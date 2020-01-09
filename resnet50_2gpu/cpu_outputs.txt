@@ -1,0 +1,3004 @@
+SrcNode v/cg/resnet_v18/conv29/batchnorm29/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667608585
+SrcNode v/cg/resnet_v13/conv13/batchnorm13/moving_mean/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599192
+SrcNode v/cg/resnet_v11/conv6/conv2d/kernel/read/_442 1
+Output 0 0 0  1578299667601756
+SrcNode v/cg/resnet_v11/conv6/conv2d/kernel/read/_446 1
+Output 0 0 0  1578299667601774
+SrcNode v/tower_0/cg/resnet_v114/conv48/batchnorm48/AssignMovingAvg/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667686327
+SrcNode v/cg/resnet_v111/conv39/conv2d/kernel/read 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667594362
+SrcNode v/cg/resnet_v13/conv13/batchnorm13/beta 1
+Output 0 512 512 cuda_host_bfc 1578299667603566
+SrcNode v/tower_0/cg/resnet_v13/conv12/batchnorm12/AssignMovingAvg/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667636215
+SrcNode GradientDescent/update_v/cg/resnet_v115/conv51/batchnorm51/beta/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667702713
+SrcNode v/tower_0/cg/resnet_v110/conv34/batchnorm34/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667668467
+SrcNode v/cg/resnet_v14/conv17/batchnorm17/gamma 1
+Output 0 2048 2048 cuda_host_bfc 1578299667604470
+SrcNode GradientDescent/update_v/cg/resnet_v19/conv31/batchnorm31/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667761128
+SrcNode v/tower_0/cg/resnet_v11/conv7/batchnorm7/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667623482
+SrcNode v/tower_0/cg/resnet_v111/conv39/batchnorm39/AssignMovingAvg 1
+Output 0 4096 4096 cuda_host_bfc 1578299667674711
+SrcNode v/cg/resnet_v11/conv5/conv2d/kernel/read/_424 1
+Output 0 0 0  1578299667601536
+SrcNode PiecewiseConstant/case/LessEqual 1
+Output 0 1 1 cpu 1578299667593495
+SrcNode v/cg/resnet_v114/conv47/batchnorm47/beta/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667596994
+SrcNode v/cg/resnet_v112/conv42/batchnorm42/moving_mean/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593068
+SrcNode v/tower_0/cg/resnet_v17/conv26/batchnorm26/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667658239
+SrcNode v/cg/resnet_v18/conv28/batchnorm28/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667607752
+SrcNode v/cg/resnet_v13/conv12/batchnorm12/moving_variance/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599156
+SrcNode GradientDescent/update_v/cg/resnet_v12/conv9/conv2d/kernel/ApplyGradientDescent 1
+Output 0 147456 147456 cuda_host_bfc 1578299667835874
+SrcNode v/cg/resnet_v10/conv3/batchnorm3/moving_variance/read 1
+Output 0 256 256 cuda_host_bfc 1578299667592936
+SrcNode v/cg/resnet_v17/conv27/batchnorm27/moving_mean 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599437
+SrcNode v/cg/resnet_v13/conv11/batchnorm11/gamma 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599664
+SrcNode v/cg/resnet_v18/conv30/batchnorm30/moving_mean/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599606
+SrcNode v/tower_0/cg/resnet_v115/conv51/batchnorm51/AssignMovingAvg/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667690094
+SrcNode v/tower_0/cg/resnet_v17/conv25/batchnorm25/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667657257
+SrcNode v/cg/resnet_v14/conv17/conv2d/kernel/read/_644 1
+Output 0 0 0  1578299667604532
+SrcNode v/cg/resnet_v14/conv17/conv2d/kernel/read/_640 1
+Output 0 0 0  1578299667604479
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv24/batchnorm24/beta/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777144
+SrcNode group_deps_2 0
+SrcNode v/tower_0/cg/resnet_v12/conv9/batchnorm9/AssignMovingAvg_1/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667628864
+SrcNode AddN_80 1
+Output 0 1024 1024 cuda_host_bfc 1578299667779682
+SrcNode v/cg/resnet_v17/conv24/batchnorm24/gamma/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599673
+SrcNode v/tower_0/cg/resnet_v115/conv51/batchnorm51/AssignMovingAvg_1/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667690008
+SrcNode v/tower_0/cg/resnet_v16/conv22/batchnorm22/AssignMovingAvg/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667651985
+SrcNode v/tower_0/cg/resnet_v112/conv40/batchnorm40/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667676172
+SrcNode v/tower_0/cg/resnet_v115/conv50/batchnorm50/AssignMovingAvg 1
+Output 0 2048 2048 cuda_host_bfc 1578299667688892
+SrcNode v/cg/conv0/batchnorm0/moving_variance/read 1
+Output 0 256 256 cuda_host_bfc 1578299667592661
+SrcNode v/cg/resnet_v17/conv24/conv2d/kernel/read 1
+Output 0 2097152 2097152 cuda_host_bfc 1578299667599756
+SrcNode v/tower_0/cg/resnet_v111/conv37/batchnorm37/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667672255
+SrcNode v/tower_0/cg/resnet_v112/conv40/batchnorm40/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667676115
+SrcNode Mul_68 1
+Output 0 512 512 cuda_host_bfc 1578299667788474
+SrcNode v/tower_0/cg/resnet_v15/conv18/batchnorm18/AssignMovingAvg_1/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667645857
+SrcNode v/cg/resnet_v113/conv44/batchnorm44/moving_variance/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593133
+SrcNode v/tower_0/cg/resnet_v16/conv23/batchnorm23/AssignMovingAvg_1/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667653770
+SrcNode v/cg/resnet_v15/conv20/conv2d/kernel 1
+Output 0 262144 262144 cuda_host_bfc 1578299667605212
+SrcNode v/cg/conv0/batchnorm0/moving_mean/read 1
+Output 0 256 256 cuda_host_bfc 1578299667592582
+SrcNode v/cg/resnet_v10/conv2/batchnorm2/gamma 1
+Output 0 256 256 cuda_host_bfc 1578299667600647
+SrcNode v/cg/resnet_v14/conv17/batchnorm17/moving_variance/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599271
+SrcNode v/tower_0/cg/resnet_v111/conv37/batchnorm37/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667672301
+SrcNode v/cg/resnet_v14/conv16/batchnorm16/moving_variance 1
+Output 0 512 512 cuda_host_bfc 1578299667599222
+SrcNode v/tower_0/cg/resnet_v11/conv7/batchnorm7/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667623561
+SrcNode Mul_129 1
+Output 0 8388608 8388608 cuda_host_bfc 1578299667727613
+SrcNode Mul_128 1
+Output 0 4096 4096 cuda_host_bfc 1578299667732635
+SrcNode Mul_123 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667735911
+SrcNode Mul_122 1
+Output 0 1024 1024 cuda_host_bfc 1578299667737375
+SrcNode Mul_121 1
+Output 0 1024 1024 cuda_host_bfc 1578299667737410
+SrcNode Mul_120 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667738013
+SrcNode Mul_127 1
+Output 0 4096 6144 cuda_host_bfc 1578299667732643
+SrcNode Mul_126 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667732974
+SrcNode Mul_125 1
+Output 0 1024 1024 cuda_host_bfc 1578299667734931
+SrcNode Mul_124 1
+Output 0 1024 1024 cuda_host_bfc 1578299667734895
+SrcNode v/tower_0/cg/resnet_v17/conv24/batchnorm24/AssignMovingAvg_1/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667657181
+SrcNode v/tower_0/cg/resnet_v115/conv50/batchnorm50/AssignMovingAvg/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667688869
+SrcNode PiecewiseConstant/case/cond/cond/Switch/Switch 1
+Output 1 1 1 cpu 1578299667594522
+SrcNode GradientDescent/update_v/cg/resnet_v12/conv10/conv2d/kernel/ApplyGradientDescent 1
+Output 0 65536 65536 cuda_host_bfc 1578299667830225
+SrcNode v/tower_0/cg/resnet_v17/conv26/batchnorm26/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667658248
+SrcNode v/cg/resnet_v18/conv30/batchnorm30/moving_mean 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599506
+SrcNode v/cg/resnet_v10/conv1/batchnorm1/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592781
+SrcNode AddN_29 1
+Output 0 256 256 cuda_host_bfc 1578299667835206
+SrcNode v/cg/resnet_v19/conv32/conv2d/kernel 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667607521
+SrcNode v/cg/resnet_v19/conv33/batchnorm33/moving_mean 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599617
+SrcNode AddN_8 1
+Output 0 256 256 cuda_host_bfc 1578299667872544
+SrcNode AddN_9 1
+Output 0 147456 147456 cuda_host_bfc 1578299667870862
+SrcNode AddN_6 1
+Output 0 16384 16384 cuda_host_bfc 1578299667874671
+SrcNode AddN_7 1
+Output 0 256 256 cuda_host_bfc 1578299667872565
+SrcNode AddN_4 1
+Output 0 1024 1024 cuda_host_bfc 1578299667865243
+SrcNode AddN_5 1
+Output 0 1024 1792 cuda_host_bfc 1578299667865266
+SrcNode AddN_2 1
+Output 0 256 256 cuda_host_bfc 1578299667881137
+SrcNode GradientDescent/update_v/cg/resnet_v110/conv34/batchnorm34/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667752998
+SrcNode AddN_1 1
+Output 0 256 256 cuda_host_bfc 1578299667881115
+SrcNode v/cg/resnet_v111/conv39/conv2d/kernel/read/_1036 1
+Output 0 0 0  1578299667594403
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv11/batchnorm11/beta/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667818156
+SrcNode v/cg/resnet_v11/conv6/batchnorm6/moving_mean/read 1
+Output 0 256 256 cuda_host_bfc 1578299667592905
+SrcNode v/cg/resnet_v12/conv8/batchnorm8/beta 1
+Output 0 256 256 cuda_host_bfc 1578299667602258
+SrcNode v/cg/resnet_v113/conv45/batchnorm45/moving_mean 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593115
+SrcNode GradientDescent/update_v/cg/resnet_v114/conv49/batchnorm49/beta/ApplyGradientDescent 1
+Output 0 8192 8192 cuda_host_bfc 1578299667708986
+SrcNode v/cg/resnet_v19/conv32/batchnorm32/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667603047
+SrcNode v/tower_0/cg/resnet_v11/conv6/batchnorm6/AssignMovingAvg_1/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667621219
+SrcNode v/cg/resnet_v14/conv16/batchnorm16/beta/read 1
+Output 0 512 512 cuda_host_bfc 1578299667604263
+SrcNode v/cg/resnet_v10/conv3/batchnorm3/beta 1
+Output 0 256 256 cuda_host_bfc 1578299667601011
+SrcNode v/cg/resnet_v14/conv15/batchnorm15/beta/read 1
+Output 0 512 512 cuda_host_bfc 1578299667604073
+SrcNode v/tower_0/cg/resnet_v16/conv22/batchnorm22/AssignMovingAvg_1/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667652001
+SrcNode v/tower_0/cg/resnet_v18/conv30/batchnorm30/AssignMovingAvg 1
+Output 0 4096 4096 cuda_host_bfc 1578299667663194
+SrcNode v/cg/resnet_v16/conv23/batchnorm23/moving_mean/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599401
+SrcNode v/cg/resnet_v114/conv48/batchnorm48/beta/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597178
+SrcNode v/cg/resnet_v114/conv48/conv2d/kernel/read/_1202 1
+Output 0 0 0  1578299667597080
+SrcNode v/cg/resnet_v110/conv35/batchnorm35/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592923
+SrcNode v/cg/resnet_v18/conv28/batchnorm28/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599466
+SrcNode v/cg/resnet_v111/conv38/conv2d/kernel/read/_1022 1
+Output 0 0 0  1578299667594351
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv44/batchnorm44/beta/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667729402
+SrcNode v/cg/resnet_v12/conv10/batchnorm10/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667602805
+SrcNode v/cg/resnet_v13/conv13/batchnorm13/gamma/read 1
+Output 0 512 512 cuda_host_bfc 1578299667603554
+SrcNode v/cg/resnet_v13/conv14/batchnorm14/gamma 1
+Output 0 2048 2048 cuda_host_bfc 1578299667603705
+SrcNode v/cg/resnet_v16/conv21/batchnorm21/moving_mean 1
+Output 0 512 512 cuda_host_bfc 1578299667599311
+SrcNode v/cg/resnet_v10/conv2/conv2d/kernel/read 1
+Output 0 16384 16384 cuda_host_bfc 1578299667600659
+SrcNode v/tower_0/cg/resnet_v19/conv33/batchnorm33/AssignMovingAvg 1
+Output 0 4096 4096 cuda_host_bfc 1578299667667271
+SrcNode Less 1
+Output 0 1 1 cpu 1578299667592578
+SrcNode GradientDescent/update_v/cg/resnet_v18/conv30/batchnorm30/gamma/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667763935
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv13/batchnorm13/beta/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667820766
+SrcNode AddN_160 1
+Output 0 4004 5632 cuda_host_bfc 1578299667696330
+SrcNode v/cg/resnet_v114/conv47/batchnorm47/moving_mean 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593168
+SrcNode v/cg/resnet_v12/conv8/batchnorm8/moving_variance 1
+Output 0 256 256 cuda_host_bfc 1578299667599004
+SrcNode v/cg/resnet_v112/conv40/batchnorm40/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667594343
+SrcNode v/cg/resnet_v19/conv33/batchnorm33/moving_variance 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599627
+SrcNode AddN_21 1
+Output 0 65536 65536 cuda_host_bfc 1578299667846053
+SrcNode v/cg/resnet_v13/conv12/conv2d/kernel/read/_536 1
+Output 0 0 0  1578299667602916
+SrcNode v/tower_0/cg/resnet_v110/conv35/batchnorm35/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667669322
+SrcNode v/cg/resnet_v112/conv40/conv2d/kernel/read 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667594338
+SrcNode GradientDescent/update_v/cg/conv0/batchnorm0/gamma/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667881269
+SrcNode AssignAdd/value 1
+Output 0 8 0 cpu 1578299667881534
+SrcNode GradientDescent/update_v/cg/resnet_v112/conv41/batchnorm41/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667734953
+SrcNode v/cg/resnet_v12/conv9/batchnorm9/beta 1
+Output 0 256 256 cuda_host_bfc 1578299667602467
+SrcNode v/tower_0/cg/resnet_v111/conv37/batchnorm37/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667672234
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv2/batchnorm2/beta/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667872624
+SrcNode AddN_23 1
+Output 0 1024 1024 cuda_host_bfc 1578299667845613
+SrcNode v/tower_0/cg/resnet_v12/conv9/batchnorm9/AssignMovingAvg_1/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667628914
+SrcNode v/cg/resnet_v16/conv21/conv2d/kernel/read/_712 1
+Output 0 0 0  1578299667605445
+SrcNode v/tower_0/cg/resnet_v10/conv2/batchnorm2/AssignMovingAvg/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667611248
+SrcNode Mul_101 1
+Output 0 4096 4096 cuda_host_bfc 1578299667756085
+SrcNode v/cg/resnet_v18/conv28/conv2d/kernel 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667607606
+SrcNode v/cg/resnet_v17/conv27/batchnorm27/moving_variance 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599449
+SrcNode v/cg/resnet_v110/conv34/batchnorm34/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592901
+SrcNode v/cg/resnet_v13/conv13/batchnorm13/beta/read 1
+Output 0 512 512 cuda_host_bfc 1578299667603606
+SrcNode GradientDescent/update_v/cg/resnet_v16/conv23/conv2d/kernel/ApplyGradientDescent 1
+Output 0 262144 357120 cuda_host_bfc 1578299667786183
+SrcNode v/cg/resnet_v19/conv31/batchnorm31/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599531
+SrcNode v/tower_0/cg/resnet_v113/conv44/batchnorm44/AssignMovingAvg 1
+Output 0 2048 2048 cuda_host_bfc 1578299667681591
+SrcNode v/cg/resnet_v115/conv52/batchnorm52/gamma 1
+Output 0 8192 8192 cuda_host_bfc 1578299667598263
+SrcNode v/tower_0/cg/resnet_v16/conv22/batchnorm22/AssignMovingAvg/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667651932
+SrcNode v/cg/resnet_v18/conv30/batchnorm30/moving_variance/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599554
+SrcNode v/cg/resnet_v17/conv24/batchnorm24/moving_mean/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599390
+SrcNode v/cg/resnet_v15/conv18/conv2d/kernel/read/_658 1
+Output 0 0 0  1578299667604669
+SrcNode v/cg/resnet_v19/conv32/batchnorm32/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599551
+SrcNode v/cg/resnet_v112/conv42/conv2d/kernel 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667595373
+SrcNode GradientDescent/update_v/cg/resnet_v112/conv40/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667738143
+SrcNode cond/Merge 2
+Output 0 4 4 cpu 1578299667592685
+Output 1 4 4 cpu 1578299667592685
+SrcNode v/cg/resnet_v111/conv39/batchnorm39/moving_variance 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593006
+SrcNode v/cg/resnet_v16/conv21/batchnorm21/gamma 1
+Output 0 512 512 cuda_host_bfc 1578299667605442
+SrcNode v/cg/resnet_v111/conv38/batchnorm38/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593875
+SrcNode v/cg/resnet_v14/conv15/batchnorm15/gamma/read 1
+Output 0 512 512 cuda_host_bfc 1578299667604080
+SrcNode v/cg/resnet_v14/conv15/conv2d/kernel/read 1
+Output 0 262144 262144 cuda_host_bfc 1578299667603940
+SrcNode v/cg/resnet_v10/conv2/conv2d/kernel/read/_364 1
+Output 0 0 0  1578299667600695
+SrcNode GradientDescent/update_v/cg/resnet_v14/conv17/batchnorm17/beta/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667803858
+SrcNode Mul_138 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667726090
+SrcNode Mul_139 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723687
+SrcNode Mul_130 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723601
+SrcNode v/tower_0/cg/resnet_v18/conv28/batchnorm28/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667661068
+SrcNode Mul_132 1
+Output 0 2097152 2097152 cuda_host_bfc 1578299667730736
+SrcNode Mul_133 1
+Output 0 2048 2048 cuda_host_bfc 1578299667729370
+SrcNode Mul_134 1
+Output 0 2048 2048 cuda_host_bfc 1578299667729381
+SrcNode Mul_135 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667731513
+SrcNode Mul_136 1
+Output 0 2048 2048 cuda_host_bfc 1578299667727100
+SrcNode Mul_137 1
+Output 0 2048 2816 cuda_host_bfc 1578299667727137
+SrcNode v/cg/resnet_v16/conv22/batchnorm22/gamma/read 1
+Output 0 512 512 cuda_host_bfc 1578299667605976
+SrcNode v/cg/resnet_v112/conv40/batchnorm40/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593086
+SrcNode v/tower_0/cg/resnet_v12/conv9/batchnorm9/AssignMovingAvg/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667628871
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv45/batchnorm45/beta/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667727169
+SrcNode GradientDescent/update_v/cg/resnet_v114/conv47/batchnorm47/beta/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667715108
+SrcNode GradientDescent/update_v/cg/resnet_v112/conv42/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667733280
+SrcNode v/cg/resnet_v111/conv39/conv2d/kernel 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667593984
+SrcNode Mean 1
+Output 0 4 4 cpu 1578299667697328
+SrcNode v/cg/resnet_v115/conv52/conv2d/kernel 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667598096
+SrcNode v/tower_0/cg/resnet_v18/conv28/batchnorm28/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667661039
+SrcNode v/cg/resnet_v16/conv21/conv2d/kernel/read 1
+Output 0 262144 262144 cuda_host_bfc 1578299667605424
+SrcNode v/cg/resnet_v114/conv48/batchnorm48/moving_variance 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593182
+SrcNode v/cg/resnet_v17/conv25/batchnorm25/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667606599
+SrcNode v/cg/resnet_v12/conv8/batchnorm8/moving_mean 1
+Output 0 256 256 cuda_host_bfc 1578299667598993
+SrcNode v/tower_0/cg/resnet_v115/conv52/batchnorm52/AssignMovingAvg_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667691448
+SrcNode GradientDescent/update_v/cg/resnet_v14/conv15/batchnorm15/gamma/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667809160
+SrcNode v/cg/resnet_v113/conv44/conv2d/kernel/read 1
+Output 0 2097152 2097152 cuda_host_bfc 1578299667595737
+SrcNode v/tower_0/cg/resnet_v112/conv40/batchnorm40/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667676141
+SrcNode v/cg/resnet_v17/conv24/batchnorm24/moving_mean 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599371
+SrcNode v/cg/resnet_v115/conv50/batchnorm50/moving_variance/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593239
+SrcNode v/cg/resnet_v12/conv8/batchnorm8/moving_variance/read 1
+Output 0 256 256 cuda_host_bfc 1578299667599044
+SrcNode v/cg/resnet_v10/conv4/conv2d/kernel/read/_410 1
+Output 0 0 0  1578299667601136
+SrcNode v/cg/resnet_v11/conv7/batchnorm7/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593468
+SrcNode v/tower_0/cg/resnet_v10/conv2/batchnorm2/AssignMovingAvg_1/sub_1 1
+Output 0 256 256 cpu 1578299667611342
+SrcNode v/cg/resnet_v19/conv33/batchnorm33/beta/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667596948
+SrcNode v/cg/resnet_v10/conv1/conv2d/kernel/read 1
+Output 0 65536 65536 cuda_host_bfc 1578299667599771
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv26/conv2d/kernel/ApplyGradientDescent 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667780857
+SrcNode v/tower_0/cg/resnet_v110/conv35/batchnorm35/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667669334
+SrcNode v/cg/resnet_v10/conv1/conv2d/kernel/read/_352 1
+Output 0 0 0  1578299667599793
+SrcNode GradientDescent/update_v/cg/resnet_v15/conv20/conv2d/kernel/ApplyGradientDescent 1
+Output 0 262144 262144 cuda_host_bfc 1578299667795125
+SrcNode v/cg/resnet_v10/conv3/batchnorm3/moving_mean 1
+Output 0 256 256 cuda_host_bfc 1578299667592784
+SrcNode v/cg/resnet_v113/conv44/batchnorm44/moving_variance 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593112
+SrcNode v/tower_0/cg/resnet_v15/conv20/batchnorm20/AssignMovingAvg_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667649033
+SrcNode v/cg/resnet_v15/conv20/batchnorm20/gamma/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667605279
+SrcNode v/cg/resnet_v115/conv51/batchnorm51/moving_mean/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593268
+SrcNode v/cg/resnet_v15/conv19/batchnorm19/moving_variance/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599349
+SrcNode v/cg/resnet_v111/conv38/batchnorm38/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592991
+SrcNode v/cg/resnet_v110/conv34/conv2d/kernel/read 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667593359
+SrcNode GradientDescent/update_v/cg/resnet_v18/conv30/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667764601
+SrcNode Mul_160/y 1
+Output 0 4 0 cpu 1578299667592416
+SrcNode AddN_152 1
+Output 0 2048 2048 cuda_host_bfc 1578299667706063
+SrcNode AddN_153 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667703646
+SrcNode AddN_150 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667706358
+SrcNode AddN_151 1
+Output 0 2048 2048 cuda_host_bfc 1578299667706088
+SrcNode AddN_156 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667700488
+SrcNode AddN_157 1
+Output 0 8192 8192 cuda_host_bfc 1578299667699946
+SrcNode AddN_154 1
+Output 0 2048 2048 cuda_host_bfc 1578299667702607
+SrcNode AddN_155 1
+Output 0 2048 2048 cuda_host_bfc 1578299667702637
+SrcNode AddN_158 1
+Output 0 8192 8192 cuda_host_bfc 1578299667699923
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv43/conv2d/kernel/ApplyGradientDescent 1
+Output 0 8388608 8388608 cuda_host_bfc 1578299667728667
+SrcNode v/cg/resnet_v10/conv4/batchnorm4/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592852
+SrcNode v/tower_0/cg/resnet_v111/conv39/batchnorm39/AssignMovingAvg/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667674678
+SrcNode Mul_37 1
+Output 0 512 512 cuda_host_bfc 1578299667824337
+SrcNode Mul_34 1
+Output 0 2048 2048 cuda_host_bfc 1578299667818027
+SrcNode Mul_35 1
+Output 0 2048 3072 cuda_host_bfc 1578299667818132
+SrcNode Mul_32 1
+Output 0 1024 1024 cuda_host_bfc 1578299667829897
+SrcNode Mul_33 1
+Output 0 524288 524288 cuda_host_bfc 1578299667818372
+SrcNode Mul_30 1
+Output 0 65536 65536 cuda_host_bfc 1578299667830180
+SrcNode Mul_31 1
+Output 0 1024 1024 cuda_host_bfc 1578299667829915
+SrcNode GradientDescent/update_v/cg/resnet_v11/conv5/batchnorm5/gamma/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667855307
+SrcNode Mul_38 1
+Output 0 512 512 cuda_host_bfc 1578299667824356
+SrcNode Mul_39 1
+Output 0 589824 589824 cuda_host_bfc 1578299667820973
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv26/batchnorm26/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667779749
+SrcNode v/tower_0/cg/resnet_v10/conv4/batchnorm4/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667616131
+SrcNode v/cg/resnet_v11/conv7/batchnorm7/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592885
+SrcNode v/tower_0/cg/resnet_v10/conv2/batchnorm2/AssignMovingAvg_1 1
+Output 0 256 256 cuda_host_bfc 1578299667611375
+SrcNode v/cg/affine0/weights/read 1
+Output 0 8200192 8200192 cuda_host_bfc 1578299667592605
+SrcNode v/tower_0/cg/resnet_v19/conv32/batchnorm32/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667665723
+SrcNode v/tower_0/cg/resnet_v15/conv20/batchnorm20/AssignMovingAvg/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667648854
+SrcNode Mean/input 1
+Output 0 8 8 cpu 1578299667697271
+SrcNode v/cg/resnet_v16/conv22/batchnorm22/gamma 1
+Output 0 512 512 cuda_host_bfc 1578299667605912
+SrcNode v/cg/resnet_v13/conv11/batchnorm11/moving_mean/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599087
+SrcNode v/tower_0/cg/resnet_v10/conv4/batchnorm4/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667616033
+SrcNode v/tower_0/cg/resnet_v18/conv30/batchnorm30/AssignMovingAvg_1/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667663133
+SrcNode v/tower_0/cg/resnet_v11/conv7/batchnorm7/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667623488
+SrcNode v/cg/resnet_v15/conv19/batchnorm19/gamma 1
+Output 0 512 512 cuda_host_bfc 1578299667605017
+SrcNode v/cg/resnet_v19/conv31/conv2d/kernel/read/_896 1
+Output 0 0 0  1578299667609039
+SrcNode v/cg/resnet_v14/conv16/batchnorm16/beta 1
+Output 0 512 512 cuda_host_bfc 1578299667604237
+SrcNode GradientDescent/update_v/cg/resnet_v14/conv16/batchnorm16/beta/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667806246
+SrcNode GradientDescent/update_v/cg/resnet_v16/conv23/batchnorm23/gamma/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667786006
+SrcNode v/cg/resnet_v110/conv34/batchnorm34/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593880
+SrcNode GradientDescent/update_v/cg/resnet_v111/conv38/conv2d/kernel/ApplyGradientDescent 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667743647
+SrcNode v/tower_0/cg/resnet_v17/conv27/batchnorm27/AssignMovingAvg 1
+Output 0 4096 4096 cuda_host_bfc 1578299667659489
+SrcNode GradientDescent/update_v/cg/resnet_v19/conv32/conv2d/kernel/ApplyGradientDescent 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667759574
+SrcNode v/cg/resnet_v16/conv22/batchnorm22/moving_mean/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599361
+SrcNode v/cg/resnet_v10/conv4/batchnorm4/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667601135
+SrcNode v/tower_0/cg/resnet_v13/conv13/batchnorm13/AssignMovingAvg_1 1
+Output 0 512 512 cuda_host_bfc 1578299667637428
+SrcNode Mul_105 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667751535
+SrcNode Mul_104 1
+Output 0 1024 1024 cuda_host_bfc 1578299667752998
+SrcNode Mul_107 1
+Output 0 1024 1024 cuda_host_bfc 1578299667750536
+SrcNode Mul_106 1
+Output 0 1024 1024 cuda_host_bfc 1578299667750597
+SrcNode GradientDescent/update_v/cg/resnet_v16/conv21/conv2d/kernel/ApplyGradientDescent 1
+Output 0 262144 262144 cuda_host_bfc 1578299667792194
+SrcNode v/cg/resnet_v10/conv2/conv2d/kernel/read/_356 1
+Output 0 0 0  1578299667600681
+SrcNode Mul_103 1
+Output 0 1024 1024 cuda_host_bfc 1578299667752979
+SrcNode Mul_102 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667753478
+SrcNode Mul_109 1
+Output 0 4096 4096 cuda_host_bfc 1578299667748162
+SrcNode Mul_108 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667748493
+SrcNode _retval_AssignAdd_0_0 0
+SrcNode v/cg/resnet_v110/conv35/conv2d/kernel/read 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667593914
+SrcNode GradientDescent/update_v/cg/resnet_v12/conv9/batchnorm9/gamma/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667835302
+SrcNode v/tower_0/cg/resnet_v115/conv50/batchnorm50/AssignMovingAvg/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667688814
+SrcNode v/cg/resnet_v111/conv37/batchnorm37/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592949
+SrcNode v/tower_0/cg/resnet_v11/conv7/batchnorm7/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667623530
+SrcNode v/cg/resnet_v13/conv14/batchnorm14/moving_variance/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599189
+SrcNode v/cg/resnet_v17/conv25/batchnorm25/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599441
+SrcNode v/cg/resnet_v10/conv2/batchnorm2/beta 1
+Output 0 256 256 cuda_host_bfc 1578299667600724
+SrcNode PiecewiseConstant/case/cond/Merge 2
+Output 1 4 4 cpu 1578299667594566
+Output 0 4 0 cpu 1578299667594566
+SrcNode PiecewiseConstant/case/Assert/AssertGuard/Assert/Switch_1 1
+Output 1 5 5 cpu 1578299667593537
+SrcNode v/cg/resnet_v10/conv1/conv2d/kernel 1
+Output 0 65536 65536 cuda_host_bfc 1578299667599745
+SrcNode v/cg/resnet_v113/conv43/batchnorm43/beta/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593320
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv2/batchnorm2/gamma/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667872643
+SrcNode v/tower_0/cg/resnet_v15/conv19/batchnorm19/AssignMovingAvg/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667647217
+SrcNode v/cg/resnet_v10/conv3/batchnorm3/beta/read 1
+Output 0 256 256 cuda_host_bfc 1578299667601043
+SrcNode v/cg/resnet_v10/conv3/batchnorm3/gamma 1
+Output 0 256 256 cuda_host_bfc 1578299667600805
+SrcNode v/tower_0/cg/resnet_v17/conv26/batchnorm26/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667658201
+SrcNode v/cg/resnet_v114/conv47/conv2d/kernel 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667596871
+SrcNode v/cg/resnet_v19/conv32/batchnorm32/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599570
+SrcNode v/tower_0/cg/resnet_v115/conv52/batchnorm52/AssignMovingAvg_1/sub_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667691262
+SrcNode GradientDescent/update_v/cg/resnet_v14/conv15/batchnorm15/beta/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667809203
+SrcNode v/cg/resnet_v114/conv48/conv2d/kernel/read/_1198 1
+Output 0 0 0  1578299667597061
+SrcNode PiecewiseConstant/case/num_true_conds 1
+Output 0 4 4 cpu 1578299667593461
+SrcNode v/tower_0/cg/resnet_v13/conv12/batchnorm12/AssignMovingAvg 1
+Output 0 512 512 cuda_host_bfc 1578299667636288
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv12/batchnorm12/beta/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667824380
+SrcNode v/cg/resnet_v14/conv17/batchnorm17/moving_mean/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599255
+SrcNode v/tower_0/cg/resnet_v14/conv17/batchnorm17/AssignMovingAvg_1/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667643910
+SrcNode v/cg/resnet_v13/conv12/conv2d/kernel/read 1
+Output 0 131072 131072 cuda_host_bfc 1578299667602896
+SrcNode GradientDescent/update_v/cg/resnet_v12/conv8/batchnorm8/gamma/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667839883
+SrcNode v/cg/resnet_v110/conv35/batchnorm35/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593954
+SrcNode v/cg/resnet_v114/conv49/conv2d/kernel 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667597223
+SrcNode v/cg/resnet_v111/conv38/conv2d/kernel 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667593738
+SrcNode v/tower_0/cg/resnet_v13/conv11/batchnorm11/AssignMovingAvg/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667636172
+SrcNode v/cg/resnet_v115/conv52/batchnorm52/moving_variance 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593252
+SrcNode v/tower_0/cg/resnet_v16/conv21/batchnorm21/AssignMovingAvg_1/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667650881
+SrcNode v/cg/resnet_v16/conv23/batchnorm23/moving_variance/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599391
+SrcNode v/cg/resnet_v17/conv27/batchnorm27/gamma 1
+Output 0 4096 4096 cuda_host_bfc 1578299667607362
+SrcNode v/tower_0/cg/resnet_v10/conv4/batchnorm4/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667616036
+SrcNode GradientDescent/update_v/cg/conv0/batchnorm0/beta/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667881225
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv45/conv2d/kernel/ApplyGradientDescent 1
+Output 0 9437184 10928128 cuda_host_bfc 1578299667732901
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv43/batchnorm43/gamma/ApplyGradientDescent 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723739
+SrcNode v/tower_0/cg/resnet_v113/conv45/batchnorm45/AssignMovingAvg_1/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667682772
+SrcNode v/tower_0/cg/resnet_v113/conv43/batchnorm43/AssignMovingAvg_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667681512
+SrcNode GradientDescent/update_v/cg/resnet_v14/conv16/conv2d/kernel/ApplyGradientDescent 1
+Output 0 589824 589824 cuda_host_bfc 1578299667806639
+SrcNode v/cg/resnet_v14/conv16/conv2d/kernel 1
+Output 0 589824 589824 cuda_host_bfc 1578299667604064
+SrcNode AddN_145 1
+Output 0 2048 2048 cuda_host_bfc 1578299667711729
+SrcNode AddN_144 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667712475
+SrcNode AddN_147 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667709222
+SrcNode AddN_146 1
+Output 0 2048 2048 cuda_host_bfc 1578299667711746
+SrcNode v/tower_0/cg/resnet_v13/conv14/batchnorm14/AssignMovingAvg/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667639010
+SrcNode AddN_140 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723593
+SrcNode AddN_143 1
+Output 0 2048 2048 cuda_host_bfc 1578299667715020
+SrcNode AddN_142 1
+Output 0 2048 2048 cuda_host_bfc 1578299667714997
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv44/batchnorm44/gamma/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667729400
+SrcNode AddN_149 1
+Output 0 8192 8192 cuda_host_bfc 1578299667708895
+SrcNode AddN_148 1
+Output 0 8192 8192 cuda_host_bfc 1578299667708920
+SrcNode v/tower_0/cg/resnet_v115/conv51/batchnorm51/AssignMovingAvg_1/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667690059
+SrcNode v/tower_0/cg/resnet_v112/conv40/batchnorm40/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667676092
+SrcNode v/tower_0/cg/resnet_v14/conv15/batchnorm15/AssignMovingAvg/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667641131
+SrcNode v/tower_0/cg/resnet_v12/conv8/batchnorm8/AssignMovingAvg_1/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667626775
+SrcNode Mul_25 1
+Output 0 256 256 cuda_host_bfc 1578299667839861
+SrcNode Mul_24 1
+Output 0 65536 65536 cuda_host_bfc 1578299667840996
+SrcNode v/cg/resnet_v18/conv30/conv2d/kernel 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667608598
+SrcNode Mul_26 1
+Output 0 256 256 cuda_host_bfc 1578299667839833
+SrcNode Mul_21 1
+Output 0 65536 65536 cuda_host_bfc 1578299667846133
+SrcNode Mul_20 1
+Output 0 256 256 cuda_host_bfc 1578299667850790
+SrcNode Mul_23 1
+Output 0 1024 1024 cuda_host_bfc 1578299667845669
+SrcNode v/tower_0/cg/resnet_v17/conv27/batchnorm27/AssignMovingAvg_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667659588
+SrcNode Mul_29 1
+Output 0 256 256 cuda_host_bfc 1578299667835260
+SrcNode v/tower_0/cg/resnet_v19/conv32/batchnorm32/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667665775
+SrcNode v/tower_0/cg/resnet_v110/conv35/batchnorm35/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667669386
+SrcNode v/cg/resnet_v18/conv30/batchnorm30/beta 1
+Output 0 4096 4096 cuda_host_bfc 1578299667608744
+SrcNode v/tower_0/cg/resnet_v18/conv29/batchnorm29/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667662159
+SrcNode global_step/read 1
+Output 0 8 256 cuda_host_bfc 1578299667592531
+SrcNode v/cg/resnet_v16/conv23/batchnorm23/gamma/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667606242
+SrcNode v/tower_0/cg/resnet_v19/conv33/batchnorm33/AssignMovingAvg_1/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667667297
+SrcNode v/tower_0/cg/resnet_v14/conv17/batchnorm17/AssignMovingAvg 1
+Output 0 2048 2048 cuda_host_bfc 1578299667644002
+SrcNode v/cg/resnet_v17/conv26/batchnorm26/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667607122
+SrcNode v/cg/resnet_v13/conv11/conv2d/kernel 1
+Output 0 524288 524288 cuda_host_bfc 1578299667599660
+SrcNode v/tower_0/cg/resnet_v10/conv1/batchnorm1/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667611271
+SrcNode v/cg/resnet_v16/conv23/conv2d/kernel 1
+Output 0 262144 357120 cuda_host_bfc 1578299667606114
+SrcNode v/tower_0/cg/resnet_v16/conv21/batchnorm21/AssignMovingAvg_1 1
+Output 0 512 512 cuda_host_bfc 1578299667650932
+SrcNode v/tower_0/cg/resnet_v12/conv10/batchnorm10/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667631203
+SrcNode PiecewiseConstant/case/cond/cond/cond/cond/Switch/Switch 1
+Output 1 1 1 cpu 1578299667594132
+SrcNode v/tower_0/cg/resnet_v13/conv13/batchnorm13/AssignMovingAvg/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667637375
+SrcNode v/tower_0/cg/resnet_v12/conv8/batchnorm8/AssignMovingAvg_1 1
+Output 0 256 256 cuda_host_bfc 1578299667626860
+SrcNode GradientDescent/update_v/cg/resnet_v111/conv39/batchnorm39/gamma/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667740556
+SrcNode GradientDescent/update_v/cg/resnet_v111/conv38/batchnorm38/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667742722
+SrcNode GradientDescent/update_v/cg/resnet_v110/conv36/batchnorm36/beta/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667748164
+SrcNode v/cg/resnet_v15/conv18/batchnorm18/beta/read 1
+Output 0 512 512 cuda_host_bfc 1578299667604892
+SrcNode v/cg/resnet_v115/conv51/batchnorm51/moving_variance 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593250
+SrcNode GradientDescent/update_v/cg/resnet_v18/conv30/batchnorm30/beta/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667763992
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv14/batchnorm14/gamma/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667818143
+SrcNode v/cg/resnet_v19/conv32/batchnorm32/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667603075
+SrcNode v/tower_0/cg/resnet_v112/conv41/batchnorm41/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667677256
+SrcNode v/tower_0/cg/resnet_v110/conv36/batchnorm36/AssignMovingAvg_1/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667670652
+SrcNode v/cg/resnet_v115/conv50/batchnorm50/moving_mean 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593215
+SrcNode GradientDescent/update_v/cg/resnet_v15/conv18/batchnorm18/gamma/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667800353
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv4/conv2d/kernel/ApplyGradientDescent 1
+Output 0 65536 65536 cuda_host_bfc 1578299667866105
+SrcNode v/tower_0/cg/resnet_v18/conv30/batchnorm30/AssignMovingAvg_1/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667663190
+SrcNode v/tower_0/cg/resnet_v111/conv38/batchnorm38/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667673393
+SrcNode v/cg/resnet_v16/conv23/conv2d/kernel/read/_748 1
+Output 0 0 0  1578299667606242
+SrcNode Mul_112 1
+Output 0 1024 1024 cuda_host_bfc 1578299667745118
+SrcNode Mul_113 1
+Output 0 1024 1024 cuda_host_bfc 1578299667745154
+SrcNode Mul_110 1
+Output 0 4096 5120 cuda_host_bfc 1578299667748144
+SrcNode Mul_111 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667745698
+SrcNode Mul_116 1
+Output 0 1024 1024 cuda_host_bfc 1578299667742714
+SrcNode Mul_117 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667740896
+SrcNode Mul_114 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667743428
+SrcNode Mul_115 1
+Output 0 1024 1024 cuda_host_bfc 1578299667742702
+SrcNode v/cg/resnet_v19/conv31/batchnorm31/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667609011
+SrcNode Mul_118 1
+Output 0 4096 4096 cuda_host_bfc 1578299667740536
+SrcNode Mul_119 1
+Output 0 4096 4096 cuda_host_bfc 1578299667740555
+SrcNode v/cg/resnet_v14/conv16/batchnorm16/moving_variance/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599243
+SrcNode v/tower_0/cg/resnet_v11/conv6/batchnorm6/AssignMovingAvg 1
+Output 0 256 256 cuda_host_bfc 1578299667621278
+SrcNode v/cg/resnet_v114/conv49/conv2d/kernel/read 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667597258
+SrcNode v/cg/resnet_v114/conv48/batchnorm48/moving_variance/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593204
+SrcNode v/cg/resnet_v111/conv39/batchnorm39/moving_mean 1
+Output 0 4096 4096 cuda_host_bfc 1578299667592986
+SrcNode v/cg/resnet_v12/conv10/batchnorm10/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667602872
+SrcNode Mul_36 1
+Output 0 131072 131072 cuda_host_bfc 1578299667825506
+SrcNode v/cg/resnet_v13/conv13/batchnorm13/moving_variance 1
+Output 0 512 512 cuda_host_bfc 1578299667599162
+SrcNode v/cg/resnet_v14/conv15/batchnorm15/moving_variance/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599235
+SrcNode v/cg/resnet_v12/conv10/batchnorm10/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667598927
+SrcNode v/cg/resnet_v111/conv38/conv2d/kernel/read 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667593830
+SrcNode v/cg/resnet_v112/conv40/batchnorm40/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667594373
+SrcNode v/tower_0/cg/resnet_v13/conv14/batchnorm14/AssignMovingAvg_1/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667638988
+SrcNode div 1
+Output 0 4 4 cpu 1578299667592647
+SrcNode v/tower_0/cg/resnet_v112/conv41/batchnorm41/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667677204
+SrcNode v/cg/resnet_v10/conv1/batchnorm1/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592664
+SrcNode v/cg/resnet_v115/conv51/batchnorm51/moving_variance/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593297
+SrcNode v/cg/resnet_v10/conv2/batchnorm2/moving_variance 1
+Output 0 256 256 cuda_host_bfc 1578299667592773
+SrcNode PiecewiseConstant/Greater 1
+Output 0 1 1 cpu 1578299667592607
+SrcNode v/cg/resnet_v112/conv40/batchnorm40/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593013
+SrcNode v/cg/resnet_v15/conv20/batchnorm20/moving_mean 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599285
+SrcNode GradientDescent/update_v/cg/resnet_v11/conv6/batchnorm6/gamma/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667850772
+SrcNode v/cg/resnet_v111/conv39/conv2d/kernel/read/_1040 1
+Output 0 0 0  1578299667594423
+SrcNode _SOURCE 0
+SrcNode GradientDescent/update_v/cg/resnet_v115/conv50/conv2d/kernel/ApplyGradientDescent 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667708324
+SrcNode GradientDescent/update_v/cg/resnet_v110/conv35/batchnorm35/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667750623
+SrcNode v/tower_0/cg/resnet_v112/conv42/batchnorm42/AssignMovingAvg/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667678538
+SrcNode v/cg/resnet_v13/conv11/batchnorm11/beta 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599745
+SrcNode v/cg/resnet_v114/conv48/batchnorm48/gamma/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597127
+SrcNode v/cg/resnet_v10/conv2/batchnorm2/moving_variance/read 1
+Output 0 256 256 cuda_host_bfc 1578299667592987
+SrcNode v/cg/resnet_v113/conv45/conv2d/kernel 1
+Output 0 9437184 10928128 cuda_host_bfc 1578299667595961
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv24/batchnorm24/gamma/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777133
+SrcNode v/cg/conv0/batchnorm0/beta/read 1
+Output 0 256 256 cuda_host_bfc 1578299667600632
+SrcNode v/cg/resnet_v112/conv41/conv2d/kernel/read 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667595027
+SrcNode v/tower_0/cg/resnet_v16/conv21/batchnorm21/AssignMovingAvg/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667650961
+SrcNode GradientDescent/update_v/cg/resnet_v114/conv48/batchnorm48/beta/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667711845
+SrcNode v/cg/resnet_v112/conv42/batchnorm42/moving_variance/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593096
+SrcNode v/tower_0/cg/resnet_v19/conv31/batchnorm31/AssignMovingAvg_1/mul 1
+Output 0 1024 1536 cuda_host_bfc 1578299667664781
+SrcNode GradientDescent/update_v/cg/resnet_v16/conv21/batchnorm21/beta/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667791491
+SrcNode v/cg/resnet_v114/conv48/conv2d/kernel/read 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667597037
+SrcNode v/tower_0/cg/resnet_v14/conv17/batchnorm17/AssignMovingAvg_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667643979
+SrcNode v/tower_0/cg/resnet_v115/conv52/batchnorm52/AssignMovingAvg/mul 1
+Output 0 8192 8192 cuda_host_bfc 1578299667691296
+SrcNode v/cg/resnet_v111/conv37/conv2d/kernel/read/_1000 1
+Output 0 0 0  1578299667593717
+SrcNode v/cg/resnet_v12/conv10/batchnorm10/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667598983
+SrcNode v/cg/resnet_v111/conv37/conv2d/kernel/read/_1004 1
+Output 0 0 0  1578299667593735
+SrcNode v/cg/resnet_v111/conv37/batchnorm37/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592957
+SrcNode v/tower_0/cg/resnet_v11/conv5/batchnorm5/AssignMovingAvg_1/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667619249
+SrcNode v/cg/resnet_v114/conv47/batchnorm47/beta 1
+Output 0 2048 2048 cuda_host_bfc 1578299667596923
+SrcNode PiecewiseConstant/case/cond/cond/cond/Switch/Switch 1
+Output 1 1 1 cpu 1578299667594480
+SrcNode GradientDescent/update_v/cg/resnet_v111/conv37/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667745812
+SrcNode v/tower_0/cg/resnet_v16/conv23/batchnorm23/AssignMovingAvg/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667653671
+SrcNode v/cg/resnet_v16/conv21/batchnorm21/gamma/read 1
+Output 0 512 512 cuda_host_bfc 1578299667605463
+SrcNode v/cg/resnet_v19/conv32/conv2d/kernel/read/_914 1
+Output 0 0 0  1578299667607628
+SrcNode v/cg/resnet_v113/conv45/batchnorm45/gamma/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667596046
+SrcNode v/cg/resnet_v19/conv32/conv2d/kernel/read/_910 1
+Output 0 0 0  1578299667607608
+SrcNode v/cg/resnet_v114/conv49/conv2d/kernel/read/_1216 1
+Output 0 0 0  1578299667597276
+SrcNode v/cg/resnet_v113/conv43/batchnorm43/moving_mean/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593106
+SrcNode Mul_10 1
+Output 0 256 256 cuda_host_bfc 1578299667870620
+SrcNode Mul_11 1
+Output 0 256 256 cuda_host_bfc 1578299667870590
+SrcNode Mul_12 1
+Output 0 65536 65536 cuda_host_bfc 1578299667866072
+SrcNode Mul_13 1
+Output 0 1024 1024 cuda_host_bfc 1578299667865523
+SrcNode Mul_14 1
+Output 0 1024 1024 cuda_host_bfc 1578299667865463
+SrcNode Mul_15 1
+Output 0 65536 65536 cuda_host_bfc 1578299667856520
+SrcNode Mul_16 1
+Output 0 256 256 cuda_host_bfc 1578299667855283
+SrcNode Mul_17 1
+Output 0 256 256 cuda_host_bfc 1578299667855314
+SrcNode Mul_18 1
+Output 0 147456 147456 cuda_host_bfc 1578299667851147
+SrcNode GradientDescent/update_v/cg/resnet_v110/conv35/conv2d/kernel/ApplyGradientDescent 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667751775
+SrcNode v/tower_0/cg/resnet_v114/conv48/batchnorm48/AssignMovingAvg 1
+Output 0 2048 2048 cuda_host_bfc 1578299667686350
+SrcNode GradientDescent/update_v/cg/resnet_v12/conv8/conv2d/kernel/ApplyGradientDescent 1
+Output 0 65536 65536 cuda_host_bfc 1578299667841026
+SrcNode v/tower_0/cg/resnet_v16/conv21/batchnorm21/AssignMovingAvg/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667650907
+SrcNode v/cg/resnet_v14/conv15/batchnorm15/moving_mean 1
+Output 0 512 512 cuda_host_bfc 1578299667599196
+SrcNode v/tower_0/cg/resnet_v19/conv33/batchnorm33/AssignMovingAvg_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667667405
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv26/batchnorm26/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667779771
+SrcNode Mul_3 1
+Output 0 65536 65536 cuda_host_bfc 1578299667865653
+SrcNode AddN_18 1
+Output 0 147456 147456 cuda_host_bfc 1578299667851072
+SrcNode v/tower_0/cg/conv0/batchnorm0/AssignMovingAvg/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667606687
+SrcNode v/cg/resnet_v115/conv50/conv2d/kernel/read 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667597597
+SrcNode AddN_14 1
+Output 0 1024 1024 cuda_host_bfc 1578299667865440
+SrcNode AddN_15 1
+Output 0 65536 65536 cuda_host_bfc 1578299667856445
+SrcNode AddN_16 1
+Output 0 256 256 cuda_host_bfc 1578299667855225
+SrcNode AddN_17 1
+Output 0 256 256 cuda_host_bfc 1578299667855247
+SrcNode AddN_10 1
+Output 0 256 256 cuda_host_bfc 1578299667870566
+SrcNode AddN_11 1
+Output 0 256 256 cuda_host_bfc 1578299667870535
+SrcNode AddN_12 1
+Output 0 65536 65536 cuda_host_bfc 1578299667865950
+SrcNode AddN_13 1
+Output 0 1024 1024 cuda_host_bfc 1578299667865486
+SrcNode v/cg/resnet_v12/conv9/batchnorm9/moving_variance/read 1
+Output 0 256 256 cuda_host_bfc 1578299667599121
+SrcNode v/cg/resnet_v114/conv47/batchnorm47/moving_variance/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593196
+SrcNode v/cg/resnet_v15/conv19/batchnorm19/moving_mean/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599297
+SrcNode v/cg/resnet_v113/conv46/batchnorm46/beta 1
+Output 0 8192 8192 cuda_host_bfc 1578299667596555
+SrcNode PiecewiseConstant/and 1
+Output 0 1 1 cpu 1578299667592799
+SrcNode v/cg/resnet_v17/conv26/batchnorm26/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599404
+SrcNode v/cg/resnet_v14/conv16/batchnorm16/gamma/read 1
+Output 0 512 512 cuda_host_bfc 1578299667604183
+SrcNode v/tower_0/cg/resnet_v14/conv16/batchnorm16/AssignMovingAvg_1/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667642276
+SrcNode v/cg/resnet_v14/conv16/batchnorm16/moving_mean/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599231
+SrcNode v/tower_0/cg/conv0/batchnorm0/AssignMovingAvg_1/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667606755
+SrcNode v/tower_0/cg/resnet_v112/conv42/batchnorm42/AssignMovingAvg/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667678468
+SrcNode v/cg/resnet_v115/conv51/conv2d/kernel/read/_1252 1
+Output 0 0 0  1578299667597979
+SrcNode v/cg/resnet_v115/conv51/conv2d/kernel/read/_1256 1
+Output 0 0 0  1578299667598018
+SrcNode v/cg/resnet_v10/conv2/batchnorm2/moving_mean 1
+Output 0 256 256 cuda_host_bfc 1578299667592705
+SrcNode v/cg/resnet_v15/conv18/batchnorm18/moving_variance/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599288
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv1/conv2d/kernel/ApplyGradientDescent 1
+Output 0 65536 65536 cuda_host_bfc 1578299667865689
+SrcNode GradientDescent/update_v/cg/resnet_v111/conv39/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667741011
+SrcNode v/cg/resnet_v19/conv33/batchnorm33/moving_mean/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599644
+SrcNode v/tower_0/cg/resnet_v12/conv8/batchnorm8/AssignMovingAvg/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667626779
+SrcNode v/cg/resnet_v12/conv10/conv2d/kernel/read 1
+Output 0 65536 65536 cuda_host_bfc 1578299667602725
+SrcNode v/tower_0/cg/resnet_v111/conv37/batchnorm37/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667672271
+SrcNode v/tower_0/cg/resnet_v111/conv39/batchnorm39/AssignMovingAvg_1/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667674629
+SrcNode v/cg/conv0/batchnorm0/moving_variance 1
+Output 0 256 256 cuda_host_bfc 1578299667592640
+SrcNode v/tower_0/cg/resnet_v14/conv16/batchnorm16/AssignMovingAvg 1
+Output 0 512 512 cuda_host_bfc 1578299667642321
+SrcNode GradientDescent/update_v/cg/resnet_v16/conv21/batchnorm21/gamma/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667791500
+SrcNode v/tower_0/cg/resnet_v10/conv3/batchnorm3/AssignMovingAvg/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667613320
+SrcNode v/cg/resnet_v16/conv23/conv2d/kernel/read/_752 1
+Output 0 0 0  1578299667606279
+SrcNode v/cg/resnet_v113/conv45/conv2d/kernel/read/_1144 1
+Output 0 0 0  1578299667596011
+SrcNode v/tower_0/cg/resnet_v10/conv3/batchnorm3/AssignMovingAvg 1
+Output 0 256 256 cuda_host_bfc 1578299667613367
+SrcNode GradientDescent/update_v/cg/resnet_v19/conv32/batchnorm32/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667758420
+SrcNode v/cg/resnet_v10/conv1/batchnorm1/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592705
+SrcNode v/tower_0/cg/resnet_v113/conv43/batchnorm43/AssignMovingAvg 1
+Output 0 8192 8192 cuda_host_bfc 1578299667681626
+SrcNode GradientDescent/update_v/cg/resnet_v11/conv7/conv2d/kernel/ApplyGradientDescent 1
+Output 0 65536 65536 cuda_host_bfc 1578299667846165
+SrcNode v/cg/resnet_v113/conv45/batchnorm45/beta/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667596312
+SrcNode v/cg/resnet_v11/conv6/conv2d/kernel/read 1
+Output 0 147456 147456 cuda_host_bfc 1578299667601733
+SrcNode v/tower_0/cg/resnet_v15/conv20/batchnorm20/AssignMovingAvg_1/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667648874
+SrcNode v/cg/conv0/batchnorm0/beta 1
+Output 0 256 256 cuda_host_bfc 1578299667600557
+SrcNode v/cg/resnet_v14/conv15/conv2d/kernel/read/_608 1
+Output 0 0 0  1578299667603973
+SrcNode v/cg/resnet_v11/conv7/batchnorm7/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667601994
+SrcNode v/cg/resnet_v14/conv15/conv2d/kernel/read/_604 1
+Output 0 0 0  1578299667603960
+SrcNode v/tower_0/cg/resnet_v113/conv43/batchnorm43/AssignMovingAvg/sub_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667681554
+SrcNode v/cg/resnet_v113/conv46/batchnorm46/gamma 1
+Output 0 8192 8192 cuda_host_bfc 1578299667596526
+SrcNode v/cg/resnet_v17/conv26/batchnorm26/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667607019
+SrcNode AddN_3 1
+Output 0 65536 65536 cuda_host_bfc 1578299667865496
+SrcNode v/cg/resnet_v13/conv14/conv2d/kernel/read/_590 1
+Output 0 0 0  1578299667603737
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv13/conv2d/kernel/ApplyGradientDescent 1
+Output 0 589824 589824 cuda_host_bfc 1578299667821051
+SrcNode v/cg/resnet_v16/conv21/batchnorm21/beta/read 1
+Output 0 512 512 cuda_host_bfc 1578299667605592
+SrcNode v/cg/resnet_v10/conv3/batchnorm3/moving_variance 1
+Output 0 256 256 cuda_host_bfc 1578299667592814
+SrcNode v/cg/resnet_v19/conv31/conv2d/kernel/read/_892 1
+Output 0 0 0  1578299667609022
+SrcNode v/tower_0/cg/resnet_v113/conv45/batchnorm45/AssignMovingAvg/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667682800
+SrcNode v/cg/resnet_v18/conv30/batchnorm30/beta/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667608767
+SrcNode GradientDescent/update_v/cg/resnet_v19/conv33/batchnorm33/beta/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667756105
+SrcNode v/cg/resnet_v110/conv34/batchnorm34/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592927
+SrcNode v/cg/resnet_v113/conv43/batchnorm43/moving_mean 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593086
+SrcNode PiecewiseConstant/case/cond/cond/cond/cond/cond/Switch/Switch 1
+Output 1 1 1 cpu 1578299667594101
+SrcNode v/tower_0/cg/resnet_v113/conv46/batchnorm46/AssignMovingAvg_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667683997
+SrcNode GradientDescent/update_v/cg/resnet_v114/conv48/conv2d/kernel/ApplyGradientDescent 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667717241
+SrcNode v/cg/resnet_v13/conv13/batchnorm13/gamma 1
+Output 0 512 512 cuda_host_bfc 1578299667603520
+SrcNode GradientDescent/update_v/cg/resnet_v18/conv29/batchnorm29/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667766414
+SrcNode v/tower_0/cg/resnet_v112/conv42/batchnorm42/AssignMovingAvg_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667678523
+SrcNode v/tower_0/cg/resnet_v19/conv33/batchnorm33/AssignMovingAvg/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667667217
+SrcNode Mul_27 1
+Output 0 147456 147456 cuda_host_bfc 1578299667835834
+SrcNode v/cg/resnet_v114/conv49/batchnorm49/moving_variance/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593231
+SrcNode v/tower_0/cg/resnet_v114/conv49/batchnorm49/AssignMovingAvg/sub_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667687496
+SrcNode v/cg/resnet_v15/conv18/batchnorm18/moving_mean/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599282
+SrcNode v/cg/resnet_v10/conv4/conv2d/kernel/read/_406 1
+Output 0 0 0  1578299667601121
+SrcNode v/cg/resnet_v15/conv20/batchnorm20/beta 1
+Output 0 2048 2048 cuda_host_bfc 1578299667605322
+SrcNode v/cg/resnet_v112/conv41/batchnorm41/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593026
+SrcNode Mul_28 1
+Output 0 256 256 cuda_host_bfc 1578299667835280
+SrcNode v/cg/resnet_v11/conv6/batchnorm6/moving_variance/read 1
+Output 0 256 256 cuda_host_bfc 1578299667592893
+SrcNode v/cg/resnet_v14/conv15/batchnorm15/gamma 1
+Output 0 512 512 cuda_host_bfc 1578299667604041
+SrcNode v/tower_0/cg/resnet_v18/conv29/batchnorm29/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667662126
+SrcNode v/cg/resnet_v115/conv52/batchnorm52/moving_mean/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593285
+SrcNode v/tower_0/cg/resnet_v113/conv43/batchnorm43/AssignMovingAvg_1/sub_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667681412
+SrcNode v/tower_0/cg/resnet_v113/conv45/batchnorm45/AssignMovingAvg_1/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667682724
+SrcNode v/cg/resnet_v17/conv25/batchnorm25/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667606497
+SrcNode v/cg/resnet_v11/conv6/conv2d/kernel 1
+Output 0 147456 147456 cuda_host_bfc 1578299667601698
+SrcNode v/tower_0/cg/resnet_v15/conv19/batchnorm19/AssignMovingAvg 1
+Output 0 512 512 cuda_host_bfc 1578299667647242
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv4/batchnorm4/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667865485
+SrcNode GradientDescent/update_v/cg/resnet_v111/conv37/batchnorm37/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667745137
+SrcNode v/tower_0/cg/resnet_v110/conv36/batchnorm36/AssignMovingAvg_1/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667670721
+SrcNode v/tower_0/cg/resnet_v13/conv12/batchnorm12/AssignMovingAvg_1/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667636180
+SrcNode GradientDescent/update_v/cg/resnet_v15/conv19/conv2d/kernel/ApplyGradientDescent 1
+Output 0 589824 589824 cuda_host_bfc 1578299667797846
+SrcNode v/tower_0/cg/resnet_v114/conv47/batchnorm47/AssignMovingAvg_1/mul 1
+Output 0 2048 3072 cuda_host_bfc 1578299667685267
+SrcNode v/cg/resnet_v18/conv29/conv2d/kernel/read 1
+Output 0 2359296 3145728 cuda_host_bfc 1578299667608219
+SrcNode v/tower_0/cg/resnet_v14/conv17/batchnorm17/AssignMovingAvg/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667643930
+SrcNode GradientDescent/update_v/cg/resnet_v112/conv41/batchnorm41/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667734941
+SrcNode v/tower_0/cg/resnet_v17/conv25/batchnorm25/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667657282
+SrcNode v/tower_0/cg/resnet_v15/conv19/batchnorm19/AssignMovingAvg_1/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667647183
+SrcNode v/tower_0/cg/resnet_v10/conv1/batchnorm1/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667611273
+SrcNode v/cg/resnet_v12/conv9/batchnorm9/beta/read 1
+Output 0 256 256 cuda_host_bfc 1578299667602516
+SrcNode v/tower_0/cg/resnet_v110/conv34/batchnorm34/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667668566
+SrcNode AddN_28 1
+Output 0 256 256 cuda_host_bfc 1578299667835225
+SrcNode v/tower_0/cg/resnet_v113/conv44/batchnorm44/AssignMovingAvg_1/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667681642
+SrcNode v/cg/resnet_v18/conv29/batchnorm29/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599627
+SrcNode AddN_20 1
+Output 0 256 256 cuda_host_bfc 1578299667850722
+SrcNode v/cg/resnet_v10/conv2/conv2d/kernel 1
+Output 0 16384 16384 cuda_host_bfc 1578299667600572
+SrcNode AddN_22 1
+Output 0 1024 1024 cuda_host_bfc 1578299667845643
+SrcNode AddN_25 1
+Output 0 256 256 cuda_host_bfc 1578299667839806
+SrcNode AddN_24 1
+Output 0 65536 65536 cuda_host_bfc 1578299667840926
+SrcNode AddN_27 1
+Output 0 147456 147456 cuda_host_bfc 1578299667835738
+SrcNode AddN_26 1
+Output 0 256 256 cuda_host_bfc 1578299667839780
+SrcNode v/cg/resnet_v10/conv3/batchnorm3/gamma/read 1
+Output 0 256 256 cuda_host_bfc 1578299667600839
+SrcNode v/tower_0/cg/resnet_v114/conv49/batchnorm49/AssignMovingAvg_1/mul 1
+Output 0 8192 8192 cuda_host_bfc 1578299667687532
+SrcNode v/cg/resnet_v12/conv10/conv2d/kernel 1
+Output 0 65536 65536 cuda_host_bfc 1578299667602640
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv44/conv2d/kernel/ApplyGradientDescent 1
+Output 0 2097152 2097152 cuda_host_bfc 1578299667731006
+SrcNode v/tower_0/cg/resnet_v115/conv52/batchnorm52/AssignMovingAvg 1
+Output 0 8192 8192 cuda_host_bfc 1578299667691331
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv25/batchnorm25/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667782401
+SrcNode PiecewiseConstant/case/cond/cond/cond/Switch_1 1
+Output 1 4 0 cpu 1578299667594437
+SrcNode v/tower_0/cg/resnet_v18/conv30/batchnorm30/AssignMovingAvg/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667663144
+SrcNode v/tower_0/cg/resnet_v110/conv34/batchnorm34/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667668493
+SrcNode v/cg/resnet_v114/conv47/batchnorm47/moving_variance 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593172
+SrcNode v/cg/resnet_v17/conv27/batchnorm27/beta 1
+Output 0 4096 4096 cuda_host_bfc 1578299667607470
+SrcNode v/cg/resnet_v17/conv26/batchnorm26/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667607149
+SrcNode v/cg/resnet_v17/conv27/conv2d/kernel 1
+Output 0 1048576 1687552 cuda_host_bfc 1578299667607203
+SrcNode v/cg/resnet_v10/conv4/conv2d/kernel 1
+Output 0 65536 65536 cuda_host_bfc 1578299667601020
+SrcNode v/cg/resnet_v15/conv20/batchnorm20/beta/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667605379
+SrcNode v/tower_0/cg/resnet_v19/conv31/batchnorm31/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667664804
+SrcNode v/tower_0/cg/resnet_v10/conv2/batchnorm2/AssignMovingAvg 1
+Output 0 256 256 cuda_host_bfc 1578299667611300
+SrcNode GradientDescent/update_v/cg/resnet_v12/conv8/batchnorm8/beta/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667839856
+SrcNode v/tower_0/cg/resnet_v113/conv44/batchnorm44/AssignMovingAvg_1/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667681554
+SrcNode v/tower_0/cg/resnet_v115/conv51/batchnorm51/AssignMovingAvg 1
+Output 0 2048 2048 cuda_host_bfc 1578299667690119
+SrcNode v/cg/resnet_v110/conv35/batchnorm35/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592919
+SrcNode v/tower_0/cg/resnet_v19/conv32/batchnorm32/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667665803
+SrcNode v/tower_0/cg/resnet_v19/conv31/batchnorm31/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667664774
+SrcNode v/cg/resnet_v112/conv40/batchnorm40/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593789
+SrcNode v/cg/resnet_v115/conv50/batchnorm50/moving_mean/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593236
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv24/conv2d/kernel/ApplyGradientDescent 1
+Output 0 2097152 2097152 cuda_host_bfc 1578299667778204
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv3/conv2d/kernel/ApplyGradientDescent 1
+Output 0 147456 147456 cuda_host_bfc 1578299667870970
+SrcNode v/cg/resnet_v12/conv9/batchnorm9/moving_variance 1
+Output 0 256 256 cuda_host_bfc 1578299667599027
+SrcNode v/cg/resnet_v112/conv42/batchnorm42/gamma/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667595466
+SrcNode v/cg/resnet_v111/conv38/batchnorm38/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593785
+SrcNode v/cg/resnet_v13/conv14/batchnorm14/gamma/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667603791
+SrcNode v/cg/resnet_v11/conv5/batchnorm5/beta/read 1
+Output 0 256 256 cuda_host_bfc 1578299667601561
+SrcNode v/cg/resnet_v114/conv49/batchnorm49/gamma/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667597420
+SrcNode v/cg/resnet_v16/conv22/batchnorm22/beta 1
+Output 0 512 512 cuda_host_bfc 1578299667606033
+SrcNode PiecewiseConstant/case/cond/pred_id 1
+Output 0 1 1 cpu 1578299667594050
+SrcNode v/cg/resnet_v19/conv32/batchnorm32/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667605121
+SrcNode v/tower_0/cg/resnet_v111/conv37/batchnorm37/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667672212
+SrcNode v/cg/resnet_v17/conv25/conv2d/kernel 1
+Output 0 524288 524288 cuda_host_bfc 1578299667606403
+SrcNode v/cg/resnet_v16/conv23/batchnorm23/moving_mean 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599364
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv13/batchnorm13/gamma/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667820745
+SrcNode v/cg/resnet_v113/conv44/batchnorm44/gamma 1
+Output 0 2048 2048 cuda_host_bfc 1578299667595829
+SrcNode v/tower_0/cg/resnet_v14/conv17/batchnorm17/AssignMovingAvg_1/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667643958
+SrcNode v/tower_0/cg/resnet_v17/conv27/batchnorm27/AssignMovingAvg_1/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667659428
+SrcNode v/cg/resnet_v112/conv40/conv2d/kernel 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667594298
+SrcNode v/cg/resnet_v14/conv17/batchnorm17/moving_mean 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599228
+SrcNode v/cg/resnet_v111/conv37/batchnorm37/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593749
+SrcNode v/cg/resnet_v13/conv14/conv2d/kernel/read/_586 1
+Output 0 0 0  1578299667603717
+SrcNode v/cg/resnet_v13/conv11/batchnorm11/moving_mean 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599067
+SrcNode AddN_141 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667715615
+SrcNode v/cg/resnet_v18/conv30/batchnorm30/moving_variance 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599509
+SrcNode v/tower_0/cg/resnet_v115/conv50/batchnorm50/AssignMovingAvg_1/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667688776
+SrcNode v/cg/resnet_v113/conv46/batchnorm46/moving_mean/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593167
+SrcNode v/cg/resnet_v15/conv19/batchnorm19/moving_variance 1
+Output 0 512 512 cuda_host_bfc 1578299667599285
+SrcNode v/tower_0/cg/resnet_v110/conv36/batchnorm36/AssignMovingAvg 1
+Output 0 4096 4096 cuda_host_bfc 1578299667670753
+SrcNode GradientDescent/update_v/cg/resnet_v110/conv34/batchnorm34/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667753020
+SrcNode v/tower_0/cg/resnet_v17/conv25/batchnorm25/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667657259
+SrcNode v/cg/resnet_v13/conv14/batchnorm14/moving_variance 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599170
+SrcNode v/tower_0/cg/resnet_v15/conv20/batchnorm20/AssignMovingAvg_1/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667649007
+SrcNode v/cg/resnet_v13/conv11/conv2d/kernel/read/_532 1
+Output 0 0 0  1578299667599754
+SrcNode v/cg/resnet_v112/conv41/batchnorm41/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667595241
+SrcNode v/tower_0/cg/resnet_v12/conv10/batchnorm10/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667631177
+SrcNode v/cg/resnet_v112/conv42/batchnorm42/moving_variance 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593075
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv27/batchnorm27/gamma/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777231
+SrcNode v/cg/resnet_v16/conv21/conv2d/kernel 1
+Output 0 262144 262144 cuda_host_bfc 1578299667605356
+SrcNode v/tower_0/cg/resnet_v13/conv11/batchnorm11/AssignMovingAvg_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667636296
+SrcNode v/tower_0/cg/resnet_v11/conv6/batchnorm6/AssignMovingAvg/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667621230
+SrcNode v/cg/resnet_v14/conv17/batchnorm17/gamma/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667604537
+SrcNode v/cg/resnet_v12/conv9/conv2d/kernel/read/_500 1
+Output 0 0 0  1578299667602462
+SrcNode v/cg/resnet_v17/conv25/conv2d/kernel/read/_770 1
+Output 0 0 0  1578299667606506
+SrcNode v/cg/resnet_v18/conv28/batchnorm28/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599449
+SrcNode v/cg/resnet_v13/conv13/batchnorm13/moving_variance/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599204
+SrcNode v/cg/resnet_v110/conv34/conv2d/kernel 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667593314
+SrcNode v/cg/resnet_v17/conv25/conv2d/kernel/read/_778 1
+Output 0 0 0  1578299667606520
+SrcNode v/cg/resnet_v115/conv51/conv2d/kernel 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667597884
+SrcNode v/cg/resnet_v17/conv24/conv2d/kernel/read/_766 1
+Output 0 0 0  1578299667599780
+SrcNode v/cg/resnet_v10/conv4/batchnorm4/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667601170
+SrcNode v/tower_0/cg/resnet_v14/conv15/batchnorm15/AssignMovingAvg/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667641082
+SrcNode GradientDescent/update_v/cg/resnet_v15/conv18/batchnorm18/beta/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667800315
+SrcNode v/tower_0/cg/resnet_v19/conv31/batchnorm31/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667664789
+SrcNode v/tower_0/cg/resnet_v114/conv49/batchnorm49/AssignMovingAvg_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667687559
+SrcNode v/cg/resnet_v110/conv35/batchnorm35/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593631
+SrcNode v/cg/resnet_v12/conv9/batchnorm9/moving_mean 1
+Output 0 256 256 cuda_host_bfc 1578299667599019
+SrcNode v/cg/resnet_v111/conv37/batchnorm37/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592989
+SrcNode v/cg/resnet_v18/conv29/batchnorm29/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667608611
+SrcNode Mul_78 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667780601
+SrcNode Mul_79 1
+Output 0 1024 1024 cuda_host_bfc 1578299667779708
+SrcNode Mul_72 1
+Output 0 2097152 2097152 cuda_host_bfc 1578299667777953
+SrcNode Mul_73 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777114
+SrcNode Mul_70 1
+Output 0 2048 2048 cuda_host_bfc 1578299667785981
+SrcNode GradientDescent/update_v/cg/resnet_v115/conv52/conv2d/kernel/ApplyGradientDescent 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667702548
+SrcNode Mul_76 1
+Output 0 1024 1024 cuda_host_bfc 1578299667782365
+SrcNode v/tower_0/cg/resnet_v18/conv29/batchnorm29/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667662089
+SrcNode Mul_74 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777109
+SrcNode Mul_75 1
+Output 0 524288 524288 cuda_host_bfc 1578299667783236
+SrcNode v/cg/resnet_v16/conv22/batchnorm22/moving_mean 1
+Output 0 512 512 cuda_host_bfc 1578299667599344
+SrcNode GradientDescent/update_v/cg/resnet_v114/conv49/conv2d/kernel/ApplyGradientDescent 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667711348
+SrcNode AddN_36 1
+Output 0 131072 131072 cuda_host_bfc 1578299667825421
+SrcNode AddN_37 1
+Output 0 512 512 cuda_host_bfc 1578299667824288
+SrcNode AddN_34 1
+Output 0 2048 2048 cuda_host_bfc 1578299667817980
+SrcNode AddN_35 1
+Output 0 2048 3072 cuda_host_bfc 1578299667818058
+SrcNode AddN_32 1
+Output 0 1024 1024 cuda_host_bfc 1578299667829846
+SrcNode v/tower_0/cg/resnet_v112/conv40/batchnorm40/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667676079
+SrcNode AddN_30 1
+Output 0 65536 65536 cuda_host_bfc 1578299667830127
+SrcNode AddN_31 1
+Output 0 1024 1024 cuda_host_bfc 1578299667829868
+SrcNode GradientDescent/update_v/cg/conv0/conv2d/kernel/ApplyGradientDescent 1
+Output 0 37632 37632 cuda_host_bfc 1578299667881373
+SrcNode v/cg/resnet_v11/conv7/batchnorm7/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667601968
+SrcNode AddN_38 1
+Output 0 512 512 cuda_host_bfc 1578299667824308
+SrcNode AddN_39 1
+Output 0 589824 589824 cuda_host_bfc 1578299667820776
+SrcNode v/cg/resnet_v10/conv4/batchnorm4/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667601189
+SrcNode Mul_100 1
+Output 0 4096 4096 cuda_host_bfc 1578299667756114
+SrcNode v/cg/resnet_v15/conv20/batchnorm20/moving_mean/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599308
+SrcNode v/cg/resnet_v13/conv14/conv2d/kernel/read 1
+Output 0 262144 262144 cuda_host_bfc 1578299667603695
+SrcNode AddN_97 1
+Output 0 1024 1024 cuda_host_bfc 1578299667758352
+SrcNode v/cg/resnet_v18/conv29/batchnorm29/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599483
+SrcNode v/cg/resnet_v110/conv36/batchnorm36/moving_variance/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593576
+SrcNode v/cg/resnet_v112/conv42/batchnorm42/beta/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667595698
+SrcNode v/tower_0/cg/resnet_v10/conv4/batchnorm4/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667616016
+SrcNode v/tower_0/cg/resnet_v12/conv9/batchnorm9/AssignMovingAvg_1 1
+Output 0 256 256 cuda_host_bfc 1578299667628944
+SrcNode v/tower_0/cg/resnet_v15/conv20/batchnorm20/AssignMovingAvg/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667648910
+SrcNode v/tower_0/cg/resnet_v10/conv1/batchnorm1/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667611322
+SrcNode v/cg/resnet_v17/conv24/batchnorm24/beta/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599680
+SrcNode PiecewiseConstant/LessEqual 1
+Output 0 1 1 cpu 1578299667592602
+SrcNode v/cg/resnet_v16/conv21/batchnorm21/moving_mean/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599350
+SrcNode v/cg/resnet_v115/conv52/batchnorm52/gamma/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667598351
+SrcNode Mul_58 1
+Output 0 512 512 cuda_host_bfc 1578299667797377
+SrcNode v/cg/resnet_v18/conv28/batchnorm28/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667607971
+SrcNode Mul_59 1
+Output 0 512 512 cuda_host_bfc 1578299667797341
+SrcNode v/cg/resnet_v11/conv7/conv2d/kernel 1
+Output 0 65536 65536 cuda_host_bfc 1578299667601821
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv12/conv2d/kernel/ApplyGradientDescent 1
+Output 0 131072 131072 cuda_host_bfc 1578299667825549
+SrcNode v/tower_0/cg/resnet_v111/conv38/batchnorm38/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667673456
+SrcNode PiecewiseConstant/Const_6 1
+Output 0 4 0 cpu 1578299667592275
+SrcNode PiecewiseConstant/Const_7 1
+Output 0 4 0 cpu 1578299667592242
+SrcNode PiecewiseConstant/Const_4 1
+Output 0 4 0 cpu 1578299667592310
+SrcNode v/cg/resnet_v15/conv18/conv2d/kernel/read 1
+Output 0 262144 262144 cuda_host_bfc 1578299667604645
+SrcNode v/tower_0/cg/resnet_v114/conv47/batchnorm47/AssignMovingAvg 1
+Output 0 2048 2048 cuda_host_bfc 1578299667685298
+SrcNode v/tower_0/cg/resnet_v13/conv14/batchnorm14/AssignMovingAvg_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667639057
+SrcNode PiecewiseConstant/Const_8 1
+Output 0 4 0 cpu 1578299667592298
+SrcNode v/cg/resnet_v15/conv18/conv2d/kernel 1
+Output 0 262144 262144 cuda_host_bfc 1578299667604613
+SrcNode v/cg/resnet_v13/conv12/batchnorm12/moving_mean 1
+Output 0 512 512 cuda_host_bfc 1578299667599120
+SrcNode v/tower_0/cg/resnet_v15/conv19/batchnorm19/AssignMovingAvg_1 1
+Output 0 512 512 cuda_host_bfc 1578299667647258
+SrcNode GradientDescent/update_v/cg/resnet_v115/conv51/conv2d/kernel/ApplyGradientDescent 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667708641
+SrcNode v/cg/resnet_v15/conv20/batchnorm20/moving_variance/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599339
+SrcNode v/cg/resnet_v14/conv17/conv2d/kernel/read 1
+Output 0 262144 262144 cuda_host_bfc 1578299667604460
+SrcNode v/cg/resnet_v14/conv17/batchnorm17/beta 1
+Output 0 2048 2048 cuda_host_bfc 1578299667604505
+SrcNode v/cg/resnet_v114/conv47/batchnorm47/gamma 1
+Output 0 2048 2048 cuda_host_bfc 1578299667596897
+SrcNode v/cg/resnet_v10/conv1/batchnorm1/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592671
+SrcNode PiecewiseConstant/case/Assert/AssertGuard/control_dependency 1
+Output 0 1 0 cpu 1578299667593994
+SrcNode v/tower_0/cg/resnet_v11/conv5/batchnorm5/AssignMovingAvg 1
+Output 0 256 256 cuda_host_bfc 1578299667619254
+SrcNode v/cg/resnet_v112/conv41/conv2d/kernel/read/_1072 1
+Output 0 0 0  1578299667595049
+SrcNode v/cg/resnet_v112/conv41/conv2d/kernel/read/_1076 1
+Output 0 0 0  1578299667595066
+SrcNode v/cg/resnet_v12/conv10/batchnorm10/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667598969
+SrcNode v/cg/resnet_v14/conv16/conv2d/kernel/read/_622 1
+Output 0 0 0  1578299667604118
+SrcNode v/cg/resnet_v10/conv3/conv2d/kernel/read 1
+Output 0 147456 147456 cuda_host_bfc 1578299667600827
+SrcNode v/cg/resnet_v14/conv16/conv2d/kernel/read/_626 1
+Output 0 0 0  1578299667604133
+SrcNode v/cg/resnet_v111/conv39/batchnorm39/gamma 1
+Output 0 4096 4096 cuda_host_bfc 1578299667594105
+SrcNode v/cg/resnet_v113/conv46/conv2d/kernel/read 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667596540
+SrcNode v/cg/resnet_v12/conv9/conv2d/kernel/read 1
+Output 0 147456 147456 cuda_host_bfc 1578299667602416
+SrcNode v/cg/resnet_v18/conv28/conv2d/kernel/read/_838 1
+Output 0 0 0  1578299667607682
+SrcNode v/cg/resnet_v112/conv41/batchnorm41/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667595050
+SrcNode v/cg/resnet_v13/conv11/batchnorm11/moving_variance/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599123
+SrcNode v/tower_0/cg/resnet_v13/conv12/batchnorm12/AssignMovingAvg_1 1
+Output 0 512 512 cuda_host_bfc 1578299667636231
+SrcNode v/tower_0/cg/resnet_v18/conv29/batchnorm29/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667662163
+SrcNode v/tower_0/cg/resnet_v11/conv6/batchnorm6/AssignMovingAvg_1 1
+Output 0 256 256 cuda_host_bfc 1578299667621290
+SrcNode v/cg/resnet_v112/conv41/batchnorm41/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667595019
+SrcNode v/tower_0/cg/resnet_v17/conv26/batchnorm26/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667658265
+SrcNode v/cg/resnet_v13/conv12/batchnorm12/moving_variance 1
+Output 0 512 512 cuda_host_bfc 1578299667599137
+SrcNode v/cg/conv0/conv2d/kernel/read 1
+Output 0 37632 37632 cuda_host_bfc 1578299667600000
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv14/conv2d/kernel/ApplyGradientDescent 1
+Output 0 262144 262144 cuda_host_bfc 1578299667818520
+SrcNode Mul 1
+Output 0 37632 37632 cuda_host_bfc 1578299667881235
+SrcNode v/tower_0/cg/resnet_v17/conv24/batchnorm24/AssignMovingAvg/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667657187
+SrcNode v/tower_0/cg/resnet_v110/conv34/batchnorm34/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667668519
+SrcNode v/cg/resnet_v17/conv26/batchnorm26/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599423
+SrcNode v/cg/resnet_v12/conv8/conv2d/kernel 1
+Output 0 65536 65536 cuda_host_bfc 1578299667601982
+SrcNode v/tower_0/cg/resnet_v10/conv1/batchnorm1/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667611223
+SrcNode v/cg/resnet_v13/conv11/conv2d/kernel/read 1
+Output 0 524288 524288 cuda_host_bfc 1578299667599724
+SrcNode v/cg/resnet_v11/conv6/batchnorm6/beta 1
+Output 0 256 256 cuda_host_bfc 1578299667601749
+SrcNode v/cg/resnet_v11/conv5/batchnorm5/moving_variance 1
+Output 0 256 256 cuda_host_bfc 1578299667592832
+SrcNode v/cg/resnet_v113/conv43/batchnorm43/gamma/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593317
+SrcNode v/cg/resnet_v111/conv39/batchnorm39/gamma/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667594137
+SrcNode v/tower_0/cg/resnet_v114/conv49/batchnorm49/AssignMovingAvg 1
+Output 0 8192 8192 cuda_host_bfc 1578299667687547
+SrcNode v/tower_0/cg/resnet_v114/conv49/batchnorm49/AssignMovingAvg/mul 1
+Output 0 8192 8192 cuda_host_bfc 1578299667687532
+SrcNode GradientDescent/update_v/cg/resnet_v115/conv52/batchnorm52/gamma/ApplyGradientDescent 1
+Output 0 8192 8192 cuda_host_bfc 1578299667700032
+SrcNode v/cg/resnet_v112/conv41/batchnorm41/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593057
+SrcNode v/cg/resnet_v110/conv35/batchnorm35/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592957
+SrcNode v/tower_0/cg/resnet_v17/conv27/batchnorm27/AssignMovingAvg/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667659410
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv46/conv2d/kernel/ApplyGradientDescent 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667726611
+SrcNode v/cg/resnet_v15/conv18/batchnorm18/moving_mean 1
+Output 0 512 512 cuda_host_bfc 1578299667599261
+SrcNode v/tower_0/cg/resnet_v14/conv15/batchnorm15/AssignMovingAvg_1/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667641108
+SrcNode GradientDescent/update_v/cg/resnet_v19/conv33/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667756730
+SrcNode PiecewiseConstant/Cast_2 1
+Output 0 8 0 cpu 1578299667592347
+SrcNode v/cg/resnet_v11/conv5/batchnorm5/gamma 1
+Output 0 256 256 cuda_host_bfc 1578299667601517
+SrcNode Mul_69 1
+Output 0 262144 262144 cuda_host_bfc 1578299667786126
+SrcNode v/cg/resnet_v114/conv49/conv2d/kernel/read/_1220 1
+Output 0 0 0  1578299667597295
+SrcNode Mul_61 1
+Output 0 2048 2048 cuda_host_bfc 1578299667794925
+SrcNode Mul_60 1
+Output 0 262144 262144 cuda_host_bfc 1578299667795088
+SrcNode Mul_63 1
+Output 0 262144 262144 cuda_host_bfc 1578299667792152
+SrcNode Mul_62 1
+Output 0 2048 2048 cuda_host_bfc 1578299667794969
+SrcNode Mul_65 1
+Output 0 512 512 cuda_host_bfc 1578299667791468
+SrcNode Mul_64 1
+Output 0 512 512 cuda_host_bfc 1578299667791480
+SrcNode Mul_67 1
+Output 0 512 512 cuda_host_bfc 1578299667788441
+SrcNode Mul_66 1
+Output 0 589824 589824 cuda_host_bfc 1578299667788866
+SrcNode AddN_43 1
+Output 0 2048 2048 cuda_host_bfc 1578299667818019
+SrcNode AddN_42 1
+Output 0 262144 262144 cuda_host_bfc 1578299667818367
+SrcNode AddN_41 1
+Output 0 512 512 cuda_host_bfc 1578299667820688
+SrcNode AddN_40 1
+Output 0 512 512 cuda_host_bfc 1578299667820648
+SrcNode AddN_47 1
+Output 0 512 512 cuda_host_bfc 1578299667809126
+SrcNode AddN_46 1
+Output 0 512 512 cuda_host_bfc 1578299667809098
+SrcNode AddN_45 1
+Output 0 262144 262144 cuda_host_bfc 1578299667809785
+SrcNode AddN_44 1
+Output 0 2048 2048 cuda_host_bfc 1578299667817982
+SrcNode AddN_49 1
+Output 0 512 512 cuda_host_bfc 1578299667806132
+SrcNode AddN_48 1
+Output 0 589824 589824 cuda_host_bfc 1578299667806381
+SrcNode v/tower_0/cg/resnet_v18/conv29/batchnorm29/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667662140
+SrcNode AddN_126 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667732686
+SrcNode AssignAdd 1
+Output 0 8 256 cuda_host_bfc 1578299667881636
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv1/batchnorm1/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667865351
+SrcNode _retval_Mean_0_1 0
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv3/batchnorm3/gamma/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667870643
+SrcNode v/cg/resnet_v19/conv32/batchnorm32/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667605091
+SrcNode v/tower_0/cg/resnet_v16/conv21/batchnorm21/AssignMovingAvg 1
+Output 0 512 512 cuda_host_bfc 1578299667650985
+SrcNode PiecewiseConstant/case/cond/cond/Switch_1 1
+Output 1 4 0 cpu 1578299667594505
+SrcNode v/tower_0/cg/resnet_v13/conv11/batchnorm11/AssignMovingAvg_1/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667636224
+SrcNode v/cg/resnet_v17/conv26/conv2d/kernel/read 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667606864
+SrcNode v/tower_0/cg/resnet_v114/conv47/batchnorm47/AssignMovingAvg_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667685288
+SrcNode v/tower_0/cg/resnet_v17/conv24/batchnorm24/AssignMovingAvg/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667657240
+SrcNode v/tower_0/cg/resnet_v14/conv16/batchnorm16/AssignMovingAvg/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667642251
+SrcNode GradientDescent/update_v/cg/affine0/biases/ApplyGradientDescent 1
+Output 0 4004 4096 cuda_host_bfc 1578299667696409
+SrcNode v/cg/resnet_v16/conv21/batchnorm21/moving_variance 1
+Output 0 512 512 cuda_host_bfc 1578299667599336
+SrcNode v/tower_0/cg/resnet_v113/conv46/batchnorm46/AssignMovingAvg 1
+Output 0 8192 8192 cuda_host_bfc 1578299667683972
+SrcNode v/tower_0/cg/resnet_v115/conv52/batchnorm52/AssignMovingAvg/sub_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667691244
+SrcNode v/tower_0/cg/resnet_v113/conv44/batchnorm44/AssignMovingAvg_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667681683
+SrcNode v/cg/resnet_v13/conv14/conv2d/kernel 1
+Output 0 262144 262144 cuda_host_bfc 1578299667603634
+SrcNode v/tower_0/cg/resnet_v14/conv16/batchnorm16/AssignMovingAvg_1 1
+Output 0 512 512 cuda_host_bfc 1578299667642297
+SrcNode v/tower_0/cg/resnet_v10/conv4/batchnorm4/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667615983
+SrcNode v/cg/resnet_v111/conv37/conv2d/kernel/read 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667593693
+SrcNode v/tower_0/cg/resnet_v12/conv9/batchnorm9/AssignMovingAvg 1
+Output 0 256 256 cuda_host_bfc 1578299667628919
+SrcNode v/cg/resnet_v113/conv44/batchnorm44/moving_mean 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593104
+SrcNode v/cg/resnet_v113/conv46/batchnorm46/moving_variance 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593165
+SrcNode v/tower_0/cg/resnet_v16/conv22/batchnorm22/AssignMovingAvg_1/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667651968
+SrcNode v/cg/resnet_v15/conv19/batchnorm19/gamma/read 1
+Output 0 512 512 cuda_host_bfc 1578299667605113
+SrcNode v/cg/resnet_v112/conv41/batchnorm41/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593062
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv27/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1048576 1687552 cuda_host_bfc 1578299667777999
+SrcNode v/cg/resnet_v11/conv7/batchnorm7/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667602058
+SrcNode v/tower_0/cg/resnet_v112/conv41/batchnorm41/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667677284
+SrcNode v/cg/resnet_v16/conv22/conv2d/kernel/read 1
+Output 0 589824 786432 cuda_host_bfc 1578299667605700
+SrcNode v/cg/resnet_v11/conv7/batchnorm7/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667601905
+SrcNode v/cg/resnet_v19/conv33/batchnorm33/gamma 1
+Output 0 4096 4096 cuda_host_bfc 1578299667597509
+SrcNode v/cg/resnet_v110/conv35/conv2d/kernel 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667593504
+SrcNode v/tower_0/cg/resnet_v13/conv14/batchnorm14/AssignMovingAvg 1
+Output 0 2048 2048 cuda_host_bfc 1578299667639081
+SrcNode PiecewiseConstant/case/cond/cond/cond/cond/Switch_1 1
+Output 1 4 0 cpu 1578299667594118
+SrcNode v/tower_0/cg/resnet_v11/conv7/batchnorm7/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667623558
+SrcNode v/cg/resnet_v17/conv25/batchnorm25/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599400
+SrcNode v/tower_0/cg/resnet_v15/conv18/batchnorm18/AssignMovingAvg 1
+Output 0 512 512 cuda_host_bfc 1578299667645948
+SrcNode v/tower_0/cg/resnet_v17/conv24/batchnorm24/AssignMovingAvg_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667657197
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv3/batchnorm3/beta/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667870614
+SrcNode v/cg/resnet_v113/conv46/conv2d/kernel/read/_1166 1
+Output 0 0 0  1578299667596583
+SrcNode v/tower_0/cg/resnet_v112/conv42/batchnorm42/AssignMovingAvg_1/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667678500
+SrcNode v/cg/resnet_v16/conv23/batchnorm23/gamma 1
+Output 0 2048 2048 cuda_host_bfc 1578299667606147
+SrcNode cond/Switch_2 1
+Output 1 4 0 cpu 1578299667594636
+SrcNode cond/Switch_1 1
+Output 1 4 4 cpu 1578299667592669
+SrcNode v/cg/resnet_v19/conv31/batchnorm31/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599617
+SrcNode v/cg/resnet_v18/conv28/batchnorm28/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667608096
+SrcNode GradientDescent/update_v/cg/resnet_v18/conv28/batchnorm28/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667769039
+SrcNode v/tower_0/cg/resnet_v11/conv6/batchnorm6/AssignMovingAvg/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667621262
+SrcNode v/cg/resnet_v16/conv21/conv2d/kernel/read/_716 1
+Output 0 0 0  1578299667605462
+SrcNode v/cg/resnet_v110/conv35/batchnorm35/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593523
+SrcNode v/tower_0/cg/resnet_v113/conv46/batchnorm46/AssignMovingAvg/mul 1
+Output 0 8192 8192 cuda_host_bfc 1578299667683950
+SrcNode v/cg/resnet_v13/conv13/batchnorm13/moving_mean 1
+Output 0 512 512 cuda_host_bfc 1578299667599158
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv2/conv2d/kernel/ApplyGradientDescent 1
+Output 0 16384 16384 cuda_host_bfc 1578299667874761
+SrcNode v/cg/resnet_v110/conv35/conv2d/kernel/read/_968 1
+Output 0 0 0  1578299667593984
+SrcNode PiecewiseConstant/Greater_3 1
+Output 0 1 1 cpu 1578299667592797
+SrcNode PiecewiseConstant/Greater_2 1
+Output 0 1 1 cpu 1578299667592727
+SrcNode PiecewiseConstant/Greater_1 1
+Output 0 1 1 cpu 1578299667592665
+SrcNode v/cg/resnet_v110/conv35/conv2d/kernel/read/_964 1
+Output 0 0 0  1578299667593939
+SrcNode v/cg/resnet_v114/conv48/batchnorm48/beta 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597139
+SrcNode v/cg/resnet_v15/conv18/batchnorm18/moving_variance 1
+Output 0 512 512 cuda_host_bfc 1578299667599269
+SrcNode v/tower_0/cg/resnet_v110/conv36/batchnorm36/AssignMovingAvg/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667670731
+SrcNode v/cg/resnet_v14/conv16/batchnorm16/moving_mean 1
+Output 0 512 512 cuda_host_bfc 1578299667599210
+SrcNode v/cg/resnet_v14/conv17/batchnorm17/beta/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667604533
+SrcNode GradientDescent/update_v/cg/resnet_v115/conv50/batchnorm50/beta/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667706134
+SrcNode v/cg/resnet_v19/conv31/conv2d/kernel/read 1
+Output 0 1048576 2031616 cuda_host_bfc 1578299667609004
+SrcNode v/tower_0/cg/resnet_v113/conv44/batchnorm44/AssignMovingAvg/mul 1
+Output 0 2048 2560 cuda_host_bfc 1578299667681568
+SrcNode v/cg/resnet_v17/conv25/batchnorm25/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599408
+SrcNode v/cg/resnet_v115/conv52/batchnorm52/moving_mean 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593251
+SrcNode v/tower_0/cg/resnet_v17/conv26/batchnorm26/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667658259
+SrcNode v/tower_0/cg/resnet_v17/conv25/batchnorm25/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667657179
+SrcNode GradientDescent/update_v/cg/resnet_v18/conv28/batchnorm28/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667769086
+SrcNode v/cg/resnet_v19/conv32/conv2d/kernel/read 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667607582
+SrcNode v/cg/resnet_v18/conv29/conv2d/kernel/read/_856 1
+Output 0 0 0  1578299667608238
+SrcNode v/cg/conv0/batchnorm0/gamma 1
+Output 0 256 256 cuda_host_bfc 1578299667600503
+SrcNode v/cg/resnet_v115/conv50/batchnorm50/beta 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597720
+SrcNode v/cg/resnet_v13/conv12/conv2d/kernel/read/_544 1
+Output 0 0 0  1578299667602931
+SrcNode v/cg/resnet_v12/conv9/batchnorm9/gamma/read 1
+Output 0 256 256 cuda_host_bfc 1578299667602493
+SrcNode v/cg/resnet_v112/conv42/conv2d/kernel/read 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667595413
+SrcNode v/cg/resnet_v12/conv10/batchnorm10/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667602860
+SrcNode v/cg/resnet_v113/conv44/batchnorm44/gamma/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667595905
+SrcNode Mul_54 1
+Output 0 262144 262144 cuda_host_bfc 1578299667801058
+SrcNode Mul_55 1
+Output 0 512 512 cuda_host_bfc 1578299667800331
+SrcNode Mul_56 1
+Output 0 512 512 cuda_host_bfc 1578299667800295
+SrcNode Mul_57 1
+Output 0 589824 589824 cuda_host_bfc 1578299667797763
+SrcNode Mul_50 1
+Output 0 512 512 cuda_host_bfc 1578299667806216
+SrcNode Mul_51 1
+Output 0 262144 262144 cuda_host_bfc 1578299667804008
+SrcNode Mul_52 1
+Output 0 2048 2048 cuda_host_bfc 1578299667803759
+SrcNode Mul_53 1
+Output 0 2048 2048 cuda_host_bfc 1578299667803748
+SrcNode v/tower_0/cg/resnet_v13/conv13/batchnorm13/AssignMovingAvg_1/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667637406
+SrcNode v/tower_0/cg/resnet_v18/conv28/batchnorm28/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667661091
+SrcNode v/cg/resnet_v14/conv15/batchnorm15/moving_mean/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599215
+SrcNode AddN_50 1
+Output 0 512 512 cuda_host_bfc 1578299667806160
+SrcNode AddN_51 1
+Output 0 262144 262144 cuda_host_bfc 1578299667803912
+SrcNode AddN_52 1
+Output 0 2048 2048 cuda_host_bfc 1578299667803711
+SrcNode AddN_53 1
+Output 0 2048 2048 cuda_host_bfc 1578299667803691
+SrcNode AddN_54 1
+Output 0 262144 262144 cuda_host_bfc 1578299667800930
+SrcNode AddN_55 1
+Output 0 512 512 cuda_host_bfc 1578299667800275
+SrcNode AddN_56 1
+Output 0 512 512 cuda_host_bfc 1578299667800247
+SrcNode AddN_57 1
+Output 0 589824 589824 cuda_host_bfc 1578299667797563
+SrcNode AddN_58 1
+Output 0 512 512 cuda_host_bfc 1578299667797323
+SrcNode AddN_59 1
+Output 0 512 512 cuda_host_bfc 1578299667797296
+SrcNode v/tower_0/cg/resnet_v113/conv45/batchnorm45/AssignMovingAvg/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667682750
+SrcNode v/tower_0/cg/resnet_v12/conv10/batchnorm10/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667631227
+SrcNode GradientDescent/update_v/cg/resnet_v115/conv51/batchnorm51/gamma/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667702681
+SrcNode v/cg/resnet_v18/conv28/batchnorm28/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599459
+SrcNode v/cg/resnet_v113/conv44/conv2d/kernel/read/_1112 1
+Output 0 0 0  1578299667595755
+SrcNode v/cg/resnet_v18/conv30/batchnorm30/gamma/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667608655
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv25/conv2d/kernel/ApplyGradientDescent 1
+Output 0 524288 524288 cuda_host_bfc 1578299667783303
+SrcNode v/tower_0/cg/resnet_v113/conv45/batchnorm45/AssignMovingAvg_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667682794
+SrcNode v/tower_0/cg/resnet_v13/conv14/batchnorm14/AssignMovingAvg_1/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667639035
+SrcNode v/cg/affine0/biases/read 1
+Output 0 4004 4096 cuda_host_bfc 1578299667592536
+SrcNode v/tower_0/cg/resnet_v112/conv41/batchnorm41/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667677279
+SrcNode v/cg/resnet_v16/conv23/batchnorm23/beta/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667606810
+SrcNode v/cg/resnet_v113/conv46/conv2d/kernel/read/_1162 1
+Output 0 0 0  1578299667596564
+SrcNode v/cg/resnet_v113/conv46/conv2d/kernel 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667596468
+SrcNode GradientDescent/update_v/cg/resnet_v14/conv15/conv2d/kernel/ApplyGradientDescent 1
+Output 0 262144 262144 cuda_host_bfc 1578299667809991
+SrcNode v/tower_0/cg/resnet_v17/conv26/batchnorm26/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667658214
+SrcNode v/cg/resnet_v11/conv5/batchnorm5/moving_variance/read 1
+Output 0 256 256 cuda_host_bfc 1578299667592906
+SrcNode v/cg/resnet_v17/conv27/batchnorm27/beta/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667607524
+SrcNode v/cg/resnet_v115/conv51/batchnorm51/beta 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597935
+SrcNode v/cg/resnet_v110/conv34/conv2d/kernel/read/_950 1
+Output 0 0 0  1578299667593396
+SrcNode v/cg/resnet_v17/conv25/batchnorm25/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667606623
+SrcNode v/cg/resnet_v110/conv36/conv2d/kernel/read 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667593629
+SrcNode GradientDescent/update_v/cg/resnet_v15/conv18/conv2d/kernel/ApplyGradientDescent 1
+Output 0 262144 262144 cuda_host_bfc 1578299667801110
+SrcNode GradientDescent/update_v/cg/resnet_v11/conv5/batchnorm5/beta/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667855339
+SrcNode GradientDescent/update_v/cg/resnet_v111/conv37/batchnorm37/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667745173
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv11/batchnorm11/gamma/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667818048
+SrcNode mul_161 1
+Output 0 4 0 cpu 1578299667592396
+SrcNode v/tower_0/cg/resnet_v17/conv27/batchnorm27/AssignMovingAvg_1/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667659463
+SrcNode v/tower_0/cg/resnet_v113/conv44/batchnorm44/AssignMovingAvg/sub_1 1
+Output 0 2048 2560 cuda_host_bfc 1578299667681515
+SrcNode AddN 1
+Output 0 37632 37632 cuda_host_bfc 1578299667881167
+SrcNode v/cg/resnet_v15/conv19/batchnorm19/moving_mean 1
+Output 0 512 512 cuda_host_bfc 1578299667599275
+SrcNode GradientDescent/update_v/cg/resnet_v110/conv36/batchnorm36/gamma/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667748182
+SrcNode v/cg/resnet_v113/conv46/batchnorm46/moving_mean 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593147
+SrcNode v/cg/resnet_v17/conv26/batchnorm26/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599432
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv46/batchnorm46/gamma/ApplyGradientDescent 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723712
+SrcNode v/cg/resnet_v19/conv33/conv2d/kernel 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667597781
+SrcNode GradientDescent/update_v/cg/resnet_v12/conv10/batchnorm10/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667829935
+SrcNode v/tower_0/cg/resnet_v15/conv18/batchnorm18/AssignMovingAvg_1 1
+Output 0 512 512 cuda_host_bfc 1578299667645929
+SrcNode v/tower_0/cg/resnet_v10/conv3/batchnorm3/AssignMovingAvg_1 1
+Output 0 256 256 cuda_host_bfc 1578299667613391
+SrcNode v/cg/resnet_v19/conv33/conv2d/kernel/read 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667597819
+SrcNode v/cg/resnet_v13/conv12/batchnorm12/beta/read 1
+Output 0 512 512 cuda_host_bfc 1578299667603310
+SrcNode v/cg/resnet_v17/conv27/conv2d/kernel/read/_820 1
+Output 0 0 0  1578299667607294
+SrcNode v/cg/resnet_v10/conv4/conv2d/kernel/read 1
+Output 0 65536 65536 cuda_host_bfc 1578299667601093
+SrcNode v/cg/resnet_v17/conv27/conv2d/kernel/read 1
+Output 0 1048576 1687552 cuda_host_bfc 1578299667607264
+SrcNode GradientDescent/update_v/cg/resnet_v112/conv41/conv2d/kernel/ApplyGradientDescent 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667736165
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv46/batchnorm46/beta/ApplyGradientDescent 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723746
+SrcNode v/tower_0/cg/resnet_v14/conv15/batchnorm15/AssignMovingAvg_1 1
+Output 0 512 512 cuda_host_bfc 1578299667641129
+SrcNode Mul_77 1
+Output 0 1024 1024 cuda_host_bfc 1578299667782381
+SrcNode v/cg/resnet_v10/conv4/batchnorm4/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667601200
+SrcNode v/tower_0/cg/resnet_v13/conv11/batchnorm11/AssignMovingAvg_1/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667636273
+SrcNode v/cg/resnet_v13/conv12/conv2d/kernel 1
+Output 0 131072 131072 cuda_host_bfc 1578299667602849
+SrcNode v/tower_0/cg/resnet_v115/conv51/batchnorm51/AssignMovingAvg_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667690087
+SrcNode v/tower_0/cg/resnet_v114/conv49/batchnorm49/AssignMovingAvg_1/sub_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667687478
+SrcNode v/cg/resnet_v16/conv22/conv2d/kernel/read/_734 1
+Output 0 0 0  1578299667605737
+SrcNode GradientDescent/update_v/cg/resnet_v11/conv6/batchnorm6/beta/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667850814
+SrcNode v/cg/resnet_v17/conv24/batchnorm24/gamma 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599653
+SrcNode v/cg/resnet_v17/conv27/batchnorm27/moving_variance/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599595
+SrcNode v/tower_0/cg/conv0/batchnorm0/AssignMovingAvg_1/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667606647
+SrcNode GradientDescent/update_v/cg/resnet_v115/conv50/batchnorm50/gamma/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667706179
+SrcNode v/cg/resnet_v111/conv38/batchnorm38/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667594289
+SrcNode v/cg/resnet_v18/conv28/conv2d/kernel/read 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667607657
+SrcNode v/cg/resnet_v15/conv20/batchnorm20/gamma 1
+Output 0 2048 2048 cuda_host_bfc 1578299667605253
+SrcNode ConstantFoldingCtrl/PiecewiseConstant/case/Assert/AssertGuard/Switch_1 1
+Output 0 1 1 cpu 1578299667593944
+SrcNode v/tower_0/cg/resnet_v110/conv35/batchnorm35/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667669405
+SrcNode v/cg/resnet_v111/conv38/batchnorm38/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593852
+SrcNode v/cg/resnet_v13/conv12/batchnorm12/beta 1
+Output 0 512 512 cuda_host_bfc 1578299667603262
+SrcNode AddN_33 1
+Output 0 524288 524288 cuda_host_bfc 1578299667818138
+SrcNode v/cg/resnet_v115/conv51/batchnorm51/gamma/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597945
+SrcNode v/tower_0/cg/resnet_v10/conv2/batchnorm2/AssignMovingAvg/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667611283
+SrcNode Mul_43 1
+Output 0 2048 2048 cuda_host_bfc 1578299667818093
+SrcNode Mul_42 1
+Output 0 262144 262144 cuda_host_bfc 1578299667818475
+SrcNode Mul_41 1
+Output 0 512 512 cuda_host_bfc 1578299667820742
+SrcNode Mul_40 1
+Output 0 512 512 cuda_host_bfc 1578299667820722
+SrcNode Mul_47 1
+Output 0 512 512 cuda_host_bfc 1578299667809180
+SrcNode Mul_46 1
+Output 0 512 512 cuda_host_bfc 1578299667809141
+SrcNode Mul_45 1
+Output 0 262144 262144 cuda_host_bfc 1578299667809911
+SrcNode Mul_44 1
+Output 0 2048 2048 cuda_host_bfc 1578299667818051
+SrcNode v/tower_0/cg/resnet_v113/conv46/batchnorm46/AssignMovingAvg/sub_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667683899
+SrcNode Mul_49 1
+Output 0 512 512 cuda_host_bfc 1578299667806179
+SrcNode Mul_48 1
+Output 0 589824 589824 cuda_host_bfc 1578299667806570
+SrcNode v/cg/resnet_v19/conv31/batchnorm31/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667609071
+SrcNode v/cg/resnet_v114/conv49/batchnorm49/beta/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667597589
+SrcNode v/cg/resnet_v11/conv5/batchnorm5/gamma/read 1
+Output 0 256 256 cuda_host_bfc 1578299667601548
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv45/batchnorm45/gamma/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667727145
+SrcNode v/tower_0/cg/resnet_v114/conv47/batchnorm47/AssignMovingAvg/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667685275
+SrcNode v/cg/resnet_v16/conv22/batchnorm22/moving_variance/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599372
+SrcNode AddN_69 1
+Output 0 262144 262144 cuda_host_bfc 1578299667786036
+SrcNode v/cg/resnet_v113/conv43/batchnorm43/moving_variance/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593818
+SrcNode v/cg/affine0/biases 1
+Output 0 4004 4096 cuda_host_bfc 1578299667592479
+SrcNode AddN_64 1
+Output 0 512 512 cuda_host_bfc 1578299667791435
+SrcNode AddN_67 1
+Output 0 512 512 cuda_host_bfc 1578299667788395
+SrcNode v/cg/resnet_v115/conv52/conv2d/kernel/read/_1270 1
+Output 0 0 0  1578299667598143
+SrcNode AddN_61 1
+Output 0 2048 2048 cuda_host_bfc 1578299667794880
+SrcNode AddN_60 1
+Output 0 262144 262144 cuda_host_bfc 1578299667795001
+SrcNode v/cg/resnet_v115/conv52/batchnorm52/beta 1
+Output 0 8192 8192 cuda_host_bfc 1578299667598341
+SrcNode v/cg/resnet_v115/conv52/conv2d/kernel/read/_1274 1
+Output 0 0 0  1578299667598158
+SrcNode v/cg/resnet_v18/conv29/batchnorm29/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667608381
+SrcNode v/cg/resnet_v18/conv29/batchnorm29/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667608355
+SrcNode v/cg/resnet_v113/conv44/conv2d/kernel/read/_1120 1
+Output 0 0 0  1578299667595766
+SrcNode v/cg/resnet_v13/conv12/batchnorm12/gamma/read 1
+Output 0 512 512 cuda_host_bfc 1578299667603291
+SrcNode v/cg/resnet_v110/conv34/batchnorm34/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592983
+SrcNode PiecewiseConstant/case/cond/cond/cond/cond/cond/Switch_1 1
+Output 1 4 0 cpu 1578299667594081
+SrcNode PiecewiseConstant/case/cond/cond/cond/cond/cond/Switch_6 1
+Output 1 4 0 cpu 1578299667594538
+SrcNode v/cg/resnet_v12/conv9/batchnorm9/moving_mean/read 1
+Output 0 256 256 cuda_host_bfc 1578299667599083
+SrcNode v/cg/resnet_v115/conv51/conv2d/kernel/read 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667597933
+SrcNode v/tower_0/cg/resnet_v19/conv32/batchnorm32/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667665747
+SrcNode v/cg/resnet_v13/conv14/batchnorm14/moving_mean 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599162
+SrcNode PiecewiseConstant/case/Assert/AssertGuard/Assert/Switch 1
+Output 1 1 1 cpu 1578299667593520
+SrcNode v/cg/resnet_v115/conv50/batchnorm50/beta/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597761
+SrcNode v/cg/resnet_v110/conv34/conv2d/kernel/read/_946 1
+Output 0 0 0  1578299667593380
+SrcNode v/cg/resnet_v14/conv17/conv2d/kernel 1
+Output 0 262144 262144 cuda_host_bfc 1578299667604424
+SrcNode GradientDescent/update_v/cg/resnet_v15/conv19/batchnorm19/beta/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667797359
+SrcNode GradientDescent/update_v/cg/resnet_v19/conv32/batchnorm32/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667758428
+SrcNode AddN_87 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667766553
+SrcNode AddN_86 1
+Output 0 1024 1024 cuda_host_bfc 1578299667769001
+SrcNode AddN_85 1
+Output 0 1024 1024 cuda_host_bfc 1578299667768976
+SrcNode AddN_84 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667769198
+SrcNode AddN_83 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777132
+SrcNode AddN_82 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777156
+SrcNode AddN_81 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667777544
+SrcNode v/tower_0/cg/conv0/batchnorm0/AssignMovingAvg_1 1
+Output 0 256 256 cuda_host_bfc 1578299667606800
+SrcNode AddN_89 1
+Output 0 1024 1024 cuda_host_bfc 1578299667766271
+SrcNode AddN_88 1
+Output 0 1024 1024 cuda_host_bfc 1578299667766328
+SrcNode v/tower_0/cg/resnet_v18/conv28/batchnorm28/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667661052
+SrcNode v/cg/resnet_v13/conv13/conv2d/kernel/read 1
+Output 0 589824 589824 cuda_host_bfc 1578299667603376
+SrcNode v/cg/resnet_v11/conv5/batchnorm5/moving_mean 1
+Output 0 256 256 cuda_host_bfc 1578299667592829
+SrcNode v/tower_0/cg/resnet_v13/conv12/batchnorm12/AssignMovingAvg_1/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667636215
+SrcNode GradientDescent/update_v/cg/resnet_v115/conv52/batchnorm52/beta/ApplyGradientDescent 1
+Output 0 8192 8192 cuda_host_bfc 1578299667700000
+SrcNode v/cg/resnet_v113/conv43/conv2d/kernel 1
+Output 0 8388608 8388608 cuda_host_bfc 1578299667593282
+SrcNode GradientDescent/update_v/cg/resnet_v15/conv20/batchnorm20/beta/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667794993
+SrcNode v/cg/resnet_v110/conv36/batchnorm36/moving_mean 1
+Output 0 4096 4096 cuda_host_bfc 1578299667592925
+SrcNode v/tower_0/cg/resnet_v16/conv22/batchnorm22/AssignMovingAvg_1 1
+Output 0 512 512 cuda_host_bfc 1578299667652018
+SrcNode v/tower_0/cg/resnet_v14/conv16/batchnorm16/AssignMovingAvg/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667642299
+SrcNode v/cg/resnet_v113/conv43/batchnorm43/gamma 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593282
+SrcNode v/tower_0/cg/conv0/batchnorm0/AssignMovingAvg/sub 1
+Output 0 4 0 cpu 1578299667592469
+SrcNode v/cg/resnet_v10/conv4/batchnorm4/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592813
+SrcNode v/cg/resnet_v114/conv48/conv2d/kernel 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667596930
+SrcNode v/cg/conv0/conv2d/kernel 1
+Output 0 37632 37632 cuda_host_bfc 1578299667599970
+SrcNode v/cg/resnet_v17/conv24/batchnorm24/moving_variance 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599374
+SrcNode v/cg/resnet_v111/conv39/batchnorm39/beta 1
+Output 0 4096 4096 cuda_host_bfc 1578299667594117
+SrcNode v/tower_0/cg/resnet_v114/conv47/batchnorm47/AssignMovingAvg_1/sub_1 1
+Output 0 2048 3072 cuda_host_bfc 1578299667685213
+SrcNode v/cg/resnet_v11/conv6/batchnorm6/gamma/read 1
+Output 0 256 256 cuda_host_bfc 1578299667601817
+SrcNode Mul_131 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723672
+SrcNode v/cg/resnet_v15/conv18/batchnorm18/gamma 1
+Output 0 512 512 cuda_host_bfc 1578299667604711
+SrcNode AddN_122 1
+Output 0 1024 1024 cuda_host_bfc 1578299667737327
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv4/batchnorm4/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667865545
+SrcNode GradientDescent/update_v/cg/resnet_v16/conv22/batchnorm22/beta/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667788497
+SrcNode AddN_124 1
+Output 0 1024 1024 cuda_host_bfc 1578299667734847
+SrcNode v/tower_0/cg/resnet_v112/conv41/batchnorm41/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667677253
+SrcNode v/cg/resnet_v13/conv11/batchnorm11/beta/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599895
+SrcNode v/cg/resnet_v114/conv48/batchnorm48/gamma 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597076
+SrcNode AddN_128 1
+Output 0 4096 4096 cuda_host_bfc 1578299667732582
+SrcNode v/cg/resnet_v110/conv36/batchnorm36/moving_mean/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593472
+SrcNode v/cg/resnet_v15/conv19/conv2d/kernel/read 1
+Output 0 589824 589824 cuda_host_bfc 1578299667604972
+SrcNode v/cg/resnet_v113/conv43/conv2d/kernel/read 1
+Output 0 8388608 8388608 cuda_host_bfc 1578299667593315
+SrcNode v/cg/resnet_v114/conv49/batchnorm49/beta 1
+Output 0 8192 8192 cuda_host_bfc 1578299667597554
+SrcNode v/cg/resnet_v15/conv20/conv2d/kernel/read/_698 1
+Output 0 0 0  1578299667605291
+SrcNode v/tower_0/cg/resnet_v111/conv38/batchnorm38/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667673442
+SrcNode v/cg/resnet_v115/conv51/batchnorm51/gamma 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597904
+SrcNode v/cg/resnet_v15/conv20/conv2d/kernel/read/_694 1
+Output 0 0 0  1578299667605274
+SrcNode v/cg/conv0/conv2d/kernel/read/_334 1
+Output 0 0 0  1578299667600018
+SrcNode v/tower_0/cg/resnet_v18/conv28/batchnorm28/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667661017
+SrcNode v/cg/conv0/conv2d/kernel/read/_338 1
+Output 0 0 0  1578299667600029
+SrcNode v/cg/resnet_v10/conv1/batchnorm1/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599943
+SrcNode v/cg/resnet_v18/conv30/conv2d/kernel/read 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667608644
+SrcNode GradientDescent/update_v/cg/resnet_v18/conv29/batchnorm29/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667766310
+SrcNode v/cg/resnet_v10/conv2/batchnorm2/beta/read 1
+Output 0 256 256 cuda_host_bfc 1578299667600764
+SrcNode AddN_130 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723549
+SrcNode AddN_131 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723572
+SrcNode AddN_132 1
+Output 0 2097152 2097152 cuda_host_bfc 1578299667729941
+SrcNode AddN_133 1
+Output 0 2048 2048 cuda_host_bfc 1578299667729312
+SrcNode AddN_134 1
+Output 0 2048 2048 cuda_host_bfc 1578299667729329
+SrcNode AddN_135 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667727833
+SrcNode AddN_136 1
+Output 0 2048 2048 cuda_host_bfc 1578299667727034
+SrcNode AddN_137 1
+Output 0 2048 2816 cuda_host_bfc 1578299667727053
+SrcNode AddN_138 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667724553
+SrcNode AddN_139 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723619
+SrcNode PiecewiseConstant/case/preds_c 1
+Output 0 5 5 cpu 1578299667593388
+SrcNode v/cg/resnet_v113/conv43/batchnorm43/beta 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593301
+SrcNode v/cg/resnet_v110/conv36/batchnorm36/gamma/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667594066
+SrcNode v/cg/resnet_v110/conv36/batchnorm36/beta 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593623
+SrcNode range 1
+Output 0 4 0 cpu 1578299667592370
+SrcNode PiecewiseConstant/LessEqual_2 1
+Output 0 1 1 cpu 1578299667592768
+SrcNode PiecewiseConstant/LessEqual_3 1
+Output 0 1 1 cpu 1578299667592774
+SrcNode PiecewiseConstant/LessEqual_1 1
+Output 0 1 1 cpu 1578299667592679
+SrcNode v/cg/resnet_v12/conv9/conv2d/kernel/read/_496 1
+Output 0 0 0  1578299667602445
+SrcNode v/cg/resnet_v113/conv44/batchnorm44/beta 1
+Output 0 2048 2048 cuda_host_bfc 1578299667595937
+SrcNode v/tower_0/cg/resnet_v15/conv18/batchnorm18/AssignMovingAvg/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667645876
+SrcNode AddN_78 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667779833
+SrcNode AddN_79 1
+Output 0 1024 1024 cuda_host_bfc 1578299667779662
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv27/batchnorm27/beta/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777204
+SrcNode AddN_72 1
+Output 0 2097152 2097152 cuda_host_bfc 1578299667777259
+SrcNode AddN_73 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777069
+SrcNode AddN_70 1
+Output 0 2048 2048 cuda_host_bfc 1578299667785895
+SrcNode AddN_71 1
+Output 0 2048 2048 cuda_host_bfc 1578299667785861
+SrcNode AddN_76 1
+Output 0 1024 1024 cuda_host_bfc 1578299667782317
+SrcNode AddN_77 1
+Output 0 1024 1024 cuda_host_bfc 1578299667782336
+SrcNode AddN_74 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777055
+SrcNode AddN_75 1
+Output 0 524288 524288 cuda_host_bfc 1578299667783052
+SrcNode v/cg/resnet_v10/conv1/batchnorm1/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599788
+SrcNode v/tower_0/cg/resnet_v19/conv32/batchnorm32/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667665799
+SrcNode v/cg/resnet_v113/conv45/batchnorm45/moving_mean/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593146
+SrcNode v/tower_0/cg/resnet_v15/conv20/batchnorm20/AssignMovingAvg 1
+Output 0 2048 2048 cuda_host_bfc 1578299667648935
+SrcNode v/tower_0/cg/resnet_v111/conv38/batchnorm38/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667673381
+SrcNode v/tower_0/cg/resnet_v110/conv35/batchnorm35/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667669382
+SrcNode v/cg/affine0/weights 1
+Output 0 8200192 8200192 cuda_host_bfc 1578299667592548
+SrcNode v/tower_0/cg/resnet_v16/conv23/batchnorm23/AssignMovingAvg_1/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667653719
+SrcNode v/cg/resnet_v115/conv52/batchnorm52/moving_variance/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593276
+SrcNode v/cg/resnet_v15/conv20/batchnorm20/moving_variance 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599300
+SrcNode v/cg/resnet_v17/conv24/conv2d/kernel 1
+Output 0 2097152 2097152 cuda_host_bfc 1578299667599637
+SrcNode v/cg/resnet_v11/conv7/batchnorm7/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592960
+SrcNode v/cg/resnet_v17/conv26/conv2d/kernel/read/_802 1
+Output 0 0 0  1578299667606883
+SrcNode v/cg/resnet_v17/conv26/conv2d/kernel/read/_806 1
+Output 0 0 0  1578299667606901
+SrcNode v/cg/resnet_v10/conv3/conv2d/kernel/read/_388 1
+Output 0 0 0  1578299667600851
+SrcNode v/tower_0/cg/resnet_v10/conv1/batchnorm1/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667611296
+SrcNode v/cg/resnet_v114/conv47/batchnorm47/gamma/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667596940
+SrcNode v/cg/resnet_v115/conv50/conv2d/kernel 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667597565
+SrcNode v/cg/resnet_v11/conv7/conv2d/kernel/read/_464 1
+Output 0 0 0  1578299667601929
+SrcNode v/cg/resnet_v112/conv42/batchnorm42/moving_mean 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593048
+SrcNode v/cg/resnet_v11/conv7/conv2d/kernel/read/_460 1
+Output 0 0 0  1578299667601912
+SrcNode v/cg/resnet_v19/conv32/batchnorm32/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599592
+SrcNode Mul_4 1
+Output 0 1024 1024 cuda_host_bfc 1578299667865298
+SrcNode global_step 1
+Output 0 8 256 cuda_host_bfc 1578299667592472
+SrcNode v/cg/resnet_v17/conv27/batchnorm27/gamma/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667607393
+SrcNode AddN_94 1
+Output 0 1024 1024 cuda_host_bfc 1578299667761033
+SrcNode AddN_95 1
+Output 0 1024 1024 cuda_host_bfc 1578299667761050
+SrcNode AddN_96 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667758603
+SrcNode v/cg/resnet_v10/conv2/batchnorm2/gamma/read 1
+Output 0 256 256 cuda_host_bfc 1578299667600700
+SrcNode AddN_90 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667764122
+SrcNode AddN_91 1
+Output 0 4096 5120 cuda_host_bfc 1578299667763868
+SrcNode AddN_92 1
+Output 0 4096 4096 cuda_host_bfc 1578299667763898
+SrcNode AddN_93 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667761571
+SrcNode v/cg/resnet_v114/conv49/batchnorm49/moving_variance 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593213
+SrcNode v/cg/resnet_v114/conv49/batchnorm49/moving_mean/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593233
+SrcNode AddN_98 1
+Output 0 1024 1024 cuda_host_bfc 1578299667758366
+SrcNode AddN_99 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667756305
+SrcNode v/cg/resnet_v110/conv36/batchnorm36/gamma 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593618
+SrcNode v/cg/resnet_v12/conv8/batchnorm8/gamma 1
+Output 0 256 256 cuda_host_bfc 1578299667602207
+SrcNode Cast 1
+Output 0 4 4 cpu 1578299667592628
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv14/batchnorm14/beta/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667818081
+SrcNode v/cg/resnet_v15/conv20/conv2d/kernel/read 1
+Output 0 262144 262144 cuda_host_bfc 1578299667605256
+SrcNode v/tower_0/cg/resnet_v17/conv24/batchnorm24/AssignMovingAvg_1/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667657144
+SrcNode GradientDescent/update_v/cg/resnet_v11/conv7/batchnorm7/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667845693
+SrcNode Mul_22 1
+Output 0 1024 1024 cuda_host_bfc 1578299667845699
+SrcNode v/cg/resnet_v113/conv46/batchnorm46/moving_variance/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593187
+SrcNode v/cg/resnet_v14/conv16/batchnorm16/gamma 1
+Output 0 512 512 cuda_host_bfc 1578299667604160
+SrcNode v/cg/resnet_v13/conv13/conv2d/kernel/read/_568 1
+Output 0 0 0  1578299667603398
+SrcNode v/cg/resnet_v110/conv35/batchnorm35/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593579
+SrcNode v/cg/resnet_v114/conv49/batchnorm49/gamma 1
+Output 0 8192 8192 cuda_host_bfc 1578299667597393
+SrcNode v/cg/resnet_v115/conv50/batchnorm50/gamma 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597596
+SrcNode v/tower_0/cg/resnet_v112/conv42/batchnorm42/AssignMovingAvg_1/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667678436
+SrcNode PiecewiseConstant/Const_5 1
+Output 0 4 0 cpu 1578299667592286
+SrcNode v/tower_0/cg/resnet_v12/conv8/batchnorm8/AssignMovingAvg/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667626747
+SrcNode v/tower_0/cg/resnet_v18/conv30/batchnorm30/AssignMovingAvg_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667663214
+SrcNode v/cg/resnet_v11/conv6/batchnorm6/moving_mean 1
+Output 0 256 256 cuda_host_bfc 1578299667592836
+SrcNode v/cg/resnet_v114/conv47/batchnorm47/moving_mean/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593194
+SrcNode Mul_160 1
+Output 0 4004 5632 cuda_host_bfc 1578299667696382
+SrcNode v/tower_0/cg/resnet_v19/conv31/batchnorm31/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1536 cuda_host_bfc 1578299667664729
+SrcNode v/cg/resnet_v112/conv41/batchnorm41/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593029
+SrcNode v/tower_0/cg/resnet_v11/conv5/batchnorm5/AssignMovingAvg/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667619238
+SrcNode v/tower_0/cg/resnet_v114/conv48/batchnorm48/AssignMovingAvg_1/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667686323
+SrcNode GradientDescent/update_v/cg/resnet_v18/conv29/conv2d/kernel/ApplyGradientDescent 1
+Output 0 2359296 3145728 cuda_host_bfc 1578299667767471
+SrcNode v/cg/resnet_v17/conv27/conv2d/kernel/read/_824 1
+Output 0 0 0  1578299667607308
+SrcNode v/cg/resnet_v111/conv38/batchnorm38/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592973
+SrcNode v/cg/resnet_v13/conv11/conv2d/kernel/read/_540 1
+Output 0 0 0  1578299667599769
+SrcNode v/cg/resnet_v16/conv22/conv2d/kernel 1
+Output 0 589824 786432 cuda_host_bfc 1578299667605670
+SrcNode v/cg/resnet_v113/conv45/batchnorm45/gamma 1
+Output 0 2048 2048 cuda_host_bfc 1578299667595992
+SrcNode v/cg/resnet_v114/conv47/conv2d/kernel/read/_1180 1
+Output 0 0 0  1578299667596947
+SrcNode v/cg/resnet_v114/conv47/conv2d/kernel/read/_1184 1
+Output 0 0 0  1578299667596963
+SrcNode v/tower_0/cg/resnet_v111/conv37/batchnorm37/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667672184
+SrcNode Mul_19 1
+Output 0 256 256 cuda_host_bfc 1578299667850749
+SrcNode v/tower_0/cg/resnet_v15/conv18/batchnorm18/AssignMovingAvg/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667645926
+SrcNode GradientDescent/update_v/cg/resnet_v11/conv7/batchnorm7/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667845721
+SrcNode v/cg/resnet_v12/conv10/batchnorm10/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667602787
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv12/batchnorm12/gamma/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667824368
+SrcNode v/cg/resnet_v18/conv29/conv2d/kernel/read/_860 1
+Output 0 0 0  1578299667608252
+SrcNode GradientDescent/update_v/cg/resnet_v110/conv34/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667753584
+SrcNode v/cg/resnet_v112/conv40/conv2d/kernel/read/_1058 1
+Output 0 0 0  1578299667594376
+SrcNode v/cg/resnet_v112/conv40/conv2d/kernel/read/_1054 1
+Output 0 0 0  1578299667594359
+SrcNode AddN_123 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667735179
+SrcNode v/cg/resnet_v110/conv34/batchnorm34/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593422
+SrcNode AddN_121 1
+Output 0 1024 1024 cuda_host_bfc 1578299667737346
+SrcNode AddN_120 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667737660
+SrcNode AddN_127 1
+Output 0 4096 6144 cuda_host_bfc 1578299667732599
+SrcNode v/cg/resnet_v12/conv10/conv2d/kernel/read/_514 1
+Output 0 0 0  1578299667602746
+SrcNode AddN_125 1
+Output 0 1024 1024 cuda_host_bfc 1578299667734866
+SrcNode v/cg/conv0/batchnorm0/moving_mean 1
+Output 0 256 256 cuda_host_bfc 1578299667592550
+SrcNode v/cg/resnet_v12/conv10/conv2d/kernel/read/_518 1
+Output 0 0 0  1578299667602763
+SrcNode AddN_129 1
+Output 0 8388608 8388608 cuda_host_bfc 1578299667724404
+SrcNode v/tower_0/cg/resnet_v12/conv8/batchnorm8/AssignMovingAvg_1/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667626830
+SrcNode GradientDescent/update_v/cg/resnet_v14/conv17/batchnorm17/gamma/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667803779
+SrcNode v/tower_0/cg/resnet_v110/conv34/batchnorm34/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667668542
+SrcNode v/cg/resnet_v13/conv12/batchnorm12/moving_mean/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599147
+SrcNode v/tower_0/cg/resnet_v13/conv11/batchnorm11/AssignMovingAvg/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667636225
+SrcNode v/tower_0/cg/resnet_v113/conv43/batchnorm43/AssignMovingAvg/mul 1
+Output 0 8192 8192 cuda_host_bfc 1578299667681584
+SrcNode v/tower_0/cg/resnet_v112/conv41/batchnorm41/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667677192
+SrcNode GradientDescent/update_v/cg/resnet_v111/conv38/batchnorm38/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667742733
+SrcNode v/tower_0/cg/resnet_v15/conv18/batchnorm18/AssignMovingAvg_1/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667645906
+SrcNode v/cg/resnet_v112/conv41/conv2d/kernel 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667594980
+SrcNode v/cg/resnet_v114/conv48/batchnorm48/moving_mean 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593177
+SrcNode v/cg/resnet_v112/conv42/batchnorm42/gamma 1
+Output 0 4096 4096 cuda_host_bfc 1578299667595425
+SrcNode v/cg/resnet_v113/conv46/batchnorm46/gamma/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667596553
+SrcNode v/cg/resnet_v113/conv43/conv2d/kernel/read/_1108 1
+Output 0 0 0  1578299667593334
+SrcNode v/cg/resnet_v17/conv24/batchnorm24/moving_variance/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599425
+SrcNode v/tower_0/cg/resnet_v12/conv10/batchnorm10/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667631129
+SrcNode v/cg/resnet_v17/conv26/batchnorm26/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599413
+SrcNode v/tower_0/cg/resnet_v115/conv50/batchnorm50/AssignMovingAvg_1/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667688835
+SrcNode v/cg/resnet_v19/conv33/batchnorm33/beta 1
+Output 0 4096 4096 cuda_host_bfc 1578299667596909
+SrcNode GradientDescent/update_v/cg/resnet_v19/conv33/batchnorm33/gamma/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667756134
+SrcNode v/cg/resnet_v112/conv41/batchnorm41/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667595219
+SrcNode v/cg/resnet_v12/conv8/conv2d/kernel/read 1
+Output 0 65536 65536 cuda_host_bfc 1578299667602019
+SrcNode v/tower_0/cg/resnet_v14/conv16/batchnorm16/AssignMovingAvg_1/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667642228
+SrcNode GradientDescent/update_v/cg/resnet_v16/conv23/batchnorm23/beta/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667785964
+SrcNode v/tower_0/cg/resnet_v111/conv39/batchnorm39/AssignMovingAvg_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667674707
+SrcNode v/cg/resnet_v10/conv3/conv2d/kernel/read/_392 1
+Output 0 0 0  1578299667600868
+SrcNode v/tower_0/cg/resnet_v11/conv7/batchnorm7/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667623533
+SrcNode v/cg/resnet_v13/conv11/batchnorm11/gamma/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599887
+SrcNode v/cg/resnet_v11/conv6/batchnorm6/moving_variance 1
+Output 0 256 256 cuda_host_bfc 1578299667592872
+SrcNode v/cg/resnet_v10/conv2/batchnorm2/moving_mean/read 1
+Output 0 256 256 cuda_host_bfc 1578299667592868
+SrcNode v/cg/resnet_v12/conv8/conv2d/kernel/read/_482 1
+Output 0 0 0  1578299667602059
+SrcNode GradientDescent/update_v/cg/resnet_v114/conv47/conv2d/kernel/ApplyGradientDescent 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667717620
+SrcNode v/tower_0/cg/resnet_v114/conv48/batchnorm48/AssignMovingAvg_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667686343
+SrcNode v/cg/resnet_v19/conv33/conv2d/kernel/read/_928 1
+Output 0 0 0  1578299667597838
+SrcNode v/cg/resnet_v13/conv14/batchnorm14/beta 1
+Output 0 2048 2048 cuda_host_bfc 1578299667603768
+SrcNode AddN_19 1
+Output 0 256 256 cuda_host_bfc 1578299667850694
+SrcNode v/cg/resnet_v15/conv19/batchnorm19/beta 1
+Output 0 512 512 cuda_host_bfc 1578299667605038
+SrcNode v/cg/resnet_v113/conv45/conv2d/kernel/read 1
+Output 0 9437184 10928128 cuda_host_bfc 1578299667595996
+SrcNode v/cg/resnet_v113/conv45/batchnorm45/moving_variance/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593160
+SrcNode v/cg/resnet_v112/conv40/batchnorm40/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667594461
+SrcNode PiecewiseConstant/case/Assert/AssertGuard/Merge 2
+Output 1 4 4 cpu 1578299667594015
+Output 0 1 0 cpu 1578299667594015
+SrcNode v/tower_0/cg/resnet_v14/conv17/batchnorm17/AssignMovingAvg/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667643980
+SrcNode v/tower_0/cg/conv0/batchnorm0/AssignMovingAvg/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667606649
+SrcNode v/tower_0/cg/resnet_v17/conv24/batchnorm24/AssignMovingAvg 1
+Output 0 4096 4096 cuda_host_bfc 1578299667657263
+SrcNode v/tower_0/cg/resnet_v19/conv32/batchnorm32/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667665786
+SrcNode v/cg/resnet_v13/conv14/batchnorm14/moving_mean/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599182
+SrcNode v/tower_0/cg/resnet_v17/conv27/batchnorm27/AssignMovingAvg/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667659462
+SrcNode v/tower_0/cg/resnet_v13/conv11/batchnorm11/AssignMovingAvg 1
+Output 0 2048 2048 cuda_host_bfc 1578299667636248
+SrcNode v/cg/resnet_v13/conv13/conv2d/kernel/read/_572 1
+Output 0 0 0  1578299667603416
+SrcNode v/cg/resnet_v19/conv33/batchnorm33/gamma/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667597540
+SrcNode v/cg/resnet_v111/conv39/batchnorm39/beta/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667594153
+SrcNode v/tower_0/cg/resnet_v14/conv15/batchnorm15/AssignMovingAvg 1
+Output 0 512 512 cuda_host_bfc 1578299667641152
+SrcNode GradientDescent/update_v/cg/resnet_v110/conv35/batchnorm35/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667750555
+SrcNode v/cg/resnet_v11/conv6/batchnorm6/beta/read 1
+Output 0 256 256 cuda_host_bfc 1578299667601809
+SrcNode v/cg/resnet_v12/conv9/batchnorm9/gamma 1
+Output 0 256 256 cuda_host_bfc 1578299667602432
+SrcNode v/cg/resnet_v18/conv28/batchnorm28/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599481
+SrcNode v/tower_0/cg/resnet_v11/conv5/batchnorm5/AssignMovingAvg_1/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667619160
+SrcNode v/cg/resnet_v111/conv37/conv2d/kernel 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667593657
+SrcNode PiecewiseConstant/case/Cast 1
+Output 0 20 20 cpu 1578299667593435
+SrcNode v/cg/resnet_v15/conv18/batchnorm18/gamma/read 1
+Output 0 512 512 cuda_host_bfc 1578299667604733
+SrcNode v/tower_0/cg/resnet_v10/conv3/batchnorm3/AssignMovingAvg_1/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667613374
+SrcNode v/tower_0/cg/resnet_v17/conv25/batchnorm25/AssignMovingAvg_1/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667657207
+SrcNode v/cg/resnet_v113/conv43/batchnorm43/moving_variance 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593103
+SrcNode v/cg/resnet_v111/conv37/batchnorm37/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593709
+SrcNode v/cg/resnet_v10/conv3/conv2d/kernel 1
+Output 0 147456 147456 cuda_host_bfc 1578299667600782
+SrcNode v/cg/resnet_v13/conv11/batchnorm11/moving_variance 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599103
+SrcNode v/tower_0/cg/conv0/batchnorm0/AssignMovingAvg 1
+Output 0 256 256 cuda_host_bfc 1578299667606711
+SrcNode v/cg/resnet_v16/conv22/batchnorm22/beta/read 1
+Output 0 512 512 cuda_host_bfc 1578299667606061
+SrcNode v/cg/resnet_v16/conv22/batchnorm22/moving_variance 1
+Output 0 512 512 cuda_host_bfc 1578299667599354
+SrcNode v/cg/resnet_v11/conv5/conv2d/kernel 1
+Output 0 65536 65536 cuda_host_bfc 1578299667601482
+SrcNode v/tower_0/cg/resnet_v114/conv48/batchnorm48/AssignMovingAvg/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667686283
+SrcNode v/tower_0/cg/resnet_v18/conv28/batchnorm28/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667661114
+SrcNode GradientDescent/update_v/cg/resnet_v114/conv49/batchnorm49/gamma/ApplyGradientDescent 1
+Output 0 8192 8192 cuda_host_bfc 1578299667708998
+SrcNode v/cg/resnet_v18/conv28/conv2d/kernel/read/_842 1
+Output 0 0 0  1578299667607698
+SrcNode v/cg/resnet_v112/conv40/batchnorm40/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593026
+SrcNode v/cg/resnet_v13/conv13/conv2d/kernel 1
+Output 0 589824 589824 cuda_host_bfc 1578299667603343
+SrcNode v/cg/resnet_v17/conv24/conv2d/kernel/read/_774 1
+Output 0 0 0  1578299667599796
+SrcNode v/tower_0/cg/resnet_v113/conv46/batchnorm46/AssignMovingAvg_1/sub_1 1
+Output 0 8192 8192 cuda_host_bfc 1578299667683922
+SrcNode GradientDescent/update_v/cg/resnet_v16/conv22/batchnorm22/gamma/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667788461
+SrcNode v/cg/resnet_v11/conv5/conv2d/kernel/read/_428 1
+Output 0 0 0  1578299667601556
+SrcNode v/cg/resnet_v113/conv45/batchnorm45/moving_variance 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593121
+SrcNode GradientDescent/update_v/cg/resnet_v14/conv17/conv2d/kernel/ApplyGradientDescent 1
+Output 0 262144 262144 cuda_host_bfc 1578299667804050
+SrcNode v/cg/resnet_v110/conv34/batchnorm34/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593490
+SrcNode v/cg/resnet_v113/conv44/conv2d/kernel 1
+Output 0 2097152 2097152 cuda_host_bfc 1578299667595710
+SrcNode v/cg/resnet_v18/conv29/batchnorm29/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599492
+SrcNode v/cg/resnet_v110/conv34/batchnorm34/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592894
+SrcNode v/tower_0/cg/resnet_v12/conv10/batchnorm10/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667631152
+SrcNode v/cg/resnet_v17/conv25/conv2d/kernel/read 1
+Output 0 524288 524288 cuda_host_bfc 1578299667606471
+SrcNode v/cg/resnet_v16/conv21/batchnorm21/moving_variance/read 1
+Output 0 512 512 cuda_host_bfc 1578299667599357
+SrcNode AddN_116 1
+Output 0 1024 1024 cuda_host_bfc 1578299667742671
+SrcNode AddN_117 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667740588
+SrcNode AddN_114 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667742756
+SrcNode AddN_115 1
+Output 0 1024 1024 cuda_host_bfc 1578299667742655
+SrcNode AddN_112 1
+Output 0 1024 1024 cuda_host_bfc 1578299667745077
+SrcNode AddN_113 1
+Output 0 1024 1024 cuda_host_bfc 1578299667745106
+SrcNode AddN_110 1
+Output 0 4096 5120 cuda_host_bfc 1578299667748097
+SrcNode AddN_111 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667745389
+SrcNode AddN_118 1
+Output 0 4096 4096 cuda_host_bfc 1578299667740488
+SrcNode AddN_119 1
+Output 0 4096 4096 cuda_host_bfc 1578299667740509
+SrcNode v/tower_0/cg/resnet_v13/conv13/batchnorm13/AssignMovingAvg/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667637423
+SrcNode v/cg/resnet_v10/conv4/batchnorm4/moving_variance 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592825
+SrcNode Mul_98 1
+Output 0 1024 1024 cuda_host_bfc 1578299667758409
+SrcNode Mul_99 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667756615
+SrcNode v/cg/resnet_v110/conv36/batchnorm36/beta/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593658
+SrcNode Mul_90 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667764469
+SrcNode Mul_91 1
+Output 0 4096 5120 cuda_host_bfc 1578299667763915
+SrcNode Mul_92 1
+Output 0 4096 4096 cuda_host_bfc 1578299667763969
+SrcNode Mul_93 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667761908
+SrcNode Mul_94 1
+Output 0 1024 1024 cuda_host_bfc 1578299667761091
+SrcNode Mul_95 1
+Output 0 1024 1024 cuda_host_bfc 1578299667761122
+SrcNode Mul_96 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667759337
+SrcNode Mul_97 1
+Output 0 1024 1024 cuda_host_bfc 1578299667758399
+SrcNode GradientDescent/update_v/cg/affine0/weights/ApplyGradientDescent 1
+Output 0 8200192 8200192 cuda_host_bfc 1578299667701152
+SrcNode v/cg/resnet_v19/conv31/batchnorm31/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667609043
+SrcNode PiecewiseConstant/and_2 1
+Output 0 1 1 cpu 1578299667592814
+SrcNode PiecewiseConstant/and_1 1
+Output 0 1 1 cpu 1578299667592810
+SrcNode v/cg/resnet_v16/conv23/batchnorm23/moving_variance 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599367
+SrcNode v/cg/resnet_v113/conv46/batchnorm46/beta/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667596608
+SrcNode v/tower_0/cg/resnet_v114/conv48/batchnorm48/AssignMovingAvg_1/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667686274
+SrcNode v/cg/resnet_v18/conv29/batchnorm29/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599509
+SrcNode v/cg/resnet_v13/conv14/batchnorm14/beta/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667603816
+SrcNode v/tower_0/cg/resnet_v13/conv13/batchnorm13/AssignMovingAvg 1
+Output 0 512 512 cuda_host_bfc 1578299667637444
+SrcNode v/cg/resnet_v113/conv44/batchnorm44/beta/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667595966
+SrcNode v/tower_0/cg/resnet_v19/conv33/batchnorm33/AssignMovingAvg/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667667255
+SrcNode v/tower_0/cg/resnet_v111/conv38/batchnorm38/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667673421
+SrcNode v/tower_0/cg/resnet_v113/conv46/batchnorm46/AssignMovingAvg_1/mul 1
+Output 0 8192 8192 cuda_host_bfc 1578299667683974
+SrcNode GradientDescent/update_v/cg/resnet_v18/conv28/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667769654
+SrcNode v/cg/resnet_v11/conv5/batchnorm5/moving_mean/read 1
+Output 0 256 256 cuda_host_bfc 1578299667593399
+SrcNode v/tower_0/cg/resnet_v14/conv15/batchnorm15/AssignMovingAvg_1/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667641062
+SrcNode v/tower_0/cg/resnet_v115/conv50/batchnorm50/AssignMovingAvg_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667688859
+SrcNode v/cg/resnet_v18/conv30/conv2d/kernel/read/_874 1
+Output 0 0 0  1578299667608667
+SrcNode v/cg/resnet_v18/conv30/conv2d/kernel/read/_878 1
+Output 0 0 0  1578299667608679
+SrcNode v/tower_0/cg/resnet_v11/conv6/batchnorm6/AssignMovingAvg_1/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667621269
+SrcNode v/cg/resnet_v11/conv7/conv2d/kernel/read 1
+Output 0 65536 65536 cuda_host_bfc 1578299667601888
+SrcNode GradientDescent/update_v/cg/resnet_v112/conv42/batchnorm42/gamma/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667732663
+SrcNode v/cg/resnet_v111/conv37/batchnorm37/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593676
+SrcNode v/cg/resnet_v19/conv33/conv2d/kernel/read/_932 1
+Output 0 0 0  1578299667597853
+SrcNode v/tower_0/cg/resnet_v115/conv51/batchnorm51/AssignMovingAvg/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667690044
+SrcNode GradientDescent/update_v/cg/resnet_v111/conv39/batchnorm39/beta/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667740574
+SrcNode v/tower_0/cg/resnet_v113/conv45/batchnorm45/AssignMovingAvg 1
+Output 0 2048 2048 cuda_host_bfc 1578299667682822
+SrcNode Mul_6 1
+Output 0 16384 16384 cuda_host_bfc 1578299667874736
+SrcNode Mul_7 1
+Output 0 256 256 cuda_host_bfc 1578299667872620
+SrcNode v/tower_0/cg/resnet_v110/conv35/batchnorm35/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667669485
+SrcNode Mul_5 1
+Output 0 1024 1792 cuda_host_bfc 1578299667865339
+SrcNode Mul_2 1
+Output 0 256 256 cuda_host_bfc 1578299667881190
+SrcNode v/cg/resnet_v14/conv15/batchnorm15/moving_variance 1
+Output 0 512 512 cuda_host_bfc 1578299667599206
+SrcNode Mul_1 1
+Output 0 256 256 cuda_host_bfc 1578299667881243
+SrcNode v/cg/resnet_v112/conv40/batchnorm40/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667594317
+SrcNode Mul_8 1
+Output 0 256 256 cuda_host_bfc 1578299667872600
+SrcNode Mul_9 1
+Output 0 147456 147456 cuda_host_bfc 1578299667870934
+SrcNode v/cg/resnet_v15/conv19/conv2d/kernel/read/_676 1
+Output 0 0 0  1578299667604991
+SrcNode v/cg/resnet_v19/conv31/batchnorm31/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599517
+SrcNode v/tower_0/cg/resnet_v16/conv22/batchnorm22/AssignMovingAvg 1
+Output 0 512 512 cuda_host_bfc 1578299667652009
+SrcNode AddN_159 1
+Output 0 8200192 8200192 cuda_host_bfc 1578299667696917
+SrcNode v/cg/resnet_v12/conv8/conv2d/kernel/read/_478 1
+Output 0 0 0  1578299667602041
+SrcNode v/cg/resnet_v19/conv32/batchnorm32/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599632
+SrcNode v/cg/resnet_v10/conv1/batchnorm1/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599917
+SrcNode v/cg/resnet_v112/conv42/batchnorm42/beta 1
+Output 0 4096 4096 cuda_host_bfc 1578299667595636
+SrcNode v/cg/resnet_v113/conv45/conv2d/kernel/read/_1148 1
+Output 0 0 0  1578299667596026
+SrcNode v/cg/resnet_v115/conv51/batchnorm51/moving_mean 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593248
+SrcNode v/cg/resnet_v111/conv38/batchnorm38/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593842
+SrcNode v/cg/resnet_v110/conv35/batchnorm35/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593007
+SrcNode v/cg/resnet_v15/conv18/conv2d/kernel/read/_662 1
+Output 0 0 0  1578299667604685
+SrcNode v/tower_0/cg/resnet_v10/conv2/batchnorm2/AssignMovingAvg_1/mul 1
+Output 0 256 256 cpu 1578299667611362
+SrcNode v/cg/resnet_v18/conv30/batchnorm30/gamma 1
+Output 0 4096 4096 cuda_host_bfc 1578299667608601
+SrcNode v/cg/resnet_v15/conv19/conv2d/kernel 1
+Output 0 589824 589824 cuda_host_bfc 1578299667604934
+SrcNode GradientDescent/update_v/cg/resnet_v113/conv43/batchnorm43/beta/ApplyGradientDescent 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723787
+SrcNode v/cg/resnet_v12/conv10/batchnorm10/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667598956
+SrcNode v/tower_0/cg/resnet_v111/conv38/batchnorm38/AssignMovingAvg 1
+Output 0 1024 1024 cuda_host_bfc 1578299667673490
+SrcNode Less/y 1
+Output 0 8 0 cpu 1578299667592405
+SrcNode v/tower_0/cg/resnet_v10/conv4/batchnorm4/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667616004
+SrcNode v/tower_0/cg/resnet_v12/conv8/batchnorm8/AssignMovingAvg 1
+Output 0 256 256 cuda_host_bfc 1578299667626794
+SrcNode GradientDescent/update_v/cg/resnet_v13/conv11/conv2d/kernel/ApplyGradientDescent 1
+Output 0 524288 524288 cuda_host_bfc 1578299667818455
+SrcNode v/tower_0/cg/resnet_v110/conv34/batchnorm34/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667668503
+SrcNode v/cg/resnet_v114/conv48/batchnorm48/moving_mean/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593198
+SrcNode GradientDescent/update_v/cg/resnet_v112/conv40/batchnorm40/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667737434
+SrcNode GradientDescent/update_v/cg/resnet_v112/conv40/batchnorm40/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667737417
+SrcNode Mul_141 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667717126
+SrcNode Mul_140 1
+Output 0 8192 8192 cuda_host_bfc 1578299667723710
+SrcNode Mul_143 1
+Output 0 2048 2048 cuda_host_bfc 1578299667715084
+SrcNode Mul_142 1
+Output 0 2048 2048 cuda_host_bfc 1578299667715139
+SrcNode Mul_145 1
+Output 0 2048 2048 cuda_host_bfc 1578299667711785
+SrcNode Mul_144 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667716049
+SrcNode Mul_147 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667710832
+SrcNode Mul_146 1
+Output 0 2048 2048 cuda_host_bfc 1578299667711823
+SrcNode Mul_149 1
+Output 0 8192 8192 cuda_host_bfc 1578299667708962
+SrcNode Mul_148 1
+Output 0 8192 8192 cuda_host_bfc 1578299667708975
+SrcNode v/tower_0/cg/resnet_v16/conv21/batchnorm21/AssignMovingAvg_1/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667650917
+SrcNode v/tower_0/cg/resnet_v13/conv12/batchnorm12/AssignMovingAvg/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667636264
+SrcNode v/cg/resnet_v14/conv15/batchnorm15/beta 1
+Output 0 512 512 cuda_host_bfc 1578299667604044
+SrcNode AddN_68 1
+Output 0 512 512 cuda_host_bfc 1578299667788420
+SrcNode v/cg/resnet_v115/conv51/batchnorm51/beta/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597981
+SrcNode AddN_65 1
+Output 0 512 512 cuda_host_bfc 1578299667791416
+SrcNode v/cg/resnet_v115/conv52/conv2d/kernel/read 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667598125
+SrcNode v/cg/resnet_v114/conv47/conv2d/kernel/read 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667596919
+SrcNode GradientDescent/update_v/cg/resnet_v16/conv22/conv2d/kernel/ApplyGradientDescent 1
+Output 0 589824 786432 cuda_host_bfc 1578299667788968
+SrcNode GradientDescent/update_v/cg/resnet_v110/conv36/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667748606
+SrcNode AddN_66 1
+Output 0 589824 589824 cuda_host_bfc 1578299667788673
+SrcNode v/cg/resnet_v19/conv31/conv2d/kernel 1
+Output 0 1048576 2031616 cuda_host_bfc 1578299667608972
+SrcNode v/cg/resnet_v115/conv50/batchnorm50/moving_variance 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593222
+SrcNode GradientDescent/update_v/cg/resnet_v112/conv42/batchnorm42/beta/ApplyGradientDescent 1
+Output 0 4096 4096 cuda_host_bfc 1578299667732657
+SrcNode v/tower_0/cg/resnet_v13/conv14/batchnorm14/AssignMovingAvg/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667639060
+SrcNode AddN_63 1
+Output 0 262144 262144 cuda_host_bfc 1578299667792038
+SrcNode v/tower_0/cg/resnet_v111/conv39/batchnorm39/AssignMovingAvg/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667674613
+SrcNode AddN_62 1
+Output 0 2048 2048 cuda_host_bfc 1578299667794911
+SrcNode v/cg/resnet_v14/conv16/conv2d/kernel/read 1
+Output 0 589824 589824 cuda_host_bfc 1578299667604099
+SrcNode GradientDescent/update_v/cg/resnet_v17/conv25/batchnorm25/gamma/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667782387
+SrcNode v/tower_0/cg/resnet_v19/conv33/batchnorm33/AssignMovingAvg_1/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667667243
+SrcNode v/cg/resnet_v13/conv12/batchnorm12/gamma 1
+Output 0 512 512 cuda_host_bfc 1578299667603252
+SrcNode PiecewiseConstant/Cast_1 1
+Output 0 8 0 cpu 1578299667592335
+SrcNode PiecewiseConstant/Cast_3 1
+Output 0 8 0 cpu 1578299667592359
+SrcNode v/cg/resnet_v12/conv9/conv2d/kernel 1
+Output 0 147456 147456 cuda_host_bfc 1578299667602347
+SrcNode v/cg/resnet_v12/conv8/batchnorm8/beta/read 1
+Output 0 256 256 cuda_host_bfc 1578299667602288
+SrcNode v/cg/resnet_v12/conv8/batchnorm8/gamma/read 1
+Output 0 256 256 cuda_host_bfc 1578299667602282
+SrcNode v/cg/resnet_v17/conv25/batchnorm25/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599389
+SrcNode v/cg/resnet_v11/conv5/conv2d/kernel/read 1
+Output 0 65536 65536 cuda_host_bfc 1578299667601514
+SrcNode v/cg/resnet_v18/conv29/conv2d/kernel 1
+Output 0 2359296 3145728 cuda_host_bfc 1578299667608186
+SrcNode v/cg/resnet_v17/conv26/conv2d/kernel 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667606832
+SrcNode v/tower_0/cg/resnet_v12/conv9/batchnorm9/AssignMovingAvg/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667628905
+SrcNode v/cg/resnet_v113/conv45/batchnorm45/beta 1
+Output 0 2048 2048 cuda_host_bfc 1578299667596281
+SrcNode v/cg/resnet_v114/conv49/batchnorm49/moving_mean 1
+Output 0 8192 8192 cuda_host_bfc 1578299667593212
+SrcNode v/cg/resnet_v10/conv1/conv2d/kernel/read/_360 1
+Output 0 0 0  1578299667599807
+SrcNode Mul_87 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667767248
+SrcNode Mul_86 1
+Output 0 1024 1024 cuda_host_bfc 1578299667769063
+SrcNode Mul_85 1
+Output 0 1024 1024 cuda_host_bfc 1578299667769020
+SrcNode Mul_84 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667769516
+SrcNode Mul_83 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777182
+SrcNode Mul_82 1
+Output 0 4096 4096 cuda_host_bfc 1578299667777209
+SrcNode Mul_81 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667777873
+SrcNode Mul_80 1
+Output 0 1024 1024 cuda_host_bfc 1578299667779746
+SrcNode Mul_89 1
+Output 0 1024 1024 cuda_host_bfc 1578299667766294
+SrcNode Mul_88 1
+Output 0 1024 1024 cuda_host_bfc 1578299667766391
+SrcNode v/cg/resnet_v12/conv8/batchnorm8/moving_mean/read 1
+Output 0 256 256 cuda_host_bfc 1578299667599008
+SrcNode v/tower_0/cg/resnet_v19/conv31/batchnorm31/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667664739
+SrcNode v/cg/resnet_v111/conv39/batchnorm39/moving_variance/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593029
+SrcNode v/cg/resnet_v14/conv15/conv2d/kernel 1
+Output 0 262144 262144 cuda_host_bfc 1578299667603905
+SrcNode v/tower_0/cg/resnet_v10/conv1/batchnorm1/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667611305
+SrcNode v/cg/resnet_v110/conv36/batchnorm36/moving_variance 1
+Output 0 4096 4096 cuda_host_bfc 1578299667592943
+SrcNode v/cg/resnet_v113/conv44/batchnorm44/moving_mean/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667593126
+SrcNode v/cg/resnet_v10/conv3/batchnorm3/moving_mean/read 1
+Output 0 256 256 cuda_host_bfc 1578299667592816
+SrcNode v/tower_0/cg/resnet_v115/conv52/batchnorm52/AssignMovingAvg_1/mul 1
+Output 0 8192 8192 cuda_host_bfc 1578299667691315
+SrcNode v/cg/resnet_v110/conv36/conv2d/kernel/read/_986 1
+Output 0 0 0  1578299667593666
+SrcNode v/cg/resnet_v110/conv36/conv2d/kernel/read/_982 1
+Output 0 0 0  1578299667593651
+SrcNode v/tower_0/cg/resnet_v11/conv5/batchnorm5/AssignMovingAvg/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667619175
+SrcNode AddN_109 1
+Output 0 4096 4096 cuda_host_bfc 1578299667748117
+SrcNode AddN_108 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667748194
+SrcNode v/cg/resnet_v110/conv36/conv2d/kernel 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667593586
+SrcNode AddN_101 1
+Output 0 4096 4096 cuda_host_bfc 1578299667756041
+SrcNode AddN_100 1
+Output 0 4096 4096 cuda_host_bfc 1578299667756062
+SrcNode AddN_103 1
+Output 0 1024 1024 cuda_host_bfc 1578299667752933
+SrcNode AddN_102 1
+Output 0 1048576 1048576 cuda_host_bfc 1578299667753181
+SrcNode AddN_105 1
+Output 0 2359296 2359296 cuda_host_bfc 1578299667750795
+SrcNode AddN_104 1
+Output 0 1024 1024 cuda_host_bfc 1578299667752952
+SrcNode AddN_107 1
+Output 0 1024 1024 cuda_host_bfc 1578299667750492
+SrcNode AddN_106 1
+Output 0 1024 1024 cuda_host_bfc 1578299667750474
+SrcNode v/tower_0/cg/resnet_v111/conv39/batchnorm39/AssignMovingAvg_1/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667674681
+SrcNode v/cg/resnet_v16/conv22/conv2d/kernel/read/_730 1
+Output 0 0 0  1578299667605723
+SrcNode GradientDescent/update_v/cg/resnet_v114/conv47/batchnorm47/gamma/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667715168
+SrcNode v/cg/resnet_v15/conv19/batchnorm19/beta/read 1
+Output 0 512 512 cuda_host_bfc 1578299667605080
+SrcNode v/tower_0/cg/resnet_v10/conv3/batchnorm3/AssignMovingAvg_1/sub_1 1
+Output 0 256 256 cuda_host_bfc 1578299667613341
+SrcNode GradientDescent/update_v/cg/resnet_v11/conv5/conv2d/kernel/ApplyGradientDescent 1
+Output 0 65536 65536 cuda_host_bfc 1578299667856552
+SrcNode v/cg/resnet_v110/conv34/batchnorm34/beta/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593510
+SrcNode v/cg/resnet_v19/conv31/batchnorm31/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599647
+SrcNode GradientDescent/update_v/cg/resnet_v15/conv20/batchnorm20/gamma/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667794945
+SrcNode v/tower_0/cg/resnet_v112/conv40/batchnorm40/AssignMovingAvg/sub_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667676042
+SrcNode v/cg/resnet_v17/conv26/batchnorm26/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667607115
+SrcNode v/tower_0/cg/resnet_v113/conv43/batchnorm43/AssignMovingAvg_1/mul 1
+Output 0 8192 8192 cuda_host_bfc 1578299667681475
+SrcNode v/cg/resnet_v11/conv7/batchnorm7/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592884
+SrcNode GradientDescent/update_v/cg/resnet_v19/conv31/conv2d/kernel/ApplyGradientDescent 1
+Output 0 1048576 2031616 cuda_host_bfc 1578299667765804
+SrcNode v/tower_0/cg/resnet_v110/conv36/batchnorm36/AssignMovingAvg/sub_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667670681
+SrcNode v/tower_0/cg/resnet_v18/conv29/batchnorm29/AssignMovingAvg_1 1
+Output 0 1024 1024 cuda_host_bfc 1578299667662184
+SrcNode v/cg/resnet_v11/conv5/batchnorm5/beta 1
+Output 0 256 256 cuda_host_bfc 1578299667601519
+SrcNode GradientDescent 0
+SrcNode v/tower_0/cg/resnet_v114/conv47/batchnorm47/AssignMovingAvg/sub_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667685229
+SrcNode v/cg/resnet_v17/conv27/batchnorm27/moving_mean/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599453
+SrcNode v/tower_0/cg/resnet_v11/conv5/batchnorm5/AssignMovingAvg_1 1
+Output 0 256 256 cuda_host_bfc 1578299667619274
+SrcNode v/cg/resnet_v111/conv39/batchnorm39/moving_mean/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667593018
+SrcNode v/tower_0/cg/resnet_v15/conv19/batchnorm19/AssignMovingAvg_1/mul 1
+Output 0 512 512 cuda_host_bfc 1578299667647235
+SrcNode v/cg/resnet_v17/conv25/batchnorm25/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667606457
+SrcNode v/cg/resnet_v16/conv23/conv2d/kernel/read 1
+Output 0 262144 357120 cuda_host_bfc 1578299667606207
+SrcNode v/cg/resnet_v10/conv1/batchnorm1/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667599814
+SrcNode GradientDescent/update_v/cg/resnet_v19/conv31/batchnorm31/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667761143
+SrcNode v/tower_0/cg/resnet_v112/conv42/batchnorm42/AssignMovingAvg 1
+Output 0 4096 4096 cuda_host_bfc 1578299667678568
+SrcNode v/cg/resnet_v10/conv4/batchnorm4/moving_variance/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592877
+SrcNode v/cg/resnet_v15/conv19/conv2d/kernel/read/_680 1
+Output 0 0 0  1578299667605006
+SrcNode v/tower_0/cg/resnet_v16/conv23/batchnorm23/AssignMovingAvg 1
+Output 0 2048 2048 cuda_host_bfc 1578299667653722
+SrcNode v/tower_0/cg/resnet_v18/conv30/batchnorm30/AssignMovingAvg/mul 1
+Output 0 4096 4096 cuda_host_bfc 1578299667663178
+SrcNode GradientDescent/update_v/cg/resnet_v11/conv6/conv2d/kernel/ApplyGradientDescent 1
+Output 0 147456 147456 cuda_host_bfc 1578299667851182
+SrcNode GradientDescent/update_v/cg/resnet_v14/conv16/batchnorm16/gamma/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667806199
+SrcNode v/cg/resnet_v19/conv31/batchnorm31/gamma 1
+Output 0 1024 1024 cuda_host_bfc 1578299667609008
+SrcNode v/tower_0/cg/resnet_v17/conv25/batchnorm25/AssignMovingAvg/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667657233
+SrcNode Mul_158 1
+Output 0 8192 8192 cuda_host_bfc 1578299667699978
+SrcNode Mul_159 1
+Output 0 8200192 8200192 cuda_host_bfc 1578299667700081
+SrcNode Mul_156 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667702045
+SrcNode Mul_157 1
+Output 0 8192 8192 cuda_host_bfc 1578299667700008
+SrcNode Mul_154 1
+Output 0 2048 2048 cuda_host_bfc 1578299667702660
+SrcNode Mul_155 1
+Output 0 2048 2048 cuda_host_bfc 1578299667702691
+SrcNode Mul_152 1
+Output 0 2048 2048 cuda_host_bfc 1578299667706114
+SrcNode Mul_153 1
+Output 0 9437184 9437184 cuda_host_bfc 1578299667707433
+SrcNode Mul_150 1
+Output 0 4194304 4194304 cuda_host_bfc 1578299667707874
+SrcNode Mul_151 1
+Output 0 2048 2048 cuda_host_bfc 1578299667706157
+SrcNode PiecewiseConstant/Cast 1
+Output 0 8 0 cpu 1578299667592320
+SrcNode v/cg/resnet_v115/conv50/batchnorm50/gamma/read 1
+Output 0 2048 2048 cuda_host_bfc 1578299667597630
+SrcNode v/tower_0/cg/resnet_v110/conv36/batchnorm36/AssignMovingAvg_1 1
+Output 0 4096 4096 cuda_host_bfc 1578299667670752
+SrcNode v/cg/resnet_v15/conv18/batchnorm18/beta 1
+Output 0 512 512 cuda_host_bfc 1578299667604830
+SrcNode v/cg/resnet_v115/conv50/conv2d/kernel/read/_1234 1
+Output 0 0 0  1578299667597616
+SrcNode v/cg/resnet_v18/conv28/batchnorm28/gamma/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667607786
+SrcNode v/cg/resnet_v115/conv50/conv2d/kernel/read/_1238 1
+Output 0 0 0  1578299667597634
+SrcNode v/tower_0/cg/resnet_v15/conv19/batchnorm19/AssignMovingAvg/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667647165
+SrcNode v/tower_0/cg/resnet_v12/conv10/batchnorm10/AssignMovingAvg_1/mul 1
+Output 0 1024 1024 cuda_host_bfc 1578299667631161
+SrcNode PiecewiseConstant/case/n_true_conds 1
+Output 0 4 0 cpu 1578299667592384
+SrcNode v/cg/resnet_v11/conv6/batchnorm6/gamma 1
+Output 0 256 256 cuda_host_bfc 1578299667601736
+SrcNode v/cg/conv0/batchnorm0/gamma/read 1
+Output 0 256 256 cuda_host_bfc 1578299667600573
+SrcNode v/cg/resnet_v19/conv33/batchnorm33/moving_variance/read 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599644
+SrcNode v/cg/resnet_v14/conv17/batchnorm17/moving_variance 1
+Output 0 2048 2048 cuda_host_bfc 1578299667599252
+SrcNode v/tower_0/cg/resnet_v16/conv23/batchnorm23/AssignMovingAvg/mul 1
+Output 0 2048 2048 cuda_host_bfc 1578299667653697
+SrcNode v/cg/resnet_v111/conv38/batchnorm38/moving_mean 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592966
+SrcNode GradientDescent/update_v/cg/resnet_v15/conv19/batchnorm19/gamma/ApplyGradientDescent 1
+Output 0 512 512 cuda_host_bfc 1578299667797402
+SrcNode v/cg/resnet_v111/conv37/batchnorm37/beta 1
+Output 0 1024 1024 cuda_host_bfc 1578299667593683
+SrcNode v/tower_0/cg/resnet_v16/conv23/batchnorm23/AssignMovingAvg_1 1
+Output 0 2048 2048 cuda_host_bfc 1578299667653787
+SrcNode GradientDescent/update_v/cg/resnet_v10/conv1/batchnorm1/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667865374
+SrcNode GradientDescent/update_v/cg/resnet_v12/conv10/batchnorm10/beta/ApplyGradientDescent 1
+Output 0 1024 1024 cuda_host_bfc 1578299667829918
+SrcNode v/cg/resnet_v17/conv24/batchnorm24/beta 1
+Output 0 4096 4096 cuda_host_bfc 1578299667599658
+SrcNode v/cg/resnet_v16/conv21/batchnorm21/beta 1
+Output 0 512 512 cuda_host_bfc 1578299667605560
+SrcNode v/cg/resnet_v16/conv23/batchnorm23/beta 1
+Output 0 2048 2048 cuda_host_bfc 1578299667606234
+SrcNode v/cg/resnet_v115/conv52/batchnorm52/beta/read 1
+Output 0 8192 8192 cuda_host_bfc 1578299667598411
+SrcNode v/tower_0/cg/resnet_v10/conv3/batchnorm3/AssignMovingAvg/mul 1
+Output 0 256 256 cuda_host_bfc 1578299667613352
+SrcNode v/cg/resnet_v112/conv42/conv2d/kernel/read/_1094 1
+Output 0 0 0  1578299667595455
+SrcNode Mul_71 1
+Output 0 2048 2048 cuda_host_bfc 1578299667785907
+SrcNode v/cg/resnet_v111/conv37/batchnorm37/moving_mean/read 1
+Output 0 1024 1024 cuda_host_bfc 1578299667592994
+SrcNode GradientDescent/update_v/cg/resnet_v12/conv9/batchnorm9/beta/ApplyGradientDescent 1
+Output 0 256 256 cuda_host_bfc 1578299667835283
+SrcNode v/cg/resnet_v111/conv38/conv2d/kernel/read/_1018 1
+Output 0 0 0  1578299667593858
+SrcNode v/tower_0/cg/resnet_v13/conv13/batchnorm13/AssignMovingAvg_1/sub_1 1
+Output 0 512 512 cuda_host_bfc 1578299667637359
+SrcNode GradientDescent/update_v/cg/resnet_v114/conv48/batchnorm48/gamma/ApplyGradientDescent 1
+Output 0 2048 2048 cuda_host_bfc 1578299667711920
+SrcNode v/cg/resnet_v112/conv42/conv2d/kernel/read/_1090 1
+Output 0 0 0  1578299667595435

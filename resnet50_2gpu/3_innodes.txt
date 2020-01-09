@@ -1,7 +1,6 @@
 SrcNode	_SOURCE	0
 SrcNode	_SINK	433
 InputNode	_SOURCE	-1
-InputNode	_SOURCE	-1
 InputNode	group_deps_2	-1
 InputNode	_retval_AssignAdd_0_0	-1
 InputNode	_retval_Mean_0_1	-1
@@ -433,6 +432,7 @@ InputNode	v/cg/resnet_v115/conv52/batchnorm52/gamma/read/_1280	-1
 InputNode	v/cg/resnet_v115/conv52/batchnorm52/beta/read/_1282	-1
 InputNode	v/cg/affine0/weights/read/_1288	-1
 InputNode	v/cg/affine0/biases/read/_1290	-1
+InputNode	_SOURCE	-1
 SrcNode	PiecewiseConstant/Const_7	1
 InputNode	_SOURCE	-1
 SrcNode	PiecewiseConstant/Const_6	1
@@ -2932,10 +2932,8 @@ InputNode	v/tower_0/cg/resnet_v16/conv23/batchnorm23/AssignMovingAvg/mul	0
 SrcNode	v/tower_0/cg/resnet_v16/conv23/batchnorm23/AssignMovingAvg_1	2
 InputNode	v/cg/resnet_v16/conv23/batchnorm23/moving_variance	0
 InputNode	v/tower_0/cg/resnet_v16/conv23/batchnorm23/AssignMovingAvg_1/mul	0
-SrcNode	v/cg/resnet_v17/conv24/conv2d/kernel/read/_774	1
-InputNode	v/cg/resnet_v17/conv24/conv2d/kernel/read	-1
 SrcNode	v/cg/resnet_v17/conv24/conv2d/kernel/read/_775	1
-InputNode	v/cg/resnet_v17/conv24/conv2d/kernel/read/_774	0
+InputNode	v/cg/resnet_v17/conv24/conv2d/kernel/read/_766	0
 SrcNode	v/cg/resnet_v17/conv25/conv2d/kernel/read/_778	1
 InputNode	v/cg/resnet_v17/conv25/conv2d/kernel/read	-1
 SrcNode	v/cg/resnet_v17/conv25/conv2d/kernel/read/_779	1
@@ -3616,8 +3614,10 @@ InputNode	v/tower_0/cg/resnet_v112/conv42/batchnorm42/AssignMovingAvg/mul	0
 SrcNode	v/tower_0/cg/resnet_v112/conv42/batchnorm42/AssignMovingAvg_1	2
 InputNode	v/cg/resnet_v112/conv42/batchnorm42/moving_variance	0
 InputNode	v/tower_0/cg/resnet_v112/conv42/batchnorm42/AssignMovingAvg_1/mul	0
+SrcNode	v/cg/resnet_v113/conv43/conv2d/kernel/read/_1116	1
+InputNode	v/cg/resnet_v113/conv43/conv2d/kernel/read	-1
 SrcNode	v/cg/resnet_v113/conv43/conv2d/kernel/read/_1117	1
-InputNode	v/cg/resnet_v113/conv43/conv2d/kernel/read/_1108	0
+InputNode	v/cg/resnet_v113/conv43/conv2d/kernel/read/_1116	0
 SrcNode	v/cg/resnet_v113/conv44/conv2d/kernel/read/_1120	1
 InputNode	v/cg/resnet_v113/conv44/conv2d/kernel/read	-1
 SrcNode	v/cg/resnet_v113/conv44/conv2d/kernel/read/_1121	1

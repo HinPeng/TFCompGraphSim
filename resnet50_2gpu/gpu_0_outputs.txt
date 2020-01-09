@@ -1,0 +1,2147 @@
+SrcNode v/tower_0/gradients/AddN_1 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667710500
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/conv47/batchnorm47/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 1 2048 2048 GPU_0_bfc 1578299667707819
+Output 0 6422528 6422528 GPU_0_bfc 1578299667707819
+Output 3 4 256 GPU_0_bfc 1578299667707819
+Output 2 2048 2048 GPU_0_bfc 1578299667707819
+Output 4 4 256 GPU_0_bfc 1578299667707819
+SrcNode v/tower_0/gradients/AddN_3 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667732129
+SrcNode v_1/tower_1/cg/resnet_v12/Relu 0
+SrcNode v/tower_0/gradients/v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/xentropy/xentropy_grad/mul 1
+Output 0 256256 262144 GPU_0_bfc 1578299667691723
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_42_grad/mul 0
+SrcNode v/tower_0/gradients/AddN_7 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667763013
+SrcNode v/tower_0/gradients/AddN_8 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667776152
+SrcNode v/tower_0/gradients/AddN_9 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667785132
+SrcNode v/tower_0/cg/resnet_v115/conv52/batchnorm52/FusedBatchNorm 5
+Output 1 8192 8192 GPU_0_bfc 1578299667690731
+Output 0 25690112 25690112 GPU_0_bfc 1578299667690731
+Output 3 8192 8192 GPU_0_bfc 1578299667690731
+Output 2 8192 8192 GPU_0_bfc 1578299667690731
+Output 4 8192 12288 GPU_0_bfc 1578299667690731
+SrcNode v/tower_0/cg/resnet_v115/conv50/conv2d/Conv2D 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667687491
+SrcNode v/tower_0/gradients/AddN_2 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667724337
+SrcNode v_1/tower_1/cg/resnet_v115/conv52/conv2d/Conv2D 0
+SrcNode v_1/tower_1/cg/resnet_v110/conv35/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/conv38/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv1/batchnorm1/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/conv15/batchnorm15/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/conv6/batchnorm6/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 0 51380224 51380224 GPU_0_bfc 1578299667840052
+Output 1 256 256 GPU_0_bfc 1578299667840052
+Output 2 256 256 GPU_0_bfc 1578299667840052
+Output 3 4 256 GPU_0_bfc 1578299667840052
+Output 4 4 256 GPU_0_bfc 1578299667840052
+SrcNode v/tower_0/gradients/AddN_4 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667739881
+SrcNode v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667610928
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/conv42/batchnorm42/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 3 4 256 GPU_0_bfc 1578299667724925
+Output 2 4096 4096 GPU_0_bfc 1578299667724925
+Output 1 4096 4096 GPU_0_bfc 1578299667724925
+Output 0 51380224 51380224 GPU_0_bfc 1578299667724925
+Output 4 4 256 GPU_0_bfc 1578299667724925
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv12/batchnorm12/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/AddN 0
+SrcNode v/tower_0/gradients/AddN_5 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667747661
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/Relu_grad/ReluGrad 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667747950
+SrcNode v_1/tower_1/L2Loss_148 0
+SrcNode v_1/tower_1/L2Loss_149 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_44_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v15/conv20/conv2d/Conv2D 0
+SrcNode v/tower_0/cg/resnet_v110/conv36/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667669257
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv1/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/L2Loss_142 0
+SrcNode v_1/tower_1/L2Loss_143 0
+SrcNode v_1/tower_1/L2Loss_140 0
+SrcNode v_1/tower_1/L2Loss_141 0
+SrcNode v_1/tower_1/L2Loss_146 0
+SrcNode v_1/tower_1/L2Loss_147 0
+SrcNode v_1/tower_1/L2Loss_144 0
+SrcNode v_1/tower_1/L2Loss_145 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv44/Relu_grad/ReluGrad 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667722554
+SrcNode v_1/tower_1/cg/resnet_v11/conv6/Relu 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/conv7/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667836968
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv46/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/conv33/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667656084
+SrcNode v/tower_0/cg/resnet_v12/conv9/batchnorm9/FusedBatchNorm 5
+Output 0 51380224 51380224 GPU_0_bfc 1578299667628339
+Output 1 256 256 GPU_0_bfc 1578299667628339
+Output 2 256 256 GPU_0_bfc 1578299667628339
+Output 3 256 256 GPU_0_bfc 1578299667628339
+Output 4 256 256 GPU_0_bfc 1578299667628339
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/conv36/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/cg/resnet_v115/conv51/batchnorm51/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_66 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_11_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/conv31/batchnorm31/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/conv23/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 262144 262144 GPU_0_bfc 1578299667779106
+SrcNode v_1/tower_1/gradients/AddN_80 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/conv18/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv1/batchnorm1/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667850815
+Output 3 4 256 GPU_0_bfc 1578299667850815
+Output 2 1024 1024 GPU_0_bfc 1578299667850815
+Output 1 1024 1024 GPU_0_bfc 1578299667850815
+Output 0 205520896 205520896 GPU_0_bfc 1578299667850815
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/cg/resnet_v10/conv3/batchnorm3/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_158_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667830024
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/conv0/batchnorm0/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/L2Loss_42 0
+SrcNode v_1/tower_1/L2Loss_43 0
+SrcNode v_1/tower_1/L2Loss_40 0
+SrcNode v_1/tower_1/L2Loss_41 0
+SrcNode v_1/tower_1/L2Loss_46 0
+SrcNode v_1/tower_1/L2Loss_47 0
+SrcNode v_1/tower_1/L2Loss_44 0
+SrcNode v_1/tower_1/L2Loss_45 0
+SrcNode v/tower_0/cg/resnet_v17/conv26/Relu 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667657972
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/conv50/batchnorm50/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667699016
+Output 0 6422528 6422528 GPU_0_bfc 1578299667699016
+Output 1 2048 2048 GPU_0_bfc 1578299667699016
+Output 2 2048 2048 GPU_0_bfc 1578299667699016
+Output 3 4 256 GPU_0_bfc 1578299667699016
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/conv35/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/cg/resnet_v110/conv34/conv2d/Conv2D 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/conv47/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 4194304 8212736 GPU_0_bfc 1578299667707904
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv26/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/spatial_mean0 1
+Output 0 524288 524288 GPU_0_bfc 1578299667691168
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_40_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv1/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 65536 65536 GPU_0_bfc 1578299667855074
+SrcNode v_1/tower_1/gradients/AddN_173 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv1/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/cg/resnet_v110/conv34/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv13/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v113/conv43/batchnorm43/FusedBatchNorm 5
+Output 4 8192 8192 GPU_0_bfc 1578299667680960
+Output 3 8192 8192 GPU_0_bfc 1578299667680960
+Output 2 8192 8192 GPU_0_bfc 1578299667680960
+Output 1 8192 8192 GPU_0_bfc 1578299667680960
+Output 0 25690112 25690112 GPU_0_bfc 1578299667680960
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/conv28/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/conv10/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667800784
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/conv9/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 589824 589824 GPU_0_bfc 1578299667781485
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/conv52/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 4194304 4194304 GPU_0_bfc 1578299667693392
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/conv35/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/cg/resnet_v111/conv39/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667673068
+SrcNode v_1/tower_1/L2Loss_118 0
+SrcNode v/tower_0/cg/resnet_v15/conv19/Relu 1
+Output 0 25690112 26279936 GPU_0_bfc 1578299667646909
+SrcNode v_1/tower_1/cg/resnet_v113/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/conv35/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_145_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v11/conv7/conv2d/Conv2D 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667621219
+SrcNode v_1/tower_1/cg/resnet_v114/add 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_127_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv45/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/AddN_52 0
+SrcNode v/tower_0/cg/resnet_v16/conv21/Relu 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667650625
+SrcNode v_1/tower_1/gradients/AddN_165 0
+SrcNode v_1/tower_1/gradients/AddN_166 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/conv18/batchnorm18/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/AddN_160 0
+SrcNode v_1/tower_1/gradients/AddN_161 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 205520896 308281344 GPU_0_bfc 1578299667815150
+SrcNode v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667639739
+SrcNode v_1/tower_1/gradients/AddN_125 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 16384 16384 GPU_0_bfc 1578299667865880
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/conv22/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/conv35/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 14438400 GPU_0_bfc 1578299667744213
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv44/batchnorm44/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 2 2048 2048 GPU_0_bfc 1578299667722600
+Output 3 4 256 GPU_0_bfc 1578299667722600
+Output 0 6422528 7221248 GPU_0_bfc 1578299667722600
+Output 1 2048 2048 GPU_0_bfc 1578299667722600
+Output 4 4 256 GPU_0_bfc 1578299667722600
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51970560 GPU_0_bfc 1578299667840493
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv27/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 25688832 GPU_0_bfc 1578299667769467
+SrcNode v_1/tower_1/cg/conv0/batchnorm0/FusedBatchNorm 0
+SrcNode v/tower_0/cg/resnet_v10/Relu 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667616888
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_120_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/conv38/batchnorm38/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667656982
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 2359296 2359296 GPU_0_bfc 1578299667751855
+SrcNode v_1/tower_1/L2Loss_59 0
+SrcNode v/tower_0/cg/resnet_v114/conv47/batchnorm47/FusedBatchNorm 5
+Output 4 2048 2048 GPU_0_bfc 1578299667684842
+Output 0 6422528 12713984 GPU_0_bfc 1578299667684842
+Output 1 2048 2048 GPU_0_bfc 1578299667684842
+Output 2 2048 2048 GPU_0_bfc 1578299667684842
+Output 3 2048 2048 GPU_0_bfc 1578299667684842
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_160_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/conv47/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/cg/resnet_v112/conv40/conv2d/Conv2D 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667674740
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_54_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v16/conv23/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/AddN_42 0
+SrcNode v_1/tower_1/gradients/AddN_43 0
+SrcNode v_1/tower_1/gradients/AddN_40 0
+SrcNode v/tower_0/gradients/AddN 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667701739
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/conv41/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/cg/conv0/Relu 0
+SrcNode v_1/tower_1/cg/resnet_v16/conv23/batchnorm23/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_45 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/conv20/batchnorm20/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_37_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_158 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/conv37/batchnorm37/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667737634
+Output 0 12845056 12845056 GPU_0_bfc 1578299667737634
+Output 1 1024 1024 GPU_0_bfc 1578299667737634
+Output 2 1024 1024 GPU_0_bfc 1578299667737634
+Output 3 4 256 GPU_0_bfc 1578299667737634
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/cg/resnet_v114/conv47/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_17_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_107 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv14/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v13/Relu 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667639335
+SrcNode v/tower_0/cg/resnet_v10/conv1/batchnorm1/FusedBatchNorm 5
+Output 2 1024 1024 GPU_0_bfc 1578299667609300
+Output 3 1024 1024 GPU_0_bfc 1578299667609300
+Output 0 205520896 205520896 GPU_0_bfc 1578299667609300
+Output 1 1024 1024 GPU_0_bfc 1578299667609300
+Output 4 1024 1024 GPU_0_bfc 1578299667609300
+SrcNode v/tower_0/cg/resnet_v19/add 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667666636
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/conv28/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667760987
+SrcNode v/tower_0/cg/resnet_v110/Relu 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667670714
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv27/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/cg/resnet_v10/add 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667615737
+SrcNode v_1/tower_1/cg/resnet_v115/conv51/Relu 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/conv36/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 13635584 GPU_0_bfc 1578299667741867
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv11/batchnorm11/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 2 2048 2048 GPU_0_bfc 1578299667804082
+Output 3 4 256 GPU_0_bfc 1578299667804082
+Output 0 102760448 102760448 GPU_0_bfc 1578299667804082
+Output 1 2048 2048 GPU_0_bfc 1578299667804082
+Output 4 4 256 GPU_0_bfc 1578299667804082
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_155_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/conv15/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_16_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667645817
+SrcNode v_1/tower_1/gradients/AddN_100 0
+SrcNode v_1/tower_1/gradients/AddN_136 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv45/batchnorm45/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667719530
+Output 2 2048 2048 GPU_0_bfc 1578299667719530
+Output 3 4 256 GPU_0_bfc 1578299667719530
+Output 0 6422528 8212736 GPU_0_bfc 1578299667719530
+Output 1 2048 2048 GPU_0_bfc 1578299667719530
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_68_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/conv16/batchnorm16/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 1 512 512 GPU_0_bfc 1578299667798108
+Output 0 25690112 38535168 GPU_0_bfc 1578299667798108
+Output 3 4 256 GPU_0_bfc 1578299667798108
+Output 2 512 512 GPU_0_bfc 1578299667798108
+Output 4 4 256 GPU_0_bfc 1578299667798108
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/conv47/Relu_grad/ReluGrad 1
+Output 0 6422528 8650752 GPU_0_bfc 1578299667707777
+SrcNode v_1/tower_1/cg/resnet_v14/conv16/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/conv31/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv11/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/cg/resnet_v10/add 0
+SrcNode v_1/tower_1/cg/resnet_v13/conv11/batchnorm11/FusedBatchNorm 0
+SrcNode v_1/tower_1/cg/resnet_v110/add 0
+SrcNode v_1/tower_1/cg/resnet_v110/conv34/batchnorm34/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_20_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/affine0/xw_plus_b_grad/BiasAddGrad 1
+Output 0 4004 4096 GPU_0_bfc 1578299667691749
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv4/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/conv19/batchnorm19/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667789240
+Output 0 25690112 26279936 GPU_0_bfc 1578299667789240
+Output 1 512 512 GPU_0_bfc 1578299667789240
+Output 2 512 512 GPU_0_bfc 1578299667789240
+Output 3 4 256 GPU_0_bfc 1578299667789240
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv4/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 65536 65536 GPU_0_bfc 1578299667857852
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_48_grad/mul 0
+SrcNode v_1/tower_1/xentropy/sparse_softmax_cross_entropy_loss/xentropy/xentropy 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667720762
+SrcNode v_1/tower_1/cg/resnet_v111/conv37/batchnorm37/FusedBatchNorm 0
+SrcNode v/tower_0/cg/resnet_v11/conv5/batchnorm5/FusedBatchNorm 5
+Output 4 256 256 GPU_0_bfc 1578299667618642
+Output 3 256 256 GPU_0_bfc 1578299667618642
+Output 2 256 256 GPU_0_bfc 1578299667618642
+Output 1 256 256 GPU_0_bfc 1578299667618642
+Output 0 51380224 51380224 GPU_0_bfc 1578299667618642
+SrcNode v_1/tower_1/cg/resnet_v17/conv27/batchnorm27/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_114 0
+SrcNode v_1/tower_1/xentropy/sparse_softmax_cross_entropy_loss/Sum 0
+SrcNode v/tower_0/cg/resnet_v14/conv15/batchnorm15/FusedBatchNorm 5
+Output 4 512 512 GPU_0_bfc 1578299667640685
+Output 0 25690112 25952256 GPU_0_bfc 1578299667640685
+Output 1 512 512 GPU_0_bfc 1578299667640685
+Output 2 512 512 GPU_0_bfc 1578299667640685
+Output 3 512 512 GPU_0_bfc 1578299667640685
+SrcNode v/tower_0/cg/affine0/xw_plus_b 1
+Output 0 256256 262144 GPU_0_bfc 1578299667691409
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/conv19/batchnorm19/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/conv22/batchnorm22/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667780295
+Output 3 4 256 GPU_0_bfc 1578299667780295
+Output 2 512 512 GPU_0_bfc 1578299667780295
+Output 1 512 512 GPU_0_bfc 1578299667780295
+Output 0 25690112 26279936 GPU_0_bfc 1578299667780295
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_143_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D 1
+Output 0 25690112 50790400 GPU_0_bfc 1578299667636022
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/conv33/batchnorm33/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/conv32/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/xentropy/sparse_softmax_cross_entropy_loss/xentropy/xentropy_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_93_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv44/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv46/batchnorm46/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667711019
+Output 2 8192 8192 GPU_0_bfc 1578299667711019
+Output 3 4 256 GPU_0_bfc 1578299667711019
+Output 0 25690112 25690112 GPU_0_bfc 1578299667711019
+Output 1 8192 9216 GPU_0_bfc 1578299667711019
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_157_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/conv8/Relu_grad/ReluGrad 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667829273
+SrcNode v_1/tower_1/cg/resnet_v115/conv50/Relu 0
+SrcNode v/tower_0/cg/resnet_v19/conv32/batchnorm32/FusedBatchNorm 5
+Output 4 1024 1024 GPU_0_bfc 1578299667665351
+Output 1 1024 1024 GPU_0_bfc 1578299667665351
+Output 0 12845056 15204352 GPU_0_bfc 1578299667665351
+Output 3 1024 1024 GPU_0_bfc 1578299667665351
+Output 2 1024 1024 GPU_0_bfc 1578299667665351
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/conv36/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v16/add 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667653447
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/mpool0/MaxPool_grad/MaxPoolGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_130_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v19/conv31/Relu 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667664389
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/conv10/batchnorm10/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667819705
+Output 3 4 256 GPU_0_bfc 1578299667819705
+Output 2 1024 1536 GPU_0_bfc 1578299667819705
+Output 1 1024 1024 GPU_0_bfc 1578299667819705
+Output 0 205520896 205520896 GPU_0_bfc 1578299667819705
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/conv31/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1048576 1048576 GPU_0_bfc 1578299667754343
+SrcNode v_1/tower_1/cg/resnet_v113/conv43/batchnorm43/FusedBatchNorm 0
+SrcNode v_1/tower_1/cg/resnet_v12/conv10/batchnorm10/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/conv15/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/L2Loss_115 0
+SrcNode v_1/tower_1/L2Loss_114 0
+SrcNode v_1/tower_1/L2Loss_117 0
+SrcNode v_1/tower_1/L2Loss_116 0
+SrcNode v_1/tower_1/L2Loss_111 0
+SrcNode v_1/tower_1/L2Loss_110 0
+SrcNode v_1/tower_1/L2Loss_113 0
+SrcNode v_1/tower_1/L2Loss_112 0
+SrcNode v_1/tower_1/cg/conv0/Pad 0
+SrcNode v/tower_0/cg/resnet_v115/conv52/conv2d/Conv2D 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667689720
+SrcNode v_1/tower_1/L2Loss_119 0
+SrcNode v_1/tower_1/cg/resnet_v12/conv8/conv2d/Conv2D 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/Relu_grad/ReluGrad 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667724629
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 2359296 2359296 GPU_0_bfc 1578299667759634
+SrcNode v_1/tower_1/cg/resnet_v14/conv17/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_52_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v15/conv19/conv2d/Conv2D 0
+SrcNode v_1/tower_1/cg/resnet_v15/conv20/batchnorm20/FusedBatchNorm 0
+SrcNode v_1/tower_1/cg/resnet_v114/conv48/conv2d/Conv2D 0
+SrcNode v_1/tower_1/cg/resnet_v13/conv13/batchnorm13/FusedBatchNorm 0
+SrcNode v/tower_0/cg/resnet_v112/conv40/batchnorm40/FusedBatchNorm 5
+Output 2 1024 1024 GPU_0_bfc 1578299667675670
+Output 3 1024 1024 GPU_0_bfc 1578299667675670
+Output 0 12845056 12845056 GPU_0_bfc 1578299667675670
+Output 1 1024 1024 GPU_0_bfc 1578299667675670
+Output 4 1024 1024 GPU_0_bfc 1578299667675670
+SrcNode v/tower_0/cg/resnet_v16/conv22/Relu 1
+Output 0 25690112 26279936 GPU_0_bfc 1578299667651823
+SrcNode v_1/tower_1/cg/resnet_v111/conv37/Relu 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667713768
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/conv18/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/conv48/Relu_grad/ReluGrad 1
+Output 0 6422528 11247616 GPU_0_bfc 1578299667704740
+SrcNode v_1/tower_1/gradients/AddN_111 0
+SrcNode v_1/tower_1/cg/resnet_v17/conv24/batchnorm24/FusedBatchNorm 0
+SrcNode v/tower_0/cg/resnet_v12/conv10/conv2d/Conv2D 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667628837
+SrcNode v/tower_0/cg/resnet_v15/conv18/batchnorm18/FusedBatchNorm 5
+Output 1 512 512 GPU_0_bfc 1578299667645560
+Output 0 25690112 25690112 GPU_0_bfc 1578299667645560
+Output 3 512 512 GPU_0_bfc 1578299667645560
+Output 2 512 512 GPU_0_bfc 1578299667645560
+Output 4 512 512 GPU_0_bfc 1578299667645560
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/conv7/batchnorm7/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 2 1024 1024 GPU_0_bfc 1578299667835317
+Output 3 4 256 GPU_0_bfc 1578299667835317
+Output 0 205520896 205520896 GPU_0_bfc 1578299667835317
+Output 1 1024 1024 GPU_0_bfc 1578299667835317
+Output 4 4 256 GPU_0_bfc 1578299667835317
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv25/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/cg/resnet_v111/conv37/Relu 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667671940
+SrcNode v_1/tower_1/L2Loss_33 0
+SrcNode v_1/tower_1/L2Loss_32 0
+SrcNode v_1/tower_1/L2Loss_31 0
+SrcNode v_1/tower_1/L2Loss_30 0
+SrcNode v_1/tower_1/L2Loss_37 0
+SrcNode v_1/tower_1/L2Loss_36 0
+SrcNode v_1/tower_1/L2Loss_35 0
+SrcNode v_1/tower_1/L2Loss_34 0
+SrcNode v/tower_0/cg/resnet_v115/conv51/Relu 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667689691
+SrcNode v/tower_0/cg/resnet_v16/conv21/batchnorm21/FusedBatchNorm 5
+Output 4 512 512 GPU_0_bfc 1578299667650474
+Output 2 512 512 GPU_0_bfc 1578299667650474
+Output 3 512 512 GPU_0_bfc 1578299667650474
+Output 0 25690112 25690112 GPU_0_bfc 1578299667650474
+Output 1 512 512 GPU_0_bfc 1578299667650474
+SrcNode v_1/tower_1/L2Loss_39 0
+SrcNode v_1/tower_1/L2Loss_78 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv11/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 524288 524544 GPU_0_bfc 1578299667808281
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/conv30/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1048576 1048576 GPU_0_bfc 1578299667757417
+SrcNode v_1/tower_1/gradients/AddN_95 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/Relu_grad/ReluGrad 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667776770
+SrcNode v_1/tower_1/cg/resnet_v13/conv14/batchnorm14/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_110 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_90_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_88 0
+SrcNode v_1/tower_1/L2Loss_89 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_79_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_87 0
+SrcNode v_1/tower_1/L2Loss_84 0
+SrcNode v_1/tower_1/L2Loss_85 0
+SrcNode v_1/tower_1/L2Loss_82 0
+SrcNode v_1/tower_1/L2Loss_83 0
+SrcNode v_1/tower_1/L2Loss_80 0
+SrcNode v_1/tower_1/L2Loss_81 0
+SrcNode v_1/tower_1/cg/resnet_v13/conv12/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_6_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v111/conv38/conv2d/Conv2D 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667671994
+SrcNode v_1/tower_1/gradients/AddN_25 0
+SrcNode v/tower_0/cg/resnet_v12/conv9/Relu 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667628634
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_103_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667774313
+SrcNode v_1/tower_1/cg/resnet_v12/conv8/batchnorm8/FusedBatchNorm 0
+SrcNode v/tower_0/cg/resnet_v19/conv32/Relu 1
+Output 0 12845056 15204352 GPU_0_bfc 1578299667665434
+SrcNode v_1/tower_1/gradients/AddN_89 0
+SrcNode v_1/tower_1/gradients/AddN_113 0
+SrcNode v/tower_0/cg/resnet_v18/Relu 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667663185
+SrcNode v/tower_0/cg/resnet_v112/conv41/conv2d/Conv2D 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667675812
+SrcNode v/tower_0/cg/resnet_v12/add 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667630995
+SrcNode v_1/tower_1/gradients/AddN_20 0
+SrcNode v/tower_0/cg/resnet_v113/conv44/Relu 1
+Output 0 6422528 8519680 GPU_0_bfc 1578299667681213
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 589824 1048576 GPU_0_bfc 1578299667799275
+SrcNode v_1/tower_1/gradients/AddN_21 0
+SrcNode v/tower_0/cg/resnet_v110/conv36/batchnorm36/FusedBatchNorm 5
+Output 0 51380224 51380224 GPU_0_bfc 1578299667670160
+Output 1 4096 4096 GPU_0_bfc 1578299667670160
+Output 2 4096 4096 GPU_0_bfc 1578299667670160
+Output 3 4096 4096 GPU_0_bfc 1578299667670160
+Output 4 4096 4096 GPU_0_bfc 1578299667670160
+SrcNode v_1/tower_1/gradients/AddN_127 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/conv28/batchnorm28/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667760855
+Output 1 1024 1024 GPU_0_bfc 1578299667760855
+Output 0 12845056 14417920 GPU_0_bfc 1578299667760855
+Output 3 4 256 GPU_0_bfc 1578299667760855
+Output 2 1024 1024 GPU_0_bfc 1578299667760855
+SrcNode v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667654414
+SrcNode v_1/tower_1/cg/resnet_v113/conv44/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/conv9/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/AddN_23 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_10_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_87 0
+SrcNode v_1/tower_1/gradients/AddN_112 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_14_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/conv48/batchnorm48/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 1 2048 2048 GPU_0_bfc 1578299667704782
+Output 0 6422528 6422528 GPU_0_bfc 1578299667704782
+Output 3 4 256 GPU_0_bfc 1578299667704782
+Output 2 2048 2048 GPU_0_bfc 1578299667704782
+Output 4 4 256 GPU_0_bfc 1578299667704782
+SrcNode v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667619146
+SrcNode v_1/tower_1/gradients/AddN_139 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/spatial_mean0_grad/Tile 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/conv17/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_65_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/conv49/batchnorm49/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/AddN_134 0
+SrcNode v_1/tower_1/gradients/AddN_133 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_82_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_131 0
+SrcNode v/tower_0/cg/resnet_v114/conv48/Relu 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667686018
+SrcNode v_1/tower_1/cg/resnet_v16/Relu 0
+SrcNode v_1/tower_1/L2Loss_86 0
+SrcNode v_1/tower_1/L2Loss_49 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/conv42/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1048576 1048576 GPU_0_bfc 1578299667725345
+SrcNode v_1/tower_1/cg/resnet_v110/conv35/Relu 0
+SrcNode v/tower_0/gradients/AddN_6 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667755336
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv44/batchnorm44/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/conv29/Relu_grad/ReluGrad 1
+Output 0 12845056 25688832 GPU_0_bfc 1578299667758418
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/conv21/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/cg/resnet_v113/conv44/conv2d/Conv2D 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667680452
+SrcNode v_1/tower_1/cg/resnet_v113/conv45/conv2d/Conv2D 0
+SrcNode v_1/tower_1/cg/resnet_v17/conv26/batchnorm26/FusedBatchNorm 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/conv38/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 2359296 2359296 GPU_0_bfc 1578299667735424
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/conv19/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/cg/affine0/xw_plus_b/MatMul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_97_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 2097152 2097152 GPU_0_bfc 1578299667767458
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_115_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v11/Relu 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667860417
+SrcNode v_1/tower_1/cg/resnet_v18/conv29/batchnorm29/FusedBatchNorm 0
+SrcNode v/tower_0/cg/resnet_v17/add 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667659171
+SrcNode v_1/tower_1/gradients/AddN_74 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv2/batchnorm2/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667865117
+Output 1 256 256 GPU_0_bfc 1578299667865117
+Output 0 51380224 51970560 GPU_0_bfc 1578299667865117
+Output 3 4 256 GPU_0_bfc 1578299667865117
+Output 2 256 256 GPU_0_bfc 1578299667865117
+SrcNode v_1/tower_1/cg/resnet_v113/conv45/batchnorm45/FusedBatchNorm 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/conv23/batchnorm23/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667777355
+Output 3 4 256 GPU_0_bfc 1578299667777355
+Output 2 2048 2048 GPU_0_bfc 1578299667777355
+Output 1 2048 2048 GPU_0_bfc 1578299667777355
+Output 0 102760448 102760448 GPU_0_bfc 1578299667777355
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv46/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 6422528 11247616 GPU_0_bfc 1578299667717450
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/conv51/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/AddN_152 0
+SrcNode v/tower_0/cg/resnet_v112/conv42/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667676885
+SrcNode v/tower_0/cg/resnet_v10/conv1/conv2d/Conv2D 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667607799
+SrcNode v_1/tower_1/cg/resnet_v10/conv1/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/conv37/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/conv50/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/cg/resnet_v18/conv28/Relu 1
+Output 0 12845056 14417920 GPU_0_bfc 1578299667660658
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/conv34/batchnorm34/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/AddN_71 0
+SrcNode v_1/tower_1/gradients/AddN_14 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/conv19/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/conv15/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 262144 262144 GPU_0_bfc 1578299667801912
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 2359296 2359296 GPU_0_bfc 1578299667772852
+SrcNode v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667678566
+SrcNode v_1/tower_1/cg/resnet_v114/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_108_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v10/conv4/conv2d/Conv2D 0
+SrcNode v/tower_0/cg/resnet_v110/conv34/conv2d/Conv2D 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667667131
+SrcNode v_1/tower_1/gradients/AddN_32 0
+SrcNode v_1/tower_1/cg/resnet_v17/conv25/Relu 0
+SrcNode v_1/tower_1/gradients/AddN_30 0
+SrcNode v_1/tower_1/gradients/AddN_37 0
+SrcNode v_1/tower_1/gradients/AddN_36 0
+SrcNode v_1/tower_1/gradients/AddN_35 0
+SrcNode v_1/tower_1/cg/resnet_v15/add 0
+SrcNode v_1/tower_1/cg/spatial_mean0 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv3/batchnorm3/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 3 4 256 GPU_0_bfc 1578299667859983
+Output 2 256 256 GPU_0_bfc 1578299667859983
+Output 1 256 256 GPU_0_bfc 1578299667859983
+Output 0 51380224 51970560 GPU_0_bfc 1578299667859983
+Output 4 4 256 GPU_0_bfc 1578299667859983
+SrcNode v_1/tower_1/gradients/AddN_39 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/conv50/Relu_grad/ReluGrad 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667698973
+SrcNode v/tower_0/cg/resnet_v115/add 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667690904
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 589824 1048576 GPU_0_bfc 1578299667813637
+SrcNode v_1/tower_1/gradients/AddN_154 0
+SrcNode v/tower_0/cg/resnet_v14/Relu 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667644214
+SrcNode v/tower_0/cg/resnet_v17/conv24/batchnorm24/FusedBatchNorm 5
+Output 3 4096 4096 GPU_0_bfc 1578299667656580
+Output 2 4096 4096 GPU_0_bfc 1578299667656580
+Output 1 4096 4096 GPU_0_bfc 1578299667656580
+Output 0 51380224 51380224 GPU_0_bfc 1578299667656580
+Output 4 4096 4096 GPU_0_bfc 1578299667656580
+SrcNode v/tower_0/cg/resnet_v114/conv47/Relu 1
+Output 0 6422528 12713984 GPU_0_bfc 1578299667684902
+SrcNode v_1/tower_1/gradients/AddN_12 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_128_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v111/conv39/conv2d/Conv2D 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 262144 262144 GPU_0_bfc 1578299667784146
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/conv42/batchnorm42/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_105_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv14/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 262144 262144 GPU_0_bfc 1578299667811245
+SrcNode v/tower_0/cg/resnet_v13/conv11/conv2d/Conv2D 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667632938
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/conv0/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/conv39/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1048576 1048576 GPU_0_bfc 1578299667733128
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/conv50/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667700295
+SrcNode v_1/tower_1/gradients/AddN_78 0
+SrcNode v_1/tower_1/mul 0
+SrcNode v_1/tower_1/cg/resnet_v11/conv6/batchnorm6/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/conv49/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/L2Loss_159 0
+SrcNode v_1/tower_1/L2Loss_158 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_132_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv3/Relu_grad/ReluGrad 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667859680
+SrcNode v_1/tower_1/L2Loss_151 0
+SrcNode v_1/tower_1/L2Loss_150 0
+SrcNode v_1/tower_1/L2Loss_153 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_150_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_155 0
+SrcNode v_1/tower_1/L2Loss_154 0
+SrcNode v_1/tower_1/L2Loss_157 0
+SrcNode v_1/tower_1/L2Loss_156 0
+SrcNode v_1/tower_1/cg/resnet_v15/conv18/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/AddN_119 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/conv33/batchnorm33/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667748242
+Output 0 51380224 51380224 GPU_0_bfc 1578299667748242
+Output 1 4096 4096 GPU_0_bfc 1578299667748242
+Output 2 4096 4096 GPU_0_bfc 1578299667748242
+Output 3 4 256 GPU_0_bfc 1578299667748242
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/conv41/batchnorm41/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv43/batchnorm43/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/AddN_135 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/conv38/batchnorm38/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 0 12845056 12984832 GPU_0_bfc 1578299667735284
+Output 1 1024 1024 GPU_0_bfc 1578299667735284
+Output 2 1024 1024 GPU_0_bfc 1578299667735284
+Output 3 4 256 GPU_0_bfc 1578299667735284
+Output 4 4 256 GPU_0_bfc 1578299667735284
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv45/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv12/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_156_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/conv29/batchnorm29/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667758591
+Output 1 1024 1024 GPU_0_bfc 1578299667758591
+Output 0 12845056 12845056 GPU_0_bfc 1578299667758591
+Output 3 4 256 GPU_0_bfc 1578299667758591
+Output 2 1024 1024 GPU_0_bfc 1578299667758591
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv26/batchnorm26/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/cg/resnet_v13/add 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667638764
+SrcNode v/tower_0/cg/resnet_v113/conv45/Relu 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667682386
+SrcNode v_1/tower_1/cg/resnet_v11/conv6/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/conv6/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/cg/resnet_v17/conv25/batchnorm25/FusedBatchNorm 5
+Output 3 1024 1024 GPU_0_bfc 1578299667656841
+Output 2 1024 1024 GPU_0_bfc 1578299667656841
+Output 1 1024 1024 GPU_0_bfc 1578299667656841
+Output 0 12845056 13369344 GPU_0_bfc 1578299667656841
+Output 4 1024 1024 GPU_0_bfc 1578299667656841
+SrcNode v_1/tower_1/transpose 0
+SrcNode v_1/tower_1/gradients/AddN_176 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_142_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_25_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv13/batchnorm13/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/cg/resnet_v14/conv15/Relu 1
+Output 0 25690112 25952256 GPU_0_bfc 1578299667640840
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/cg/resnet_v12/conv8/batchnorm8/FusedBatchNorm 5
+Output 2 256 256 GPU_0_bfc 1578299667626277
+Output 3 256 256 GPU_0_bfc 1578299667626277
+Output 0 51380224 51380224 GPU_0_bfc 1578299667626277
+Output 1 256 256 GPU_0_bfc 1578299667626277
+Output 4 256 256 GPU_0_bfc 1578299667626277
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/conv10/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/conv34/Relu_grad/ReluGrad 1
+Output 0 12845056 14438400 GPU_0_bfc 1578299667745311
+SrcNode v_1/tower_1/cg/resnet_v18/conv30/conv2d/Conv2D 0
+SrcNode v_1/tower_1/cg/resnet_v115/add 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/conv5/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_70_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v12/conv9/batchnorm9/FusedBatchNorm 0
+SrcNode v/tower_0/cg/resnet_v12/Relu 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667632138
+SrcNode v/tower_0/cg/resnet_v14/conv17/conv2d/Conv2D 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667642144
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_19_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/conv17/batchnorm17/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/cg/resnet_v111/conv39/batchnorm39/FusedBatchNorm 0
+SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/value 1
+Output 0 4 256 GPU_0_bfc 1578299667692584
+SrcNode v/tower_0/gradients/AddN_13 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667832981
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv45/Relu_grad/ReluGrad 1
+Output 0 6422528 11247616 GPU_0_bfc 1578299667719490
+SrcNode v/tower_0/cg/conv0/batchnorm0/FusedBatchNorm 5
+Output 3 256 256 GPU_0_bfc 1578299667604882
+Output 2 256 256 GPU_0_bfc 1578299667604882
+Output 1 256 256 GPU_0_bfc 1578299667604882
+Output 0 205520896 205558528 GPU_0_bfc 1578299667604882
+Output 4 256 256 GPU_0_bfc 1578299667604882
+SrcNode v/tower_0/cg/resnet_v114/add 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667687236
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv27/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/cg/resnet_v19/conv32/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/conv28/batchnorm28/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv44/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/conv6/Relu_grad/ReluGrad 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667839752
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/conv35/Relu_grad/ReluGrad 1
+Output 0 12845056 13635584 GPU_0_bfc 1578299667742961
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/conv48/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 6422528 8650752 GPU_0_bfc 1578299667706007
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_77_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv27/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1048576 1048576 GPU_0_bfc 1578299667770468
+SrcNode v/tower_0/cg/resnet_v15/conv20/batchnorm20/FusedBatchNorm 5
+Output 1 2048 2048 GPU_0_bfc 1578299667647986
+Output 0 102760448 102760448 GPU_0_bfc 1578299667647986
+Output 3 2048 2048 GPU_0_bfc 1578299667647986
+Output 2 2048 2048 GPU_0_bfc 1578299667647986
+Output 4 2048 2048 GPU_0_bfc 1578299667647986
+SrcNode v_1/tower_1/cg/resnet_v113/conv45/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv45/batchnorm45/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/AddN_106 0
+SrcNode v/tower_0/cg/resnet_v112/Relu 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667678362
+SrcNode v_1/tower_1/gradients/AddN_47 0
+SrcNode v_1/tower_1/gradients/AddN_105 0
+SrcNode v/tower_0/cg/resnet_v10/conv4/conv2d/Conv2D 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667613413
+SrcNode v_1/tower_1/gradients/AddN_103 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/conv41/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 2359296 2359296 GPU_0_bfc 1578299667727644
+SrcNode v_1/tower_1/gradients/AddN_101 0
+SrcNode v/tower_0/cg/resnet_v13/conv12/batchnorm12/FusedBatchNorm 5
+Output 4 512 512 GPU_0_bfc 1578299667635759
+Output 3 512 512 GPU_0_bfc 1578299667635759
+Output 2 512 512 GPU_0_bfc 1578299667635759
+Output 1 512 512 GPU_0_bfc 1578299667635759
+Output 0 25690112 37470208 GPU_0_bfc 1578299667635759
+SrcNode v_1/tower_1/cg/resnet_v16/conv21/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_148_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv12/Relu_grad/ReluGrad 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667814714
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/conv5/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/cg/resnet_v10/conv2/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/AddN_108 0
+SrcNode v_1/tower_1/L2Loss_103 0
+SrcNode v_1/tower_1/L2Loss_77 0
+SrcNode v_1/tower_1/L2Loss_76 0
+SrcNode v_1/tower_1/L2Loss_75 0
+SrcNode v_1/tower_1/L2Loss_74 0
+SrcNode v_1/tower_1/L2Loss_73 0
+SrcNode v_1/tower_1/L2Loss_72 0
+SrcNode v_1/tower_1/L2Loss_71 0
+SrcNode v_1/tower_1/L2Loss_70 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv12/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/cg/resnet_v16/conv23/batchnorm23/FusedBatchNorm 5
+Output 2 2048 2048 GPU_0_bfc 1578299667652899
+Output 3 2048 2048 GPU_0_bfc 1578299667652899
+Output 0 102760448 102760448 GPU_0_bfc 1578299667652899
+Output 1 2048 2048 GPU_0_bfc 1578299667652899
+Output 4 2048 2048 GPU_0_bfc 1578299667652899
+SrcNode v_1/tower_1/L2Loss_79 0
+SrcNode v_1/tower_1/cg/resnet_v10/conv2/Relu 0
+SrcNode v_1/tower_1/gradients/AddN_44 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/conv23/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v115/conv50/Relu 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667688514
+SrcNode v_1/tower_1/cg/resnet_v17/conv26/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/affine0/xw_plus_b/MatMul_grad/MatMul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_151_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v114/conv48/batchnorm48/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_15_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_63_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_5 0
+SrcNode v_1/tower_1/L2Loss_4 0
+SrcNode v_1/tower_1/L2Loss_7 0
+SrcNode v_1/tower_1/L2Loss_6 0
+SrcNode v_1/tower_1/L2Loss_1 0
+SrcNode v_1/tower_1/gradients/AddN_72 0
+SrcNode v_1/tower_1/L2Loss_3 0
+SrcNode v_1/tower_1/L2Loss_2 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 262144 262656 GPU_0_bfc 1578299667793036
+SrcNode v_1/tower_1/add 0
+SrcNode v_1/tower_1/L2Loss_9 0
+SrcNode v_1/tower_1/L2Loss_8 0
+SrcNode v_1/tower_1/gradients/AddN_79 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_27_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_91_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/conv19/Relu_grad/ReluGrad 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667789064
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_144_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_95_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_141_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_113_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_107_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v14/conv16/batchnorm16/FusedBatchNorm 0
+SrcNode v_1/tower_1/cg/resnet_v16/conv22/conv2d/Conv2D 0
+SrcNode v_1/tower_1/cg/resnet_v11/conv5/batchnorm5/FusedBatchNorm 0
+SrcNode v_1/tower_1/cg/resnet_v111/conv38/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv25/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/Relu_grad/ReluGrad 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667834135
+SrcNode v/tower_0/cg/resnet_v17/conv27/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667658024
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/conv47/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667709064
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_99_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/Relu_grad/ReluGrad 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667849632
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/spatial_mean0_grad/truediv 0
+SrcNode v_1/tower_1/cg/resnet_v19/conv32/conv2d/Conv2D 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/Relu_grad/ReluGrad 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667818517
+SrcNode v_1/tower_1/gradients/AddN_94 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/conv28/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_146_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v16/conv22/batchnorm22/FusedBatchNorm 0
+SrcNode v/tower_0/cg/resnet_v11/conv5/Relu 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667618940
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/conv41/batchnorm41/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 3 4 256 GPU_0_bfc 1578299667727507
+Output 2 1024 1024 GPU_0_bfc 1578299667727507
+Output 1 1024 1024 GPU_0_bfc 1578299667727507
+Output 0 12845056 13635584 GPU_0_bfc 1578299667727507
+Output 4 4 256 GPU_0_bfc 1578299667727507
+SrcNode v_1/tower_1/cg/resnet_v18/add 0
+SrcNode v_1/tower_1/cg/resnet_v13/conv13/Relu 0
+SrcNode v_1/tower_1/cg/resnet_v111/add 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv14/batchnorm14/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv14/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667810333
+SrcNode v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667650729
+SrcNode v/tower_0/cg/resnet_v113/conv45/batchnorm45/FusedBatchNorm 5
+Output 3 2048 2048 GPU_0_bfc 1578299667682323
+Output 2 2048 2048 GPU_0_bfc 1578299667682323
+Output 1 2048 2048 GPU_0_bfc 1578299667682323
+Output 0 6422528 6422528 GPU_0_bfc 1578299667682323
+Output 4 2048 2048 GPU_0_bfc 1578299667682323
+SrcNode v/tower_0/gradients/v/tower_0/cg/affine0/xw_plus_b/MatMul_grad/MatMul 1
+Output 0 524288 524288 GPU_0_bfc 1578299667691830
+SrcNode v/tower_0/cg/resnet_v13/conv14/conv2d/Conv2D 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667637245
+SrcNode v/tower_0/cg/resnet_v11/Relu 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667624522
+SrcNode v/tower_0/cg/resnet_v110/conv34/batchnorm34/FusedBatchNorm 5
+Output 0 12845056 12845056 GPU_0_bfc 1578299667668055
+Output 1 1024 1024 GPU_0_bfc 1578299667668055
+Output 2 1024 1024 GPU_0_bfc 1578299667668055
+Output 3 1024 1024 GPU_0_bfc 1578299667668055
+Output 4 1024 1024 GPU_0_bfc 1578299667668055
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/conv40/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/conv37/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1048576 1048576 GPU_0_bfc 1578299667737780
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/conv34/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/cg/resnet_v112/conv40/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/conv29/batchnorm29/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/conv39/batchnorm39/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/cg/resnet_v13/add 0
+SrcNode v_1/tower_1/cg/resnet_v112/Relu 0
+SrcNode v/tower_0/cg/resnet_v13/conv13/Relu 1
+Output 0 25690112 26279936 GPU_0_bfc 1578299667637139
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/conv37/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667738766
+SrcNode v_1/tower_1/cg/resnet_v110/conv35/batchnorm35/FusedBatchNorm 0
+SrcNode v_1/tower_1/cg/resnet_v13/conv13/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_71_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/conv33/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1048576 1048576 GPU_0_bfc 1578299667749643
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/AddN_88 0
+SrcNode v_1/tower_1/cg/resnet_v115/conv52/batchnorm52/FusedBatchNorm 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/conv49/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 6422528 11247616 GPU_0_bfc 1578299667703389
+SrcNode v_1/tower_1/cg/resnet_v18/Relu 0
+SrcNode v_1/tower_1/cg/resnet_v115/conv50/batchnorm50/FusedBatchNorm 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/conv18/Relu_grad/ReluGrad 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667791478
+SrcNode v/tower_0/cg/resnet_v19/conv33/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667665486
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667798338
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/conv23/batchnorm23/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/cg/resnet_v12/conv10/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_118_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_22_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_84 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/AddN_149 0
+SrcNode v_1/tower_1/gradients/AddN_85 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_80_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_61_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v114/conv48/Relu 0
+SrcNode v_1/tower_1/cg/affine0/xw_plus_b 0
+SrcNode v_1/tower_1/gradients/AddN_82 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv26/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/conv34/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667746521
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667758731
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/conv40/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_109_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/conv28/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/cg/resnet_v13/conv14/batchnorm14/FusedBatchNorm 5
+Output 4 2048 2048 GPU_0_bfc 1578299667638214
+Output 3 2048 2048 GPU_0_bfc 1578299667638214
+Output 2 2048 2048 GPU_0_bfc 1578299667638214
+Output 1 2048 2048 GPU_0_bfc 1578299667638214
+Output 0 102760448 103022592 GPU_0_bfc 1578299667638214
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv11/batchnorm11/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/AddN_81 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv13/batchnorm13/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 2 512 512 GPU_0_bfc 1578299667812479
+Output 3 4 256 GPU_0_bfc 1578299667812479
+Output 0 25690112 26279936 GPU_0_bfc 1578299667812479
+Output 1 512 512 GPU_0_bfc 1578299667812479
+Output 4 4 256 GPU_0_bfc 1578299667812479
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_4_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_120 0
+SrcNode v_1/tower_1/L2Loss_121 0
+SrcNode v_1/tower_1/L2Loss_122 0
+SrcNode v_1/tower_1/L2Loss_123 0
+SrcNode v_1/tower_1/L2Loss_124 0
+SrcNode v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667634683
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_117_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_127 0
+SrcNode v_1/tower_1/L2Loss_128 0
+SrcNode v/tower_0/cg/resnet_v10/conv3/Relu 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667613210
+SrcNode v_1/tower_1/gradients/AddN_97 0
+SrcNode v_1/tower_1/gradients/AddN_96 0
+SrcNode v_1/tower_1/gradients/AddN_91 0
+SrcNode v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667644615
+SrcNode v_1/tower_1/gradients/AddN_93 0
+SrcNode v_1/tower_1/gradients/AddN_92 0
+SrcNode v/tower_0/cg/resnet_v11/add 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667623369
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/conv51/Relu_grad/ReluGrad 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667695903
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_3_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/conv29/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/conv6/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv25/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v13/conv13/batchnorm13/FusedBatchNorm 5
+Output 4 512 512 GPU_0_bfc 1578299667636987
+Output 3 512 512 GPU_0_bfc 1578299667636987
+Output 2 512 512 GPU_0_bfc 1578299667636987
+Output 1 512 512 GPU_0_bfc 1578299667636987
+Output 0 25690112 26279936 GPU_0_bfc 1578299667636987
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_36_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_83 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/conv7/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 65536 65536 GPU_0_bfc 1578299667837926
+SrcNode v_1/tower_1/xentropy/sparse_softmax_cross_entropy_loss/value 0
+SrcNode v/tower_0/cg/resnet_v17/Relu 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667659457
+SrcNode v_1/tower_1/gradients/AddN_164 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_33_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/conv32/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_18_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_51_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/conv6/batchnorm6/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 65536 65536 GPU_0_bfc 1578299667831453
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/conv41/Relu_grad/ReluGrad 1
+Output 0 12845056 13643776 GPU_0_bfc 1578299667727428
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_136_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/conv37/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667845596
+SrcNode v_1/tower_1/cg/resnet_v14/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_96_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_28 0
+SrcNode v_1/tower_1/L2Loss_29 0
+SrcNode v_1/tower_1/L2Loss_24 0
+SrcNode v_1/tower_1/L2Loss_25 0
+SrcNode v_1/tower_1/L2Loss_26 0
+SrcNode v_1/tower_1/L2Loss_27 0
+SrcNode v_1/tower_1/L2Loss_20 0
+SrcNode v_1/tower_1/L2Loss_21 0
+SrcNode v_1/tower_1/L2Loss_22 0
+SrcNode v_1/tower_1/L2Loss_23 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_9_grad/mul 0
+SrcNode v_1/tower_1/cg/conv0/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/conv19/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/AddN_162 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_86_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v14/conv17/batchnorm17/FusedBatchNorm 5
+Output 4 2048 2048 GPU_0_bfc 1578299667643085
+Output 0 102760448 102760448 GPU_0_bfc 1578299667643085
+Output 1 2048 2048 GPU_0_bfc 1578299667643085
+Output 2 2048 2048 GPU_0_bfc 1578299667643085
+Output 3 2048 2048 GPU_0_bfc 1578299667643085
+SrcNode v_1/tower_1/cg/resnet_v10/conv2/batchnorm2/FusedBatchNorm 0
+SrcNode v/tower_0/cg/resnet_v11/conv6/batchnorm6/FusedBatchNorm 5
+Output 1 256 256 GPU_0_bfc 1578299667620713
+Output 0 51380224 51380224 GPU_0_bfc 1578299667620713
+Output 3 256 256 GPU_0_bfc 1578299667620713
+Output 2 256 256 GPU_0_bfc 1578299667620713
+Output 4 256 256 GPU_0_bfc 1578299667620713
+SrcNode v_1/tower_1/gradients/AddN_163 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv25/Relu_grad/ReluGrad 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667773902
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/conv18/batchnorm18/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667791680
+Output 0 25690112 25690112 GPU_0_bfc 1578299667791680
+Output 1 512 512 GPU_0_bfc 1578299667791680
+Output 2 512 512 GPU_0_bfc 1578299667791680
+Output 3 4 256 GPU_0_bfc 1578299667791680
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/conv6/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 147456 215296 GPU_0_bfc 1578299667842041
+SrcNode v_1/tower_1/cg/resnet_v13/conv11/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/AddN_102 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/conv5/batchnorm5/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/AddN_172 0
+SrcNode v_1/tower_1/cg/resnet_v11/conv7/conv2d/Conv2D 0
+SrcNode v_1/tower_1/cg/resnet_v112/conv41/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_24_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_126 0
+SrcNode v/tower_0/cg/resnet_v18/conv30/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667661750
+SrcNode v/tower_0/cg/resnet_v111/add 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667674246
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/conv10/batchnorm10/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_8_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v115/conv51/batchnorm51/FusedBatchNorm 5
+Output 1 2048 2048 GPU_0_bfc 1578299667689628
+Output 0 6422528 6422528 GPU_0_bfc 1578299667689628
+Output 3 2048 2048 GPU_0_bfc 1578299667689628
+Output 2 2048 2048 GPU_0_bfc 1578299667689628
+Output 4 2048 2048 GPU_0_bfc 1578299667689628
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/conv17/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 262144 262144 GPU_0_bfc 1578299667796921
+SrcNode v_1/tower_1/cg/resnet_v15/conv19/Relu 0
+SrcNode v_1/tower_1/gradients/AddN_128 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/conv50/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/AddN_142 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/conv8/batchnorm8/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 3 4 256 GPU_0_bfc 1578299667829583
+Output 2 256 256 GPU_0_bfc 1578299667829583
+Output 1 256 256 GPU_0_bfc 1578299667829583
+Output 0 51380224 51380224 GPU_0_bfc 1578299667829583
+Output 4 4 256 GPU_0_bfc 1578299667829583
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv11/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_13_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_154_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv13/Relu_grad/ReluGrad 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667812304
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/conv40/Relu_grad/ReluGrad 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667729793
+SrcNode v_1/tower_1/gradients/AddN_148 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_121_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_31 0
+SrcNode v_1/tower_1/cg/resnet_v112/conv41/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_53_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_143 0
+SrcNode v_1/tower_1/gradients/AddN_140 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv13/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667812705
+SrcNode v_1/tower_1/gradients/AddN_146 0
+SrcNode v_1/tower_1/gradients/AddN_147 0
+SrcNode v_1/tower_1/gradients/AddN_144 0
+SrcNode v/tower_0/cg/resnet_v10/conv4/batchnorm4/FusedBatchNorm 5
+Output 4 1024 1024 GPU_0_bfc 1578299667614661
+Output 0 205520896 205520896 GPU_0_bfc 1578299667614661
+Output 1 1024 1024 GPU_0_bfc 1578299667614661
+Output 2 1024 1024 GPU_0_bfc 1578299667614661
+Output 3 1024 1024 GPU_0_bfc 1578299667614661
+SrcNode v_1/tower_1/cg/resnet_v112/conv40/batchnorm40/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_29_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv4/batchnorm4/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_41_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_170 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_31_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_129_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv0/Relu_grad/ReluGrad 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667869224
+SrcNode v_1/tower_1/cg/resnet_v15/conv18/batchnorm18/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_28 0
+SrcNode v_1/tower_1/gradients/AddN_29 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/conv23/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/AddN_24 0
+SrcNode v/tower_0/cg/resnet_v113/conv46/batchnorm46/FusedBatchNorm 5
+Output 3 8192 8192 GPU_0_bfc 1578299667683446
+Output 2 8192 8192 GPU_0_bfc 1578299667683446
+Output 1 8192 8192 GPU_0_bfc 1578299667683446
+Output 0 25690112 25690112 GPU_0_bfc 1578299667683446
+Output 4 8192 8192 GPU_0_bfc 1578299667683446
+SrcNode v_1/tower_1/gradients/AddN_26 0
+SrcNode v_1/tower_1/cg/resnet_v13/conv12/batchnorm12/FusedBatchNorm 0
+SrcNode v_1/tower_1/cg/resnet_v14/conv17/batchnorm17/FusedBatchNorm 0
+SrcNode v_1/tower_1/cg/resnet_v19/conv31/Relu 0
+SrcNode v_1/tower_1/gradients/AddN_22 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/conv48/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/cg/resnet_v112/conv40/Relu 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667675756
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/conv28/Relu_grad/ReluGrad 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667760575
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/conv52/batchnorm52/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667693163
+Output 0 25690112 25690112 GPU_0_bfc 1578299667693163
+Output 1 8192 8192 GPU_0_bfc 1578299667693163
+Output 2 8192 8192 GPU_0_bfc 1578299667693163
+Output 3 4 256 GPU_0_bfc 1578299667693163
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_119_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/conv5/Relu_grad/ReluGrad 1
+Output 0 51380224 51970560 GPU_0_bfc 1578299667844850
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_76_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv2/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/cg/resnet_v112/add 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667678070
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_72_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/conv30/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 25688832 GPU_0_bfc 1578299667756415
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv24/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv0/batchnorm0/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667870395
+Output 2 256 256 GPU_0_bfc 1578299667870395
+Output 3 4 256 GPU_0_bfc 1578299667870395
+Output 0 205520896 207186944 GPU_0_bfc 1578299667870395
+Output 1 256 256 GPU_0_bfc 1578299667870395
+SrcNode v_1/tower_1/cg/resnet_v10/conv3/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_43_grad/mul 0
+SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/xentropy/xentropy 2
+Output 1 256256 262144 GPU_0_bfc 1578299667691417
+Output 0 256 256 GPU_0_bfc 1578299667691417
+SrcNode v_1/tower_1/cg/resnet_v113/add 0
+SrcNode v_1/tower_1/cg/resnet_v10/conv4/batchnorm4/FusedBatchNorm 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/conv22/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667780526
+SrcNode v/tower_0/cg/resnet_v18/conv28/conv2d/Conv2D 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667659657
+SrcNode v_1/tower_1/cg/resnet_v16/conv22/Relu 0
+SrcNode v_1/tower_1/gradients/AddN_141 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/Relu_grad/ReluGrad 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667803495
+SrcNode v_1/tower_1/cg/resnet_v111/Relu 0
+SrcNode v/tower_0/cg/resnet_v115/conv51/conv2d/Conv2D 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667688544
+SrcNode v_1/tower_1/cg/resnet_v113/conv44/batchnorm44/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/conv52/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv46/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/conv7/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v112/conv41/batchnorm41/FusedBatchNorm 5
+Output 4 1024 1024 GPU_0_bfc 1578299667676740
+Output 2 1024 1024 GPU_0_bfc 1578299667676740
+Output 3 1024 1024 GPU_0_bfc 1578299667676740
+Output 0 12845056 15204352 GPU_0_bfc 1578299667676740
+Output 1 1024 1024 GPU_0_bfc 1578299667676740
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/conv50/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/cg/resnet_v18/conv29/Relu 0
+SrcNode v/tower_0/cg/resnet_v19/conv33/batchnorm33/FusedBatchNorm 5
+Output 1 4096 4096 GPU_0_bfc 1578299667666383
+Output 0 51380224 51380224 GPU_0_bfc 1578299667666383
+Output 3 4096 5376 GPU_0_bfc 1578299667666383
+Output 2 4096 4096 GPU_0_bfc 1578299667666383
+Output 4 4096 4096 GPU_0_bfc 1578299667666383
+SrcNode v_1/tower_1/cg/resnet_v16/conv21/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/conv41/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/conv31/batchnorm31/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667753184
+Output 0 12845056 12845056 GPU_0_bfc 1578299667753184
+Output 1 1024 1024 GPU_0_bfc 1578299667753184
+Output 2 1024 1024 GPU_0_bfc 1578299667753184
+Output 3 4 256 GPU_0_bfc 1578299667753184
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv24/batchnorm24/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/cg/resnet_v110/add 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667670425
+SrcNode v/tower_0/cg/affine0/xw_plus_b/MatMul 1
+Output 0 256256 262144 GPU_0_bfc 1578299667691310
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/conv17/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv44/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/AddN_61 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/conv15/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_112_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_49 0
+SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/Sum 1
+Output 0 4 256 GPU_0_bfc 1578299667691735
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv25/batchnorm25/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667774181
+Output 2 1024 1024 GPU_0_bfc 1578299667774181
+Output 3 4 256 GPU_0_bfc 1578299667774181
+Output 0 12845056 13369344 GPU_0_bfc 1578299667774181
+Output 1 1024 1024 GPU_0_bfc 1578299667774181
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_124_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v18/conv28/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv13/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/cg/resnet_v12/conv8/Relu 0
+SrcNode v/tower_0/cg/resnet_v113/conv44/batchnorm44/FusedBatchNorm 5
+Output 4 2048 2048 GPU_0_bfc 1578299667681142
+Output 3 2048 2048 GPU_0_bfc 1578299667681142
+Output 2 2048 2048 GPU_0_bfc 1578299667681142
+Output 1 2048 2048 GPU_0_bfc 1578299667681142
+Output 0 6422528 8519680 GPU_0_bfc 1578299667681142
+SrcNode v/tower_0/cg/resnet_v12/conv8/Relu 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667626577
+SrcNode v/tower_0/gradients/v/tower_0/cg/spatial_mean0_grad/Tile 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667692593
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/conv16/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/conv7/batchnorm7/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv43/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 8388608 9437184 GPU_0_bfc 1578299667711243
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/conv39/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/conv38/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/cg/resnet_v13/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv2/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_122_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/conv39/batchnorm39/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667732719
+Output 0 51380224 51380224 GPU_0_bfc 1578299667732719
+Output 1 4096 4096 GPU_0_bfc 1578299667732719
+Output 2 4096 4096 GPU_0_bfc 1578299667732719
+Output 3 4 256 GPU_0_bfc 1578299667732719
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/conv21/batchnorm21/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/conv52/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667694543
+SrcNode v_1/tower_1/L2Loss_160 0
+SrcNode v_1/tower_1/cg/resnet_v115/conv50/conv2d/Conv2D 0
+SrcNode v_1/tower_1/cg/resnet_v112/conv42/conv2d/Conv2D 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667824865
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/conv32/batchnorm32/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 147456 147456 GPU_0_bfc 1578299667826439
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 589824 1048576 GPU_0_bfc 1578299667790403
+SrcNode v_1/tower_1/gradients/AddN_41 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/conv18/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/conv20/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/AddN_46 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv3/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/cg/resnet_v12/conv9/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667626779
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_116_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_30_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/Relu_grad/ReluGrad 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667732421
+SrcNode v_1/tower_1/cg/resnet_v10/conv3/Relu 0
+SrcNode v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667664441
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/Relu_grad/ReluGrad 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667785732
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_134_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v13/conv14/conv2d/Conv2D 0
+SrcNode v_1/tower_1/cg/resnet_v14/conv15/Relu 0
+SrcNode v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667649529
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/conv22/Relu_grad/ReluGrad 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667780119
+SrcNode v_1/tower_1/gradients/AddN_145 0
+SrcNode v/tower_0/cg/resnet_v15/conv19/batchnorm19/FusedBatchNorm 5
+Output 1 512 512 GPU_0_bfc 1578299667646757
+Output 0 25690112 26279936 GPU_0_bfc 1578299667646757
+Output 3 512 512 GPU_0_bfc 1578299667646757
+Output 2 512 512 GPU_0_bfc 1578299667646757
+Output 4 512 512 GPU_0_bfc 1578299667646757
+SrcNode v/tower_0/cg/resnet_v114/conv49/batchnorm49/FusedBatchNorm 5
+Output 0 25690112 25690112 GPU_0_bfc 1578299667687053
+Output 1 8192 8192 GPU_0_bfc 1578299667687053
+Output 2 8192 8192 GPU_0_bfc 1578299667687053
+Output 3 8192 8192 GPU_0_bfc 1578299667687053
+Output 4 8192 8192 GPU_0_bfc 1578299667687053
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/conv40/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/conv34/batchnorm34/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667745392
+Output 1 1024 1024 GPU_0_bfc 1578299667745392
+Output 0 12845056 12845056 GPU_0_bfc 1578299667745392
+Output 3 4 256 GPU_0_bfc 1578299667745392
+Output 2 1024 1024 GPU_0_bfc 1578299667745392
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/conv42/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 13643776 GPU_0_bfc 1578299667726332
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/conv15/Relu_grad/ReluGrad 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667800350
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/conv32/batchnorm32/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 0 12845056 12845056 GPU_0_bfc 1578299667750811
+Output 1 1024 1024 GPU_0_bfc 1578299667750811
+Output 2 1024 1024 GPU_0_bfc 1578299667750811
+Output 3 4 256 GPU_0_bfc 1578299667750811
+Output 4 4 256 GPU_0_bfc 1578299667750811
+SrcNode v_1/tower_1/gradients/AddN_174 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_12_grad/mul 0
+SrcNode v/tower_0/cg/conv0/Relu 1
+Output 0 205520896 205558528 GPU_0_bfc 1578299667606068
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/conv37/batchnorm37/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/conv51/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/conv21/batchnorm21/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 3 4 256 GPU_0_bfc 1578299667782786
+Output 2 512 512 GPU_0_bfc 1578299667782786
+Output 1 512 512 GPU_0_bfc 1578299667782786
+Output 0 25690112 25690112 GPU_0_bfc 1578299667782786
+Output 4 4 256 GPU_0_bfc 1578299667782786
+SrcNode v/tower_0/cg/resnet_v111/conv37/conv2d/Conv2D 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667670917
+SrcNode v_1/tower_1/gradients/AddN_167 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv25/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 524288 524288 GPU_0_bfc 1578299667775551
+SrcNode v/tower_0/cg/resnet_v14/conv16/Relu 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667642038
+SrcNode v_1/tower_1/L2Loss_14 0
+SrcNode v_1/tower_1/L2Loss_17 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_85_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_11 0
+SrcNode v_1/tower_1/L2Loss_10 0
+SrcNode v_1/tower_1/L2Loss_13 0
+SrcNode v_1/tower_1/L2Loss_12 0
+SrcNode v/tower_0/cg/resnet_v17/conv27/batchnorm27/FusedBatchNorm 5
+Output 4 4096 4096 GPU_0_bfc 1578299667658915
+Output 3 4096 4096 GPU_0_bfc 1578299667658915
+Output 2 4096 4096 GPU_0_bfc 1578299667658915
+Output 1 4096 4096 GPU_0_bfc 1578299667658915
+Output 0 51380224 51380224 GPU_0_bfc 1578299667658915
+SrcNode v_1/tower_1/cg/resnet_v17/conv27/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/conv48/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/L2Loss_19 0
+SrcNode v_1/tower_1/L2Loss_18 0
+SrcNode v_1/tower_1/gradients/AddN_130 0
+SrcNode v_1/tower_1/cg/resnet_v113/conv44/Relu 0
+SrcNode v_1/tower_1/L2Loss_60 0
+SrcNode v_1/tower_1/cg/mpool0/MaxPool 0
+SrcNode v_1/tower_1/L2Loss_62 0
+SrcNode v_1/tower_1/L2Loss_63 0
+SrcNode v_1/tower_1/L2Loss_64 0
+SrcNode v_1/tower_1/L2Loss_65 0
+SrcNode v/tower_0/cg/mpool0/MaxPool 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667606872
+SrcNode v_1/tower_1/L2Loss_67 0
+SrcNode v_1/tower_1/L2Loss_68 0
+SrcNode v_1/tower_1/L2Loss_69 0
+SrcNode v_1/tower_1/cg/resnet_v16/conv21/batchnorm21/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_168 0
+SrcNode v/tower_0/cg/resnet_v112/conv42/batchnorm42/FusedBatchNorm 5
+Output 4 4096 4096 GPU_0_bfc 1578299667677799
+Output 2 4096 4096 GPU_0_bfc 1578299667677799
+Output 3 4096 6144 GPU_0_bfc 1578299667677799
+Output 0 51380224 51380224 GPU_0_bfc 1578299667677799
+Output 1 4096 4096 GPU_0_bfc 1578299667677799
+SrcNode v_1/tower_1/cg/resnet_v14/conv15/conv2d/Conv2D 0
+SrcNode v_1/tower_1/cg/resnet_v17/conv25/batchnorm25/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_55 0
+SrcNode v/tower_0/cg/resnet_v11/conv6/Relu 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667621015
+SrcNode v_1/tower_1/cg/resnet_v115/conv51/conv2d/Conv2D 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv43/batchnorm43/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 2 8192 8192 GPU_0_bfc 1578299667710799
+Output 3 4 256 GPU_0_bfc 1578299667710799
+Output 0 25690112 25690112 GPU_0_bfc 1578299667710799
+Output 1 8192 8192 GPU_0_bfc 1578299667710799
+Output 4 4 256 GPU_0_bfc 1578299667710799
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv26/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667771947
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/Relu_grad/ReluGrad 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667701884
+SrcNode v/tower_0/gradients/AddN_12 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667817356
+SrcNode v_1/tower_1/gradients/AddN_98 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/conv35/batchnorm35/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 1 1024 1024 GPU_0_bfc 1578299667743040
+Output 0 12845056 12984832 GPU_0_bfc 1578299667743040
+Output 3 4 256 GPU_0_bfc 1578299667743040
+Output 2 1024 1024 GPU_0_bfc 1578299667743040
+Output 4 4 256 GPU_0_bfc 1578299667743040
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_88_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_152_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_109 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/conv40/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1048576 1048576 GPU_0_bfc 1578299667730017
+SrcNode v_1/tower_1/gradients/AddN_54 0
+SrcNode v_1/tower_1/cg/resnet_v15/conv18/Relu 0
+SrcNode v_1/tower_1/gradients/AddN_62 0
+SrcNode v_1/tower_1/gradients/AddN_63 0
+SrcNode v_1/tower_1/gradients/AddN_64 0
+SrcNode v_1/tower_1/gradients/AddN_65 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v14/conv16/batchnorm16/FusedBatchNorm 5
+Output 4 512 512 GPU_0_bfc 1578299667641885
+Output 0 25690112 25690112 GPU_0_bfc 1578299667641885
+Output 1 512 512 GPU_0_bfc 1578299667641885
+Output 2 512 512 GPU_0_bfc 1578299667641885
+Output 3 512 768 GPU_0_bfc 1578299667641885
+SrcNode v_1/tower_1/gradients/AddN_68 0
+SrcNode v_1/tower_1/gradients/AddN_69 0
+SrcNode v/tower_0/cg/resnet_v18/conv28/batchnorm28/FusedBatchNorm 5
+Output 0 12845056 14417920 GPU_0_bfc 1578299667660578
+Output 1 1024 1024 GPU_0_bfc 1578299667660578
+Output 2 1024 1536 GPU_0_bfc 1578299667660578
+Output 3 1024 1024 GPU_0_bfc 1578299667660578
+Output 4 1024 1024 GPU_0_bfc 1578299667660578
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/conv19/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667789472
+SrcNode v/tower_0/synthetic_labels 1
+Output 0 256 256 GPU_0_bfc 1578299667582978
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/affine0/xw_plus_b_grad/BiasAddGrad 0
+SrcNode v_1/tower_1/cg/resnet_v14/conv15/batchnorm15/FusedBatchNorm 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv12/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 131072 131072 GPU_0_bfc 1578299667816655
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/conv10/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 65536 65536 GPU_0_bfc 1578299667821327
+SrcNode v/tower_0/cg/resnet_v15/Relu 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667649128
+SrcNode v_1/tower_1/cg/resnet_v110/conv36/batchnorm36/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_81_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/conv41/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/AddN_38 0
+SrcNode v_1/tower_1/L2Loss_48 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/affine0/xw_plus_b/MatMul_grad/MatMul_1 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/conv48/batchnorm48/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv13/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv2/Relu_grad/ReluGrad 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667864813
+SrcNode v_1/tower_1/cg/resnet_v114/conv49/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv3/batchnorm3/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv24/batchnorm24/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667763687
+Output 2 4096 4096 GPU_0_bfc 1578299667763687
+Output 3 4 256 GPU_0_bfc 1578299667763687
+Output 0 51380224 51380224 GPU_0_bfc 1578299667763687
+Output 1 4096 4096 GPU_0_bfc 1578299667763687
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_60_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v111/conv38/batchnorm38/FusedBatchNorm 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv4/batchnorm4/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667852468
+Output 1 1024 1024 GPU_0_bfc 1578299667852468
+Output 0 205520896 205520896 GPU_0_bfc 1578299667852468
+Output 3 4 256 GPU_0_bfc 1578299667852468
+Output 2 1024 1024 GPU_0_bfc 1578299667852468
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/cg/resnet_v12/conv9/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/conv9/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/conv51/batchnorm51/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/conv21/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_73_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_45_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667617689
+SrcNode v_1/tower_1/gradients/AddN_137 0
+SrcNode v_1/tower_1/cg/resnet_v112/conv42/batchnorm42/FusedBatchNorm 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/conv30/batchnorm30/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667756011
+Output 1 4096 4096 GPU_0_bfc 1578299667756011
+Output 0 51380224 51380224 GPU_0_bfc 1578299667756011
+Output 3 4 256 GPU_0_bfc 1578299667756011
+Output 2 4096 4096 GPU_0_bfc 1578299667756011
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_64_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_94_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v110/conv35/Relu 1
+Output 0 12845056 15204352 GPU_0_bfc 1578299667669203
+SrcNode v_1/tower_1/cg/resnet_v114/conv49/batchnorm49/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/conv47/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/cg/resnet_v10/conv3/batchnorm3/FusedBatchNorm 5
+Output 4 256 256 GPU_0_bfc 1578299667612876
+Output 2 256 256 GPU_0_bfc 1578299667612876
+Output 3 256 256 GPU_0_bfc 1578299667612876
+Output 0 51380224 51380224 GPU_0_bfc 1578299667612876
+Output 1 256 256 GPU_0_bfc 1578299667612876
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/Relu_grad/ReluGrad 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667710645
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv26/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/conv36/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1048576 1048576 GPU_0_bfc 1578299667740879
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/conv5/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 65536 65536 GPU_0_bfc 1578299667847018
+SrcNode v_1/tower_1/cg/resnet_v17/conv24/conv2d/Conv2D 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv1/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667854119
+SrcNode v/tower_0/transpose 1
+Output 0 38535168 38535168 GPU_0_bfc 1578299667583147
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/conv8/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv46/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 4194304 4198400 GPU_0_bfc 1578299667716314
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_62_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/conv41/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667728679
+SrcNode v_1/tower_1/cg/resnet_v17/conv25/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/conv50/batchnorm50/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/cg/resnet_v17/conv26/batchnorm26/FusedBatchNorm 5
+Output 4 1024 1024 GPU_0_bfc 1578299667657889
+Output 3 1024 1024 GPU_0_bfc 1578299667657889
+Output 2 1024 1024 GPU_0_bfc 1578299667657889
+Output 1 1024 1024 GPU_0_bfc 1578299667657889
+Output 0 12845056 12845056 GPU_0_bfc 1578299667657889
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/conv40/batchnorm40/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667729874
+Output 3 4 256 GPU_0_bfc 1578299667729874
+Output 2 1024 1024 GPU_0_bfc 1578299667729874
+Output 1 1024 1024 GPU_0_bfc 1578299667729874
+Output 0 12845056 12845056 GPU_0_bfc 1578299667729874
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/conv33/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/AddN_15 0
+SrcNode v_1/tower_1/cg/resnet_v113/conv46/batchnorm46/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_17 0
+SrcNode v_1/tower_1/gradients/AddN_16 0
+SrcNode v_1/tower_1/gradients/AddN_11 0
+SrcNode v_1/tower_1/gradients/AddN_10 0
+SrcNode v_1/tower_1/gradients/AddN_13 0
+SrcNode v_1/tower_1/cg/resnet_v17/Relu 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 9437184 9437184 GPU_0_bfc 1578299667719611
+SrcNode v_1/tower_1/cg/resnet_v12/add 0
+SrcNode v_1/tower_1/gradients/AddN_18 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv3/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v18/add 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667662900
+SrcNode v_1/tower_1/cg/resnet_v10/conv1/batchnorm1/FusedBatchNorm 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/conv51/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667697179
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/conv33/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 25688832 GPU_0_bfc 1578299667748643
+SrcNode v_1/tower_1/cg/resnet_v112/conv40/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_87_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v18/conv30/batchnorm30/FusedBatchNorm 5
+Output 0 51380224 51380224 GPU_0_bfc 1578299667662636
+Output 1 4096 4096 GPU_0_bfc 1578299667662636
+Output 2 4096 4096 GPU_0_bfc 1578299667662636
+Output 3 4096 4096 GPU_0_bfc 1578299667662636
+Output 4 4096 4096 GPU_0_bfc 1578299667662636
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_126_grad/mul 0
+SrcNode v_1/tower_1/L2Loss 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/conv52/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/cg/resnet_v11/conv7/batchnorm7/FusedBatchNorm 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv44/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667723401
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/conv16/batchnorm16/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv2/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v111/conv38/Relu 1
+Output 0 12845056 15204352 GPU_0_bfc 1578299667673012
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_104_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_125 0
+SrcNode v/tower_0/cg/resnet_v16/Relu 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667654015
+SrcNode v_1/tower_1/cg/resnet_v19/add 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_57_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_126 0
+SrcNode v_1/tower_1/L2Loss_139 0
+SrcNode v_1/tower_1/L2Loss_138 0
+SrcNode v_1/tower_1/L2Loss_137 0
+SrcNode v_1/tower_1/L2Loss_136 0
+SrcNode v_1/tower_1/L2Loss_135 0
+SrcNode v_1/tower_1/L2Loss_134 0
+SrcNode v_1/tower_1/L2Loss_133 0
+SrcNode v_1/tower_1/L2Loss_132 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_131_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_130 0
+SrcNode v/tower_0/cg/resnet_v115/Relu 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667691064
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/conv36/batchnorm36/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667740466
+Output 1 4096 4096 GPU_0_bfc 1578299667740466
+Output 0 51380224 51380224 GPU_0_bfc 1578299667740466
+Output 3 4 256 GPU_0_bfc 1578299667740466
+Output 2 4096 4096 GPU_0_bfc 1578299667740466
+SrcNode v_1/tower_1/L2Loss_129 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/conv0/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/cg/resnet_v114/conv47/batchnorm47/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_114_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/conv37/Relu_grad/ReluGrad 1
+Output 0 12845056 13644800 GPU_0_bfc 1578299667737557
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/conv32/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667750955
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_47_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/conv17/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 25690112 38533888 GPU_0_bfc 1578299667796008
+SrcNode v_1/tower_1/cg/resnet_v112/conv41/batchnorm41/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_90 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_111_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_58 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_23_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/conv9/Relu_grad/ReluGrad 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667824127
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_123_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v19/conv31/batchnorm31/FusedBatchNorm 0
+SrcNode v_1/tower_1/L2Loss_51 0
+SrcNode v_1/tower_1/L2Loss_50 0
+SrcNode v_1/tower_1/L2Loss_53 0
+SrcNode v_1/tower_1/L2Loss_52 0
+SrcNode v_1/tower_1/L2Loss_55 0
+SrcNode v_1/tower_1/L2Loss_54 0
+SrcNode v_1/tower_1/L2Loss_57 0
+SrcNode v_1/tower_1/L2Loss_56 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_140_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_139_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v11/conv5/Relu 0
+SrcNode v/tower_0/cg/resnet_v13/conv12/Relu 1
+Output 0 25690112 37470208 GPU_0_bfc 1578299667635918
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/conv21/Relu_grad/ReluGrad 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667782583
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/conv8/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/conv29/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_67_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/mpool0/MaxPool_grad/MaxPoolGrad 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667867086
+SrcNode v_1/tower_1/cg/resnet_v19/conv33/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/AddN_33 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_35_grad/mul 0
+SrcNode v_1/tower_1/synthetic_labels 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/conv17/batchnorm17/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 1 2048 2048 GPU_0_bfc 1578299667795216
+Output 0 102760448 102760448 GPU_0_bfc 1578299667795216
+Output 3 4 256 GPU_0_bfc 1578299667795216
+Output 2 2048 2048 GPU_0_bfc 1578299667795216
+Output 4 4 256 GPU_0_bfc 1578299667795216
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/conv37/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_56_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_159 0
+SrcNode v_1/tower_1/cg/resnet_v113/conv43/conv2d/Conv2D 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/conv51/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 9437184 9437184 GPU_0_bfc 1578299667696024
+SrcNode v/tower_0/cg/conv0/Pad 1
+Output 0 40627200 40627200 GPU_0_bfc 1578299667583540
+SrcNode v/tower_0/cg/resnet_v15/add 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667648551
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/conv47/batchnorm47/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv25/batchnorm25/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/AddN_171 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/conv42/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/conv31/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667753314
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/Relu_grad/ReluGrad 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667794632
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv27/batchnorm27/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 2 4096 4096 GPU_0_bfc 1578299667764094
+Output 3 4 256 GPU_0_bfc 1578299667764094
+Output 0 51380224 51380224 GPU_0_bfc 1578299667764094
+Output 1 4096 5376 GPU_0_bfc 1578299667764094
+Output 4 4 256 GPU_0_bfc 1578299667764094
+SrcNode v_1/tower_1/L2Loss_131 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/conv15/batchnorm15/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 1 512 512 GPU_0_bfc 1578299667800555
+Output 0 25690112 25690112 GPU_0_bfc 1578299667800555
+Output 3 4 256 GPU_0_bfc 1578299667800555
+Output 2 512 512 GPU_0_bfc 1578299667800555
+Output 4 4 256 GPU_0_bfc 1578299667800555
+SrcNode v/tower_0/cg/resnet_v15/conv18/Relu 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667645711
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v112/conv40/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667731002
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv14/batchnorm14/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 2 2048 3584 GPU_0_bfc 1578299667804887
+Output 3 4 256 GPU_0_bfc 1578299667804887
+Output 0 102760448 102760448 GPU_0_bfc 1578299667804887
+Output 1 2048 2048 GPU_0_bfc 1578299667804887
+Output 4 4 256 GPU_0_bfc 1578299667804887
+SrcNode v_1/tower_1/L2Loss_15 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v15/conv20/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_100_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v14/conv16/Relu 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v14/conv16/Relu_grad/ReluGrad 1
+Output 0 25690112 38533888 GPU_0_bfc 1578299667797929
+SrcNode v_1/tower_1/gradients/AddN_150 0
+SrcNode v_1/tower_1/gradients/AddN_153 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_49_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_155 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/conv29/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/AddN_157 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_110_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_151 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/conv16/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/L2Loss_16 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/conv31/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/conv34/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1048576 1048576 GPU_0_bfc 1578299667745534
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/conv35/batchnorm35/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/cg/resnet_v15/conv19/batchnorm19/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_19 0
+SrcNode v_1/tower_1/cg/resnet_v11/conv5/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv24/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/AddN_104 0
+SrcNode v_1/tower_1/cg/resnet_v18/conv29/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/AddN_59 0
+SrcNode v_1/tower_1/gradients/AddN_58 0
+SrcNode v_1/tower_1/gradients/AddN_175 0
+SrcNode v_1/tower_1/L2Loss_152 0
+SrcNode v/tower_0/cg/resnet_v14/conv16/conv2d/Conv2D 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667640943
+SrcNode v_1/tower_1/cg/resnet_v19/conv32/batchnorm32/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv14/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_38_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_51 0
+SrcNode v_1/tower_1/cg/resnet_v19/conv33/batchnorm33/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_53 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/Relu_grad/ReluGrad 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667693013
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_101_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_57 0
+SrcNode v_1/tower_1/gradients/AddN_56 0
+SrcNode v_1/tower_1/cg/resnet_v18/conv28/batchnorm28/FusedBatchNorm 0
+SrcNode v/tower_0/cg/resnet_v18/conv29/batchnorm29/FusedBatchNorm 5
+Output 0 12845056 15204352 GPU_0_bfc 1578299667661616
+Output 1 1024 1024 GPU_0_bfc 1578299667661616
+Output 2 1024 1024 GPU_0_bfc 1578299667661616
+Output 3 1024 1536 GPU_0_bfc 1578299667661616
+Output 4 1024 1024 GPU_0_bfc 1578299667661616
+SrcNode v_1/tower_1/cg/resnet_v18/conv28/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/AddN_6 0
+SrcNode v_1/tower_1/gradients/AddN_1 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/conv0/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 37632 37632 GPU_0_bfc 1578299667872345
+SrcNode v_1/tower_1/gradients/AddN_3 0
+SrcNode v_1/tower_1/gradients/AddN_2 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v13/conv12/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v113/Relu 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667683779
+SrcNode v/tower_0/cg/resnet_v10/conv2/batchnorm2/FusedBatchNorm 5
+Output 4 256 256 GPU_0_bfc 1578299667610393
+Output 0 51380224 102281728 GPU_0_bfc 1578299667610393
+Output 1 256 256 GPU_0_bfc 1578299667610393
+Output 2 256 256 GPU_0_bfc 1578299667610393
+Output 3 256 256 GPU_0_bfc 1578299667610393
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_75_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_8 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_147_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_5_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v19/conv31/conv2d/Conv2D 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667663384
+SrcNode v_1/tower_1/gradients/AddN_75 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/conv36/batchnorm36/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv3/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667608911
+SrcNode v_1/tower_1/gradients/AddN_118 0
+SrcNode v_1/tower_1/cg/resnet_v111/conv38/conv2d/Conv2D 0
+SrcNode v_1/tower_1/cg/resnet_v113/conv46/conv2d/Conv2D 0
+SrcNode v/tower_0/cg/resnet_v113/conv46/conv2d/Conv2D 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667682416
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_125_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_86 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/conv21/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667783013
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_98_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_121 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/conv38/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/Relu_grad/ReluGrad 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667755715
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv24/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667764499
+SrcNode v_1/tower_1/L2Loss_61 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/cg/resnet_v16/conv22/batchnorm22/FusedBatchNorm 5
+Output 2 512 512 GPU_0_bfc 1578299667651669
+Output 3 512 512 GPU_0_bfc 1578299667651669
+Output 0 25690112 26279936 GPU_0_bfc 1578299667651669
+Output 1 512 512 GPU_0_bfc 1578299667651669
+Output 4 512 512 GPU_0_bfc 1578299667651669
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_106_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv3/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 147456 147456 GPU_0_bfc 1578299667861990
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv2/batchnorm2/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/cg/resnet_v113/conv45/conv2d/Conv2D 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667681241
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v14/conv16/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_137_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/affine0/xw_plus_b/MatMul_grad/MatMul_1 1
+Output 0 8200192 9437184 GPU_0_bfc 1578299667691764
+SrcNode v_1/tower_1/gradients/AddN_138 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/conv34/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/AddN_77 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v16/conv23/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667778181
+SrcNode v_1/tower_1/cg/resnet_v13/conv12/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_58_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_135_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_66 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_66_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv2/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667865559
+SrcNode v/tower_0/cg/resnet_v110/conv35/batchnorm35/FusedBatchNorm 5
+Output 4 1024 1024 GPU_0_bfc 1578299667669117
+Output 0 12845056 15204352 GPU_0_bfc 1578299667669117
+Output 1 1024 1024 GPU_0_bfc 1578299667669117
+Output 2 1024 1024 GPU_0_bfc 1578299667669117
+Output 3 1024 1024 GPU_0_bfc 1578299667669117
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/conv20/batchnorm20/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667786312
+Output 0 102760448 102760448 GPU_0_bfc 1578299667786312
+Output 1 2048 2048 GPU_0_bfc 1578299667786312
+Output 2 2048 2048 GPU_0_bfc 1578299667786312
+Output 3 4 256 GPU_0_bfc 1578299667786312
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/conv38/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 13644800 GPU_0_bfc 1578299667736455
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/conv5/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/AddN 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_78_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_133_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv46/batchnorm46/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/AddN_123 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/conv20/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 25690112 38535168 GPU_0_bfc 1578299667787143
+SrcNode v_1/tower_1/gradients/AddN_76 0
+SrcNode v/tower_0/cg/resnet_v18/conv29/Relu 1
+Output 0 12845056 15204352 GPU_0_bfc 1578299667661698
+SrcNode v_1/tower_1/gradients/AddN_48 0
+SrcNode v/tower_0/cg/resnet_v19/Relu 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667666931
+SrcNode v_1/tower_1/cg/resnet_v110/conv36/conv2d/Conv2D 0
+SrcNode v/tower_0/cg/resnet_v111/Relu 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667674537
+SrcNode v/tower_0/cg/resnet_v114/Relu 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667687385
+SrcNode v/tower_0/cg/resnet_v111/conv37/batchnorm37/FusedBatchNorm 5
+Output 1 1024 1024 GPU_0_bfc 1578299667671853
+Output 0 12845056 12845056 GPU_0_bfc 1578299667671853
+Output 3 1024 1024 GPU_0_bfc 1578299667671853
+Output 2 1024 1024 GPU_0_bfc 1578299667671853
+Output 4 1024 1024 GPU_0_bfc 1578299667671853
+SrcNode v_1/tower_1/cg/resnet_v17/add 0
+SrcNode v/tower_0/cg/resnet_v111/conv38/batchnorm38/FusedBatchNorm 5
+Output 4 1024 1024 GPU_0_bfc 1578299667672928
+Output 1 1024 1024 GPU_0_bfc 1578299667672928
+Output 0 12845056 15204352 GPU_0_bfc 1578299667672928
+Output 3 1024 1024 GPU_0_bfc 1578299667672928
+Output 2 1024 1024 GPU_0_bfc 1578299667672928
+SrcNode v_1/tower_1/cg/resnet_v18/conv30/batchnorm30/FusedBatchNorm 0
+SrcNode v_1/tower_1/gradients/AddN_34 0
+SrcNode v_1/tower_1/cg/resnet_v19/conv31/conv2d/Conv2D 0
+SrcNode v_1/tower_1/gradients/AddN_115 0
+SrcNode v/tower_0/cg/resnet_v11/conv7/batchnorm7/FusedBatchNorm 5
+Output 4 1024 1024 GPU_0_bfc 1578299667622314
+Output 3 1024 1024 GPU_0_bfc 1578299667622314
+Output 2 1024 1024 GPU_0_bfc 1578299667622314
+Output 1 1024 1536 GPU_0_bfc 1578299667622314
+Output 0 205520896 205520896 GPU_0_bfc 1578299667622314
+SrcNode v/tower_0/cg/resnet_v115/conv50/batchnorm50/FusedBatchNorm 5
+Output 1 2048 2048 GPU_0_bfc 1578299667688453
+Output 0 6422528 6422528 GPU_0_bfc 1578299667688453
+Output 3 2048 2048 GPU_0_bfc 1578299667688453
+Output 2 2048 2048 GPU_0_bfc 1578299667688453
+Output 4 2048 2048 GPU_0_bfc 1578299667688453
+SrcNode v_1/tower_1/gradients/AddN_132 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/conv31/Relu_grad/ReluGrad 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667752897
+SrcNode v/tower_0/cg/resnet_v16/conv23/conv2d/Conv2D 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667651926
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_92_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_106 0
+SrcNode v_1/tower_1/L2Loss_107 0
+SrcNode v_1/tower_1/L2Loss_104 0
+SrcNode v_1/tower_1/L2Loss_105 0
+SrcNode v_1/tower_1/L2Loss_102 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_2_grad/mul 0
+SrcNode v_1/tower_1/L2Loss_100 0
+SrcNode v_1/tower_1/L2Loss_101 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/conv47/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_50_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v18/conv29/conv2d/Conv2D 1
+Output 0 12845056 22282240 GPU_0_bfc 1578299667660710
+SrcNode v_1/tower_1/cg/resnet_v111/conv37/conv2d/Conv2D 0
+SrcNode v_1/tower_1/L2Loss_108 0
+SrcNode v_1/tower_1/L2Loss_109 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv12/batchnorm12/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 2 512 512 GPU_0_bfc 1578299667814920
+Output 3 4 256 GPU_0_bfc 1578299667814920
+Output 0 25690112 38533888 GPU_0_bfc 1578299667814920
+Output 1 512 512 GPU_0_bfc 1578299667814920
+Output 4 4 256 GPU_0_bfc 1578299667814920
+SrcNode v/tower_0/cg/resnet_v15/conv20/conv2d/Conv2D 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667647015
+SrcNode v/tower_0/gradients/AddN_15 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667866798
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/conv22/batchnorm22/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/conv30/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v113/add 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667683631
+SrcNode v_1/tower_1/gradients/AddN_50 0
+SrcNode v_1/tower_1/cg/resnet_v110/Relu 0
+SrcNode v_1/tower_1/cg/resnet_v11/add 0
+SrcNode v_1/tower_1/gradients/AddN_117 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/conv21/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/conv39/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 12845056 13644800 GPU_0_bfc 1578299667734117
+SrcNode v/tower_0/cg/resnet_v114/conv49/conv2d/Conv2D 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667686049
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/conv42/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/conv40/batchnorm40/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v18/conv28/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 1048576 1048576 GPU_0_bfc 1578299667762018
+SrcNode v_1/tower_1/gradients/AddN_99 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_84_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/conv48/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/conv51/batchnorm51/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667695947
+Output 0 6422528 7036928 GPU_0_bfc 1578299667695947
+Output 1 2048 2048 GPU_0_bfc 1578299667695947
+Output 2 2048 2048 GPU_0_bfc 1578299667695947
+Output 3 4 256 GPU_0_bfc 1578299667695947
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv26/Relu_grad/ReluGrad 1
+Output 0 12845056 25688832 GPU_0_bfc 1578299667771641
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_138_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v17/conv25/Relu 1
+Output 0 12845056 13369344 GPU_0_bfc 1578299667656930
+SrcNode v_1/tower_1/gradients/AddN_120 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_149_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_122 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/Relu_grad/ReluGrad 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667740173
+SrcNode v_1/tower_1/gradients/AddN_124 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_32_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v111/conv39/batchnorm39/FusedBatchNorm 5
+Output 1 4096 4096 GPU_0_bfc 1578299667673976
+Output 0 51380224 51380224 GPU_0_bfc 1578299667673976
+Output 3 4096 4096 GPU_0_bfc 1578299667673976
+Output 2 4096 6144 GPU_0_bfc 1578299667673976
+Output 4 4096 4096 GPU_0_bfc 1578299667673976
+SrcNode v/tower_0/cg/resnet_v114/conv48/batchnorm48/FusedBatchNorm 5
+Output 4 2048 2048 GPU_0_bfc 1578299667685956
+Output 0 6422528 6422528 GPU_0_bfc 1578299667685956
+Output 1 2048 2048 GPU_0_bfc 1578299667685956
+Output 2 2048 2048 GPU_0_bfc 1578299667685956
+Output 3 2048 2048 GPU_0_bfc 1578299667685956
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/conv18/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667791911
+SrcNode v_1/tower_1/gradients/AddN_129 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/conv30/batchnorm30/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v19/conv32/Relu_grad/ReluGrad 1
+Output 0 12845056 25688832 GPU_0_bfc 1578299667750640
+SrcNode v/tower_0/gradients/AddN_10 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667794032
+SrcNode v_1/tower_1/cg/resnet_v14/add 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/conv48/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 9437184 9437184 GPU_0_bfc 1578299667704864
+SrcNode v/tower_0/cg/resnet_v13/conv11/batchnorm11/FusedBatchNorm 5
+Output 4 2048 2048 GPU_0_bfc 1578299667635209
+Output 3 2048 2048 GPU_0_bfc 1578299667635209
+Output 2 2048 2048 GPU_0_bfc 1578299667635209
+Output 1 2048 2048 GPU_0_bfc 1578299667635209
+Output 0 102760448 102760448 GPU_0_bfc 1578299667635209
+SrcNode v_1/tower_1/gradients/AddN_5 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/conv9/batchnorm9/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v/tower_0/gradients/AddN_11 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667802895
+SrcNode v_1/tower_1/L2Loss_99 0
+SrcNode v_1/tower_1/L2Loss_98 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v18/conv30/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/AddN_4 0
+SrcNode v_1/tower_1/L2Loss_95 0
+SrcNode v_1/tower_1/L2Loss_94 0
+SrcNode v_1/tower_1/L2Loss_97 0
+SrcNode v_1/tower_1/L2Loss_96 0
+SrcNode v_1/tower_1/L2Loss_91 0
+SrcNode v_1/tower_1/L2Loss_90 0
+SrcNode v_1/tower_1/L2Loss_93 0
+SrcNode v_1/tower_1/L2Loss_92 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v112/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/AddN_27 0
+SrcNode v/tower_0/xentropy/sparse_softmax_cross_entropy_loss/div 1
+Output 0 4 256 GPU_0_bfc 1578299667691901
+SrcNode v/tower_0/gradients/AddN_14 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667848480
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/conv7/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_74_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v114/conv47/conv2d/Conv2D 1
+Output 0 6422528 6422528 GPU_0_bfc 1578299667683883
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v10/conv4/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667856899
+SrcNode v_1/tower_1/cg/resnet_v112/add 0
+SrcNode v_1/tower_1/gradients/AddN_156 0
+SrcNode v_1/tower_1/gradients/AddN_60 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v15/conv20/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 262144 262144 GPU_0_bfc 1578299667788058
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v11/conv5/batchnorm5/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 2 256 256 GPU_0_bfc 1578299667845156
+Output 3 4 256 GPU_0_bfc 1578299667845156
+Output 0 51380224 51380224 GPU_0_bfc 1578299667845156
+Output 1 256 256 GPU_0_bfc 1578299667845156
+Output 4 4 256 GPU_0_bfc 1578299667845156
+SrcNode v_1/tower_1/cg/resnet_v12/conv9/Relu 0
+SrcNode v/tower_0/cg/resnet_v12/conv10/batchnorm10/FusedBatchNorm 5
+Output 2 1024 1536 GPU_0_bfc 1578299667629929
+Output 3 1024 1024 GPU_0_bfc 1578299667629929
+Output 0 205520896 205520896 GPU_0_bfc 1578299667629929
+Output 1 1024 1024 GPU_0_bfc 1578299667629929
+Output 4 1024 1024 GPU_0_bfc 1578299667629929
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/conv51/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/cg/resnet_v16/add 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v10/conv4/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v/tower_0/cg/resnet_v110/conv35/conv2d/Conv2D 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667668192
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_28_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/conv32/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v10/conv2/Relu 1
+Output 0 51380224 102281728 GPU_0_bfc 1578299667610724
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v13/conv11/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667805671
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_153_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_89_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v19/conv31/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/cg/resnet_v15/Relu 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/conv49/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 4194304 4194304 GPU_0_bfc 1578299667702258
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/conv22/Relu_grad/ReluGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_7_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/conv9/batchnorm9/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667824425
+Output 1 256 256 GPU_0_bfc 1578299667824425
+Output 0 51380224 51380224 GPU_0_bfc 1578299667824425
+Output 3 4 256 GPU_0_bfc 1578299667824425
+Output 2 256 256 GPU_0_bfc 1578299667824425
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v115/conv52/batchnorm52/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v16/conv22/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v_1/tower_1/cg/resnet_v10/Relu 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v114/conv49/batchnorm49/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 4 4 256 GPU_0_bfc 1578299667702034
+Output 1 8192 8192 GPU_0_bfc 1578299667702034
+Output 0 25690112 25690112 GPU_0_bfc 1578299667702034
+Output 3 4 256 GPU_0_bfc 1578299667702034
+Output 2 8192 8192 GPU_0_bfc 1578299667702034
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_1_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_9 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv43/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/AddN_67 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_39_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v11/conv6/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_69_grad/mul 0
+SrcNode v_1/tower_1/gradients/AddN_70 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/Relu_grad/ReluGrad 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667763391
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_55_grad/mul 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v110/conv35/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 2359296 4473856 GPU_0_bfc 1578299667743173
+SrcNode v/tower_0/cg/resnet_v14/add 1
+Output 0 102760448 102760448 GPU_0_bfc 1578299667643639
+SrcNode v/tower_0/cg/resnet_v110/conv34/Relu 1
+Output 0 12845056 12845056 GPU_0_bfc 1578299667668140
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v12/conv10/conv2d/Conv2D_grad/Conv2DBackpropInput 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667823140
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v113/conv44/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 2097152 2097152 GPU_0_bfc 1578299667722682
+SrcNode v/tower_0/cg/conv0/conv2d/Conv2D 1
+Output 0 205520896 205520896 GPU_0_bfc 1578299667602283
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/conv8/batchnorm8/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv43/conv2d/Conv2D_grad/Conv2DBackpropFilter 0
+SrcNode v/tower_0/cg/resnet_v19/conv31/batchnorm31/FusedBatchNorm 5
+Output 1 1024 1024 GPU_0_bfc 1578299667664307
+Output 0 12845056 12845056 GPU_0_bfc 1578299667664307
+Output 3 1024 1024 GPU_0_bfc 1578299667664307
+Output 2 1024 1024 GPU_0_bfc 1578299667664307
+Output 4 1024 1024 GPU_0_bfc 1578299667664307
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_34_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_102_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v12/conv8/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v17/conv26/batchnorm26/FusedBatchNorm_grad/FusedBatchNormGrad 5
+Output 2 1024 1024 GPU_0_bfc 1578299667771810
+Output 3 4 256 GPU_0_bfc 1578299667771810
+Output 0 12845056 12845056 GPU_0_bfc 1578299667771810
+Output 1 1024 1024 GPU_0_bfc 1578299667771810
+Output 4 4 256 GPU_0_bfc 1578299667771810
+SrcNode v_1/tower_1/gradients/AddN_169 0
+SrcNode v_1/tower_1/gradients/AddN_116 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v114/conv49/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/AddN_73 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v17/conv27/batchnorm27/FusedBatchNorm_grad/FusedBatchNormGrad 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v113/conv45/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/L2Loss_38 0
+SrcNode v_1/tower_1/cg/resnet_v17/conv26/Relu 0
+SrcNode v/tower_0/cg/resnet_v114/conv48/conv2d/Conv2D 1
+Output 0 6422528 8650752 GPU_0_bfc 1578299667684930
+SrcNode v/tower_0/cg/resnet_v12/conv8/conv2d/Conv2D 1
+Output 0 51380224 51380224 GPU_0_bfc 1578299667625326
+SrcNode v_1/tower_1/xentropy/sparse_softmax_cross_entropy_loss/div 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v115/conv50/conv2d/Conv2D_grad/Conv2DBackpropFilter 1
+Output 0 4194304 4194304 GPU_0_bfc 1578299667699103
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_159_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_83_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v115/Relu 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/spatial_mean0_grad/truediv 1
+Output 0 25690112 25690112 GPU_0_bfc 1578299667692909
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v111/conv39/conv2d/Conv2D_grad/Conv2DBackpropInput 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_46_grad/mul 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_26_grad/mul 0
+SrcNode v/tower_0/cg/resnet_v112/conv41/Relu 1
+Output 0 12845056 15204352 GPU_0_bfc 1578299667676830
+SrcNode v_1/tower_1/gradients/AddN_7 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/cg/resnet_v110/conv34/Relu_grad/ReluGrad 0
+SrcNode v/tower_0/gradients/v/tower_0/cg/resnet_v111/conv38/Relu_grad/ReluGrad 1
+Output 0 12845056 13644800 GPU_0_bfc 1578299667735204
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_21_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v114/conv47/Relu 0
+SrcNode v_1/tower_1/gradients/v_1/tower_1/L2Loss_59_grad/mul 0
+SrcNode v_1/tower_1/cg/resnet_v19/Relu 0

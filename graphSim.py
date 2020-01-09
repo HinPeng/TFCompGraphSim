@@ -1695,7 +1695,7 @@ class GraphSim():
                                                  it_name,
                                                  recomp.in_trigger[1],
                                                  recomp.in_trigger[2]))
-        recomp.inputs = list(set(recomp.inputs))
+        
         # self.GetRecompOp(recomp, recomp.name(), recomp.inputs)
         # debug
         # diff_ops = []
@@ -1707,32 +1707,35 @@ class GraphSim():
         #   logging.debug("SRCS_OPS: %s" % str(recomp.srcs_ops))
         #   logging.debug("DIFF OPS: %d, %d, %s" % (len(recomp.ops), len(recomp.srcs_ops), str(diff_ops)))
         #   logging.debug("INPUTS: %s" % str(recomp.inputs))
-        if self.savemulti_tensor:
-          # recompute multiple target tensor
-          logging.debug("RECOMP:%s" % recomp.name())
-          tmp = []
-          for tt in sub_recomp.coll.values():
-            if tt.nodename() in recomp.srcs_ops:
-              tmp.append(tt.name())          
-          if len(tmp)+1 > self.savemulti_tensor_num:
-            fout.write("%d\t%s\t" % (1, recomp.name()))
-          else:
-            fout.write("%d\t%s\t" % (len(tmp)+1, recomp.name()))
-            for tn in tmp:
-              fout.write("%s\t" % tn)
-        else:
-          # only save target tensor
-          num_recompute_tensors = 1
-          tensor_name = recomp_name
-          fout.write("%d\t%s\t" % (num_recompute_tensors, tensor_name))
-        for input_ in recomp.inputs:
-          if input_ in self.mm_decision.keys():
-            logging.error("%s is in mm decisions" % input_)
-          input_node_name = input_[:-2]
-          input_sslot = input_[-1]
-          input_name = input_node_name+':'+input_sslot
-          fout.write("%s\t" % input_name)
-        fout.write("\n")
+
+        # NOTE: No need to specify saved target tensor name in collective recomputing
+        # recomp.inputs = list(set(recomp.inputs))
+        # if self.savemulti_tensor:
+        #   # recompute multiple target tensor
+        #   logging.debug("RECOMP:%s" % recomp.name())
+        #   tmp = []
+        #   for tt in sub_recomp.coll.values():
+        #     if tt.nodename() in recomp.srcs_ops:
+        #       tmp.append(tt.name())          
+        #   if len(tmp)+1 > self.savemulti_tensor_num:
+        #     fout.write("%d\t%s\t" % (1, recomp.name()))
+        #   else:
+        #     fout.write("%d\t%s\t" % (len(tmp)+1, recomp.name()))
+        #     for tn in tmp:
+        #       fout.write("%s\t" % tn)
+        # else:
+        #   # only save target tensor
+        #   num_recompute_tensors = 1
+        #   tensor_name = recomp_name
+        #   fout.write("%d\t%s\t" % (num_recompute_tensors, tensor_name))
+        # for input_ in recomp.inputs:
+        #   if input_ in self.mm_decision.keys():
+        #     logging.error("%s is in mm decisions" % input_)
+        #   input_node_name = input_[:-2]
+        #   input_sslot = input_[-1]
+        #   input_name = input_node_name+':'+input_sslot
+        #   fout.write("%s\t" % input_name)
+        # fout.write("\n")
     fout.close()
     # debug: recompute ops
     # for sub_recomp in sub_recomps:
